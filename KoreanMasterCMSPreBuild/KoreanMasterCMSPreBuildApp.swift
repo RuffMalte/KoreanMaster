@@ -16,9 +16,27 @@ struct KoreanMasterCMSPreBuildApp: App {
 		FirebaseApp.configure()
 	}
 	
+	@StateObject var loginController = LoginController()
+	
+	
     var body: some Scene {
         WindowGroup {
-            ContentView()
+			if loginController.isInitialLoading {
+				ProgressView()
+			} else {
+				if loginController.loggedIn {
+					ContentView()
+				} else {
+					if loginController.isLoadingAccountSignIn {
+						ProgressView()
+					} else {
+						LoginView(selectedLoginOption: loginController.loginOption)
+					}
+				}
+			}
+				
         }
+		.environmentObject(loginController)
+
     }
 }

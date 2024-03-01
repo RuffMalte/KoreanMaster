@@ -30,9 +30,15 @@ struct MainTabView: View {
 		#elseif os(macOS)
 		
 		NavigationSplitView {
-			
-			
-			
+			List {
+				NavigationLink {
+					UserListView()
+				} label: {
+					Label("Users", systemImage: "person.3.fill")
+				}
+				
+				
+			}
 			
 		} detail: {
 			ContentUnavailableView("Select something to edit",
