@@ -17,7 +17,7 @@ struct KoreanMasterCMSPreBuildApp: App {
 	}
 	
 	@StateObject var loginController = LoginController()
-	
+	@StateObject var coursesController = CoursesController()
 	
     var body: some Scene {
         WindowGroup {
@@ -36,6 +36,7 @@ struct KoreanMasterCMSPreBuildApp: App {
 			}
 				
         }
+		.environmentObject(coursesController)
 		.environmentObject(loginController)
 
     }

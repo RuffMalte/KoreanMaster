@@ -37,6 +37,7 @@ struct LanguageCellView: View {
 			} label: {
 				Label("Modify", systemImage: "pencil")
 			}
+			.labelStyle(.titleAndIcon)
 			//TODO: Implement delete language
 //			Button {
 //				print("Delete language")

@@ -42,6 +42,14 @@ struct MainTabView: View {
 				} label: {
 					Label("Languages", systemImage: "globe")
 				}
+				
+				NavigationLink {
+					CoursesListView()
+				} label: {
+					Label("Courses", systemImage: "book.fill")
+				}
+
+				
 			}
 			
 		} detail: {

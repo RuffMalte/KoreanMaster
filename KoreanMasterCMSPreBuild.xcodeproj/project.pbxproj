@@ -26,6 +26,10 @@
 		2E6C51B62B93825A00626F95 /* LanguageFromMocData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6C51B52B93825A00626F95 /* LanguageFromMocData.swift */; };
 		2EAC1C332B93853B00F713F7 /* LanguageCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EAC1C322B93853B00F713F7 /* LanguageCellView.swift */; };
 		2EAC1C362B93AAB800F713F7 /* JSONView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EAC1C352B93AAB800F713F7 /* JSONView.swift */; };
+		2EAC1C3B2B93B74E00F713F7 /* CoursesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EAC1C3A2B93B74E00F713F7 /* CoursesListView.swift */; };
+		2EAC1C3D2B93B77900F713F7 /* CoursesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EAC1C3C2B93B77900F713F7 /* CoursesController.swift */; };
+		2EAC1C402B93B7E100F713F7 /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EAC1C3F2B93B7E100F713F7 /* Course.swift */; };
+		2EAC1C432B93C5A200F713F7 /* CourseMocData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EAC1C422B93C5A200F713F7 /* CourseMocData.swift */; };
 		2EF41ACD2B927A36007431ED /* KoreanMasterCMSPreBuildApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF41ACC2B927A36007431ED /* KoreanMasterCMSPreBuildApp.swift */; };
 		2EF41ACF2B927A36007431ED /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF41ACE2B927A36007431ED /* ContentView.swift */; };
 		2EF41AD12B927A38007431ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2EF41AD02B927A38007431ED /* Assets.xcassets */; };
@@ -65,6 +69,10 @@
 		2E6C51B52B93825A00626F95 /* LanguageFromMocData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageFromMocData.swift; sourceTree = "<group>"; };
 		2EAC1C322B93853B00F713F7 /* LanguageCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageCellView.swift; sourceTree = "<group>"; };
 		2EAC1C352B93AAB800F713F7 /* JSONView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONView.swift; sourceTree = "<group>"; };
+		2EAC1C3A2B93B74E00F713F7 /* CoursesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursesListView.swift; sourceTree = "<group>"; };
+		2EAC1C3C2B93B77900F713F7 /* CoursesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursesController.swift; sourceTree = "<group>"; };
+		2EAC1C3F2B93B7E100F713F7 /* Course.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
+		2EAC1C422B93C5A200F713F7 /* CourseMocData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseMocData.swift; sourceTree = "<group>"; };
 		2EF41AC92B927A36007431ED /* KoreanMasterCMSPreBuild.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KoreanMasterCMSPreBuild.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2EF41ACC2B927A36007431ED /* KoreanMasterCMSPreBuildApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KoreanMasterCMSPreBuildApp.swift; sourceTree = "<group>"; };
 		2EF41ACE2B927A36007431ED /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -165,6 +173,7 @@
 		2E6C51A32B9356C900626F95 /* MocData */ = {
 			isa = PBXGroup;
 			children = (
+				2EAC1C412B93C59800F713F7 /* Course */,
 				2E6C51B42B93823000626F95 /* Language */,
 				2E6C51A42B9356D000626F95 /* User */,
 			);
@@ -229,6 +238,30 @@
 			path = Helper;
 			sourceTree = "<group>";
 		};
+		2EAC1C392B93B73300F713F7 /* Courses */ = {
+			isa = PBXGroup;
+			children = (
+				2EAC1C3A2B93B74E00F713F7 /* CoursesListView.swift */,
+			);
+			path = Courses;
+			sourceTree = "<group>";
+		};
+		2EAC1C3E2B93B7D400F713F7 /* Course */ = {
+			isa = PBXGroup;
+			children = (
+				2EAC1C3F2B93B7E100F713F7 /* Course.swift */,
+			);
+			path = Course;
+			sourceTree = "<group>";
+		};
+		2EAC1C412B93C59800F713F7 /* Course */ = {
+			isa = PBXGroup;
+			children = (
+				2EAC1C422B93C5A200F713F7 /* CourseMocData.swift */,
+			);
+			path = Course;
+			sourceTree = "<group>";
+		};
 		2EF41AC02B927A36007431ED = {
 			isa = PBXGroup;
 			children = (
@@ -276,6 +309,7 @@
 				2EF41ACE2B927A36007431ED /* ContentView.swift */,
 				2EAC1C342B93AAAA00F713F7 /* Helper */,
 				2E6C51792B927C6500626F95 /* MainTabView */,
+				2EAC1C392B93B73300F713F7 /* Courses */,
 				2E6C51812B92816300626F95 /* Settings */,
 				2E6C517E2B927E3A00626F95 /* User */,
 			);
@@ -287,6 +321,7 @@
 			children = (
 				2E6C51A72B935AC700626F95 /* Helper */,
 				2E6C518D2B92888200626F95 /* LoginController.swift */,
+				2EAC1C3C2B93B77900F713F7 /* CoursesController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -295,6 +330,7 @@
 			isa = PBXGroup;
 			children = (
 				2E6C51A32B9356C900626F95 /* MocData */,
+				2EAC1C3E2B93B7D400F713F7 /* Course */,
 				2E6C51AA2B93667800626F95 /* Language */,
 				2E6C518A2B92846600626F95 /* User */,
 			);
@@ -423,11 +459,15 @@
 				2EAC1C362B93AAB800F713F7 /* JSONView.swift in Sources */,
 				2E6C518C2B92847300626F95 /* LoginOptions.swift in Sources */,
 				2EAC1C332B93853B00F713F7 /* LanguageCellView.swift in Sources */,
+				2EAC1C3D2B93B77900F713F7 /* CoursesController.swift in Sources */,
 				2E6C51862B92835C00626F95 /* UserListView.swift in Sources */,
 				2E6C51A62B9356DC00626F95 /* UserMocData.swift in Sources */,
+				2EAC1C432B93C5A200F713F7 /* CourseMocData.swift in Sources */,
 				2E6C51A12B93567500626F95 /* UserCellView.swift in Sources */,
 				2E6C518E2B92888200626F95 /* LoginController.swift in Sources */,
 				2E6C51AF2B936DA300626F95 /* LanguagesListView.swift in Sources */,
+				2EAC1C402B93B7E100F713F7 /* Course.swift in Sources */,
+				2EAC1C3B2B93B74E00F713F7 /* CoursesListView.swift in Sources */,
 				2E6C51B22B93820700626F95 /* ModifyLanguageSheetView.swift in Sources */,
 				2E6C519F2B92944000626F95 /* FirestoreUser.swift in Sources */,
 				2EF41ACF2B927A36007431ED /* ContentView.swift in Sources */,

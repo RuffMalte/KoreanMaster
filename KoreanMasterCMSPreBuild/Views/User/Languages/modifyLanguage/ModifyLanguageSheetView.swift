@@ -35,7 +35,7 @@ struct ModifyLanguageSheetView: View {
 			.toolbar {
 				ToolbarItem(placement: .primaryAction) {
 					Button {
-						if let language = language {
+						if language != nil {
 							loginCon.addLanguageToFirestore(language: workingLanguage)
 						} else {
 							loginCon.editLanguageInFirestore(language: workingLanguage)

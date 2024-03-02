@@ -23,7 +23,7 @@ struct UserListView: View {
 					
 					ForEach(loginCon.allFirestoreUsers) { user in
 						NavigationLink {
-							Text(user.displayName)
+							JSONView(model: user)
 						} label: {
 							UserCellView(user: user)
 						}
