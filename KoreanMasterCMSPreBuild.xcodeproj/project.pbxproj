@@ -24,6 +24,7 @@
 		2E6C51AF2B936DA300626F95 /* LanguagesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6C51AE2B936DA300626F95 /* LanguagesListView.swift */; };
 		2E6C51B22B93820700626F95 /* ModifyLanguageSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6C51B12B93820700626F95 /* ModifyLanguageSheetView.swift */; };
 		2E6C51B62B93825A00626F95 /* LanguageFromMocData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6C51B52B93825A00626F95 /* LanguageFromMocData.swift */; };
+		2EAC1C332B93853B00F713F7 /* LanguageCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EAC1C322B93853B00F713F7 /* LanguageCellView.swift */; };
 		2EF41ACD2B927A36007431ED /* KoreanMasterCMSPreBuildApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF41ACC2B927A36007431ED /* KoreanMasterCMSPreBuildApp.swift */; };
 		2EF41ACF2B927A36007431ED /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF41ACE2B927A36007431ED /* ContentView.swift */; };
 		2EF41AD12B927A38007431ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2EF41AD02B927A38007431ED /* Assets.xcassets */; };
@@ -61,6 +62,7 @@
 		2E6C51AE2B936DA300626F95 /* LanguagesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguagesListView.swift; sourceTree = "<group>"; };
 		2E6C51B12B93820700626F95 /* ModifyLanguageSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyLanguageSheetView.swift; sourceTree = "<group>"; };
 		2E6C51B52B93825A00626F95 /* LanguageFromMocData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageFromMocData.swift; sourceTree = "<group>"; };
+		2EAC1C322B93853B00F713F7 /* LanguageCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageCellView.swift; sourceTree = "<group>"; };
 		2EF41AC92B927A36007431ED /* KoreanMasterCMSPreBuild.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KoreanMasterCMSPreBuild.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2EF41ACC2B927A36007431ED /* KoreanMasterCMSPreBuildApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KoreanMasterCMSPreBuildApp.swift; sourceTree = "<group>"; };
 		2EF41ACE2B927A36007431ED /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -196,6 +198,7 @@
 			children = (
 				2E6C51B02B9381CB00626F95 /* modifyLanguage */,
 				2E6C51AE2B936DA300626F95 /* LanguagesListView.swift */,
+				2EAC1C322B93853B00F713F7 /* LanguageCellView.swift */,
 			);
 			path = Languages;
 			sourceTree = "<group>";
@@ -407,6 +410,7 @@
 				2E6C51B62B93825A00626F95 /* LanguageFromMocData.swift in Sources */,
 				2E6C51892B92840600626F95 /* LoginView.swift in Sources */,
 				2E6C518C2B92847300626F95 /* LoginOptions.swift in Sources */,
+				2EAC1C332B93853B00F713F7 /* LanguageCellView.swift in Sources */,
 				2E6C51862B92835C00626F95 /* UserListView.swift in Sources */,
 				2E6C51A62B9356DC00626F95 /* UserMocData.swift in Sources */,
 				2E6C51A12B93567500626F95 /* UserCellView.swift in Sources */,

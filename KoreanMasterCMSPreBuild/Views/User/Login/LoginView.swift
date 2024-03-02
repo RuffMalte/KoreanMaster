@@ -15,7 +15,7 @@ struct LoginView: View {
 	@State private var password: String = ""
 	
 	@State private var displayName: String = ""
-	@State private var selectedLanguage: LanguageFrom?
+	@State private var selectedLanguage: CourseLanguage?
 	
 	
 	@EnvironmentObject var loginCon: LoginController

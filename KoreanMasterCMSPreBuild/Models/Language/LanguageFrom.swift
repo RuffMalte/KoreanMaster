@@ -1,5 +1,5 @@
 //
-//  LanguageFrom.swift
+//  CourseLanguage.swift
 //  KoreanMasterCMSPreBuild
 //
 //  Created by Malte Ruff on 02.03.24.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-class LanguageFrom: Identifiable, Encodable, Decodable {
+class CourseLanguage: Identifiable, Encodable, Decodable {
 	var id: String
 	var language: String
 	var languageCode: String

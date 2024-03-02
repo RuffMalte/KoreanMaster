@@ -29,7 +29,7 @@ class LoginController: ObservableObject {
 	
 	var allFirestoreUsers: [FirestoreUser] = []
 	
-	var allLanguages: [LanguageFrom] = []
+	var allLanguages: [CourseLanguage] = []
 	
 	init() {
 		self.checkUserLoggedIn()
@@ -284,13 +284,13 @@ class LoginController: ObservableObject {
 				print("Error reading all languages from Firestore: \(error)")
 			} else {
 				self.allLanguages = querySnapshot?.documents.compactMap { document in
-					try? document.data(as: LanguageFrom.self)
+					try? document.data(as: CourseLanguage.self)
 				} ?? []
 			}
 		}
 	}
 	
-	func addLanguageToFirestore(language: LanguageFrom) {
+	func addLanguageToFirestore(language: CourseLanguage) {
 		let languagesCollection = Firestore.firestore().collection("languages")
 		
 		do {

@@ -18,7 +18,8 @@ struct LanguagesListView: View {
 			List {
 				HStack {
 					Button {
-						loginCon.addLanguageToFirestore(language: LanguageFrom(language: "English", languageCode: "en", languageFlag: "🇬🇧"))
+						isShowingAddLanguage.toggle()
+//						loginCon.addLanguageToFirestore(language: CourseLanguage(language: "English", languageCode: "en", languageFlag: "🇬🇧"))
 					} label: {
 						Label("Add Language", systemImage: "plus.circle.fill")
 					}
@@ -30,13 +31,7 @@ struct LanguagesListView: View {
 				}
 				
 				ForEach(loginCon.allLanguages) { language in
-					HStack {
-						Label {
-							Text(language.language)
-						} icon: {
-							Text(language.languageFlag)
-						}
-					}
+					LanguageCellView(language: language)
 				}
 			}
 			
