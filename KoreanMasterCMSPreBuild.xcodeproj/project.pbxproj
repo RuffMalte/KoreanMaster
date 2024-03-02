@@ -25,6 +25,7 @@
 		2E6C51B22B93820700626F95 /* ModifyLanguageSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6C51B12B93820700626F95 /* ModifyLanguageSheetView.swift */; };
 		2E6C51B62B93825A00626F95 /* LanguageFromMocData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6C51B52B93825A00626F95 /* LanguageFromMocData.swift */; };
 		2EAC1C332B93853B00F713F7 /* LanguageCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EAC1C322B93853B00F713F7 /* LanguageCellView.swift */; };
+		2EAC1C362B93AAB800F713F7 /* JSONView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EAC1C352B93AAB800F713F7 /* JSONView.swift */; };
 		2EF41ACD2B927A36007431ED /* KoreanMasterCMSPreBuildApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF41ACC2B927A36007431ED /* KoreanMasterCMSPreBuildApp.swift */; };
 		2EF41ACF2B927A36007431ED /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF41ACE2B927A36007431ED /* ContentView.swift */; };
 		2EF41AD12B927A38007431ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2EF41AD02B927A38007431ED /* Assets.xcassets */; };
@@ -63,6 +64,7 @@
 		2E6C51B12B93820700626F95 /* ModifyLanguageSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyLanguageSheetView.swift; sourceTree = "<group>"; };
 		2E6C51B52B93825A00626F95 /* LanguageFromMocData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageFromMocData.swift; sourceTree = "<group>"; };
 		2EAC1C322B93853B00F713F7 /* LanguageCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageCellView.swift; sourceTree = "<group>"; };
+		2EAC1C352B93AAB800F713F7 /* JSONView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONView.swift; sourceTree = "<group>"; };
 		2EF41AC92B927A36007431ED /* KoreanMasterCMSPreBuild.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KoreanMasterCMSPreBuild.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2EF41ACC2B927A36007431ED /* KoreanMasterCMSPreBuildApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KoreanMasterCMSPreBuildApp.swift; sourceTree = "<group>"; };
 		2EF41ACE2B927A36007431ED /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -219,6 +221,14 @@
 			path = Language;
 			sourceTree = "<group>";
 		};
+		2EAC1C342B93AAAA00F713F7 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				2EAC1C352B93AAB800F713F7 /* JSONView.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
 		2EF41AC02B927A36007431ED = {
 			isa = PBXGroup;
 			children = (
@@ -264,6 +274,7 @@
 			isa = PBXGroup;
 			children = (
 				2EF41ACE2B927A36007431ED /* ContentView.swift */,
+				2EAC1C342B93AAAA00F713F7 /* Helper */,
 				2E6C51792B927C6500626F95 /* MainTabView */,
 				2E6C51812B92816300626F95 /* Settings */,
 				2E6C517E2B927E3A00626F95 /* User */,
@@ -409,6 +420,7 @@
 				2E6C51802B927ECB00626F95 /* ProfileView.swift in Sources */,
 				2E6C51B62B93825A00626F95 /* LanguageFromMocData.swift in Sources */,
 				2E6C51892B92840600626F95 /* LoginView.swift in Sources */,
+				2EAC1C362B93AAB800F713F7 /* JSONView.swift in Sources */,
 				2E6C518C2B92847300626F95 /* LoginOptions.swift in Sources */,
 				2EAC1C332B93853B00F713F7 /* LanguageCellView.swift in Sources */,
 				2E6C51862B92835C00626F95 /* UserListView.swift in Sources */,

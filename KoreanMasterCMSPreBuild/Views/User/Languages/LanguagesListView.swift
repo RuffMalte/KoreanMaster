@@ -30,7 +30,13 @@ struct LanguagesListView: View {
 				}
 				
 				ForEach(loginCon.allLanguages) { language in
-					LanguageCellView(language: language)
+					NavigationLink {
+						JSONView(model: language)
+					} label: {
+						LanguageCellView(language: language)
+					}
+
+
 				}
 			}
 			
