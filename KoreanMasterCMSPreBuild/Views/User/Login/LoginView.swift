@@ -31,6 +31,18 @@ struct LoginView: View {
 					.padding()
 				Spacer()
 			}
+			Section {
+				Button {
+					email = "1@1.com"
+					password = "123456"
+					displayName = "TestUser"
+				} label: {
+					Label("Fill in Debug", systemImage: "arrow.right.circle.fill")
+				}
+				
+				 
+				
+			}
 			
 			Section {
 				TextField("Email", text: $email)
@@ -60,7 +72,9 @@ struct LoginView: View {
 					}
 				case .reauthenticate:
 					Button("Reauthenticate") {
+						loginCon.reauthenticateUser(email: email, password: password)
 					}
+					.disabled(email.isEmpty || password.isEmpty)
 				}
 				
 				

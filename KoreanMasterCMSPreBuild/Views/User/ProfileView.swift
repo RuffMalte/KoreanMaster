@@ -17,10 +17,10 @@ struct ProfileView: View {
     var body: some View {
 		Form {
 			Section {
-				Text("Display Name: \(loginCon.user?.displayName ?? "No display name")")
+				Text(loginCon.currentFirestoreUser?.displayName ?? "")
 					.font(.system(.headline, design: .rounded, weight: .bold))
 					
-				Text("Email: \(loginCon.user?.email ?? "No email")")
+				Text(loginCon.currentFirestoreUser?.email ?? "")
 					.font(.system(.subheadline, design: .monospaced, weight: .bold))
 			}
 			
@@ -35,8 +35,8 @@ struct ProfileView: View {
 					loginCon.deleteCurrentUser()
 				} label: {
 					Label("Delete Account", systemImage: "trash.fill")
+						.foregroundStyle(.red)
 				}
-				.foregroundStyle(.red)
 			}
 			
 		}

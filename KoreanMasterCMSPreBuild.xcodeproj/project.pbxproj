@@ -15,6 +15,11 @@
 		2E6C51892B92840600626F95 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6C51882B92840600626F95 /* LoginView.swift */; };
 		2E6C518C2B92847300626F95 /* LoginOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6C518B2B92847300626F95 /* LoginOptions.swift */; };
 		2E6C518E2B92888200626F95 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6C518D2B92888200626F95 /* LoginController.swift */; };
+		2E6C51962B9292DC00626F95 /* KoreanMasterCMSPreBuildTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6C51952B9292DC00626F95 /* KoreanMasterCMSPreBuildTests.swift */; };
+		2E6C519F2B92944000626F95 /* FirestoreUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6C519E2B92944000626F95 /* FirestoreUser.swift */; };
+		2E6C51A12B93567500626F95 /* UserCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6C51A02B93567500626F95 /* UserCellView.swift */; };
+		2E6C51A62B9356DC00626F95 /* UserMocData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6C51A52B9356DC00626F95 /* UserMocData.swift */; };
+		2E6C51A92B935AD300626F95 /* PasteboardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6C51A82B935AD300626F95 /* PasteboardController.swift */; };
 		2EF41ACD2B927A36007431ED /* KoreanMasterCMSPreBuildApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF41ACC2B927A36007431ED /* KoreanMasterCMSPreBuildApp.swift */; };
 		2EF41ACF2B927A36007431ED /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF41ACE2B927A36007431ED /* ContentView.swift */; };
 		2EF41AD12B927A38007431ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2EF41AD02B927A38007431ED /* Assets.xcassets */; };
@@ -22,6 +27,16 @@
 		2EF41AE12B927B37007431ED /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 2EF41AE02B927B37007431ED /* FirebaseAuth */; };
 		2EF41AE32B927B37007431ED /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 2EF41AE22B927B37007431ED /* FirebaseFirestore */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2E6C51972B9292DC00626F95 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2EF41AC12B927A36007431ED /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2EF41AC82B927A36007431ED;
+			remoteInfo = KoreanMasterCMSPreBuild;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		2E6C517A2B927C7000626F95 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
@@ -32,6 +47,12 @@
 		2E6C51882B92840600626F95 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		2E6C518B2B92847300626F95 /* LoginOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginOptions.swift; sourceTree = "<group>"; };
 		2E6C518D2B92888200626F95 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		2E6C51932B9292DC00626F95 /* KoreanMasterCMSPreBuildTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KoreanMasterCMSPreBuildTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2E6C51952B9292DC00626F95 /* KoreanMasterCMSPreBuildTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KoreanMasterCMSPreBuildTests.swift; sourceTree = "<group>"; };
+		2E6C519E2B92944000626F95 /* FirestoreUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreUser.swift; sourceTree = "<group>"; };
+		2E6C51A02B93567500626F95 /* UserCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCellView.swift; sourceTree = "<group>"; };
+		2E6C51A52B9356DC00626F95 /* UserMocData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMocData.swift; sourceTree = "<group>"; };
+		2E6C51A82B935AD300626F95 /* PasteboardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasteboardController.swift; sourceTree = "<group>"; };
 		2EF41AC92B927A36007431ED /* KoreanMasterCMSPreBuild.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KoreanMasterCMSPreBuild.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2EF41ACC2B927A36007431ED /* KoreanMasterCMSPreBuildApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KoreanMasterCMSPreBuildApp.swift; sourceTree = "<group>"; };
 		2EF41ACE2B927A36007431ED /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -41,6 +62,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		2E6C51902B9292DC00626F95 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2EF41AC62B927A36007431ED /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -83,6 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				2E6C51852B92835C00626F95 /* UserListView.swift */,
+				2E6C51A02B93567500626F95 /* UserCellView.swift */,
 			);
 			path = UserLists;
 			sourceTree = "<group>";
@@ -99,14 +128,56 @@
 			isa = PBXGroup;
 			children = (
 				2E6C518B2B92847300626F95 /* LoginOptions.swift */,
+				2E6C519E2B92944000626F95 /* FirestoreUser.swift */,
 			);
 			path = User;
+			sourceTree = "<group>";
+		};
+		2E6C51942B9292DC00626F95 /* KoreanMasterCMSPreBuildTests */ = {
+			isa = PBXGroup;
+			children = (
+				2E6C519C2B92930400626F95 /* ControllerTest */,
+				2E6C51952B9292DC00626F95 /* KoreanMasterCMSPreBuildTests.swift */,
+			);
+			path = KoreanMasterCMSPreBuildTests;
+			sourceTree = "<group>";
+		};
+		2E6C519C2B92930400626F95 /* ControllerTest */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ControllerTest;
+			sourceTree = "<group>";
+		};
+		2E6C51A32B9356C900626F95 /* MocData */ = {
+			isa = PBXGroup;
+			children = (
+				2E6C51A42B9356D000626F95 /* User */,
+			);
+			path = MocData;
+			sourceTree = "<group>";
+		};
+		2E6C51A42B9356D000626F95 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				2E6C51A52B9356DC00626F95 /* UserMocData.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		2E6C51A72B935AC700626F95 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				2E6C51A82B935AD300626F95 /* PasteboardController.swift */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 		2EF41AC02B927A36007431ED = {
 			isa = PBXGroup;
 			children = (
 				2EF41ACB2B927A36007431ED /* KoreanMasterCMSPreBuild */,
+				2E6C51942B9292DC00626F95 /* KoreanMasterCMSPreBuildTests */,
 				2EF41ACA2B927A36007431ED /* Products */,
 			);
 			sourceTree = "<group>";
@@ -115,6 +186,7 @@
 			isa = PBXGroup;
 			children = (
 				2EF41AC92B927A36007431ED /* KoreanMasterCMSPreBuild.app */,
+				2E6C51932B9292DC00626F95 /* KoreanMasterCMSPreBuildTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -156,6 +228,7 @@
 		2EF41ADC2B927ABD007431ED /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				2E6C51A72B935AC700626F95 /* Helper */,
 				2E6C518D2B92888200626F95 /* LoginController.swift */,
 			);
 			path = Controllers;
@@ -164,6 +237,7 @@
 		2EF41ADE2B927AC9007431ED /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				2E6C51A32B9356C900626F95 /* MocData */,
 				2E6C518A2B92846600626F95 /* User */,
 			);
 			path = Models;
@@ -172,6 +246,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		2E6C51922B9292DC00626F95 /* KoreanMasterCMSPreBuildTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2E6C51992B9292DC00626F95 /* Build configuration list for PBXNativeTarget "KoreanMasterCMSPreBuildTests" */;
+			buildPhases = (
+				2E6C518F2B9292DC00626F95 /* Sources */,
+				2E6C51902B9292DC00626F95 /* Frameworks */,
+				2E6C51912B9292DC00626F95 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2E6C51982B9292DC00626F95 /* PBXTargetDependency */,
+			);
+			name = KoreanMasterCMSPreBuildTests;
+			productName = KoreanMasterCMSPreBuildTests;
+			productReference = 2E6C51932B9292DC00626F95 /* KoreanMasterCMSPreBuildTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		2EF41AC82B927A36007431ED /* KoreanMasterCMSPreBuild */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2EF41AD82B927A38007431ED /* Build configuration list for PBXNativeTarget "KoreanMasterCMSPreBuild" */;
@@ -203,6 +295,10 @@
 				LastSwiftUpdateCheck = 1520;
 				LastUpgradeCheck = 1520;
 				TargetAttributes = {
+					2E6C51922B9292DC00626F95 = {
+						CreatedOnToolsVersion = 15.2;
+						TestTargetID = 2EF41AC82B927A36007431ED;
+					};
 					2EF41AC82B927A36007431ED = {
 						CreatedOnToolsVersion = 15.2;
 					};
@@ -225,11 +321,19 @@
 			projectRoot = "";
 			targets = (
 				2EF41AC82B927A36007431ED /* KoreanMasterCMSPreBuild */,
+				2E6C51922B9292DC00626F95 /* KoreanMasterCMSPreBuildTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		2E6C51912B9292DC00626F95 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2EF41AC72B927A36007431ED /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -243,6 +347,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		2E6C518F2B9292DC00626F95 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2E6C51962B9292DC00626F95 /* KoreanMasterCMSPreBuildTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2EF41AC52B927A36007431ED /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -251,9 +363,13 @@
 				2E6C51892B92840600626F95 /* LoginView.swift in Sources */,
 				2E6C518C2B92847300626F95 /* LoginOptions.swift in Sources */,
 				2E6C51862B92835C00626F95 /* UserListView.swift in Sources */,
+				2E6C51A62B9356DC00626F95 /* UserMocData.swift in Sources */,
+				2E6C51A12B93567500626F95 /* UserCellView.swift in Sources */,
 				2E6C518E2B92888200626F95 /* LoginController.swift in Sources */,
+				2E6C519F2B92944000626F95 /* FirestoreUser.swift in Sources */,
 				2EF41ACF2B927A36007431ED /* ContentView.swift in Sources */,
 				2E6C51832B92817100626F95 /* MainSettingsView.swift in Sources */,
+				2E6C51A92B935AD300626F95 /* PasteboardController.swift in Sources */,
 				2EF41ACD2B927A36007431ED /* KoreanMasterCMSPreBuildApp.swift in Sources */,
 				2E6C517B2B927C7000626F95 /* MainTabView.swift in Sources */,
 			);
@@ -261,7 +377,59 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		2E6C51982B9292DC00626F95 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2EF41AC82B927A36007431ED /* KoreanMasterCMSPreBuild */;
+			targetProxy = 2E6C51972B9292DC00626F95 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		2E6C519A2B9292DC00626F95 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = DRJ4KKKV4T;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MACOSX_DEPLOYMENT_TARGET = 14.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.MalteRuff.KoreanMasterCMSPreBuildTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KoreanMasterCMSPreBuild.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/KoreanMasterCMSPreBuild";
+			};
+			name = Debug;
+		};
+		2E6C519B2B9292DC00626F95 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = DRJ4KKKV4T;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MACOSX_DEPLOYMENT_TARGET = 14.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.MalteRuff.KoreanMasterCMSPreBuildTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KoreanMasterCMSPreBuild.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/KoreanMasterCMSPreBuild";
+			};
+			name = Release;
+		};
 		2EF41AD62B927A38007431ED /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -455,6 +623,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		2E6C51992B9292DC00626F95 /* Build configuration list for PBXNativeTarget "KoreanMasterCMSPreBuildTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2E6C519A2B9292DC00626F95 /* Debug */,
+				2E6C519B2B9292DC00626F95 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		2EF41AC42B927A36007431ED /* Build configuration list for PBXProject "KoreanMasterCMSPreBuild" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

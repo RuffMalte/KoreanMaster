@@ -8,13 +8,26 @@
 import SwiftUI
 
 struct UserListView: View {
+	
+	@EnvironmentObject var loginCon: LoginController
+	
     var body: some View {
 		NavigationStack {
 			Form {
 				List {
-					Text("User 1")
-					Text("User 2")
-					Text("User 3")
+					Button {
+						loginCon.getAllFirestoreUsers()
+					} label: {
+						Label("Get all users", systemImage: "arrow.right.circle.fill")
+					}
+					
+					ForEach(loginCon.allFirestoreUsers) { user in
+						NavigationLink {
+							Text(user.displayName)
+						} label: {
+							UserCellView(user: user)
+						}
+					}
 				}
 			}
 			.navigationTitle("Users")
