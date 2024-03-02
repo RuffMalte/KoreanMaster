@@ -19,7 +19,6 @@ struct LanguagesListView: View {
 				HStack {
 					Button {
 						isShowingAddLanguage.toggle()
-//						loginCon.addLanguageToFirestore(language: CourseLanguage(language: "English", languageCode: "en", languageFlag: "🇬🇧"))
 					} label: {
 						Label("Add Language", systemImage: "plus.circle.fill")
 					}
@@ -38,7 +37,8 @@ struct LanguagesListView: View {
 		}
 		.navigationTitle("Languages for Learning Korean")
 		.sheet(isPresented: $isShowingAddLanguage) {
-			
+			ModifyLanguageSheetView()
+				.padding()
 		}
     }
 }

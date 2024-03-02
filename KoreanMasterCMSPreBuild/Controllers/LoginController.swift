@@ -300,4 +300,14 @@ class LoginController: ObservableObject {
 		}
 	}
 	
+	func editLanguageInFirestore(language: CourseLanguage) {
+		let languagesCollection = Firestore.firestore().collection("languages")
+		
+		do {
+			try languagesCollection.document(language.language).setData(from: language)
+		} catch {
+			print("Error writing language to Firestore: \(error)")
+		}
+	}
+	
 }

@@ -32,5 +32,8 @@ extension CourseLanguage {
 	}
 	
 	static var simpleExample: CourseLanguage = CourseLanguage(language: "German", languageCode: "de", languageFlag: "🇩🇪")
+	
+	
+	static var emtpyCourseLanguage: CourseLanguage = CourseLanguage(language: "", languageCode: "", languageFlag: "")
 }
 						 

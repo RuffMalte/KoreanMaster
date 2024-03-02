@@ -11,6 +11,8 @@ struct LanguageCellView: View {
 	
 	var language: CourseLanguage
 	
+	@State private var isShowingModifyLanguage: Bool = false
+	
     var body: some View {
 		VStack {
 			HStack {
@@ -28,6 +30,23 @@ struct LanguageCellView: View {
 			}
 			.foregroundStyle(.secondary)
 			.font(.system(.footnote, design: .monospaced, weight: .medium))
+		}
+		.contextMenu {
+			Button {
+				isShowingModifyLanguage.toggle()
+			} label: {
+				Label("Modify", systemImage: "pencil")
+			}
+			//TODO: Implement delete language
+//			Button {
+//				print("Delete language")
+//			} label: {
+//				Label("Delete", systemImage: "trash")
+//			}
+		}
+		.sheet(isPresented: $isShowingModifyLanguage){
+			ModifyLanguageSheetView(language: language)
+				.padding()
 		}
 	}
 }
