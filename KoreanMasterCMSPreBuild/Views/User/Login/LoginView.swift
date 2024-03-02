@@ -15,8 +15,8 @@ struct LoginView: View {
 	@State private var password: String = ""
 	
 	@State private var displayName: String = ""
+	@State private var selectedLanguage: LanguageFrom?
 	
-	@State var selectedLessonInterfaceLanguage: String = "English"
 	
 	@EnvironmentObject var loginCon: LoginController
 
@@ -35,12 +35,21 @@ struct LoginView: View {
 				Button {
 					email = "1@1.com"
 					password = "123456"
-					displayName = "TestUser"
+					displayName = "TestUser "
 				} label: {
-					Label("Fill in Debug", systemImage: "arrow.right.circle.fill")
+					Label("Fill in Debug 1", systemImage: "arrow.right.circle.fill")
+						.foregroundStyle(.red)
 				}
 				
-				 
+				Button {
+					email = "2@2.com"
+					password = "123456"
+					displayName = "TestUser 2"
+				} label: {
+					Label("Fill in Debug 2", systemImage: "arrow.right.circle.fill")
+						.foregroundStyle(.blue)
+
+				}
 				
 			}
 			
@@ -61,12 +70,42 @@ struct LoginView: View {
 					}
 				case .create:
 					TextField("Display Name", text: $displayName)
-
+					
+					if let selectedLang = selectedLanguage {
+						Menu {
+							ForEach(loginCon.allLanguages) { lang in
+								Button {
+									selectedLanguage = lang
+								} label: {
+									Label {
+										Text(lang.language)
+									} icon: {
+										Text(lang.languageFlag)
+									}
+								}
+							}
+							
+							
+						} label: {
+							Label {
+								Text(selectedLang.language)
+							} icon: {
+								Text(selectedLang.languageFlag)
+							}
+							
+						}
+					}
+						
+					
 					Button("Create Account") {
 						loginCon.createUser(email: email, password: password, displayName: displayName)
 					}
 					.disabled(email.isEmpty || password.isEmpty || displayName.isEmpty)
-
+					.onAppear {
+						if !loginCon.allLanguages.isEmpty {
+							selectedLanguage = loginCon.allLanguages.first
+						} 
+					}
 					Button("Already have an account? Login!") {
 						selectedLoginOption = .login
 					}

@@ -29,8 +29,11 @@ class LoginController: ObservableObject {
 	
 	var allFirestoreUsers: [FirestoreUser] = []
 	
+	var allLanguages: [LanguageFrom] = []
+	
 	init() {
 		self.checkUserLoggedIn()
+		self.getAllLanguages()
 		
 	}
 	
@@ -102,8 +105,9 @@ class LoginController: ObservableObject {
 	}
 	
 	func deleteCurrentUser() {
+		self.isLoadingAccountSignIn = true
 		self.deleteFirestoreUser(with: self.user?.uid ?? "")
-
+		
 		Auth.auth().currentUser?.delete { error in
 			if let error = error as NSError? {
 				if error.code == AuthErrorCode.requiresRecentLogin.rawValue {
@@ -120,8 +124,9 @@ class LoginController: ObservableObject {
 				print("User deleted")
 			}
 		}
-	}
+		self.isLoadingAccountSignIn = false
 
+	}
 	
 	func reauthenticateUser(email: String, password: String) {
 		let user = Auth.auth().currentUser
@@ -130,6 +135,7 @@ class LoginController: ObservableObject {
 			if let error = error {
 				print(error)
 			}
+			self.deleteCurrentUser()
 			//TODO: implement some kind of Confirmation
 			self.loginOption = .create
 			self.loggedIn = false
@@ -246,4 +252,52 @@ class LoginController: ObservableObject {
 			}
 		}
 	}
+	
+	
+	//MARK: Language selected to learn korean from
+	
+	func changeUserLanguageSelected(with id: String, language: String) {
+		let usersCollection = Firestore.firestore().collection("users")
+		usersCollection.document(id).getDocument { document, error in
+			if let error = error {
+				print("Error reading user from Firestore: \(error)")
+			} else {
+				if let document = document, document.exists {
+					do {
+						let user = try document.data(as: FirestoreUser.self)
+						user.languageSelected = language
+						try usersCollection.document(id).setData(from: user)
+					} catch {
+						print("Error decoding user from Firestore: \(error)")
+					}
+				} else {
+					print("User does not exist")
+				}
+			}
+		}
+	}
+	
+	func getAllLanguages() {
+		let languagesCollection = Firestore.firestore().collection("languages")
+		languagesCollection.getDocuments { querySnapshot, error in
+			if let error = error {
+				print("Error reading all languages from Firestore: \(error)")
+			} else {
+				self.allLanguages = querySnapshot?.documents.compactMap { document in
+					try? document.data(as: LanguageFrom.self)
+				} ?? []
+			}
+		}
+	}
+	
+	func addLanguageToFirestore(language: LanguageFrom) {
+		let languagesCollection = Firestore.firestore().collection("languages")
+		
+		do {
+			try languagesCollection.document(language.language).setData(from: language)
+		} catch {
+			print("Error writing language to Firestore: \(error)")
+		}
+	}
+	
 }

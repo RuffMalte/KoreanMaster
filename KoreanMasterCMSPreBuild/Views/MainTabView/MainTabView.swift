@@ -37,7 +37,11 @@ struct MainTabView: View {
 					Label("Users", systemImage: "person.3.fill")
 				}
 				
-				
+				NavigationLink {
+					LanguagesListView()
+				} label: {
+					Label("Languages", systemImage: "globe")
+				}
 			}
 			
 		} detail: {

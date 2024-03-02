@@ -13,12 +13,21 @@ class FirestoreUser: Identifiable, Encodable, Decodable {
 	var displayName: String
 	var isAdmin: Bool
 	var isAdminLesson: Bool
+	var languageSelected: String
 	
-	init(id: String, email: String, displayName: String, isAdmin: Bool = false, isAdminLesson: Bool = false) {
+	init(
+		id: String,
+		email: String,
+		displayName: String,
+		isAdmin: Bool = false,
+		isAdminLesson: Bool = false,
+		languageSelected: String = "English"
+	) {
 		self.id = id
 		self.email = email
 		self.displayName = displayName
 		self.isAdmin = isAdmin
 		self.isAdminLesson = isAdminLesson
+		self.languageSelected = languageSelected
 	}
 }
