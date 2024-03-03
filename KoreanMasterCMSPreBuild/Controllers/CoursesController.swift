@@ -227,7 +227,7 @@ class CoursesController: ObservableObject {
 			
 			// Iterate through pages of each localized lesson and add them to the batch
 			for page in localizedLesson.pages ?? []{
-				let pageRef = courseRef.collection(localizedLesson.language).document(page.id)
+				let pageRef = courseRef.collection(localizedLesson.language).document(page.pageTitle)
 				batch.setData(page.toPage(), forDocument: pageRef)
 			}
 		}
@@ -242,4 +242,16 @@ class CoursesController: ObservableObject {
 		}
 	}
 	
+	func deleteCourse(course: Course) {
+		let db = Firestore.firestore()
+		let courseRef = db.collection("courses").document(course.getCourseComputedName())
+		
+		courseRef.delete { error in
+			if let error = error {
+				print("Error deleting course: \(error)")
+			} else {
+				print("Course successfully deleted.")
+			}
+		}
+	}
 }

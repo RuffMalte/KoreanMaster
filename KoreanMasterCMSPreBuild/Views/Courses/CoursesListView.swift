@@ -43,7 +43,7 @@ struct CoursesListView: View {
 						NavigationLink {
 							ModifyCourseView(course: course)
 						} label: {
-							Text(course.getCourseComputedName())
+							CourseSmallDetailCellView(course: course)
 						}
 					}
 					
