@@ -205,6 +205,7 @@ class CoursesController: ObservableObject {
 				}
 			} else {
 				print("Document does not exist or error fetching document: \(String(describing: error))")
+				self.isLoadingCourse = false
 				completion(nil)
 			}
 		}
