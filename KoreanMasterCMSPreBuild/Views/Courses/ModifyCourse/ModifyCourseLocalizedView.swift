@@ -13,11 +13,14 @@ struct ModifyCourseLocalizedView: View {
 	
     var body: some View {
 		Form {
-			TextField("", text: $localizedLesson.title)
-				
-			Text("Title: \(localizedLesson.title)")
+			TextField("Title", text: $localizedLesson.title)
+			TextField("Description", text: $localizedLesson.description)
+			TextField("Help", text: $localizedLesson.help)
 			
-			Text("Pages: \(localizedLesson.pages?.count ?? 99999)")
+			ForEach(localizedLesson.pages ?? []) { page in
+				Text(page.pageTitle)
+				
+			}
 			
 		}
     }

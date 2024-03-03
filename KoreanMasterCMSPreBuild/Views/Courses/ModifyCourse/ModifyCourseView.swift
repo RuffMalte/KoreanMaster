@@ -23,6 +23,16 @@ struct ModifyCourseView: View {
 			} else {
 				
 				VStack {
+					HStack {
+						Spacer()
+						Button {
+							coursesCon.saveCourse(course: workingCourse)
+						} label: {
+							Label("Save", systemImage: "square.and.arrow.down")
+						}
+						.buttonStyle(.borderedProminent)
+					}
+					
 					TextField("Section", value: $workingCourse.section, formatter: NumberFormatter())
 					
 					TextField("Unit", value: $workingCourse.unit, formatter: NumberFormatter())
@@ -71,11 +81,6 @@ struct ModifyCourseView: View {
 				}
 			}
 		}
-		.overlay(content: {
-			if coursesCon.isLoadingCourse {
-				Color.white
-			}
-		})
 		.toolbar {
 			ToolbarItem(placement: .primaryAction) {
 				NavigationLink {

@@ -211,6 +211,35 @@ class CoursesController: ObservableObject {
 	}
 
 
+	func saveCourse(course: Course) {
+		let db = Firestore.firestore()
+		let courseRef = db.collection("courses").document(course.getCourseComputedName())
 		
+		let batch = db.batch()
+		
+		// Set or update the main course document
+		batch.setData(course.toFirebaseDocument(), forDocument: courseRef, merge: true)
+		
+		// Iterate through localized lessons and add them to the batch
+		for localizedLesson in course.localizedLessons ?? []{
+			let infoRef = courseRef.collection("Info").document(localizedLesson.language)
+			batch.setData(localizedLesson.toInfo(), forDocument: infoRef)
+			
+			// Iterate through pages of each localized lesson and add them to the batch
+			for page in localizedLesson.pages ?? []{
+				let pageRef = courseRef.collection(localizedLesson.language).document(page.id)
+				batch.setData(page.toPage(), forDocument: pageRef)
+			}
+		}
+		
+		// Commit the batch
+		batch.commit { error in
+			if let error = error {
+				print("Error writing batch: \(error)")
+			} else {
+				print("Batch write succeeded.")
+			}
+		}
+	}
 	
 }
