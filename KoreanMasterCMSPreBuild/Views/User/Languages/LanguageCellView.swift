@@ -1,5 +1,5 @@
 //
-//  LanguageCellView.swift
+//  LanguageMediumDetailCellView.swift
 //  KoreanMasterCMSPreBuild
 //
 //  Created by Malte Ruff on 02.03.24.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct LanguageCellView: View {
+struct LanguageMediumDetailCellView: View {
 	
 	var language: CourseLanguage
 	
@@ -53,5 +53,5 @@ struct LanguageCellView: View {
 }
 
 #Preview {
-	LanguageCellView(language: CourseLanguage.simpleExample)
+	LanguageMediumDetailCellView(language: CourseLanguage.simpleExample)
 }

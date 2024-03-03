@@ -16,6 +16,8 @@ import FirebaseFirestore
 class CoursesController: ObservableObject {
 	
 	
+	var isLoadingCourse: Bool = false
+	
 	init() {
 		
 	}
@@ -83,7 +85,7 @@ class CoursesController: ObservableObject {
 			}
 		}
 	}
-	
+	//for user
 	func getAllCoursesLocalized(sectionFilter: Int? = nil, language: String, completion: @escaping ([Course]) -> Void) {
 		let db = Firestore.firestore()
 		
@@ -137,4 +139,78 @@ class CoursesController: ObservableObject {
 			}
 		}
 	}
+	
+	//for admin
+	///When only getting a single Course add a single item in the language array, otherwise add all languages
+	func getCourseFullDetail(courseName: String, languages: [CourseLanguage], completion: @escaping (Course?) -> Void) {
+		self.isLoadingCourse = true
+		
+		let db = Firestore.firestore()
+		let courseRef = db.collection("courses").document(courseName)
+		
+		courseRef.getDocument { (document, error) in
+			self.isLoadingCourse = true
+			if let document = document, document.exists {
+				do {
+					let course = try document.data(as: Course.self)
+					course.localizedLessons = []  // Initialize the localizedLessons array
+					
+					let group = DispatchGroup()
+					
+					for lang in languages {
+						group.enter() // Enter the group for each language
+						
+						let infoRef = courseRef.collection("Info").document(lang.language)
+						infoRef.getDocument { (doc, err) in
+							if let doc = doc, doc.exists {
+								do {
+									let localizedLesson = try doc.data(as: LocalizedLesson.self)
+									localizedLesson.pages = [] // Initialize the pages array
+									
+									let localizedPageRef = courseRef.collection(lang.language)
+									group.enter() // Enter the group for pages
+									localizedPageRef.getDocuments { (querySnapshot, error) in
+										if let querySnapshot = querySnapshot {
+											for document in querySnapshot.documents {
+												do {
+													let page = try document.data(as: LessonPage.self)
+													localizedLesson.pages?.append(page)
+												} catch let decodeError {
+													print("Error deserializing page: \(decodeError)")
+												}
+											}
+										}
+										course.localizedLessons?.append(localizedLesson)
+										group.leave() // Leave the group for pages
+									}
+								} catch let decodeError {
+									print("Error decoding localized lesson: \(decodeError)")
+								}
+							} else if let err = err {
+								print("Error fetching localized lesson: \(err)")
+							}
+							group.leave() // Leave the group for each language
+						}
+					}
+					
+					// Once all asynchronous operations have finished, return the course
+					group.notify(queue: .main) {
+						completion(course)
+						self.isLoadingCourse = false
+					}
+					
+				} catch let decodeError {
+					print("Error deserializing course: \(decodeError)")
+					completion(nil)
+				}
+			} else {
+				print("Document does not exist or error fetching document: \(String(describing: error))")
+				completion(nil)
+			}
+		}
+	}
+
+
+		
+	
 }

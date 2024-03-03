@@ -35,7 +35,7 @@ struct LanguagesListView: View {
 							JSONView(model: language)
 								.navigationTitle(language.language)
 						} label: {
-							LanguageCellView(language: language)
+							LanguageMediumDetailCellView(language: language)
 						}
 						
 						

@@ -9,6 +9,7 @@ import Foundation
 
 extension Course {
 	
+	static var emptyCourse: Course = Course(section: 0, unit: 0)
 	
 	static var detailExample: Course = Course(
 		section: 1,

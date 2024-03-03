@@ -21,27 +21,15 @@ struct CoursesListView: View {
 			Form {
 				List {
 					HStack {
-						Button {
-							coursesCon.createCourse(course: Course.detailExample)
+						NavigationLink {
+							ModifyCourseView()
 						} label: {
 							Label("Create new course", systemImage: "plus")
 						}
 						
-						Button {
-							coursesCon.getCourseLocalizedInfoTEST(courseName: Course.detailExample.getCourseComputedName(), language: "German") { locLesson in
-								if let locLesson = locLesson {
-									self.locLesson = locLesson
-								} else {
-									print("Error getting localized lesson")
-								}
-								
-							}
-						} label: {
-							Label("Get all courses", systemImage: "arrow.down.circle")
-						}
 						
 						Button {
-							coursesCon.getAllCoursesLocalized(sectionFilter: 1, language: "German") { courses in
+							coursesCon.getAllCoursesLocalized(language: "German") { courses in
 								self.courses = courses
 							}
 						} label: {
@@ -50,22 +38,25 @@ struct CoursesListView: View {
 						
 					}
 					
-					if let locLesson = locLesson {
-						NavigationLink {
-							JSONView(model: locLesson)
-						} label: {
-							Text(locLesson.title)
-						}
-					}
 					
 					ForEach(courses) { course in
 						NavigationLink {
-							JSONView(model: course)
+							ModifyCourseView(course: course)
 						} label: {
 							Text(course.getCourseComputedName())
 						}
 					}
 					
+				}
+			}
+			.navigationTitle("Courses")
+			.toolbar {
+				if !courses.isEmpty {
+					NavigationLink {
+						JSONView(model: courses)
+					} label: {
+						Label("JSON", systemImage: "ellipsis.curlybraces")
+					}
 				}
 			}
 		}

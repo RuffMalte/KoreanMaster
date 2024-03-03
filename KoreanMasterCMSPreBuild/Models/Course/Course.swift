@@ -87,12 +87,12 @@ class LessonPage: Identifiable, Encodable, Decodable {
 	var id: String
 	var pageTitle: String
 	
-	var content: String
+	var content: String?
 	
 	init(
 		id: String = UUID().uuidString,
 		pageTitle: String,
-		content: String
+		content: String? = ""
 	) {
 		self.id = id
 		self.pageTitle = pageTitle

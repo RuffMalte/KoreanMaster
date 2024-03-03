@@ -23,7 +23,7 @@ struct JSONView<Model: Codable>: View {
 		}
 	}
 	
-	private func convertModelToJson(model: Model) -> String? {
+	func convertModelToJson(model: Model) -> String? {
 		let encoder = JSONEncoder()
 		encoder.outputFormatting = .prettyPrinted // Format JSON for readability
 		if let jsonData = try? encoder.encode(model),
