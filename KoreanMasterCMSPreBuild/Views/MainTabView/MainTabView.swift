@@ -44,7 +44,7 @@ struct MainTabView: View {
 				}
 				
 				NavigationLink {
-					CoursesListView()
+					//CoursesListView()
 				} label: {
 					Label("Courses", systemImage: "book.fill")
 				}
