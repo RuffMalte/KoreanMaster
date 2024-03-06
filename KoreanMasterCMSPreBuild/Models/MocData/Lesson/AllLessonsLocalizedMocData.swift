@@ -38,8 +38,8 @@ extension Lesson {
 		lessonTags: LessonTag.example,
 		lessonGoal: LessonGoal.example,
 		newLessonVocabUsed: NewLessonVocabUsed.example,
-		lessonGrammer: LessonGrammer.example,
-		lessonPratice: LessonPratice.example,
+		lessonGrammar: LessonGrammar.example,
+		lessonPractice: Lessonpractice.example,
 		lessonCultureReferences: LessonCultureReference.example
 	)
 }
@@ -110,46 +110,46 @@ extension NewLessonVocabUsed {
 	static var example: NewLessonVocabUsed = NewLessonVocabUsed(title: "Title", helpText: "helptext", vocabIDs: ["String"])
 }
 
-extension LessonGrammer {
-	static var example: LessonGrammer = LessonGrammer(
+extension LessonGrammar {
+	static var example: LessonGrammar = LessonGrammar(
 		title: "Title",
 		desc: "desc",
-		lessonGrammerPages: LessonGrammerPage.multipleExample
+		LessonGrammarPages: LessonGrammarPage.multipleExample
 	)
 	
 }
 
-extension LessonGrammerPage {
-	static var multipleExample: [LessonGrammerPage] = [
-		LessonGrammerPage(title: "Title 1", desc: "desc", example: "example"),
-		LessonGrammerPage(title: "Title 2", desc: "desc", example: "example"),
-		LessonGrammerPage(title: "Title 3", desc: "desc", example: "example")
+extension LessonGrammarPage {
+	static var multipleExample: [LessonGrammarPage] = [
+		LessonGrammarPage(title: "Title 1", desc: "desc", example: "example"),
+		LessonGrammarPage(title: "Title 2", desc: "desc", example: "example"),
+		LessonGrammarPage(title: "Title 3", desc: "desc", example: "example")
 	]
 }
 
-extension LessonPratice {
-	static var example: LessonPratice = LessonPratice(
-		title: "Lesson Pratice example",
+extension Lessonpractice {
+	static var example: Lessonpractice = Lessonpractice(
+		title: "Lesson practice example",
 		desc: "desc",
-		mulitpleChoice: LessonPraticeMultipleChoice.multipleExample,
-		sentenceBuilding: LessonPraticeSentenceBuilding.multipleExample
+		mulitpleChoice: LessonpracticeMultipleChoice.multipleExample,
+		sentenceBuilding: LessonpracticeSentenceBuilding.multipleExample
 	)
 }
 
-extension LessonPraticeMultipleChoice {
-	static var multipleExample: [LessonPraticeMultipleChoice] = [
-		LessonPraticeMultipleChoice(question: "question", answers: ["a", "b"], correctAnswer: "a"),
-		LessonPraticeMultipleChoice(question: "question", answers: ["a", "b"], correctAnswer: "a"),
-		LessonPraticeMultipleChoice(question: "question", answers: ["a", "b"], correctAnswer: "a")
+extension LessonpracticeMultipleChoice {
+	static var multipleExample: [LessonpracticeMultipleChoice] = [
+		LessonpracticeMultipleChoice(question: "question", answers: ["a", "b"], correctAnswer: "a"),
+		LessonpracticeMultipleChoice(question: "question", answers: ["a", "b"], correctAnswer: "a"),
+		LessonpracticeMultipleChoice(question: "question", answers: ["a", "b"], correctAnswer: "a")
 	]
 }
 
-extension LessonPraticeSentenceBuilding {
-	static var multipleExample: [LessonPraticeSentenceBuilding] = [
-		LessonPraticeSentenceBuilding(question: "adawdw", answers: ["a", "b"], correctAnswer: "a"),
-		LessonPraticeSentenceBuilding(question: "adawdw", answers: ["a", "b"], correctAnswer: "a"),
-		LessonPraticeSentenceBuilding(question: "adawdw", answers: ["a", "b"], correctAnswer: "a"),
-		LessonPraticeSentenceBuilding(question: "adawdw", answers: ["a", "b"], correctAnswer: "a")
+extension LessonpracticeSentenceBuilding {
+	static var multipleExample: [LessonpracticeSentenceBuilding] = [
+		LessonpracticeSentenceBuilding(question: "adawdw", answers: ["a", "b"], correctAnswer: "a"),
+		LessonpracticeSentenceBuilding(question: "adawdw", answers: ["a", "b"], correctAnswer: "a"),
+		LessonpracticeSentenceBuilding(question: "adawdw", answers: ["a", "b"], correctAnswer: "a"),
+		LessonpracticeSentenceBuilding(question: "adawdw", answers: ["a", "b"], correctAnswer: "a")
 	]
 }
 

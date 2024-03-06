@@ -15,104 +15,154 @@ import FirebaseFirestore
 @Observable
 class CoursesController: ObservableObject {
 	
-	private let infoRefDocumentName: String = "info"
-	private let commentsRefDocumentName: String = "userComments"
-	private let likedByRefDocumentName: String = "likedBy"
-	private let tagsRefDocumentName: String = "tags"
-	private let goalRefDocumentName: String = "lessonGoal"
-	private let goalsExampleRefDocumentName: String = "goalsExamples"
-	private let vocabUsedRefDocumentName: String = "vocabUsed"
-	private let grammerRefDocumentName: String = "grammer"
-	private let grammerPagesRefDocumentName: String = "pages"
-	private let praticeRefDocumentName: String = "pratice"
-	private let praticeMultipleChoiceRefDocumentName: String = "multipleChoice"
-	private let praticeSentenceRefDocumentName: String = "sentenceBuild"
-	private let cultureRefDocumentName: String = "cultureReferences"
-	private let cultureSongsRefDocumentName: String = "songs"
-	
 	func addNewLesson(lesson: Lesson, language: String, completion: @escaping (Bool) -> Void) {
 		let db = Firestore.firestore()
+		let batch = db.batch()
 		
-		
-		let lessonRef = db.collection("lessonsTEST").document(language).collection(lesson.lessonInfo.lessonName)
-		
+		// Get document references from a separate function or class
+		let refGenerator = DocumentReferenceGenerator(lessonName: lesson.lessonInfo.lessonName, language: language)
 		
 		do {
-			//set info
-			let lessonInfoRef = lessonRef.document(self.infoRefDocumentName)
-			lessonInfoRef.setData(lesson.lessonInfo.toFirebase())
+			// Set info
+			let lessonInfoRef = refGenerator.getDocumentRef(forType: .info)
+			batch.setData(lesson.lessonInfo.toFirebase(), forDocument: lessonInfoRef)
 			
-			//set tags
-			let lessonTagsRef = lessonRef.document(self.tagsRefDocumentName)
-			try lessonTagsRef.setData(from: lesson.lessonTags)
+			// Set tags
+			let lessonTagsRef = refGenerator.getDocumentRef(forType: .tags)
+			try batch.setData(from: lesson.lessonTags, forDocument: lessonTagsRef)
 			
-			
-			//set goals
-			let lessonGoalRef = lessonRef.document(self.goalRefDocumentName)
-			lessonGoalRef.setData(lesson.lessonGoal?.toFirebase() ?? [:])
-			
-				//set lessonGoals Example
-				let lessonGoalExampleRef = lessonGoalRef.collection(self.goalsExampleRefDocumentName)
-				for example in lesson.lessonGoal?.lessonGoalExamples ?? [] {
-					try lessonGoalExampleRef.addDocument(from: example)
+			// Set goals
+			if let lessonGoal = lesson.lessonGoal {
+				let lessonGoalRef = refGenerator.getDocumentRef(forType: .goal)
+				batch.setData(lessonGoal.toFirebase(), forDocument: lessonGoalRef)
+				
+				// Set lessonGoals Example
+				if let lessonGoalExample = lesson.lessonGoal?.lessonGoalExamples {
+					for example in lessonGoalExample {
+						let exampleRef = refGenerator.getNewDocumentRef(forCollection: .goalsExamples)
+						try batch.setData(from: example, forDocument: exampleRef)
+					}
 				}
+			}
 			
-			//set newLessonVocabUsed
-			let newLessonVocabUsedRef = lessonRef.document(self.vocabUsedRefDocumentName)
-			try newLessonVocabUsedRef.setData(from: lesson.newLessonVocabUsed)
+			// Set newLessonVocabUsed
+			if let newLessonVocabUsed = lesson.newLessonVocabUsed {
+				let newLessonVocabUsedRef = refGenerator.getDocumentRef(forType: .vocabUsed)
+				try batch.setData(from: newLessonVocabUsed, forDocument: newLessonVocabUsedRef)
+			}
 			
-			
-			//set lessonGrammer
-			let lessonGrammerRef = lessonRef.document(self.grammerRefDocumentName)
-			lessonGrammerRef.setData(lesson.lessonGrammer?.toFirebase() ?? [:])
-			
-				//set lessonGrammer Pages
-				let lessonGrammerPagesRef = lessonGrammerRef.collection(self.grammerPagesRefDocumentName)
-				for page in lesson.lessonGrammer?.lessonGrammerPages ?? [] {
-					try lessonGrammerPagesRef.addDocument(from: page)
+			// Set LessonGrammar
+			if let grammar = lesson.lessonGrammar {
+				let LessonGrammarRef = refGenerator.getDocumentRef(forType: .grammar)
+				batch.setData(grammar.toFirebase(), forDocument: LessonGrammarRef)
+				
+				// Set LessonGrammar Pages
+				for page in grammar.LessonGrammarPages {
+					let pageRef = refGenerator.getNewDocumentRef(forCollection: .grammarPages)
+					try batch.setData(from: page, forDocument: pageRef)
 				}
+			}
 			
-			
-			//set lessonPratice
-			let lessonPraticeRef = lessonRef.document(self.praticeRefDocumentName)
-			lessonPraticeRef.setData(lesson.lessonPratice?.toFirebase() ?? [:])
-			
-				//set lessonPratice multipleChoice
-				let lessonPraticeMultipleChoiceRef = lessonPraticeRef.collection(self.praticeMultipleChoiceRefDocumentName)
-				for multipleChoice in lesson.lessonPratice?.mulitpleChoice ?? [] {
-					try lessonPraticeMultipleChoiceRef.addDocument(from: multipleChoice)
+			// Set lessonPractice
+			if let lessonPractice = lesson.lessonPractice {
+				let lessonPracticeRef = refGenerator.getDocumentRef(forType: .practice)
+				batch.setData(lessonPractice.toFirebase(), forDocument: lessonPracticeRef)
+				
+				// Set lessonPractice multipleChoice
+				for multipleChoice in lessonPractice.mulitpleChoice {
+					let choiceRef = refGenerator.getNewDocumentRef(forCollection: .practiceMultipleChoice)
+					try batch.setData(from: multipleChoice, forDocument: choiceRef)
 				}
-			
-				//set lessonPractie sentenceBuilding
-				let lessonPraticeSentenceBuildingRef = lessonPraticeRef.collection(self.praticeSentenceRefDocumentName)
-				for sentenceBuilding in lesson.lessonPratice?.sentenceBuilding ?? [] {
-					try lessonPraticeSentenceBuildingRef.addDocument(from: sentenceBuilding)
+				
+				// Set lessonPractice sentenceBuilding
+				for sentenceBuilding in lessonPractice.sentenceBuilding {
+					let sentenceRef = refGenerator.getNewDocumentRef(forCollection: .practiceSentenceBuilding)
+					try batch.setData(from: sentenceBuilding, forDocument: sentenceRef)
 				}
+			}
 			
-			
-			//set lessonCultureReferences
-			let lessonCultureReferencesRef = lessonRef.document(self.cultureRefDocumentName)
-			lessonCultureReferencesRef.setData(lesson.lessonCultureReferences?.toFirebase() ?? [:])
-			
-				//set lessonCultureReferences songs
-				let lessonCultureReferencesItemsRef = lessonCultureReferencesRef.collection(self.cultureSongsRefDocumentName)
-				for song in lesson.lessonCultureReferences?.songs ?? [] {
-					try lessonCultureReferencesItemsRef.addDocument(from: song)
+			// Set lessonCultureReferences
+			if let lessonCultureReferences = lesson.lessonCultureReferences {
+				let lessonCultureReferencesRef = refGenerator.getDocumentRef(forType: .cultureReferences)
+				batch.setData(lessonCultureReferences.toFirebase(), forDocument: lessonCultureReferencesRef)
+				
+				// Set lessonCultureReferences songs
+				for song in lessonCultureReferences.songs {
+					let songRef = refGenerator.getNewDocumentRef(forCollection: .cultureSongs)
+					try batch.setData(from: song, forDocument: songRef)
 				}
+			}
 			
-			
-			
-			completion(true)
-			
+			// Finally, commit the batch
+			batch.commit { error in
+				if let error = error {
+					print("Error writing batch to Firestore: \(error)")
+					completion(false)
+				} else {
+					completion(true)
+				}
+			}
 		} catch {
 			print("Error writing lesson to Firestore: \(error)")
 			completion(false)
 		}
-		
-		
-		
+	}
+}
+
+// Helper class to generate Firestore document references based on document type or collection
+class DocumentReferenceGenerator {
+	private let lessonName: String
+	private let language: String
+	private var db: Firestore {
+		Firestore.firestore()
 	}
 	
+	init(lessonName: String, language: String) {
+		self.lessonName = lessonName
+		self.language = language
+	}
 	
+	enum DocumentType {
+		case info, tags, goal, vocabUsed, grammar, practice, cultureReferences
+	}
 	
+	enum CollectionType {
+		case goalsExamples, grammarPages, practiceMultipleChoice, practiceSentenceBuilding, cultureSongs
+	}
+	
+	func getDocumentRef(forType type: DocumentType) -> DocumentReference {
+		let lessonRef = db.collection("lessonsTEST").document(language).collection(lessonName)
+		switch type {
+		case .info:
+			return lessonRef.document("info")
+		case .tags:
+			return lessonRef.document("tags")
+		case .goal:
+			return lessonRef.document("lessonGoal")
+		case .vocabUsed:
+			return lessonRef.document("vocabUsed")
+		case .grammar:
+			return lessonRef.document("grammar")
+		case .practice:
+			return lessonRef.document("practice")
+		case .cultureReferences:
+			return lessonRef.document("cultureReferences")
+		}
+	}
+	
+	func getNewDocumentRef(forCollection collection: CollectionType) -> DocumentReference {
+		let lessonRef = db.collection("lessonsTEST").document(language).collection(lessonName)
+		switch collection {
+		case .goalsExamples:
+			return lessonRef.document("lessonGoal").collection("goalsExamples").document()
+		case .grammarPages:
+			return lessonRef.document("grammar").collection("pages").document()
+		case .practiceMultipleChoice:
+			return lessonRef.document("practice").collection("multipleChoice").document()
+		case .practiceSentenceBuilding:
+			return lessonRef.document("practice").collection("sentenceBuild").document()
+		case .cultureSongs:
+			return lessonRef.document("cultureReferences").collection("songs").document()
+		}
+	}
 }
