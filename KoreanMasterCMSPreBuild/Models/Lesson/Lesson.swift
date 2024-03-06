@@ -44,13 +44,13 @@ class Lesson: Identifiable, Codable {
 	
 	
 	var lessonInfo: LessonInfo
-	var lessonTags: LessonTag
+	var lessonTag: LessonTag
 
 	var lessonGoal: LessonGoal?
 	
 	var newLessonVocabUsed: NewLessonVocabUsed?
 	var lessonGrammar: LessonGrammar?
-	var lessonPractice: Lessonpractice?
+	var lessonPractice: LessonPractice?
 	var lessonCultureReferences: LessonCultureReference?
 	
 	init(
@@ -60,12 +60,12 @@ class Lesson: Identifiable, Codable {
 		lessonGoal: LessonGoal? = nil,
 		newLessonVocabUsed: NewLessonVocabUsed? = nil,
 		lessonGrammar: LessonGrammar? = nil,
-		lessonPractice: Lessonpractice? = nil,
+		lessonPractice: LessonPractice? = nil,
 		lessonCultureReferences: LessonCultureReference? = nil
 	) {
 		self.id = id
 		self.lessonInfo = lessonInfo
-		self.lessonTags = lessonTags
+		self.lessonTag = lessonTags
 		self.lessonGoal = lessonGoal
 		self.newLessonVocabUsed = newLessonVocabUsed
 		self.lessonGrammar = lessonGrammar
@@ -127,11 +127,11 @@ class LessonInfo: Identifiable, Codable {
 
 class LessonTag: Identifiable, Codable {
 	var title: String
-	var lessonTagItems: [LessonTagItem]
+	var lessonTagItems: [LessonTagItem]?
 	
 	init(
 		title: String,
-		lessonTagItems: [LessonTagItem]
+		lessonTagItems: [LessonTagItem] = []
 	) {
 		self.title = title
 		self.lessonTagItems = lessonTagItems
@@ -199,12 +199,12 @@ class LessonGoal: Identifiable, Codable {
 	var goalText: String
 	var title: String
 	
-	var lessonGoalExamples: [LessonGoalExample]
+	var lessonGoalExamples: [LessonGoalExample]?
 	
 	init(
 		goalText: String,
 		title: String,
-		lessonGoalExamples: [LessonGoalExample]
+		lessonGoalExamples: [LessonGoalExample] = []
 	) {
 		self.goalText = goalText
 		self.title = title
@@ -263,12 +263,12 @@ class LessonGrammar: Identifiable, Codable {
 	var title: String
 	var desc: String
 	
-	var LessonGrammarPages: [LessonGrammarPage]
+	var LessonGrammarPages: [LessonGrammarPage]?
 	
 	init(
 		title: String,
 		desc: String,
-		LessonGrammarPages: [LessonGrammarPage]
+		LessonGrammarPages: [LessonGrammarPage] = []
 	) {
 		self.title = title
 		self.desc = desc
@@ -302,20 +302,20 @@ class LessonGrammarPage: Identifiable, Codable {
 	}
 }
 
-class Lessonpractice: Identifiable, Codable {
+class LessonPractice: Identifiable, Codable {
 	var id: String
 	var title: String
 	var desc: String
 	
-	var mulitpleChoice: [LessonpracticeMultipleChoice]
-	var sentenceBuilding: [LessonpracticeSentenceBuilding]
+	var mulitpleChoice: [LessonpracticeMultipleChoice]?
+	var sentenceBuilding: [LessonpracticeSentenceBuilding]?
 	
 	init(
 		id: String = UUID().uuidString,
 		title: String,
 		desc: String,
-		mulitpleChoice: [LessonpracticeMultipleChoice],
-		sentenceBuilding: [LessonpracticeSentenceBuilding]
+		mulitpleChoice: [LessonpracticeMultipleChoice] = [],
+		sentenceBuilding: [LessonpracticeSentenceBuilding] = []
 	) {
 		self.id = id
 		self.title = title
@@ -326,6 +326,7 @@ class Lessonpractice: Identifiable, Codable {
 	
 	func toFirebase() -> [String: Any] {
 		return [
+			"id": id,
 			"title": title,
 			"desc": desc
 		]
@@ -375,7 +376,7 @@ class LessonCultureReference: Identifiable, Codable {
 	var title: String
 	var desc: String
 	
-	var songs: [LessonCultureReferenceSongs]
+	var songs: [LessonCultureReferenceSongs]?
 	
 	init(
 		id: String = UUID().uuidString,
@@ -391,6 +392,7 @@ class LessonCultureReference: Identifiable, Codable {
 	
 	func toFirebase() -> [String: Any] {
 		return [
+			"id": id,
 			"title": title,
 			"desc": desc
 		]

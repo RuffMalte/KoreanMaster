@@ -69,4 +69,19 @@ class DocumentReferenceGenerator {
 			return lessonRef.document("cultureReferences").collection("songs").document()
 		}
 	}
+	
+	func getCollectionRef(forDocumentRef docRef: DocumentReference, type: CollectionType) -> CollectionReference {
+		switch type {
+		case .goalsExamples:
+			return docRef.collection("goalsExamples")
+		case .grammarPages:
+			return docRef.collection("LessonGrammarPages")
+		case .practiceMultipleChoice:
+			return docRef.collection("mulitpleChoice")
+		case .practiceSentenceBuilding:
+			return docRef.collection("sentenceBuilding")
+		case .cultureSongs:
+			return docRef.collection("songs")
+		}
+	}
 }

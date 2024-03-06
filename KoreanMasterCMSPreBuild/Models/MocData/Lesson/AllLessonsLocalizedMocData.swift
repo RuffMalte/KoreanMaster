@@ -39,7 +39,7 @@ extension Lesson {
 		lessonGoal: LessonGoal.example,
 		newLessonVocabUsed: NewLessonVocabUsed.example,
 		lessonGrammar: LessonGrammar.example,
-		lessonPractice: Lessonpractice.example,
+		lessonPractice: LessonPractice.example,
 		lessonCultureReferences: LessonCultureReference.example
 	)
 }
@@ -127,8 +127,8 @@ extension LessonGrammarPage {
 	]
 }
 
-extension Lessonpractice {
-	static var example: Lessonpractice = Lessonpractice(
+extension LessonPractice {
+	static var example: LessonPractice = LessonPractice(
 		title: "Lesson practice example",
 		desc: "desc",
 		mulitpleChoice: LessonpracticeMultipleChoice.multipleExample,
