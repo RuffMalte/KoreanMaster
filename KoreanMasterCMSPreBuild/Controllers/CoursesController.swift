@@ -17,4 +17,6 @@ class CoursesController: ObservableObject {
 	
 	
 	
+	
+	
 }
