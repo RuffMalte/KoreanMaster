@@ -9,7 +9,7 @@ import SwiftUI
 
 struct LessonTagSmallView: View {
 	
-	var lessonTag: lessonTag
+	var lessonTag: LessonTagItem
 	
     var body: some View {
         Text(lessonTag.tagName)
@@ -23,5 +23,5 @@ struct LessonTagSmallView: View {
 }
 
 #Preview {
-    LessonTagSmallView(lessonTag: lessonTag(tagName: "Name", tagColor: "green"))
+	LessonTagSmallView(lessonTag: LessonTagItem.multipleExamples[0])
 }

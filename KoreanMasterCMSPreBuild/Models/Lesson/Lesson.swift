@@ -43,25 +43,29 @@ class Lesson: Identifiable, Codable {
 	var id: String
 	
 	
-	var lessonInfo: LessonInfo?
+	var lessonInfo: LessonInfo
+	var lessonTags: LessonTag
+
 	var lessonGoal: LessonGoal?
 	
-	var newLessonVocabUsed: [NewLessonVocabUsed]?
+	var newLessonVocabUsed: NewLessonVocabUsed?
 	var lessonGrammer: LessonGrammer?
 	var lessonPratice: LessonPratice?
-	var lessonCultureReferences: [LessonCultureReference]?
+	var lessonCultureReferences: LessonCultureReference?
 	
 	init(
 		id: String = UUID().uuidString,
-		lessonInfo: LessonInfo? = nil,
+		lessonInfo: LessonInfo,
+		lessonTags: LessonTag,
 		lessonGoal: LessonGoal? = nil,
-		newLessonVocabUsed: [NewLessonVocabUsed]? = nil,
+		newLessonVocabUsed: NewLessonVocabUsed? = nil,
 		lessonGrammer: LessonGrammer? = nil,
 		lessonPratice: LessonPratice? = nil,
-		lessonCultureReferences: [LessonCultureReference]? = nil
+		lessonCultureReferences: LessonCultureReference? = nil
 	) {
 		self.id = id
 		self.lessonInfo = lessonInfo
+		self.lessonTags = lessonTags
 		self.lessonGoal = lessonGoal
 		self.newLessonVocabUsed = newLessonVocabUsed
 		self.lessonGrammer = lessonGrammer
@@ -82,7 +86,6 @@ class LessonInfo: Identifiable, Codable {
 	var difficulty: String
 	var xpToGain: Int
 	
-	var lessonTags: [LessonTag]
 	
 	var likedBy: [LikedBy]?
 	var commentedBy: [CommentedBy]?
@@ -95,7 +98,6 @@ class LessonInfo: Identifiable, Codable {
 		desc: String,
 		difficulty: String,
 		xpToGain: Int,
-		lessonTags: [LessonTag],
 		likedBy: [LikedBy]? = nil,
 		commentedBy: [CommentedBy]? = nil
 	) {
@@ -106,13 +108,37 @@ class LessonInfo: Identifiable, Codable {
 		self.desc = desc
 		self.difficulty = difficulty
 		self.xpToGain = xpToGain
-		self.lessonTags = lessonTags
 		self.likedBy = likedBy
 		self.commentedBy = commentedBy
+	}
+	
+	func toFirebase() -> [String: Any] {
+		return [
+			"section": section,
+			"unit": unit,
+			"lessonName": lessonName,
+			"heading": heading,
+			"desc": desc,
+			"difficulty": difficulty,
+			"xpToGain": xpToGain
+		]
 	}
 }
 
 class LessonTag: Identifiable, Codable {
+	var title: String
+	var lessonTagItems: [LessonTagItem]
+	
+	init(
+		title: String,
+		lessonTagItems: [LessonTagItem]
+	) {
+		self.title = title
+		self.lessonTagItems = lessonTagItems
+	}
+}
+
+class LessonTagItem: Codable, Identifiable {
 	var id: String
 	var tagName: String
 	var tagColor: String
@@ -184,6 +210,13 @@ class LessonGoal: Identifiable, Codable {
 		self.title = title
 		self.lessonGoalExamples = lessonGoalExamples
 	}
+	
+	func toFirebase() -> [String: Any] {
+		return [
+			"goalText": goalText,
+			"title": title
+		]
+	}
 }
 
 class LessonGoalExample: Identifiable, Codable {
@@ -207,25 +240,23 @@ class LessonGoalExample: Identifiable, Codable {
 
 class NewLessonVocabUsed: Identifiable, Codable {
 	var id: String
-	var vocabID: String
-	var vocabKorean: String
-	var vocabTranslation: String
-	var vocabType: String
+	var title: String
+	var helpText: String
+	
+	var vocabIDs: [String]
+	
 	
 	init(
 		id: String = UUID().uuidString,
-		vocabID: String,
-		vocabKorean: String,
-		vocabTranslation: String,
-		vocabType: String
+		title: String,
+		helpText: String,
+		vocabIDs: [String] = []
 	) {
 		self.id = id
-		self.vocabID = vocabID
-		self.vocabKorean = vocabKorean
-		self.vocabTranslation = vocabTranslation
-		self.vocabType = vocabType
+		self.title = title
+		self.helpText = helpText
+		self.vocabIDs = vocabIDs
 	}
-	
 }
 
 class LessonGrammer: Identifiable, Codable {
@@ -242,6 +273,13 @@ class LessonGrammer: Identifiable, Codable {
 		self.title = title
 		self.desc = desc
 		self.lessonGrammerPages = lessonGrammerPages
+	}
+	
+	func toFirebase() -> [String: Any] {
+		return [
+			"title": title,
+			"desc": desc
+		]
 	}
 }
 
@@ -285,6 +323,13 @@ class LessonPratice: Identifiable, Codable {
 		self.mulitpleChoice = mulitpleChoice
 		self.sentenceBuilding = sentenceBuilding
 	}
+	
+	func toFirebase() -> [String: Any] {
+		return [
+			"title": title,
+			"desc": desc
+		]
+	}
 }
 
 class LessonPraticeMultipleChoice: Identifiable, Codable {
@@ -326,6 +371,33 @@ class LessonPraticeSentenceBuilding: Identifiable, Codable {
 }
 
 class LessonCultureReference: Identifiable, Codable {
+	var id: String
+	var title: String
+	var desc: String
+	
+	var songs: [LessonCultureReferenceSongs]
+	
+	init(
+		id: String = UUID().uuidString,
+		title: String,
+		desc: String,
+	 	songs: [LessonCultureReferenceSongs] = []
+	) {
+		self.id = id
+		self.title = title
+		self.desc = desc
+		self.songs = songs
+	}
+	
+	func toFirebase() -> [String: Any] {
+		return [
+			"title": title,
+			"desc": desc
+		]
+	}
+}
+
+class LessonCultureReferenceSongs: Identifiable, Codable {
 	var id: String
 	var title: String
 	var desc: String

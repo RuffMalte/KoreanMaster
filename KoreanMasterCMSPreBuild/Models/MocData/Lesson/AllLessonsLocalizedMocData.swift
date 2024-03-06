@@ -35,11 +35,12 @@ extension Lesson {
 	static var detailExample: Lesson = Lesson(
 		id: "0",
 		lessonInfo: LessonInfo.detailExample,
+		lessonTags: LessonTag.example,
 		lessonGoal: LessonGoal.example,
-		newLessonVocabUsed: NewLessonVocabUsed.multipleExample,
+		newLessonVocabUsed: NewLessonVocabUsed.example,
 		lessonGrammer: LessonGrammer.example,
 		lessonPratice: LessonPratice.example,
-		lessonCultureReferences: LessonCultureReference.multipleExample
+		lessonCultureReferences: LessonCultureReference.example
 	)
 }
 
@@ -52,23 +53,23 @@ extension LessonInfo {
 		desc: "Learn the Korean Alphabet",
 		difficulty: "Easy",
 		xpToGain: 100,
-		lessonTags: LessonTag.multipleExample,
 		likedBy: LikedBy.multipleExample,
 		commentedBy: CommentedBy.multipleExample
 	)
 }
 
 extension LessonTag {
-	static var example: LessonTag = LessonTag(
-		tagName: "Alphabet",
-		tagColor: "blue"
-	)
-	
-	static var multipleExample: [LessonTag] = [
-		LessonTag(tagName: "Tag 1", tagColor: "green"),
-		LessonTag(tagName: "Tag 2", tagColor: "red"),
-		LessonTag(tagName: "Tag 3", tagColor: "blue"),
-		LessonTag(tagName: "Tag 4", tagColor: "yellow")
+	static var example: LessonTag = LessonTag(title: "Title", lessonTagItems: LessonTagItem.multipleExamples)
+}
+
+extension LessonTagItem {
+	static var multipleExamples: [LessonTagItem] = [
+		LessonTagItem(tagName: "Tag", tagColor: "green"),
+		LessonTagItem(tagName: "Tag", tagColor: "green"),
+		LessonTagItem(tagName: "Tag", tagColor: "green"),
+		LessonTagItem(tagName: "Tag", tagColor: "green"),
+		LessonTagItem(tagName: "Tag", tagColor: "green"),
+		LessonTagItem(tagName: "Tag", tagColor: "green")
 	]
 }
 
@@ -106,12 +107,7 @@ extension LessonGoalExample {
 }
 
 extension NewLessonVocabUsed {
-	static var multipleExample: [NewLessonVocabUsed] = [
-		NewLessonVocabUsed(vocabID: "123", vocabKorean: "aa", vocabTranslation: "aw", vocabType: "awd"),
-		NewLessonVocabUsed(vocabID: "123", vocabKorean: "aa", vocabTranslation: "aw", vocabType: "awd"),
-		NewLessonVocabUsed(vocabID: "123", vocabKorean: "aa", vocabTranslation: "aw", vocabType: "awd"),
-		NewLessonVocabUsed(vocabID: "123", vocabKorean: "aa", vocabTranslation: "aw", vocabType: "awd")
-	]
+	static var example: NewLessonVocabUsed = NewLessonVocabUsed(title: "Title", helpText: "helptext", vocabIDs: ["String"])
 }
 
 extension LessonGrammer {
@@ -158,10 +154,20 @@ extension LessonPraticeSentenceBuilding {
 }
 
 extension LessonCultureReference {
-	static var multipleExample: [LessonCultureReference] = [
-		LessonCultureReference(title: "Title", desc: "desc", image: "image", link: "link"),
-		LessonCultureReference(title: "Title", desc: "desc", image: "image", link: "link"),
-		LessonCultureReference(title: "Title", desc: "desc", image: "image", link: "link"),
-		LessonCultureReference(title: "Title", desc: "desc", image: "image", link: "link")
+	static var example: LessonCultureReference = LessonCultureReference(
+		title: "Title",
+		desc: "desc",
+		songs: LessonCultureReferenceSongs.multipleExample
+	)
+}
+
+
+extension LessonCultureReferenceSongs {
+	static var multipleExample: [LessonCultureReferenceSongs] = [
+		LessonCultureReferenceSongs(title: "AA", desc: "awd", image: "awd", link: "adw"),
+		LessonCultureReferenceSongs(title: "AA", desc: "awd", image: "awd", link: "adw"),
+		LessonCultureReferenceSongs(title: "AA", desc: "awd", image: "awd", link: "adw"),
+		LessonCultureReferenceSongs(title: "AA", desc: "awd", image: "awd", link: "adw")
+	
 	]
 }
