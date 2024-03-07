@@ -26,6 +26,11 @@ struct ModifyLessonView: View {
 				TextField("Heading", text: $lesson.lessonInfo.heading)
 				TextField("Description", text: $lesson.lessonInfo.desc)
 				
+				//comments and likes
+				
+				Divider()
+				
+				
 				
 				
 			}

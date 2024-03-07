@@ -283,7 +283,10 @@
 			isa = PBXGroup;
 			children = (
 				2EDF0BFD2B9A0805001132AD /* AdminViews */,
-				2EDF0BFC2B9A07C7001132AD /* LessonComponents */,
+				2EDF0C0B2B9A3BF4001132AD /* Lesson */,
+				2EDF0C022B9A16AC001132AD /* LocallizedLesson */,
+				2EAC1C522B97A9F800F713F7 /* LessonTag */,
+				2EDF0C0F2B9A649D001132AD /* LessonInfo */,
 			);
 			path = Lessons;
 			sourceTree = "<group>";
@@ -297,20 +300,10 @@
 			path = Courses;
 			sourceTree = "<group>";
 		};
-		2EDF0BFC2B9A07C7001132AD /* LessonComponents */ = {
-			isa = PBXGroup;
-			children = (
-				2EAC1C522B97A9F800F713F7 /* LessonTag */,
-			);
-			path = LessonComponents;
-			sourceTree = "<group>";
-		};
 		2EDF0BFD2B9A0805001132AD /* AdminViews */ = {
 			isa = PBXGroup;
 			children = (
 				2EAC1C5A2B989EBB00F713F7 /* AllLessonsListView.swift */,
-				2EDF0C092B9A3BC1001132AD /* LessonViews */,
-				2EDF0BFE2B9A08D9001132AD /* ModifyLesson */,
 			);
 			path = AdminViews;
 			sourceTree = "<group>";
@@ -319,7 +312,6 @@
 			isa = PBXGroup;
 			children = (
 				2EDF0C002B9A08FF001132AD /* ModifyLessonView.swift */,
-				2EDF0C052B9A39D4001132AD /* ModifyLessonInfoView.swift */,
 			);
 			path = ModifyLesson;
 			sourceTree = "<group>";
@@ -331,15 +323,6 @@
 				2EDF0C032B9A170C001132AD /* LocallizedLessonListView.swift */,
 			);
 			path = LocallizedLesson;
-			sourceTree = "<group>";
-		};
-		2EDF0C092B9A3BC1001132AD /* LessonViews */ = {
-			isa = PBXGroup;
-			children = (
-				2EDF0C0B2B9A3BF4001132AD /* Lesson */,
-				2EDF0C022B9A16AC001132AD /* LocallizedLesson */,
-			);
-			path = LessonViews;
 			sourceTree = "<group>";
 		};
 		2EDF0C0A2B9A3BE3001132AD /* Modify */ = {
@@ -354,6 +337,7 @@
 			isa = PBXGroup;
 			children = (
 				2EDF0C0C2B9A3C01001132AD /* CellView */,
+				2EDF0BFE2B9A08D9001132AD /* ModifyLesson */,
 			);
 			path = Lesson;
 			sourceTree = "<group>";
@@ -364,6 +348,22 @@
 				2EDF0C0D2B9A3C1B001132AD /* LessonDetailSmallCellView.swift */,
 			);
 			path = CellView;
+			sourceTree = "<group>";
+		};
+		2EDF0C0F2B9A649D001132AD /* LessonInfo */ = {
+			isa = PBXGroup;
+			children = (
+				2EDF0C112B9A64AC001132AD /* ModifyLessonInfo */,
+			);
+			path = LessonInfo;
+			sourceTree = "<group>";
+		};
+		2EDF0C112B9A64AC001132AD /* ModifyLessonInfo */ = {
+			isa = PBXGroup;
+			children = (
+				2EDF0C052B9A39D4001132AD /* ModifyLessonInfoView.swift */,
+			);
+			path = ModifyLessonInfo;
 			sourceTree = "<group>";
 		};
 		2EF41AC02B927A36007431ED = {
