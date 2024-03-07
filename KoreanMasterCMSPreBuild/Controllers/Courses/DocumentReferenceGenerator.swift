@@ -77,9 +77,9 @@ class DocumentReferenceGenerator {
 		case .grammarPages:
 			return docRef.collection("LessonGrammarPages")
 		case .practiceMultipleChoice:
-			return docRef.collection("mulitpleChoice")
+			return docRef.collection("multipleChoice")
 		case .practiceSentenceBuilding:
-			return docRef.collection("sentenceBuilding")
+			return docRef.collection("sentenceBuild")
 		case .cultureSongs:
 			return docRef.collection("songs")
 		}
