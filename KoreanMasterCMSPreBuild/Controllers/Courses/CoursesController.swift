@@ -18,6 +18,7 @@ class CoursesController: ObservableObject {
 	private let dispatchGroup = DispatchGroup()
 	private var encounteredError: Error?
 	
+	var isLoadingAllLessons = false
 	
 	private func fetchDetailsDocumentData<T: Decodable>(refGenerator: DocumentReferenceGenerator, forType type: DocumentReferenceGenerator.DocumentType, assignTo: @escaping (T?) -> Void) {
 		dispatchGroup.enter()
@@ -268,6 +269,7 @@ class CoursesController: ObservableObject {
 	func getAllLessons(language: String, completion: @escaping ([Lesson], Error?) -> Void) {
 		let languageRefGenerator = DocumentReferenceGenerator(language: language)
 		let lessonsCollectionRef = languageRefGenerator.getLessonsCollectionRef()
+		isLoadingAllLessons = true
 		
 		lessonsCollectionRef.getDocuments { (snapshot, error) in
 			var lessons: [Lesson] = []
@@ -296,6 +298,7 @@ class CoursesController: ObservableObject {
 				// Once all lessons have been processed
 				dispatchGroup.notify(queue: .main) {
 					completion(lessons, nil)
+					self.isLoadingAllLessons = false
 				}
 			} else if let error = error {
 				completion([], error)
