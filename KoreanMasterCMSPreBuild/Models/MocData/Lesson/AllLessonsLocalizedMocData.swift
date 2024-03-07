@@ -42,6 +42,11 @@ extension Lesson {
 		lessonPractice: LessonPractice.example,
 		lessonCultureReferences: LessonCultureReference.example
 	)
+	
+	static var empty: Lesson = Lesson(
+		lessonInfo: LessonInfo.empty,
+		lessonTags: LessonTag.empty
+	)
 }
 
 extension LessonInfo {
@@ -56,10 +61,24 @@ extension LessonInfo {
 		likedBy: LikedBy.multipleExample,
 		commentedBy: CommentedBy.multipleExample
 	)
+	
+	static var empty: LessonInfo = LessonInfo(
+		section: 0,
+		unit: 0,
+		lessonName: "",
+		heading: "",
+		desc: "",
+		difficulty: "",
+		xpToGain: 0,
+		likedBy: [],
+		commentedBy: []
+	)
 }
 
 extension LessonTag {
 	static var example: LessonTag = LessonTag(title: "Title", lessonTagItems: LessonTagItem.multipleExamples)
+	
+	static var empty: LessonTag = LessonTag(title: "", lessonTagItems: [])
 }
 
 extension LessonTagItem {
