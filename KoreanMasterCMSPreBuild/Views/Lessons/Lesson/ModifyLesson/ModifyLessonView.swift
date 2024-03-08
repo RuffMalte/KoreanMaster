@@ -11,24 +11,17 @@ import SwiftUI
 struct ModifyLessonView: View {
 	
 	@State var lesson: Lesson
-	
+	@EnvironmentObject var courseCon: CoursesController
+
 	
     var body: some View {
 		Form {
 			
 			List {
-				HStack {
-					TextField("Section", value: $lesson.lessonInfo.section, format: .number)
-					TextField("Unit", value: $lesson.lessonInfo.unit, format: .number)
-				}
+				ModifyLessonInfoView(lessonInfo: lesson.lessonInfo)
 				
-				TextField("Lesson Name", text: $lesson.lessonInfo.lessonName)
-				TextField("Heading", text: $lesson.lessonInfo.heading)
-				TextField("Description", text: $lesson.lessonInfo.desc)
 				
-				//comments and likes
-				
-				Divider()
+				ModifyLessonTagsView(lessonTag: lesson.lessonTag)
 				
 				
 				
@@ -37,7 +30,21 @@ struct ModifyLessonView: View {
 		}
 		.textFieldStyle(.roundedBorder)
 		.navigationTitle(lesson.lessonInfo.lessonName)		
-		
+		.toolbar {
+			ToolbarItem(placement: .primaryAction) {
+				Button {
+					courseCon.SaveLesson(lesson: lesson, language: "English") { bool in
+						if bool {
+							print("Lesson added")
+						} else {
+							print("Lesson not added")
+						}
+					}
+				} label: {
+					Label("Save", systemImage: "square.and.arrow.down")
+				}
+			}
+		}
 	}
 			
 			

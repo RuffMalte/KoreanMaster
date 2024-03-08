@@ -58,8 +58,8 @@ class CoursesController: ObservableObject {
 
 	
 	
-	
-	func addNewLesson(lesson: Lesson, language: String, completion: @escaping (Bool) -> Void) {
+	///if the lesson already exists, it will be overwritten, otherwise a new lesson will be created
+	func SaveLesson(lesson: Lesson, language: String, completion: @escaping (Bool) -> Void) {
 		let db = Firestore.firestore()
 		let batch = db.batch()
 		

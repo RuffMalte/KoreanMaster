@@ -13,7 +13,17 @@ struct ModifyLessonInfoView: View {
 	
     var body: some View {
 		Form {
-			
+			VStack(alignment: .leading) {
+				HStack {
+					TextField("Section", value: $lessonInfo.section, format: .number)
+					TextField("Unit", value: $lessonInfo.unit, format: .number)
+				}
+				
+				TextField("Lesson Name", text: $lessonInfo.lessonName)
+				TextField("Heading", text: $lessonInfo.heading)
+				TextField("Description", text: $lessonInfo.desc)
+				//TODO: comments and likes
+			}
 		}
     }
 }

@@ -83,13 +83,15 @@ extension LessonTag {
 
 extension LessonTagItem {
 	static var multipleExamples: [LessonTagItem] = [
-		LessonTagItem(tagName: "Tag", tagColor: "green"),
-		LessonTagItem(tagName: "Tag", tagColor: "green"),
-		LessonTagItem(tagName: "Tag", tagColor: "green"),
-		LessonTagItem(tagName: "Tag", tagColor: "green"),
-		LessonTagItem(tagName: "Tag", tagColor: "green"),
-		LessonTagItem(tagName: "Tag", tagColor: "green")
+		LessonTagItem(tagName: "Tag", tagColor: .blue),
+		LessonTagItem(tagName: "Tag", tagColor: .red),
+		LessonTagItem(tagName: "Tag", tagColor: .green),
+		LessonTagItem(tagName: "Tag", tagColor: .orange),
+		LessonTagItem(tagName: "Tag", tagColor: .yellow),
+		LessonTagItem(tagName: "Tag", tagColor: .pink),
 	]
+	
+	static var emtpy: LessonTagItem = LessonTagItem(tagName: "", tagColor: .blue)
 }
 
 extension LikedBy {

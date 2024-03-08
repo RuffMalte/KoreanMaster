@@ -141,12 +141,12 @@ class LessonTag: Identifiable, Codable {
 class LessonTagItem: Codable, Identifiable {
 	var id: String
 	var tagName: String
-	var tagColor: String
+	var tagColor: ColorEnum
 	
 	init(
 		id: String = UUID().uuidString,
 		tagName: String,
-		tagColor: String
+		tagColor: ColorEnum
 	) {
 		self.id = id
 		self.tagName = tagName

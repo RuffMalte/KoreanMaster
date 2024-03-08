@@ -35,6 +35,20 @@ struct AllLessonsListView: View {
 		.toolbar {
 			ToolbarItem(placement: .primaryAction) {
 				Button {
+					courseCon.SaveLesson(lesson: Lesson.detailExample, language: "English") { bool in
+						if bool {
+							print("Lesson added")
+						} else {
+							print("Lesson not added")
+						}
+					}
+				} label: {
+					Label("Add new Lesson", systemImage: "plus")
+				}
+			}
+			
+			ToolbarItem(placement: .primaryAction) {
+				Button {
 					for language in loginCon.allLanguages {
 						courseCon.getAllLessons(language: language.language) { lessons, error in
 							guard error != nil else {
