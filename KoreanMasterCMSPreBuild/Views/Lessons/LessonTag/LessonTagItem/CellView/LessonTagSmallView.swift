@@ -14,11 +14,11 @@ struct LessonTagSmallView: View {
     var body: some View {
         Text("#" + lessonTag.tagName)
 			.font(.system(.footnote, design: .rounded, weight: .bold))
-			.foregroundStyle(.red)
+			.foregroundStyle(lessonTag.tagColor.toColor)
 			.padding(5)
 			.background {
 				RoundedRectangle(cornerRadius: 5)
-					.foregroundStyle(.red.opacity(0.2))
+					.foregroundStyle(lessonTag.tagColor.toColor.opacity(0.2))
 			}
     }
 }

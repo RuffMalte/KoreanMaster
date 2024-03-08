@@ -12,6 +12,7 @@ struct LocallizedLessonListView: View {
 	
 	@State var locallizedLesson: LocalizedLessons
 	@State var currentLanguage: String
+	@EnvironmentObject var courseCon: CoursesController
 	
     var body: some View {
 		Form {
@@ -27,12 +28,23 @@ struct LocallizedLessonListView: View {
 					}
 				}
 			}
-									  
-			
-			
-			
 		}
-		.navigationTitle(locallizedLesson.language)
+ 		.navigationTitle(locallizedLesson.language)
+		.toolbar {
+			ToolbarItem(placement: .primaryAction) {
+				Button {
+					courseCon.SaveLesson(lesson: Lesson.detailExample, language: currentLanguage) { bool in
+						if bool {
+							print("Lesson added")
+						} else {
+							print("Lesson not added")
+						}
+					}
+				} label: {
+					Label("Add new Lesson", systemImage: "plus")
+				}
+			}
+		}
     }
 }
 

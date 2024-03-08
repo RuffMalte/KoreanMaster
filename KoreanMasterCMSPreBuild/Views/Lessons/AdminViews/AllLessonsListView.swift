@@ -21,32 +21,21 @@ struct AllLessonsListView: View {
 			if courseCon.isLoadingAllLessons {
 				ProgressView()
 			} else {
-				TabView {
+				List {
 					ForEach(allLessonsLocalized.localizedLessons) { localized in
-						LocallizedLessonListView(locallizedLesson: localized, currentLanguage: localized.language)
-							.tabItem {
-								Text("\(localized.language) \(localized.info)")
-							}
-					
-					}
-				}
-			}
-		}
-		.toolbar {
-			ToolbarItem(placement: .primaryAction) {
-				Button {
-					courseCon.SaveLesson(lesson: Lesson.detailExample, language: "English") { bool in
-						if bool {
-							print("Lesson added")
-						} else {
-							print("Lesson not added")
+						NavigationLink {
+							LocallizedLessonListView(locallizedLesson: localized, currentLanguage: localized.language)
+						} label: {
+							Text("\(localized.language) \(localized.info)")
+
 						}
 					}
-				} label: {
-					Label("Add new Lesson", systemImage: "plus")
 				}
+				.listStyle(SidebarListStyle())
+				.navigationTitle("Courses")
 			}
-			
+		}
+		.toolbar {			
 			ToolbarItem(placement: .primaryAction) {
 				Button {
 					for language in loginCon.allLanguages {

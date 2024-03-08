@@ -18,7 +18,7 @@ struct ModifyLessonView: View {
     var body: some View {
 		Form {
 			if courseCon.isLoadingSingleLesson {
-				
+				ProgressView()
 			} else {
 				List {
 					ModifyLessonInfoView(lessonInfo: lesson.lessonInfo)
