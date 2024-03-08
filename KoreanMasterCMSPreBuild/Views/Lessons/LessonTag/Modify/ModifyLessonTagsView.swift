@@ -44,7 +44,7 @@ struct ModifyLessonTagsView: View {
 						 newLessonTag.lessonTagItems?.removeAll(where: { $0.id == tag.id })
 						 lessonTag = LessonTag(title: newLessonTag.title, lessonTagItems: newLessonTag.lessonTagItems ?? [])
 					 }
-				}
+				 }
 				 
 				
 			}

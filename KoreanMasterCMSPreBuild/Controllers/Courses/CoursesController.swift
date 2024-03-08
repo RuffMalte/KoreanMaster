@@ -19,6 +19,7 @@ class CoursesController: ObservableObject {
 	private var encounteredError: Error?
 	
 	var isLoadingAllLessons = false
+	var isLoadingSingleLesson = false
 	
 	private func fetchDetailsDocumentData<T: Decodable>(refGenerator: DocumentReferenceGenerator, forType type: DocumentReferenceGenerator.DocumentType, assignTo: @escaping (T?) -> Void) {
 		dispatchGroup.enter()
@@ -168,6 +169,7 @@ class CoursesController: ObservableObject {
 	func getFullLesson(lessonName: String, language: String, completion: @escaping (Lesson?, Error?) -> Void) {
 		let refGenerator = DocumentReferenceGenerator(lessonName: lessonName, language: language)
 		let lesson = Lesson.empty  // Assume 'Lesson.empty' initializes an empty lesson
+		self.isLoadingSingleLesson = true
 		self.encounteredError = nil  // Reset the error before starting
 		
 		
@@ -181,6 +183,12 @@ class CoursesController: ObservableObject {
 		fetchDetailsDocumentData(refGenerator: refGenerator, forType: .tags) { (tags: LessonTag?) in
 			if let tags = tags {
 				lesson.lessonTag = tags
+			}
+		}
+		
+		fetchDetailsDocumentData(refGenerator: refGenerator, forType: .vocabUsed) { (newVocab: NewLessonVocabUsed?) in
+			if let newVocab = newVocab {
+				lesson.newLessonVocabUsed = newVocab
 			}
 		}
 		
@@ -230,6 +238,7 @@ class CoursesController: ObservableObject {
 			} else {
 				completion(lesson, nil)
 			}
+			self.isLoadingSingleLesson = false
 		}
 	}
 
@@ -237,7 +246,7 @@ class CoursesController: ObservableObject {
 	
 	private func fetchDetails(refGenerator: DocumentReferenceGenerator, completion: @escaping (Lesson?, Error?) -> Void) {
 		let dispatchGroup = DispatchGroup()
-		var lesson = Lesson.empty
+		let lesson = Lesson.empty
 		var encounteredError: Error?
 		
 		dispatchGroup.enter()

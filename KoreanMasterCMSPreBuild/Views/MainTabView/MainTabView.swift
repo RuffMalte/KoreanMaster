@@ -70,9 +70,8 @@ struct MainTabView: View {
 		.sheet(isPresented: $isShowingProfile) {
 			NavigationStack {
 				ProfileView()
-					.padding()
 			}
-			.frame(minWidth: 100, idealWidth: 150, maxWidth: 300, minHeight: 50, idealHeight: 75, maxHeight: 200, alignment: .center)
+			.frame(width: 400, height: 200, alignment: .center)
 		}
 		
 		

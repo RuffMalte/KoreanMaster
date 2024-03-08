@@ -16,15 +16,14 @@ struct ProfileView: View {
 	
     var body: some View {
 		Form {
-			Section {
+			List {
 				Text(loginCon.currentFirestoreUser?.displayName ?? "")
 					.font(.system(.headline, design: .rounded, weight: .bold))
-					
+				
 				Text(loginCon.currentFirestoreUser?.email ?? "")
 					.font(.system(.subheadline, design: .monospaced, weight: .bold))
-			}
 			
-			Section {
+			
 				Button {
 					loginCon.logoutUser()
 				} label: {
@@ -37,8 +36,8 @@ struct ProfileView: View {
 					Label("Delete Account", systemImage: "trash.fill")
 						.foregroundStyle(.red)
 				}
+				
 			}
-			
 		}
 		.toolbar {
 			ToolbarItem(placement: .automatic) {

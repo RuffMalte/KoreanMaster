@@ -11,6 +11,7 @@ struct LocallizedLessonListView: View {
 	
 	
 	@State var locallizedLesson: LocalizedLessons
+	@State var currentLanguage: String
 	
     var body: some View {
 		Form {
@@ -20,7 +21,7 @@ struct LocallizedLessonListView: View {
 				
 				ForEach(locallizedLesson.lessons) { lesson in
 					NavigationLink {
-						ModifyLessonView(lesson: lesson)
+						ModifyLessonView(lesson: lesson, currentLanguage: currentLanguage)
 					} label: {
 						LessonDetailSmallCellView(lesson: lesson)
 					}
@@ -36,5 +37,5 @@ struct LocallizedLessonListView: View {
 }
 
 #Preview {
-	LocallizedLessonListView(locallizedLesson: LocalizedLessons.singleEnglishExample)
+	LocallizedLessonListView(locallizedLesson: LocalizedLessons.singleEnglishExample, currentLanguage: "English")
 }

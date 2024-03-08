@@ -23,7 +23,7 @@ struct AllLessonsListView: View {
 			} else {
 				TabView {
 					ForEach(allLessonsLocalized.localizedLessons) { localized in
-						LocallizedLessonListView(locallizedLesson: localized)
+						LocallizedLessonListView(locallizedLesson: localized, currentLanguage: localized.language)
 							.tabItem {
 								Text("\(localized.language) \(localized.info)")
 							}
