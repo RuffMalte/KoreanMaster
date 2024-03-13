@@ -49,7 +49,18 @@ struct MainTabView: View {
 					Label("Courses", systemImage: "book.fill")
 				}
 
-				
+				NavigationLink {
+					VocabLanguageListView()
+				} label: {
+					Label("Vocabularies", systemImage: "text.book.closed.fill")
+				}
+
+				NavigationLink {
+					AllWelcomeMessages()
+				} label: {
+					Label("Welcome Messages", systemImage: "message.fill")
+				}
+
 			}
 			
 		} detail: {

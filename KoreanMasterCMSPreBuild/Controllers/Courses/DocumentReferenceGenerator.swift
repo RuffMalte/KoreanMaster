@@ -26,7 +26,7 @@ class DocumentReferenceGenerator {
 		self.language = language
 	}
 	
-	private var mainCollectionPath: String {
+	private var mainLessonPath: String {
 		"lessonsTEST/\(language)/lessons"  // Adjusted path
 	}
 	
@@ -40,7 +40,7 @@ class DocumentReferenceGenerator {
 	
 	// Returns a reference to the collection of lesson documents for a specific language
 	func getLessonsCollectionRef() -> CollectionReference {
-		return db.collection(mainCollectionPath)
+		return db.collection(mainLessonPath)
 	}
 	
 	// Returns a reference to a specific lesson document
@@ -94,7 +94,7 @@ class DocumentReferenceGenerator {
 		}
 		
 		// Path to the specific detail document (like 'grammar', 'practice', etc. under 'details' collection)
-		let detailDocumentRef = db.collection(self.mainCollectionPath)
+		let detailDocumentRef = db.collection(self.mainLessonPath)
 			.document(lessonName)
 			.collection("details")
 			.document(detailType.rawValue)
@@ -112,6 +112,20 @@ class DocumentReferenceGenerator {
 		case .cultureSongs:
 			return detailDocumentRef.collection("songs")  // Adjust if necessary
 		}
+	}
+	
+	
+	private var welcomeMessagePath: String {
+		"lessonsTEST/\(language)/welcomeMessage"
+	}
+	
+	func getNewWelcomeMessageRef(withId id: String) -> DocumentReference {
+		return db.collection(self.welcomeMessagePath).document(id)
+		
+	}
+
+	func getWelcomeMessagesRef() -> CollectionReference {
+		return db.collection(self.welcomeMessagePath)
 	}
 }
 

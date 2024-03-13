@@ -21,6 +21,8 @@ class LoginController: ObservableObject {
 	var loginOption: LoginOptions = .login
 	
 	
+	var isloadingMessages: Bool = false
+	
 	var user: User?
 	
 	var currentFirestoreUser: FirestoreUser?
@@ -308,6 +310,70 @@ class LoginController: ObservableObject {
 		} catch {
 			print("Error writing language to Firestore: \(error)")
 		}
+	}
+	
+	
+	//MARK: Welcome Messages
+	func saveWelcomeMessage(with message: LocalizedWelcomeMessage, language: String, completion: @escaping (Bool) -> Void) {
+		
+		let db = Firestore.firestore()
+		let batch = db.batch()
+		let refGenerator = DocumentReferenceGenerator(language: language)
+
+		
+		let messageRef = refGenerator.getNewWelcomeMessageRef(withId: message.id)
+		
+		do {
+			try batch.setData(from: message, forDocument: messageRef)
+			
+			// Finally, commit the batch
+			batch.commit { error in
+				if let error = error {
+					print("Error writing batch to Firestore: \(error)")
+					completion(false)
+				} else {
+					completion(true)
+				}
+			}
+			
+		} catch {
+			print("Error writing message to Firestore: \(error)")
+			completion(false)
+		}
+	}
+	
+	func getWelcomeMessages(language: String, completion: @escaping ([LocalizedWelcomeMessage], Error?) -> Void) {
+		let refGenerator = DocumentReferenceGenerator(language: language)
+		let welcomeMesssageRefGen = refGenerator.getWelcomeMessagesRef()
+		self.isloadingMessages = true
+		
+		welcomeMesssageRefGen.getDocuments { querySnapshot, error in
+			var messages: [LocalizedWelcomeMessage] = []
+			let dispatchGroup = DispatchGroup()
+
+			if let snapshot = querySnapshot {
+				for document in snapshot.documents {
+					dispatchGroup.enter()
+					do {
+						let message = try document.data(as: LocalizedWelcomeMessage.self)
+						messages.append(message)
+						dispatchGroup.leave()
+					} catch {
+						print("Error decoding welcome message from Firestore: \(error)")
+					}
+				}
+				
+				dispatchGroup.notify(queue: .main) {
+					completion(messages, nil)
+					self.isloadingMessages = false
+				}
+				
+			} else if let error = error {
+				completion([], error)
+			}
+			
+		}
+		
 	}
 	
 }
