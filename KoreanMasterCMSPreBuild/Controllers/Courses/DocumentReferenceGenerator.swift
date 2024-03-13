@@ -119,7 +119,7 @@ class DocumentReferenceGenerator {
 		"lessonsTEST/\(language)/welcomeMessage"
 	}
 	
-	func getNewWelcomeMessageRef(withId id: String) -> DocumentReference {
+	func getDocWelcomeMessageRef(withId id: String) -> DocumentReference {
 		return db.collection(self.welcomeMessagePath).document(id)
 		
 	}

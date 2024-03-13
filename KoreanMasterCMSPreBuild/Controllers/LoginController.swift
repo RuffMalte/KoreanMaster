@@ -321,7 +321,7 @@ class LoginController: ObservableObject {
 		let refGenerator = DocumentReferenceGenerator(language: language)
 
 		
-		let messageRef = refGenerator.getNewWelcomeMessageRef(withId: message.id)
+		let messageRef = refGenerator.getDocWelcomeMessageRef(withId: message.id)
 		
 		do {
 			try batch.setData(from: message, forDocument: messageRef)
@@ -376,4 +376,17 @@ class LoginController: ObservableObject {
 		
 	}
 	
+	func deleteWelcomeMessage(with id: String, language: String, completion: @escaping (Bool) -> Void) {
+		let refGenerator = DocumentReferenceGenerator(language: language)
+		let messageRef = refGenerator.getWelcomeMessageRef(withId: id)
+		
+		messageRef.delete { error in
+			if let error = error {
+				print("Error deleting message from Firestore: \(error)")
+				completion(false)
+			} else {
+				completion(true)
+			}
+		}
+	}
 }
