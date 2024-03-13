@@ -46,7 +46,7 @@ struct ModifyWelcomeMessageSheetView: View {
 							print("Saved: \(isFinished)")
 							isLoadingAddingMessage = !isFinished
 						}
-						
+						dismiss()
 					} label: {
 						if isLoadingAddingMessage {
 							ProgressView()

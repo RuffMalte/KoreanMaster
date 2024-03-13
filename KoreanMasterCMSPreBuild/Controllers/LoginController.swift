@@ -376,9 +376,9 @@ class LoginController: ObservableObject {
 		
 	}
 	
-	func deleteWelcomeMessage(with id: String, language: String, completion: @escaping (Bool) -> Void) {
+	func deleteWelcomeMessage(with message: LocalizedWelcomeMessage, language: String, completion: @escaping (Bool) -> Void) {
 		let refGenerator = DocumentReferenceGenerator(language: language)
-		let messageRef = refGenerator.getWelcomeMessageRef(withId: id)
+		let messageRef = refGenerator.getDocWelcomeMessageRef(withId: message.id)
 		
 		messageRef.delete { error in
 			if let error = error {

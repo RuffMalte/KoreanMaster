@@ -13,6 +13,8 @@ struct WelcomeMessageDetailSmallCellView: View {
 	var currentLanguage: String
 	@State private var isShowingEditingSheet = false
 	
+	@EnvironmentObject var loginCon: LoginController
+
     var body: some View {
 		VStack(alignment: .leading) {
 			Text(message.welcomeMessage)
@@ -25,11 +27,16 @@ struct WelcomeMessageDetailSmallCellView: View {
 				isShowingEditingSheet.toggle()
 			} label: {
 				Label("Edit", systemImage: "pencil")
+					.labelStyle(.titleAndIcon)
 			}
 			Button {
-				//TODO: implement delete
+				loginCon.deleteWelcomeMessage(with: message, language: currentLanguage) { isFinished in
+					print("Deleted: \(isFinished)")
+				}
 			} label: {
 				Label("Delete", systemImage: "trash")
+					.labelStyle(.titleAndIcon)
+					.foregroundStyle(.red)
 			}
 		}
 		.sheet(isPresented: $isShowingEditingSheet) {
