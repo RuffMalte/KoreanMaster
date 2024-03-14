@@ -122,3 +122,4 @@ iOSInjectionProject/
 
 
 Static/
+**/GoogleService-Info.plist
