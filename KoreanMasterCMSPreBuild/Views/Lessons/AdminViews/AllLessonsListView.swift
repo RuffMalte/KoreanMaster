@@ -27,7 +27,6 @@ struct AllLessonsListView: View {
 							LocallizedLessonListView(locallizedLesson: localized, currentLanguage: localized.language)
 						} label: {
 							Text("\(localized.language) \(localized.info)")
-
 						}
 					}
 				}
@@ -46,6 +45,9 @@ struct AllLessonsListView: View {
 									info: language.languageFlag,
 									lessons: lessons
 								)
+								if allLessonsLocalized.localizedLessons.contains(where: { $0.language == newLocalized.language }) {
+									allLessonsLocalized.localizedLessons.removeAll(where: { $0.language == newLocalized.language })
+								}
 								allLessonsLocalized.localizedLessons.append(newLocalized)
 								return
 							}
