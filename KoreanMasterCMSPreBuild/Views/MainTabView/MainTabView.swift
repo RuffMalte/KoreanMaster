@@ -50,7 +50,7 @@ struct MainTabView: View {
 				}
 
 				NavigationLink {
-					VocabLanguageListView()
+					AllVocabListView()
 				} label: {
 					Label("Vocabularies", systemImage: "text.book.closed.fill")
 				}

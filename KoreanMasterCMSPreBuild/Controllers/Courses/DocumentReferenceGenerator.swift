@@ -127,5 +127,18 @@ class DocumentReferenceGenerator {
 	func getWelcomeMessagesRef() -> CollectionReference {
 		return db.collection(self.welcomeMessagePath)
 	}
+	
+	
+	private var vocabPath: String {
+		"lessonsTEST/\(language)/vocab"
+	}
+	
+	func getVocabCollectionRef() -> CollectionReference {
+		return db.collection(self.vocabPath)
+	}
+	
+	func getVocabDocRef(withId id: String) -> DocumentReference {
+		return db.collection(self.vocabPath).document(id)
+	}
 }
 

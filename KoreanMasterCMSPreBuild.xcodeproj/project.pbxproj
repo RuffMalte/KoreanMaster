@@ -27,6 +27,14 @@
 		2E6C51B22B93820700626F95 /* ModifyLanguageSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6C51B12B93820700626F95 /* ModifyLanguageSheetView.swift */; };
 		2E6C51B62B93825A00626F95 /* LanguageFromMocData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6C51B52B93825A00626F95 /* LanguageFromMocData.swift */; };
 		2E7E3A4B2BA3012E00CD9353 /* APIKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7E3A4A2BA3012E00CD9353 /* APIKeys.swift */; };
+		2E7E3A4E2BA317F900CD9353 /* VocabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7E3A4D2BA317F900CD9353 /* VocabController.swift */; };
+		2E7E3A512BA318BF00CD9353 /* Vocab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7E3A502BA318BF00CD9353 /* Vocab.swift */; };
+		2E7E3A552BA31C9100CD9353 /* VocabDetailSmallCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7E3A542BA31C9100CD9353 /* VocabDetailSmallCellView.swift */; };
+		2E7E3A582BA31CAE00CD9353 /* VocabMocData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7E3A572BA31CAE00CD9353 /* VocabMocData.swift */; };
+		2E7E3A5B2BA31F6A00CD9353 /* LocalizedVocabListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7E3A5A2BA31F6A00CD9353 /* LocalizedVocabListView.swift */; };
+		2E7E3A5E2BA3318E00CD9353 /* ModifyVocabSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7E3A5D2BA3318E00CD9353 /* ModifyVocabSheetView.swift */; };
+		2E7E3A602BA33D5A00CD9353 /* DictionaryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7E3A5F2BA33D5A00CD9353 /* DictionaryController.swift */; };
+		2E7E3A632BA33F4A00CD9353 /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7E3A622BA33F4A00CD9353 /* Dictionary.swift */; };
 		2E8D83B52BA1C4230039DE57 /* LocalizedWelcomeMessageListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8D83B42BA1C4230039DE57 /* LocalizedWelcomeMessageListView.swift */; };
 		2E8D83B82BA1CD500039DE57 /* ModifyWelcomeMessageSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8D83B72BA1CD500039DE57 /* ModifyWelcomeMessageSheetView.swift */; };
 		2E8D83BB2BA1CE240039DE57 /* LocalizedWelcomeMessageMocData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8D83BA2BA1CE240039DE57 /* LocalizedWelcomeMessageMocData.swift */; };
@@ -36,7 +44,7 @@
 		2EA7BDFB2B9B14C800AAA532 /* ColorEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA7BDFA2B9B14C800AAA532 /* ColorEnum.swift */; };
 		2EA7BDFE2B9B17EE00AAA532 /* MaltesColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA7BDFD2B9B17EE00AAA532 /* MaltesColorPicker.swift */; };
 		2EA7BE022B9B405500AAA532 /* ModifyVLessonVocabUsedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA7BE012B9B405500AAA532 /* ModifyVLessonVocabUsedView.swift */; };
-		2EA7BE072B9B80EE00AAA532 /* VocabLanguageListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA7BE062B9B80EE00AAA532 /* VocabLanguageListView.swift */; };
+		2EA7BE072B9B80EE00AAA532 /* AllVocabListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA7BE062B9B80EE00AAA532 /* AllVocabListView.swift */; };
 		2EAC1C332B93853B00F713F7 /* LanguageCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EAC1C322B93853B00F713F7 /* LanguageCellView.swift */; };
 		2EAC1C362B93AAB800F713F7 /* JSONView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EAC1C352B93AAB800F713F7 /* JSONView.swift */; };
 		2EAC1C3D2B93B77900F713F7 /* CoursesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EAC1C3C2B93B77900F713F7 /* CoursesController.swift */; };
@@ -92,6 +100,14 @@
 		2E6C51B12B93820700626F95 /* ModifyLanguageSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyLanguageSheetView.swift; sourceTree = "<group>"; };
 		2E6C51B52B93825A00626F95 /* LanguageFromMocData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageFromMocData.swift; sourceTree = "<group>"; };
 		2E7E3A4A2BA3012E00CD9353 /* APIKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKeys.swift; sourceTree = "<group>"; };
+		2E7E3A4D2BA317F900CD9353 /* VocabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocabController.swift; sourceTree = "<group>"; };
+		2E7E3A502BA318BF00CD9353 /* Vocab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vocab.swift; sourceTree = "<group>"; };
+		2E7E3A542BA31C9100CD9353 /* VocabDetailSmallCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocabDetailSmallCellView.swift; sourceTree = "<group>"; };
+		2E7E3A572BA31CAE00CD9353 /* VocabMocData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocabMocData.swift; sourceTree = "<group>"; };
+		2E7E3A5A2BA31F6A00CD9353 /* LocalizedVocabListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedVocabListView.swift; sourceTree = "<group>"; };
+		2E7E3A5D2BA3318E00CD9353 /* ModifyVocabSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyVocabSheetView.swift; sourceTree = "<group>"; };
+		2E7E3A5F2BA33D5A00CD9353 /* DictionaryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryController.swift; sourceTree = "<group>"; };
+		2E7E3A622BA33F4A00CD9353 /* Dictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dictionary.swift; sourceTree = "<group>"; };
 		2E8D83B42BA1C4230039DE57 /* LocalizedWelcomeMessageListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedWelcomeMessageListView.swift; sourceTree = "<group>"; };
 		2E8D83B72BA1CD500039DE57 /* ModifyWelcomeMessageSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyWelcomeMessageSheetView.swift; sourceTree = "<group>"; };
 		2E8D83BA2BA1CE240039DE57 /* LocalizedWelcomeMessageMocData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedWelcomeMessageMocData.swift; sourceTree = "<group>"; };
@@ -101,7 +117,7 @@
 		2EA7BDFA2B9B14C800AAA532 /* ColorEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorEnum.swift; sourceTree = "<group>"; };
 		2EA7BDFD2B9B17EE00AAA532 /* MaltesColorPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaltesColorPicker.swift; sourceTree = "<group>"; };
 		2EA7BE012B9B405500AAA532 /* ModifyVLessonVocabUsedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyVLessonVocabUsedView.swift; sourceTree = "<group>"; };
-		2EA7BE062B9B80EE00AAA532 /* VocabLanguageListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocabLanguageListView.swift; sourceTree = "<group>"; };
+		2EA7BE062B9B80EE00AAA532 /* AllVocabListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllVocabListView.swift; sourceTree = "<group>"; };
 		2EAC1C322B93853B00F713F7 /* LanguageCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageCellView.swift; sourceTree = "<group>"; };
 		2EAC1C352B93AAB800F713F7 /* JSONView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONView.swift; sourceTree = "<group>"; };
 		2EAC1C3C2B93B77900F713F7 /* CoursesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursesController.swift; sourceTree = "<group>"; };
@@ -243,6 +259,7 @@
 		2E6C51A32B9356C900626F95 /* MocData */ = {
 			isa = PBXGroup;
 			children = (
+				2E7E3A562BA31CA200CD9353 /* Vocab */,
 				2E8D83B92BA1CDDD0039DE57 /* WelcomeMessage */,
 				2EAC1C562B98725B00F713F7 /* Lesson */,
 				2E6C51B42B93823000626F95 /* Language */,
@@ -264,6 +281,7 @@
 			children = (
 				2E6C51A82B935AD300626F95 /* PasteboardController.swift */,
 				2E8D83C42BA2F8170039DE57 /* TranslationController.swift */,
+				2E7E3A5F2BA33D5A00CD9353 /* DictionaryController.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -317,6 +335,73 @@
 				2E7E3A4A2BA3012E00CD9353 /* APIKeys.swift */,
 			);
 			path = API;
+			sourceTree = "<group>";
+		};
+		2E7E3A4C2BA317CB00CD9353 /* Vocab */ = {
+			isa = PBXGroup;
+			children = (
+				2E7E3A4D2BA317F900CD9353 /* VocabController.swift */,
+			);
+			path = Vocab;
+			sourceTree = "<group>";
+		};
+		2E7E3A4F2BA318A700CD9353 /* Vocab */ = {
+			isa = PBXGroup;
+			children = (
+				2E7E3A502BA318BF00CD9353 /* Vocab.swift */,
+			);
+			path = Vocab;
+			sourceTree = "<group>";
+		};
+		2E7E3A522BA31C4500CD9353 /* AdminViews */ = {
+			isa = PBXGroup;
+			children = (
+				2E7E3A5C2BA3316D00CD9353 /* Modify */,
+				2E7E3A592BA31D0A00CD9353 /* Locallized */,
+				2E7E3A532BA31C5000CD9353 /* CellView */,
+				2EA7BE062B9B80EE00AAA532 /* AllVocabListView.swift */,
+			);
+			path = AdminViews;
+			sourceTree = "<group>";
+		};
+		2E7E3A532BA31C5000CD9353 /* CellView */ = {
+			isa = PBXGroup;
+			children = (
+				2E7E3A542BA31C9100CD9353 /* VocabDetailSmallCellView.swift */,
+			);
+			path = CellView;
+			sourceTree = "<group>";
+		};
+		2E7E3A562BA31CA200CD9353 /* Vocab */ = {
+			isa = PBXGroup;
+			children = (
+				2E7E3A572BA31CAE00CD9353 /* VocabMocData.swift */,
+			);
+			path = Vocab;
+			sourceTree = "<group>";
+		};
+		2E7E3A592BA31D0A00CD9353 /* Locallized */ = {
+			isa = PBXGroup;
+			children = (
+				2E7E3A5A2BA31F6A00CD9353 /* LocalizedVocabListView.swift */,
+			);
+			path = Locallized;
+			sourceTree = "<group>";
+		};
+		2E7E3A5C2BA3316D00CD9353 /* Modify */ = {
+			isa = PBXGroup;
+			children = (
+				2E7E3A5D2BA3318E00CD9353 /* ModifyVocabSheetView.swift */,
+			);
+			path = Modify;
+			sourceTree = "<group>";
+		};
+		2E7E3A612BA33F3D00CD9353 /* Dictionary */ = {
+			isa = PBXGroup;
+			children = (
+				2E7E3A622BA33F4A00CD9353 /* Dictionary.swift */,
+			);
+			path = Dictionary;
 			sourceTree = "<group>";
 		};
 		2E8D83B62BA1CD330039DE57 /* Modify */ = {
@@ -411,17 +496,9 @@
 		2EA7BE042B9B7E0D00AAA532 /* Vocab */ = {
 			isa = PBXGroup;
 			children = (
-				2EA7BE062B9B80EE00AAA532 /* VocabLanguageListView.swift */,
-				2EA7BE052B9B7E2F00AAA532 /* VocabLanguage */,
+				2E7E3A522BA31C4500CD9353 /* AdminViews */,
 			);
 			path = Vocab;
-			sourceTree = "<group>";
-		};
-		2EA7BE052B9B7E2F00AAA532 /* VocabLanguage */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = VocabLanguage;
 			sourceTree = "<group>";
 		};
 		2EAC1C342B93AAAA00F713F7 /* Helper */ = {
@@ -615,6 +692,7 @@
 		2EF41ADC2B927ABD007431ED /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				2E7E3A4C2BA317CB00CD9353 /* Vocab */,
 				2EAC1C5C2B98BBF600F713F7 /* Courses */,
 				2E6C51A72B935AC700626F95 /* Helper */,
 				2E6C518D2B92888200626F95 /* LoginController.swift */,
@@ -625,7 +703,9 @@
 		2EF41ADE2B927AC9007431ED /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				2E7E3A612BA33F3D00CD9353 /* Dictionary */,
 				2E6C51A32B9356C900626F95 /* MocData */,
+				2E7E3A4F2BA318A700CD9353 /* Vocab */,
 				2E5B3D7A2BA1B0600028FCB2 /* WelcomeMessage */,
 				2EA7BDF92B9B14BF00AAA532 /* HelperEnums */,
 				2EAC1C552B98713400F713F7 /* Lesson */,
@@ -757,6 +837,7 @@
 				2E6C51892B92840600626F95 /* LoginView.swift in Sources */,
 				2EDF0C042B9A170C001132AD /* LocallizedLessonListView.swift in Sources */,
 				2EDF0C082B9A3A60001132AD /* ModifyLocalizedLessonView.swift in Sources */,
+				2E7E3A512BA318BF00CD9353 /* Vocab.swift in Sources */,
 				2E8D83BB2BA1CE240039DE57 /* LocalizedWelcomeMessageMocData.swift in Sources */,
 				2E8D83B82BA1CD500039DE57 /* ModifyWelcomeMessageSheetView.swift in Sources */,
 				2EAC1C362B93AAB800F713F7 /* JSONView.swift in Sources */,
@@ -774,24 +855,31 @@
 				2E6C51A12B93567500626F95 /* UserCellView.swift in Sources */,
 				2E7E3A4B2BA3012E00CD9353 /* APIKeys.swift in Sources */,
 				2E6C518E2B92888200626F95 /* LoginController.swift in Sources */,
+				2E7E3A5B2BA31F6A00CD9353 /* LocalizedVocabListView.swift in Sources */,
 				2E6C51AF2B936DA300626F95 /* LanguagesListView.swift in Sources */,
 				2EAC1C5B2B989EBB00F713F7 /* AllLessonsListView.swift in Sources */,
 				2EA7BDFB2B9B14C800AAA532 /* ColorEnum.swift in Sources */,
 				2EAC1C542B97AA1C00F713F7 /* LessonTagSmallView.swift in Sources */,
 				2E8D83B52BA1C4230039DE57 /* LocalizedWelcomeMessageListView.swift in Sources */,
 				2E6C51B22B93820700626F95 /* ModifyLanguageSheetView.swift in Sources */,
-				2EA7BE072B9B80EE00AAA532 /* VocabLanguageListView.swift in Sources */,
+				2EA7BE072B9B80EE00AAA532 /* AllVocabListView.swift in Sources */,
 				2E6C519F2B92944000626F95 /* FirestoreUser.swift in Sources */,
 				2EF41ACF2B927A36007431ED /* ContentView.swift in Sources */,
+				2E7E3A5E2BA3318E00CD9353 /* ModifyVocabSheetView.swift in Sources */,
 				2E5B3D7C2BA1B0740028FCB2 /* WelcomeMessage.swift in Sources */,
 				2E6C51832B92817100626F95 /* MainSettingsView.swift in Sources */,
 				2E6C51A92B935AD300626F95 /* PasteboardController.swift in Sources */,
+				2E7E3A4E2BA317F900CD9353 /* VocabController.swift in Sources */,
 				2EF41ACD2B927A36007431ED /* KoreanMasterCMSPreBuildApp.swift in Sources */,
+				2E7E3A582BA31CAE00CD9353 /* VocabMocData.swift in Sources */,
 				2E6C517B2B927C7000626F95 /* MainTabView.swift in Sources */,
 				2E6C51AC2B93668D00626F95 /* CourseLanguage.swift in Sources */,
+				2E7E3A632BA33F4A00CD9353 /* Dictionary.swift in Sources */,
+				2E7E3A602BA33D5A00CD9353 /* DictionaryController.swift in Sources */,
 				2E8D83C52BA2F8170039DE57 /* TranslationController.swift in Sources */,
 				2EAC1C582B98729200F713F7 /* AllLessonsLocalizedMocData.swift in Sources */,
 				2EAC1C512B97A5DD00F713F7 /* Lesson.swift in Sources */,
+				2E7E3A552BA31C9100CD9353 /* VocabDetailSmallCellView.swift in Sources */,
 				2EDF0C062B9A39D4001132AD /* ModifyLessonInfoView.swift in Sources */,
 				2EA7BDFE2B9B17EE00AAA532 /* MaltesColorPicker.swift in Sources */,
 				2EDF0C012B9A08FF001132AD /* ModifyLessonView.swift in Sources */,

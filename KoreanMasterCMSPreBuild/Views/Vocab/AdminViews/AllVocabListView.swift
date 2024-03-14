@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct VocabLanguageListView: View {
+struct AllVocabListView: View {
 	
 	@EnvironmentObject var loginCon: LoginController
 	@EnvironmentObject var courseCon: CoursesController
@@ -18,15 +18,21 @@ struct VocabLanguageListView: View {
 				ProgressView()
 			} else {
 				List {
-					
+					ForEach(loginCon.allLanguages) { language in
+						NavigationLink {
+							LocalizedVocabListView(language: language)
+						} label: {
+							LanguageSmallDetailCellView(language: language)
+						}
+					}
 				}
 				.listStyle(SidebarListStyle())
-				.navigationTitle("Courses")
+				.navigationTitle("Vocab")
 			}
 		}
     }
 }
 
 #Preview {
-    VocabLanguageListView()
+    AllVocabListView()
 }
