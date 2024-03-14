@@ -26,6 +26,7 @@
 		2E6C51AF2B936DA300626F95 /* LanguagesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6C51AE2B936DA300626F95 /* LanguagesListView.swift */; };
 		2E6C51B22B93820700626F95 /* ModifyLanguageSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6C51B12B93820700626F95 /* ModifyLanguageSheetView.swift */; };
 		2E6C51B62B93825A00626F95 /* LanguageFromMocData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6C51B52B93825A00626F95 /* LanguageFromMocData.swift */; };
+		2E7E3A4B2BA3012E00CD9353 /* APIKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7E3A4A2BA3012E00CD9353 /* APIKeys.swift */; };
 		2E8D83B52BA1C4230039DE57 /* LocalizedWelcomeMessageListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8D83B42BA1C4230039DE57 /* LocalizedWelcomeMessageListView.swift */; };
 		2E8D83B82BA1CD500039DE57 /* ModifyWelcomeMessageSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8D83B72BA1CD500039DE57 /* ModifyWelcomeMessageSheetView.swift */; };
 		2E8D83BB2BA1CE240039DE57 /* LocalizedWelcomeMessageMocData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8D83BA2BA1CE240039DE57 /* LocalizedWelcomeMessageMocData.swift */; };
@@ -90,6 +91,7 @@
 		2E6C51AE2B936DA300626F95 /* LanguagesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguagesListView.swift; sourceTree = "<group>"; };
 		2E6C51B12B93820700626F95 /* ModifyLanguageSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyLanguageSheetView.swift; sourceTree = "<group>"; };
 		2E6C51B52B93825A00626F95 /* LanguageFromMocData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageFromMocData.swift; sourceTree = "<group>"; };
+		2E7E3A4A2BA3012E00CD9353 /* APIKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKeys.swift; sourceTree = "<group>"; };
 		2E8D83B42BA1C4230039DE57 /* LocalizedWelcomeMessageListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedWelcomeMessageListView.swift; sourceTree = "<group>"; };
 		2E8D83B72BA1CD500039DE57 /* ModifyWelcomeMessageSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyWelcomeMessageSheetView.swift; sourceTree = "<group>"; };
 		2E8D83BA2BA1CE240039DE57 /* LocalizedWelcomeMessageMocData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedWelcomeMessageMocData.swift; sourceTree = "<group>"; };
@@ -299,6 +301,22 @@
 				2E6C51B52B93825A00626F95 /* LanguageFromMocData.swift */,
 			);
 			path = Language;
+			sourceTree = "<group>";
+		};
+		2E7E3A482BA300F400CD9353 /* Static */ = {
+			isa = PBXGroup;
+			children = (
+				2E7E3A492BA300FF00CD9353 /* API */,
+			);
+			path = Static;
+			sourceTree = "<group>";
+		};
+		2E7E3A492BA300FF00CD9353 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				2E7E3A4A2BA3012E00CD9353 /* APIKeys.swift */,
+			);
+			path = API;
 			sourceTree = "<group>";
 		};
 		2E8D83B62BA1CD330039DE57 /* Modify */ = {
@@ -559,6 +577,7 @@
 			isa = PBXGroup;
 			children = (
 				2EF41ACC2B927A36007431ED /* KoreanMasterCMSPreBuildApp.swift */,
+				2E7E3A482BA300F400CD9353 /* Static */,
 				2EF41ADE2B927AC9007431ED /* Models */,
 				2EF41ADC2B927ABD007431ED /* Controllers */,
 				2EF41ADB2B927A9A007431ED /* Views */,
@@ -753,6 +772,7 @@
 				2EAC1C5E2B98BC0900F713F7 /* DocumentReferenceGenerator.swift in Sources */,
 				2EA7BE022B9B405500AAA532 /* ModifyVLessonVocabUsedView.swift in Sources */,
 				2E6C51A12B93567500626F95 /* UserCellView.swift in Sources */,
+				2E7E3A4B2BA3012E00CD9353 /* APIKeys.swift in Sources */,
 				2E6C518E2B92888200626F95 /* LoginController.swift in Sources */,
 				2E6C51AF2B936DA300626F95 /* LanguagesListView.swift in Sources */,
 				2EAC1C5B2B989EBB00F713F7 /* AllLessonsListView.swift in Sources */,

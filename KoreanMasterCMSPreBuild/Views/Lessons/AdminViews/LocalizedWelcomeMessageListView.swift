@@ -23,7 +23,6 @@ struct LocalizedWelcomeMessageListView: View {
 				ProgressView()
 			} else {
 				List {
-					Text("Welcome Messages for \(language)")
 					ForEach(messages) { message in
 						WelcomeMessageDetailSmallCellView(message: message, currentLanguage: language)
 					}
@@ -33,12 +32,7 @@ struct LocalizedWelcomeMessageListView: View {
 		}
 		.navigationTitle("\(language) welcome messages")
 		.onAppear {
-			loginCon.getWelcomeMessages(language: language) { messages, error in
-				guard error != nil else {
-					self.messages = messages
-					return
-				}
-			}
+			getWelcomeMessages()
 		}
 		.toolbar {
 			ToolbarItem(placement: .primaryAction) {
@@ -47,13 +41,27 @@ struct LocalizedWelcomeMessageListView: View {
 				} label: {
 					Label("Add new message", systemImage: "plus")
 				}
-
+			}
+			ToolbarItem(placement: .primaryAction) {
+				Button {
+					getWelcomeMessages()
+				} label: {
+					Label("Refresh", systemImage: "arrow.clockwise")
+				}
 			}
 		}
 		.sheet(isPresented: $isShowingAddMessage) {
 			ModifyWelcomeMessageSheetView(message: LocalizedWelcomeMessage.empty, currentLanguage: language)
 		}
     }
+	func getWelcomeMessages() {
+		loginCon.getWelcomeMessages(language: language) { messages, error in
+			guard error != nil else {
+				self.messages = messages
+				return
+			}
+		}
+	}
 }
 
 #Preview {

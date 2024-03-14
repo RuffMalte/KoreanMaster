@@ -35,11 +35,25 @@ struct ModifyWelcomeMessageSheetView: View {
 					HStack {
 						TextField("\(currentLanguage)", text: $message.inSelectedLanguage)
 						Button {
-							
+							TranslationController().getTranslation(for: message.inSelectedLanguage, targetLang: "KO") { translation, error in
+								if let error = error {
+									print("Error:", error)
+									return
+								}
+								if let translation = translation {
+									let newMessage = LocalizedWelcomeMessage(
+										id: message.id,
+										inSelectedLanguage: message.inSelectedLanguage,
+										inKorean: translation
+									)
+									message = newMessage
+								}
+							}
 						} label: {
 							Label("Auto Translate", systemImage: "arrow.triangle.2.circlepath.circle")
 						}
 					}
+					
 					TextField("Korean", text: $message.inKorean)
 				}
 			}
