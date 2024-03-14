@@ -8,7 +8,14 @@
 import SwiftUI
 
 extension LocalizedWelcomeMessage {
-	static let example = LocalizedWelcomeMessage(welcomeMessage: "코리안마스터에 오신 것을 환영합니다!", translation: "Welcome to KoreanMaster!")
+	static let example = LocalizedWelcomeMessage(
+		id: "example",
+		inSelectedLanguage: "Welcome to Korean Master",
+		inKorean: "한국어 마스터에 오신 것을 환영합니다"
+	)
 	
-	static let empty = LocalizedWelcomeMessage(welcomeMessage: "", translation: "")
+	static let empty = LocalizedWelcomeMessage(
+		inSelectedLanguage: "",
+		inKorean: ""
+	)
 }

@@ -26,16 +26,16 @@ class AllWelcomeMessageLocalized: Identifiable, Codable {
 
 class LocalizedWelcomeMessage: Identifiable, Codable {
 	var id: String = UUID().uuidString
-	var welcomeMessage: String
-	var translation: String
+	var inSelectedLanguage: String
+	var inKorean: String
 	
 	init(
 		id: String = UUID().uuidString,
-		welcomeMessage: String,
-		translation: String
+		inSelectedLanguage: String,
+		inKorean: String
 	) {
 		self.id = id
-		self.welcomeMessage = welcomeMessage
-		self.translation = translation
+		self.inSelectedLanguage = inSelectedLanguage
+		self.inKorean = inKorean
 	}
 }

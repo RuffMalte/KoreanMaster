@@ -17,9 +17,9 @@ struct WelcomeMessageDetailSmallCellView: View {
 
     var body: some View {
 		VStack(alignment: .leading) {
-			Text(message.welcomeMessage)
+			Text(message.inSelectedLanguage)
 				.font(.system(.headline, design: .rounded, weight: .bold))
-			Text(message.translation)
+			Text(message.inKorean)
 				.font(.system(.subheadline, design: .monospaced, weight: .regular))
 		}
 		.contextMenu {

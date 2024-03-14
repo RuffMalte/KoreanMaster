@@ -32,8 +32,15 @@ struct ModifyWelcomeMessageSheetView: View {
 							}
 						}
 					
-					TextField("Welcome Message", text: $message.welcomeMessage)
-					TextField("Translation", text: $message.translation)
+					HStack {
+						TextField("\(currentLanguage)", text: $message.inSelectedLanguage)
+						Button {
+							
+						} label: {
+							Label("Auto Translate", systemImage: "arrow.triangle.2.circlepath.circle")
+						}
+					}
+					TextField("Korean", text: $message.inKorean)
 				}
 			}
 			.textFieldStyle(.roundedBorder)

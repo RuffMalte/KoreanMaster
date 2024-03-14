@@ -102,15 +102,15 @@ class DocumentReferenceGenerator {
 		
 		switch subCollection {
 		case .goalsExamples:
-			return detailDocumentRef.collection("goalsExamples")  // Adjust if necessary
+			return detailDocumentRef.collection("goalsExamples")
 		case .grammarPages:
-			return detailDocumentRef.collection("grammarPages")  // Adjust if necessary
+			return detailDocumentRef.collection("grammarPages")
 		case .practiceMultipleChoice:
-			return detailDocumentRef.collection("multipleChoice")  // Adjust if necessary
+			return detailDocumentRef.collection("multipleChoice")
 		case .practiceSentenceBuilding:
-			return detailDocumentRef.collection("sentenceBuild")  // Adjust if necessary
+			return detailDocumentRef.collection("sentenceBuild")
 		case .cultureSongs:
-			return detailDocumentRef.collection("songs")  // Adjust if necessary
+			return detailDocumentRef.collection("songs")
 		}
 	}
 	
