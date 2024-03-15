@@ -13,13 +13,15 @@ class Dictionary: Codable {
 	var phonetics: [Phonetic]?
 	var origin: String?
 	var meanings: [Meaning]?
+	var sourceUrls: [String]?
 	
-	init(word: String?, phonetic: String?, phonetics: [Phonetic]?, origin: String?, meanings: [Meaning]?) {
+	init(word: String?, phonetic: String?, phonetics: [Phonetic]?, origin: String?, meanings: [Meaning]?, sourceUrls: [String]?) {
 		self.word = word
 		self.phonetic = phonetic
 		self.phonetics = phonetics
 		self.origin = origin
 		self.meanings = meanings
+		self.sourceUrls = sourceUrls
 	}
 }
 

@@ -703,8 +703,8 @@
 		2EF41ADE2B927AC9007431ED /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				2E7E3A612BA33F3D00CD9353 /* Dictionary */,
 				2E6C51A32B9356C900626F95 /* MocData */,
+				2E7E3A612BA33F3D00CD9353 /* Dictionary */,
 				2E7E3A4F2BA318A700CD9353 /* Vocab */,
 				2E5B3D7A2BA1B0600028FCB2 /* WelcomeMessage */,
 				2EA7BDF92B9B14BF00AAA532 /* HelperEnums */,
