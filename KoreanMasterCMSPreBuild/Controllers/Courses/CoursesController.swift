@@ -68,6 +68,8 @@ class CoursesController: ObservableObject {
 		let refGenerator = DocumentReferenceGenerator(lessonName: lesson.lessonInfo.lessonName, language: language)
 		
 		do {
+			batch.setData(["LessonName":lesson.lessonInfo.lessonName], forDocument: refGenerator.getLessonsCollectionRef().document(lesson.lessonInfo.lessonName))
+			
 			// Set info
 			let lessonInfoRef = refGenerator.getDocumentRef(forType: .info)
 			batch.setData(lesson.lessonInfo.toFirebase(), forDocument: lessonInfoRef)
