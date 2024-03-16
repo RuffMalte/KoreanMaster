@@ -11,7 +11,7 @@ struct ModifyVocabSheetView: View {
 	
 	@State var vocab: Vocab
 	var language: String
-	
+	var preSelectedLocalizedVocab: String?
 	
 	@StateObject var dictionaryCon = DictionaryController()
 	@State private var dictionary: Dictionary?
@@ -183,6 +183,9 @@ struct ModifyVocabSheetView: View {
 			}
 			.onAppear {
 				vocab.selectedLanguage = language
+				if let preSelectedLocalizedVocab = preSelectedLocalizedVocab {
+					vocab.localizedVocab = preSelectedLocalizedVocab
+				}
 			}
 			.textFieldStyle(.roundedBorder)
 			.padding()

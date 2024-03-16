@@ -51,6 +51,7 @@ struct ModifyLessonTagsView: View {
 		} header: {
 			Text("Tags")
 				.font(.system(.title2, design: .rounded, weight: .bold))
+				.foregroundStyle(.tint)
 		}
 		
 	}

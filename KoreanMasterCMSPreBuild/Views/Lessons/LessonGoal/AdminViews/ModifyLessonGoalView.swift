@@ -18,8 +18,8 @@ struct ModifyLessonGoalView: View {
 			TextField("title", text: $lessonGoal.title)
 			TextField("Goal text", text: $lessonGoal.goalText)
 			
-			DisclosureGroup {
-				VStack(alignment: .leading) {
+			NavigationLink {
+				List {
 					Button {
 						lessonGoal.lessonGoalExamples?.append(LessonGoalExample.empty)
 					} label: {
@@ -35,13 +35,21 @@ struct ModifyLessonGoalView: View {
 					}
 				}
 			} label: {
-				Label("Examples", systemImage: "list.bullet")
-					.font(.system(.title3, design: .rounded, weight: .bold))
+				HStack {
+					Label("Examples", systemImage: "text.book.closed.fill")
+					Spacer()
+					Label(lessonGoal.lessonGoalExamples?.count.description ?? "Unknown", systemImage: "number")
+						.font(.system(.headline, design: .monospaced, weight: .regular))
+					
+					Image(systemName: "chevron.right")
+				}
+				.font(.system(.headline, design: .rounded, weight: .bold))
 			}
 
 		} header: {
 			Text("Lesson Goal")
 				.font(.system(.title2, design: .rounded, weight: .bold))
+				.foregroundStyle(.tint)
 		}
 	}
 	

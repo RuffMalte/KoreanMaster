@@ -21,7 +21,7 @@ struct ModifyLessonTagItemView: View {
     var body: some View {
 		HStack {
 			
-			TextField("Tag Name", text: Binding<String>(
+			TextField("", text: Binding<String>(
 				get: {
 					// Ensure the text always starts with "#"
 					self.tagItem.tagName.hasPrefix("#") ? self.tagItem.tagName : "#\(self.tagItem.tagName)"
@@ -54,6 +54,13 @@ struct ModifyLessonTagItemView: View {
 					Image(systemName: "xmark")
 				}
 				.buttonStyle(.plain)
+				
+				Button {
+					isFocused = false
+				} label: {
+					Image(systemName: "checkmark")
+				}
+				
 			}
 			
 		}

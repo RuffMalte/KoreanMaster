@@ -20,21 +20,29 @@ struct ModifyLessonView: View {
 			if courseCon.isLoadingSingleLesson {
 				ProgressView()
 			} else {
-				List {
+				VStack(alignment: .leading) {
 					ModifyLessonInfoView(lessonInfo: lesson.lessonInfo)
 					
+					Divider()
 					
 					ModifyLessonTagsView(lessonTag: lesson.lessonTag)
+					
+					Divider()
 					
 					if let lessonGoal = lesson.lessonGoal {
 						ModifyLessonGoalView(lessonGoal: lessonGoal)
 					}
 					
+					Divider()
 					
 					if let vocabUsed = lesson.newLessonVocabUsed {
 						ModifyVLessonVocabUsedView(vocabUsed: vocabUsed, language: currentLanguage)
 					}
+					Divider()
+					
+					Spacer()
 				}
+				.padding()
 			}
 		}
 		.onAppear {

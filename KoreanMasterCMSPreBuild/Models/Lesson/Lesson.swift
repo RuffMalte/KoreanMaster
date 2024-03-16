@@ -139,6 +139,7 @@ class LessonTag: Identifiable, Codable {
 	}
 }
 
+@Observable
 class LessonTagItem: Codable, Identifiable {
 	var id: String
 	var tagName: String

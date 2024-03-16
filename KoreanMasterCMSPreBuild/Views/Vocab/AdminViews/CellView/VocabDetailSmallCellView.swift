@@ -16,10 +16,23 @@ struct VocabDetailSmallCellView: View {
 
     var body: some View {
 		HStack {
-			VStack {
+			VStack(alignment: .leading) {
 				Text(vocab.localizedVocab)
 					.font(.system(.headline, design: .rounded, weight: .bold))
 				Text(vocab.koreanVocab)
+					.font(.system(.subheadline, design: .monospaced, weight: .semibold))
+					.foregroundColor(.secondary)
+			}
+			
+			Text("-")
+				.font(.system(.title3, design: .default, weight: .bold))
+			
+			
+			VStack(alignment: .leading) {
+				Text(vocab.localizedSentence)
+					.font(.system(.headline, design: .rounded, weight: .bold))
+
+				Text(vocab.koreanSentence)
 					.font(.system(.subheadline, design: .monospaced, weight: .semibold))
 					.foregroundColor(.secondary)
 			}

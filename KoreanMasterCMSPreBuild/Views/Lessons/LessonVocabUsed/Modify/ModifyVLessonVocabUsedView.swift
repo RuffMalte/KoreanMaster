@@ -98,6 +98,7 @@ struct ModifyVLessonVocabUsedView: View {
 		} header: {
 			Text("New Vocab for this Lesson")
 				.font(.system(.title2, design: .rounded, weight: .bold))
+				.foregroundStyle(.tint)
 		}
 		.onAppear {
 			getVocab()

@@ -12,7 +12,16 @@ struct LocalizedVocabListView: View {
 	var language: String
 	
 	@State var vocab: [Vocab] = []
+	var filterdVocab: [Vocab] {
+		if searchText.isEmpty {
+			return vocab
+		} else {
+			return vocab.filter { $0.localizedVocab.contains(searchText) || $0.koreanVocab.contains(searchText) || $0.localizedSentence.contains(searchText) || $0.koreanSentence.contains(searchText) }
+		}
+	}
+	
 	@State var isShowingAddVocab: Bool = false
+	@State var searchText: String = ""
 	@StateObject var vocabCon = VocabController()
 	
 	
@@ -21,15 +30,38 @@ struct LocalizedVocabListView: View {
 			if vocabCon.isLoadingVocabs {
 				ProgressView()
 			} else {
-				List {
-					ForEach(vocab) { vocab in
-						NavigationLink {
-							JSONView(model: vocab)
-						} label: {
-							VocabDetailSmallCellView(vocab: vocab, currentLanguage: language)
+				if filterdVocab.isEmpty {
+					ContentUnavailableView {
+						Image(systemName: "text.book.closed.fill")
+					} description: {
+						Text("No vocab found")
+					} actions: {
+						if !searchText.isEmpty {
+							Button {
+								isShowingAddVocab.toggle()
+							} label: {
+								Label("Add \(searchText)", systemImage: "plus")
+							}
+							.buttonStyle(.borderedProminent)
+						}
+					}
+				} else {
+					List {
+						ForEach(filterdVocab) { vocab in
+							NavigationLink {
+								JSONView(model: vocab)
+							} label: {
+								VocabDetailSmallCellView(vocab: vocab, currentLanguage: language)
+							}
 						}
 					}
 				}
+			}
+		}
+		.searchable(text: $searchText, prompt: "Search") {
+			ForEach(vocab.filter { $0.localizedVocab.contains(searchText) || $0.koreanVocab.contains(searchText) || $0.localizedSentence.contains(searchText) || $0.koreanSentence.contains(searchText) }) { vocab in
+				Text(vocab.localizedVocab)
+					.searchCompletion(vocab.localizedVocab)
 			}
 		}
 		.navigationTitle("\(language) Vocab")
@@ -54,12 +86,12 @@ struct LocalizedVocabListView: View {
 			}
 		}
 		.sheet(isPresented: $isShowingAddVocab) {
-			ModifyVocabSheetView(vocab: Vocab.empty, language: language)
+			ModifyVocabSheetView(vocab: Vocab.empty, language: language, preSelectedLocalizedVocab: searchText.isEmpty ? nil : searchText)
 		}
     }
 	
 	func getVocab() {
-		vocabCon.getVocab(language: "English") { vocab, error in
+		vocabCon.getVocab(language: language) { vocab, error in
 			guard error != nil else {
 				self.vocab = vocab
 				return

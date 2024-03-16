@@ -12,7 +12,7 @@ struct LessonTagSmallView: View {
 	var lessonTag: LessonTagItem
 	
     var body: some View {
-        Text("#" + lessonTag.tagName)
+        Text(lessonTag.tagName)
 			.font(.system(.footnote, design: .rounded, weight: .bold))
 			.foregroundStyle(lessonTag.tagColor.toColor)
 			.padding(5)

@@ -609,7 +609,6 @@
 			isa = PBXGroup;
 			children = (
 				2EAC1C3C2B93B77900F713F7 /* CoursesController.swift */,
-				2EAC1C5D2B98BC0900F713F7 /* DocumentReferenceGenerator.swift */,
 			);
 			path = Courses;
 			sourceTree = "<group>";
@@ -749,6 +748,7 @@
 		2EF41ADC2B927ABD007431ED /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				2EAC1C5D2B98BC0900F713F7 /* DocumentReferenceGenerator.swift */,
 				2E7E3A4C2BA317CB00CD9353 /* Vocab */,
 				2EAC1C5C2B98BBF600F713F7 /* Courses */,
 				2E6C51A72B935AC700626F95 /* Helper */,

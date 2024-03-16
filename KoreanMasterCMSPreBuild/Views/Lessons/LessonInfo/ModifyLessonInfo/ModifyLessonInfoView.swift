@@ -27,6 +27,7 @@ struct ModifyLessonInfoView: View {
 		} header: {
 			Text("Lesson Info")
 				.font(.system(.title2, design: .rounded, weight: .bold))
+				.foregroundStyle(.tint)
 		}
     }
 }
