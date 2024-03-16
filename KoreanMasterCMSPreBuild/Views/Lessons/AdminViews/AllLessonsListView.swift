@@ -34,25 +34,13 @@ struct AllLessonsListView: View {
 				.navigationTitle("Courses")
 			}
 		}
-		.toolbar {			
+		.onAppear {
+			self.getLessonsForLangauges()
+		}
+		.toolbar {
 			ToolbarItem(placement: .primaryAction) {
 				Button {
-					for language in loginCon.allLanguages {
-						courseCon.getAllLessons(language: language.language) { lessons, error in
-							guard error != nil else {
-								let newLocalized = LocalizedLessons(
-									language: language.language,
-									info: language.languageFlag,
-									lessons: lessons
-								)
-								if allLessonsLocalized.localizedLessons.contains(where: { $0.language == newLocalized.language }) {
-									allLessonsLocalized.localizedLessons.removeAll(where: { $0.language == newLocalized.language })
-								}
-								allLessonsLocalized.localizedLessons.append(newLocalized)
-								return
-							}
-						}
-					}
+					self.getLessonsForLangauges()
 				} label: {
 					Label("Fetch all Lessons", systemImage: "arrow.clockwise")
 				}
@@ -61,6 +49,25 @@ struct AllLessonsListView: View {
 		}
 		
     }
+	
+	func getLessonsForLangauges() {
+		for language in loginCon.allLanguages {
+			courseCon.getAllLessons(language: language.language) { lessons, error in
+				guard error != nil else {
+					let newLocalized = LocalizedLessons(
+						language: language.language,
+						info: language.languageFlag,
+						lessons: lessons
+					)
+					if allLessonsLocalized.localizedLessons.contains(where: { $0.language == newLocalized.language }) {
+						allLessonsLocalized.localizedLessons.removeAll(where: { $0.language == newLocalized.language })
+					}
+					allLessonsLocalized.localizedLessons.append(newLocalized)
+					return
+				}
+			}
+		}
+	}
 }
 
 #Preview {
