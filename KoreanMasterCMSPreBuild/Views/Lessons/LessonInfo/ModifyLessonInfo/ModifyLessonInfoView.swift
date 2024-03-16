@@ -12,7 +12,7 @@ struct ModifyLessonInfoView: View {
 	@State var lessonInfo: LessonInfo
 	
     var body: some View {
-		Form {
+		Section {
 			VStack(alignment: .leading) {
 				HStack {
 					TextField("Section", value: $lessonInfo.section, format: .number)
@@ -24,6 +24,9 @@ struct ModifyLessonInfoView: View {
 				TextField("Description", text: $lessonInfo.desc)
 				//TODO: comments and likes
 			}
+		} header: {
+			Text("Lesson Info")
+				.font(.system(.title2, design: .rounded, weight: .bold))
 		}
     }
 }

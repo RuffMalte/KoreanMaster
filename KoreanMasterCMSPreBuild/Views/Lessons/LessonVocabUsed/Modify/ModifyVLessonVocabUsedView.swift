@@ -30,7 +30,7 @@ struct ModifyVLessonVocabUsedView: View {
 	@State private var isLoading: Bool = false
 	
     var body: some View {
-		Form {
+		Section {
 			TextField("Title", text: $vocabUsed.title)
 			TextField("Helptext", text: $vocabUsed.helpText)
 			
@@ -39,8 +39,10 @@ struct ModifyVLessonVocabUsedView: View {
 			} else {
 				VStack {
 					ScrollView(.horizontal) {
-						ForEach(vocabs, id: \.id) { vocab in
-							VocabDetailListSmallCellView(vocab: vocab)
+						HStack {
+							ForEach(vocabs, id: \.id) { vocab in
+								VocabDetailListSmallCellView(vocab: vocab)
+							}
 						}
 					}
 					HStack {
@@ -93,6 +95,9 @@ struct ModifyVLessonVocabUsedView: View {
 					
 				}
 			}
+		} header: {
+			Text("New Vocab for this Lesson")
+				.font(.system(.title2, design: .rounded, weight: .bold))
 		}
 		.onAppear {
 			getVocab()
