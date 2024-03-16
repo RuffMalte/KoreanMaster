@@ -87,6 +87,10 @@ struct LocalizedVocabListView: View {
 		}
 		.sheet(isPresented: $isShowingAddVocab) {
 			ModifyVocabSheetView(vocab: Vocab.empty, language: language, preSelectedLocalizedVocab: searchText.isEmpty ? nil : searchText)
+				.onDisappear {
+					searchText = ""
+					getVocab()
+				}
 		}
     }
 	

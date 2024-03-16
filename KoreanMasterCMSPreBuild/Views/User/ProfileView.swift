@@ -13,6 +13,7 @@ struct ProfileView: View {
 	
 	@EnvironmentObject var loginCon: LoginController
 
+	@AppStorage("selectedTintColor") var selectedTintColor: ColorEnum = .blue
 	
     var body: some View {
 		Form {
@@ -23,6 +24,8 @@ struct ProfileView: View {
 				Text(loginCon.currentFirestoreUser?.email ?? "")
 					.font(.system(.subheadline, design: .monospaced, weight: .bold))
 			
+				
+				MaltesColorPicker(color: $selectedTintColor, colorPickerStyle: .menu)
 			
 				Button {
 					loginCon.logoutUser()

@@ -8,8 +8,12 @@
 import SwiftUI
 
 struct ContentView: View {
+	
+	@AppStorage("selectedTintColor") var selectedTintColor: ColorEnum = .blue
+	
     var body: some View {
         MainTabView()
+			.tint(selectedTintColor.toColor)
     }
 }
 
