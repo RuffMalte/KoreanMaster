@@ -26,6 +26,11 @@ struct ModifyLessonView: View {
 					
 					ModifyLessonTagsView(lessonTag: lesson.lessonTag)
 					
+					if let lessonGoal = lesson.lessonGoal {
+						ModifyLessonGoalView(lessonGoal: lessonGoal)
+					}
+					
+					
 					if let vocabUsed = lesson.newLessonVocabUsed {
 						ModifyVLessonVocabUsedView(vocabUsed: vocabUsed, language: currentLanguage)
 					}

@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Observation
 
 class AllLessonsLocalized: Codable {
 	
@@ -195,6 +196,7 @@ class CommentedBy: Identifiable, Codable {
 	}
 }
 
+@Observable
 class LessonGoal: Identifiable, Codable {
 	var goalText: String
 	var title: String
@@ -213,12 +215,13 @@ class LessonGoal: Identifiable, Codable {
 	
 	func toFirebase() -> [String: Any] {
 		return [
-			"goalText": goalText,
-			"title": title
+			"_goalText": goalText,
+			"_title": title
 		]
 	}
 }
 
+@Observable
 class LessonGoalExample: Identifiable, Codable {
 	var id: String
 	var title: String

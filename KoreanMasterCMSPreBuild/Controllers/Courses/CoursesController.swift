@@ -87,7 +87,7 @@ class CoursesController: ObservableObject {
 				if let lessonGoalExamples = lessonGoal.lessonGoalExamples {
 					let examplesCollectionRef = refGenerator.getCollectionRef(forDetail: .goal, subCollection: .goalsExamples)
 					for example in lessonGoalExamples {
-						let exampleRef = examplesCollectionRef.document()  // Creates a new document reference within the collection
+						let exampleRef = examplesCollectionRef.document(example.id) 
 						try batch.setData(from: example, forDocument: exampleRef)
 					}
 				}

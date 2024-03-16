@@ -125,6 +125,7 @@ extension LessonGoalExample {
 		LessonGoalExample(title: "Title", koreanText: "ko text 2", translatedText: "org text 2"),
 		LessonGoalExample(title: "Title", koreanText: "ko text 3", translatedText: "org text 3")
 	]
+	static var empty = LessonGoalExample(title: "", koreanText: "", translatedText: "")
 }
 
 extension NewLessonVocabUsed {
