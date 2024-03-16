@@ -20,7 +20,7 @@ struct AllVocabListView: View {
 				List {
 					ForEach(loginCon.allLanguages) { language in
 						NavigationLink {
-							LocalizedVocabListView(language: language)
+							LocalizedVocabListView(language: language.language)
 						} label: {
 							LanguageSmallDetailCellView(language: language)
 						}

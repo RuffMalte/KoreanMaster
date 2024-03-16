@@ -10,7 +10,7 @@ import SwiftUI
 struct ModifyVocabSheetView: View {
 	
 	@State var vocab: Vocab
-	var language: CourseLanguage
+	var language: String
 	
 	
 	@StateObject var dictionaryCon = DictionaryController()
@@ -43,7 +43,7 @@ struct ModifyVocabSheetView: View {
 				}
 					
 				Section {
-					Text("Language: \(language.language)")
+					Text("Language: \(language)")
 
 					HStack {
 						TextField("Localized Vocab", text: $vocab.localizedVocab)
@@ -182,7 +182,7 @@ struct ModifyVocabSheetView: View {
 				
 			}
 			.onAppear {
-				vocab.selectedLanguage = language.language
+				vocab.selectedLanguage = language
 			}
 			.textFieldStyle(.roundedBorder)
 			.padding()
@@ -198,7 +198,7 @@ struct ModifyVocabSheetView: View {
 				
 				ToolbarItem(placement: .automatic) {
 					Button {
-						vocabCon.saveVocab(vocab: vocab, language: language.language) { bool, error in
+						vocabCon.saveVocab(vocab: vocab, language: language) { bool, error in
 							guard error != nil else {
 								dismiss()
 								return
@@ -215,5 +215,5 @@ struct ModifyVocabSheetView: View {
 }
 
 #Preview {
-	ModifyVocabSheetView(vocab: Vocab.example, language: CourseLanguage.simpleExample)
+	ModifyVocabSheetView(vocab: Vocab.example, language: "English")
 }

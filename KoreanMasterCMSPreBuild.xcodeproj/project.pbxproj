@@ -35,6 +35,7 @@
 		2E7E3A5E2BA3318E00CD9353 /* ModifyVocabSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7E3A5D2BA3318E00CD9353 /* ModifyVocabSheetView.swift */; };
 		2E7E3A602BA33D5A00CD9353 /* DictionaryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7E3A5F2BA33D5A00CD9353 /* DictionaryController.swift */; };
 		2E7E3A632BA33F4A00CD9353 /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7E3A622BA33F4A00CD9353 /* Dictionary.swift */; };
+		2E7E3A652BA5B86000CD9353 /* VocabDetailListSmallCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7E3A642BA5B86000CD9353 /* VocabDetailListSmallCellView.swift */; };
 		2E8D83B52BA1C4230039DE57 /* LocalizedWelcomeMessageListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8D83B42BA1C4230039DE57 /* LocalizedWelcomeMessageListView.swift */; };
 		2E8D83B82BA1CD500039DE57 /* ModifyWelcomeMessageSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8D83B72BA1CD500039DE57 /* ModifyWelcomeMessageSheetView.swift */; };
 		2E8D83BB2BA1CE240039DE57 /* LocalizedWelcomeMessageMocData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8D83BA2BA1CE240039DE57 /* LocalizedWelcomeMessageMocData.swift */; };
@@ -108,6 +109,7 @@
 		2E7E3A5D2BA3318E00CD9353 /* ModifyVocabSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyVocabSheetView.swift; sourceTree = "<group>"; };
 		2E7E3A5F2BA33D5A00CD9353 /* DictionaryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryController.swift; sourceTree = "<group>"; };
 		2E7E3A622BA33F4A00CD9353 /* Dictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dictionary.swift; sourceTree = "<group>"; };
+		2E7E3A642BA5B86000CD9353 /* VocabDetailListSmallCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocabDetailListSmallCellView.swift; sourceTree = "<group>"; };
 		2E8D83B42BA1C4230039DE57 /* LocalizedWelcomeMessageListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedWelcomeMessageListView.swift; sourceTree = "<group>"; };
 		2E8D83B72BA1CD500039DE57 /* ModifyWelcomeMessageSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyWelcomeMessageSheetView.swift; sourceTree = "<group>"; };
 		2E8D83BA2BA1CE240039DE57 /* LocalizedWelcomeMessageMocData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedWelcomeMessageMocData.swift; sourceTree = "<group>"; };
@@ -368,6 +370,7 @@
 			isa = PBXGroup;
 			children = (
 				2E7E3A542BA31C9100CD9353 /* VocabDetailSmallCellView.swift */,
+				2E7E3A642BA5B86000CD9353 /* VocabDetailListSmallCellView.swift */,
 			);
 			path = CellView;
 			sourceTree = "<group>";
@@ -876,6 +879,7 @@
 				2E6C51AC2B93668D00626F95 /* CourseLanguage.swift in Sources */,
 				2E7E3A632BA33F4A00CD9353 /* Dictionary.swift in Sources */,
 				2E7E3A602BA33D5A00CD9353 /* DictionaryController.swift in Sources */,
+				2E7E3A652BA5B86000CD9353 /* VocabDetailListSmallCellView.swift in Sources */,
 				2E8D83C52BA2F8170039DE57 /* TranslationController.swift in Sources */,
 				2EAC1C582B98729200F713F7 /* AllLessonsLocalizedMocData.swift in Sources */,
 				2EAC1C512B97A5DD00F713F7 /* Lesson.swift in Sources */,

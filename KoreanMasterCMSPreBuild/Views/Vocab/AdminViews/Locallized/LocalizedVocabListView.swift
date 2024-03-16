@@ -9,7 +9,7 @@ import SwiftUI
 
 struct LocalizedVocabListView: View {
 	
-	var language: CourseLanguage
+	var language: String
 	
 	@State var vocab: [Vocab] = []
 	@State var isShowingAddVocab: Bool = false
@@ -32,7 +32,7 @@ struct LocalizedVocabListView: View {
 				}
 			}
 		}
-		.navigationTitle("\(language.languageFlag) Vocab")
+		.navigationTitle("\(language) Vocab")
 		.onAppear {
 			getVocab()
 		}
@@ -69,5 +69,5 @@ struct LocalizedVocabListView: View {
 }
 
 #Preview {
-	LocalizedVocabListView(language: CourseLanguage.simpleExample)
+	LocalizedVocabListView(language: "English")
 }

@@ -10,7 +10,7 @@ import SwiftUI
 struct VocabDetailSmallCellView: View {
 	
 	var vocab: Vocab
-	var currentLanguage: CourseLanguage
+	var currentLanguage: String
 	@State private var isShowingModifyVocabSheet: Bool = false
 	@StateObject var vocabCon = VocabController()
 
@@ -42,7 +42,7 @@ struct VocabDetailSmallCellView: View {
 					.labelStyle(.titleAndIcon)
 			}
 			Button {
-				vocabCon.deleteVocabs(with: [vocab.id], language: currentLanguage.language) { bool, error in
+				vocabCon.deleteVocabs(with: [vocab.id], language: currentLanguage) { bool, error in
 					if let error = error {
 						print(error)
 					}
@@ -56,5 +56,5 @@ struct VocabDetailSmallCellView: View {
 }
 
 #Preview {
-	VocabDetailSmallCellView(vocab: Vocab.example, currentLanguage: CourseLanguage.simpleExample)
+	VocabDetailSmallCellView(vocab: Vocab.example, currentLanguage: "English")
 }
