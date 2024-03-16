@@ -263,6 +263,7 @@ class NewLessonVocabUsed: Identifiable, Codable {
 	}
 }
 
+@Observable
 class LessonGrammar: Identifiable, Codable {
 	var title: String
 	var desc: String
@@ -281,12 +282,13 @@ class LessonGrammar: Identifiable, Codable {
 	
 	func toFirebase() -> [String: Any] {
 		return [
-			"title": title,
-			"desc": desc
+			"_title": title,
+			"_desc": desc
 		]
 	}
 }
 
+@Observable
 class LessonGrammarPage: Identifiable, Codable {
 	var id: String
 	var title: String

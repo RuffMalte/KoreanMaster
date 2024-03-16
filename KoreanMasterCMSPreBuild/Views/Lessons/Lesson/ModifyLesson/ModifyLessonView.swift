@@ -40,6 +40,11 @@ struct ModifyLessonView: View {
 					}
 					Divider()
 					
+					if let lessonGrammar = lesson.lessonGrammar {
+						ModifyLessonGrammarView(lessonGrammar: lessonGrammar, language: currentLanguage)
+					}
+					
+					
 					Spacer()
 				}
 				.padding()

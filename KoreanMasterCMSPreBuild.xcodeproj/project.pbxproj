@@ -38,6 +38,8 @@
 		2E7E3A652BA5B86000CD9353 /* VocabDetailListSmallCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7E3A642BA5B86000CD9353 /* VocabDetailListSmallCellView.swift */; };
 		2E7E3A692BA5D0E500CD9353 /* ModifyLessonGoalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7E3A682BA5D0E500CD9353 /* ModifyLessonGoalView.swift */; };
 		2E7E3A6F2BA5D4F000CD9353 /* ModifyLessonGoalExampleListCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7E3A6E2BA5D4F000CD9353 /* ModifyLessonGoalExampleListCellView.swift */; };
+		2E7E3A752BA63EA300CD9353 /* ModifyLessonGrammarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7E3A742BA63EA300CD9353 /* ModifyLessonGrammarView.swift */; };
+		2E7E3A7B2BA644E200CD9353 /* ModifyLessonGrammarPageListCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7E3A7A2BA644E200CD9353 /* ModifyLessonGrammarPageListCellView.swift */; };
 		2E8D83B52BA1C4230039DE57 /* LocalizedWelcomeMessageListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8D83B42BA1C4230039DE57 /* LocalizedWelcomeMessageListView.swift */; };
 		2E8D83B82BA1CD500039DE57 /* ModifyWelcomeMessageSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8D83B72BA1CD500039DE57 /* ModifyWelcomeMessageSheetView.swift */; };
 		2E8D83BB2BA1CE240039DE57 /* LocalizedWelcomeMessageMocData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8D83BA2BA1CE240039DE57 /* LocalizedWelcomeMessageMocData.swift */; };
@@ -114,6 +116,8 @@
 		2E7E3A642BA5B86000CD9353 /* VocabDetailListSmallCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocabDetailListSmallCellView.swift; sourceTree = "<group>"; };
 		2E7E3A682BA5D0E500CD9353 /* ModifyLessonGoalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyLessonGoalView.swift; sourceTree = "<group>"; };
 		2E7E3A6E2BA5D4F000CD9353 /* ModifyLessonGoalExampleListCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyLessonGoalExampleListCellView.swift; sourceTree = "<group>"; };
+		2E7E3A742BA63EA300CD9353 /* ModifyLessonGrammarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyLessonGrammarView.swift; sourceTree = "<group>"; };
+		2E7E3A7A2BA644E200CD9353 /* ModifyLessonGrammarPageListCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyLessonGrammarPageListCellView.swift; sourceTree = "<group>"; };
 		2E8D83B42BA1C4230039DE57 /* LocalizedWelcomeMessageListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedWelcomeMessageListView.swift; sourceTree = "<group>"; };
 		2E8D83B72BA1CD500039DE57 /* ModifyWelcomeMessageSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyWelcomeMessageSheetView.swift; sourceTree = "<group>"; };
 		2E8D83BA2BA1CE240039DE57 /* LocalizedWelcomeMessageMocData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedWelcomeMessageMocData.swift; sourceTree = "<group>"; };
@@ -460,6 +464,71 @@
 			path = Modify;
 			sourceTree = "<group>";
 		};
+		2E7E3A702BA63D0C00CD9353 /* LessonGrammar */ = {
+			isa = PBXGroup;
+			children = (
+				2E7E3A762BA6401B00CD9353 /* LessonGrammarPages */,
+				2E7E3A712BA63DCB00CD9353 /* AdminView */,
+			);
+			path = LessonGrammar;
+			sourceTree = "<group>";
+		};
+		2E7E3A712BA63DCB00CD9353 /* AdminView */ = {
+			isa = PBXGroup;
+			children = (
+				2E7E3A732BA63DD900CD9353 /* Modify */,
+				2E7E3A722BA63DD200CD9353 /* CellView */,
+			);
+			path = AdminView;
+			sourceTree = "<group>";
+		};
+		2E7E3A722BA63DD200CD9353 /* CellView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CellView;
+			sourceTree = "<group>";
+		};
+		2E7E3A732BA63DD900CD9353 /* Modify */ = {
+			isa = PBXGroup;
+			children = (
+				2E7E3A742BA63EA300CD9353 /* ModifyLessonGrammarView.swift */,
+			);
+			path = Modify;
+			sourceTree = "<group>";
+		};
+		2E7E3A762BA6401B00CD9353 /* LessonGrammarPages */ = {
+			isa = PBXGroup;
+			children = (
+				2E7E3A772BA6402600CD9353 /* AdminView */,
+			);
+			path = LessonGrammarPages;
+			sourceTree = "<group>";
+		};
+		2E7E3A772BA6402600CD9353 /* AdminView */ = {
+			isa = PBXGroup;
+			children = (
+				2E7E3A792BA6403600CD9353 /* CellView */,
+				2E7E3A782BA6402F00CD9353 /* Modify */,
+			);
+			path = AdminView;
+			sourceTree = "<group>";
+		};
+		2E7E3A782BA6402F00CD9353 /* Modify */ = {
+			isa = PBXGroup;
+			children = (
+				2E7E3A7A2BA644E200CD9353 /* ModifyLessonGrammarPageListCellView.swift */,
+			);
+			path = Modify;
+			sourceTree = "<group>";
+		};
+		2E7E3A792BA6403600CD9353 /* CellView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CellView;
+			sourceTree = "<group>";
+		};
 		2E8D83B62BA1CD330039DE57 /* Modify */ = {
 			isa = PBXGroup;
 			children = (
@@ -595,12 +664,13 @@
 			isa = PBXGroup;
 			children = (
 				2EDF0BFD2B9A0805001132AD /* AdminViews */,
-				2EDF0C0B2B9A3BF4001132AD /* Lesson */,
 				2EDF0C022B9A16AC001132AD /* LocallizedLesson */,
-				2EDF0C0F2B9A649D001132AD /* LessonInfo */,
+				2EDF0C0B2B9A3BF4001132AD /* Lesson */,
 				2EAC1C522B97A9F800F713F7 /* LessonTag */,
-				2E7E3A662BA5D09100CD9353 /* LessonGoal */,
+				2EDF0C0F2B9A649D001132AD /* LessonInfo */,
 				2EA7BDFF2B9B400500AAA532 /* LessonVocabUsed */,
+				2E7E3A662BA5D09100CD9353 /* LessonGoal */,
+				2E7E3A702BA63D0C00CD9353 /* LessonGrammar */,
 			);
 			path = Lessons;
 			sourceTree = "<group>";
@@ -911,6 +981,7 @@
 				2EAC1C5E2B98BC0900F713F7 /* DocumentReferenceGenerator.swift in Sources */,
 				2EA7BE022B9B405500AAA532 /* ModifyVLessonVocabUsedView.swift in Sources */,
 				2E6C51A12B93567500626F95 /* UserCellView.swift in Sources */,
+				2E7E3A752BA63EA300CD9353 /* ModifyLessonGrammarView.swift in Sources */,
 				2E7E3A4B2BA3012E00CD9353 /* APIKeys.swift in Sources */,
 				2E6C518E2B92888200626F95 /* LoginController.swift in Sources */,
 				2E7E3A5B2BA31F6A00CD9353 /* LocalizedVocabListView.swift in Sources */,
@@ -930,6 +1001,7 @@
 				2E7E3A4E2BA317F900CD9353 /* VocabController.swift in Sources */,
 				2EF41ACD2B927A36007431ED /* KoreanMasterCMSPreBuildApp.swift in Sources */,
 				2E7E3A582BA31CAE00CD9353 /* VocabMocData.swift in Sources */,
+				2E7E3A7B2BA644E200CD9353 /* ModifyLessonGrammarPageListCellView.swift in Sources */,
 				2E6C517B2B927C7000626F95 /* MainTabView.swift in Sources */,
 				2E6C51AC2B93668D00626F95 /* CourseLanguage.swift in Sources */,
 				2E7E3A632BA33F4A00CD9353 /* Dictionary.swift in Sources */,

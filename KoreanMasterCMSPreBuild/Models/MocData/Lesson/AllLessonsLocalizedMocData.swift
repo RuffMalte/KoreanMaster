@@ -147,6 +147,8 @@ extension LessonGrammarPage {
 		LessonGrammarPage(title: "Title 2", desc: "desc", example: "example"),
 		LessonGrammarPage(title: "Title 3", desc: "desc", example: "example")
 	]
+	
+	static var empty: LessonGrammarPage = LessonGrammarPage(title: "", desc: "", example: "")
 }
 
 extension LessonPractice {

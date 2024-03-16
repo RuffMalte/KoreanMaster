@@ -87,7 +87,7 @@ class CoursesController: ObservableObject {
 				if let lessonGoalExamples = lessonGoal.lessonGoalExamples {
 					let examplesCollectionRef = refGenerator.getCollectionRef(forDetail: .goal, subCollection: .goalsExamples)
 					for example in lessonGoalExamples {
-						let exampleRef = examplesCollectionRef.document(example.id) 
+						let exampleRef = examplesCollectionRef.document(example.id)
 						try batch.setData(from: example, forDocument: exampleRef)
 					}
 				}
@@ -108,7 +108,7 @@ class CoursesController: ObservableObject {
 				if let grammarPages = grammar.LessonGrammarPages {
 					let grammarPagesCollectionRef = refGenerator.getCollectionRef(forDetail: .grammar, subCollection: .grammarPages)
 					for page in grammarPages {
-						let pageRef = grammarPagesCollectionRef.document()
+						let pageRef = grammarPagesCollectionRef.document(page.id)
 						try batch.setData(from: page, forDocument: pageRef)
 					}
 				}
@@ -123,7 +123,7 @@ class CoursesController: ObservableObject {
 				if let multipleChoices = lessonPractice.mulitpleChoice {
 					let multipleChoiceCollectionRef = refGenerator.getCollectionRef(forDetail: .practice, subCollection: .practiceMultipleChoice)
 					for multipleChoice in multipleChoices {
-						let choiceRef = multipleChoiceCollectionRef.document()  // Creates a new document reference within the collection
+						let choiceRef = multipleChoiceCollectionRef.document(multipleChoice.id)  // Creates a new document reference within the collection
 						try batch.setData(from: multipleChoice, forDocument: choiceRef)
 					}
 				}
@@ -132,7 +132,7 @@ class CoursesController: ObservableObject {
 				if let sentenceBuildings = lessonPractice.sentenceBuilding {
 					let sentenceBuildingCollectionRef = refGenerator.getCollectionRef(forDetail: .practice, subCollection: .practiceSentenceBuilding)
 					for sentenceBuilding in sentenceBuildings {
-						let sentenceRef = sentenceBuildingCollectionRef.document()  // Creates a new document reference within the collection
+						let sentenceRef = sentenceBuildingCollectionRef.document(sentenceBuilding.id)  // Creates a new document reference within the collection
 						try batch.setData(from: sentenceBuilding, forDocument: sentenceRef)
 					}
 				}
@@ -147,7 +147,7 @@ class CoursesController: ObservableObject {
 				if let songs = lessonCultureReferences.songs {
 					let songsCollectionRef = refGenerator.getCollectionRef(forDetail: .cultureReferences, subCollection: .cultureSongs)
 					for song in songs {
-						let songRef = songsCollectionRef.document()  // Creates a new document reference within the collection
+						let songRef = songsCollectionRef.document(song.id)  // Creates a new document reference within the collection
 						try batch.setData(from: song, forDocument: songRef)
 					}
 				}
