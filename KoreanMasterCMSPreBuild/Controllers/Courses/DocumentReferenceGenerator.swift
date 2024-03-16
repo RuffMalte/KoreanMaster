@@ -55,7 +55,7 @@ class DocumentReferenceGenerator {
 		case .tags:
 			return lessonRef.collection("details").document("tags")
 		case .goal:
-			return lessonRef.collection("details").document("lessonGoal")
+			return lessonRef.collection("details").document("goal")
 		case .vocabUsed:
 			return lessonRef.collection("details").document("vocabUsed")
 		case .grammar:
