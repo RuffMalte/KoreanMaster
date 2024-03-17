@@ -22,7 +22,8 @@ struct ModifyLessonPraticeView: View {
 				NavigationLink {
 					List {
 						Button {
-							lessonPractice.mulitpleChoice?.append(LessonpracticeMultipleChoice(question: "", answers: [], correctAnswer: ""))
+							let newAnser = LessonPraticeMultipleChoiceAnswer(answer: "")
+							lessonPractice.mulitpleChoice?.append(LessonpracticeMultipleChoice(question: "", answers: [], correctAnswer: newAnser))
 						} label: {
 							Label("Add new Multiplechoice Question", systemImage: "plus")
 						}

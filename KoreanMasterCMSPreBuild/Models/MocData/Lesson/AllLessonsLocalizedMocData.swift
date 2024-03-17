@@ -162,10 +162,15 @@ extension LessonPractice {
 
 extension LessonpracticeMultipleChoice {
 	static var multipleExample: [LessonpracticeMultipleChoice] = [
-		LessonpracticeMultipleChoice(question: "question", answers: ["a", "b"], correctAnswer: "a"),
-		LessonpracticeMultipleChoice(question: "question", answers: ["a", "b"], correctAnswer: "a"),
-		LessonpracticeMultipleChoice(question: "question", answers: ["a", "b"], correctAnswer: "a")
+		LessonpracticeMultipleChoice(question: "",
+									 answers: [LessonPraticeMultipleChoiceAnswer.example, LessonPraticeMultipleChoiceAnswer.example, LessonPraticeMultipleChoiceAnswer.example],
+									 correctAnswer: LessonPraticeMultipleChoiceAnswer.example
+									)
 	]
+}
+
+extension LessonPraticeMultipleChoiceAnswer {
+	static var example = LessonPraticeMultipleChoiceAnswer(answer: "")
 }
 
 extension LessonpracticeSentenceBuilding {

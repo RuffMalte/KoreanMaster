@@ -16,21 +16,6 @@ struct ModifyLessonPraticeMultipleChoiceCellView: View {
 		HStack {
 			VStack(alignment: .leading) {
 				TextField("Question", text: $multipleChoice.question)
-				HStack {
-					TextField("Correct Answer", text: $multipleChoice.correctAnswer)
-					Button {
-						TranslationController().getTranslation(for: multipleChoice.correctAnswer, targetLang: "KO") { result, error in
-							guard error != nil else {
-								if let result = result {
-									multipleChoice.correctAnswer = result
-								}
-								return
-							}
-						}
-					} label: {
-						Label("Translate into Korean", systemImage: "arrow.right.circle.fill")
-					}
-				}
 				
 				VStack(alignment: .leading) {
 					Text("Answers")
@@ -39,8 +24,27 @@ struct ModifyLessonPraticeMultipleChoiceCellView: View {
 					
 					ScrollView(.horizontal) {
 						HStack {
-							ForEach(multipleChoice.answers, id: \.self) { answer in
-								Text(answer)
+							Button {
+								let newAnswer = LessonPraticeMultipleChoiceAnswer(answer: "")
+								multipleChoice.answers.append(newAnswer)
+							} label: {
+								Image(systemName: "plus")
+									.foregroundStyle(.secondary)
+									.font(.system(.headline))
+							}
+							
+							ForEach(multipleChoice.answers) { answer in
+								ModifyMultipleChoiceAnswerView(answer: answer) {
+									multipleChoice.answers.removeAll(where: { $0.id == answer.id })
+								} changeCorrectAction: {
+									for a in multipleChoice.answers {
+										if a.id != answer.id {
+											a.isCorret = false
+										} else {
+											a.isCorret = true
+										}
+									}
+								}
 							}
 						}
 					}

@@ -43,6 +43,7 @@
 		2E7E3A862BA6E8B000CD9353 /* ModifyLessonPraticeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7E3A852BA6E8B000CD9353 /* ModifyLessonPraticeView.swift */; };
 		2E7E3A892BA6EA6C00CD9353 /* NavLinkHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7E3A882BA6EA6C00CD9353 /* NavLinkHeaderView.swift */; };
 		2E7E3A8E2BA6EDA200CD9353 /* ModifyLessonPraticeMultipleChoiceCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7E3A8D2BA6EDA200CD9353 /* ModifyLessonPraticeMultipleChoiceCellView.swift */; };
+		2E7E3A912BA7868C00CD9353 /* ModifyMultipleChoiceAnswerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7E3A902BA7868C00CD9353 /* ModifyMultipleChoiceAnswerView.swift */; };
 		2E8D83B52BA1C4230039DE57 /* LocalizedWelcomeMessageListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8D83B42BA1C4230039DE57 /* LocalizedWelcomeMessageListView.swift */; };
 		2E8D83B82BA1CD500039DE57 /* ModifyWelcomeMessageSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8D83B72BA1CD500039DE57 /* ModifyWelcomeMessageSheetView.swift */; };
 		2E8D83BB2BA1CE240039DE57 /* LocalizedWelcomeMessageMocData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8D83BA2BA1CE240039DE57 /* LocalizedWelcomeMessageMocData.swift */; };
@@ -124,6 +125,7 @@
 		2E7E3A852BA6E8B000CD9353 /* ModifyLessonPraticeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyLessonPraticeView.swift; sourceTree = "<group>"; };
 		2E7E3A882BA6EA6C00CD9353 /* NavLinkHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavLinkHeaderView.swift; sourceTree = "<group>"; };
 		2E7E3A8D2BA6EDA200CD9353 /* ModifyLessonPraticeMultipleChoiceCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyLessonPraticeMultipleChoiceCellView.swift; sourceTree = "<group>"; };
+		2E7E3A902BA7868C00CD9353 /* ModifyMultipleChoiceAnswerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyMultipleChoiceAnswerView.swift; sourceTree = "<group>"; };
 		2E8D83B42BA1C4230039DE57 /* LocalizedWelcomeMessageListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedWelcomeMessageListView.swift; sourceTree = "<group>"; };
 		2E8D83B72BA1CD500039DE57 /* ModifyWelcomeMessageSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyWelcomeMessageSheetView.swift; sourceTree = "<group>"; };
 		2E8D83BA2BA1CE240039DE57 /* LocalizedWelcomeMessageMocData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedWelcomeMessageMocData.swift; sourceTree = "<group>"; };
@@ -636,9 +638,18 @@
 		2E7E3A8C2BA6ED5E00CD9353 /* AdminViews */ = {
 			isa = PBXGroup;
 			children = (
+				2E7E3A8F2BA7866900CD9353 /* Answer */,
 				2E7E3A8D2BA6EDA200CD9353 /* ModifyLessonPraticeMultipleChoiceCellView.swift */,
 			);
 			path = AdminViews;
+			sourceTree = "<group>";
+		};
+		2E7E3A8F2BA7866900CD9353 /* Answer */ = {
+			isa = PBXGroup;
+			children = (
+				2E7E3A902BA7868C00CD9353 /* ModifyMultipleChoiceAnswerView.swift */,
+			);
+			path = Answer;
 			sourceTree = "<group>";
 		};
 		2E8D83B62BA1CD330039DE57 /* Modify */ = {
@@ -1096,6 +1107,7 @@
 				2EA7BDFB2B9B14C800AAA532 /* ColorEnum.swift in Sources */,
 				2EAC1C542B97AA1C00F713F7 /* LessonTagSmallView.swift in Sources */,
 				2E8D83B52BA1C4230039DE57 /* LocalizedWelcomeMessageListView.swift in Sources */,
+				2E7E3A912BA7868C00CD9353 /* ModifyMultipleChoiceAnswerView.swift in Sources */,
 				2E6C51B22B93820700626F95 /* ModifyLanguageSheetView.swift in Sources */,
 				2EA7BE072B9B80EE00AAA532 /* AllVocabListView.swift in Sources */,
 				2E6C519F2B92944000626F95 /* FirestoreUser.swift in Sources */,

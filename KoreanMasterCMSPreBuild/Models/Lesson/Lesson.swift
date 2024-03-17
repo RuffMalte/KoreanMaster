@@ -344,14 +344,14 @@ class LessonPractice: Identifiable, Codable {
 class LessonpracticeMultipleChoice: Identifiable, Codable {
 	var id: String
 	var question: String
-	var answers: [String]
-	var correctAnswer: String
+	var answers: [LessonPraticeMultipleChoiceAnswer]
+	var correctAnswer: LessonPraticeMultipleChoiceAnswer
 	
 	init(
 		id: String = UUID().uuidString,
 		question: String,
-		answers: [String],
-		correctAnswer: String
+		answers: [LessonPraticeMultipleChoiceAnswer],
+		correctAnswer: LessonPraticeMultipleChoiceAnswer
 	) {
 		self.id = id
 		self.question = question
@@ -359,6 +359,26 @@ class LessonpracticeMultipleChoice: Identifiable, Codable {
 		self.correctAnswer = correctAnswer
 	}
 }
+
+@Observable
+class LessonPraticeMultipleChoiceAnswer: Identifiable, Codable {
+	
+	var id: String
+	var answer: String
+	var isCorret: Bool
+	
+	init(
+		id: String = UUID().uuidString,
+		answer: String,
+		isCorret: Bool = false
+	) {
+		self.id = id
+		self.answer = answer
+		self.isCorret = isCorret
+	}
+	
+}
+
 
 @Observable
 class LessonpracticeSentenceBuilding: Identifiable, Codable {
