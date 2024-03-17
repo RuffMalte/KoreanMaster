@@ -21,6 +21,7 @@ struct ModifyLessonGrammarPageListCellView: View {
 				TextField("Title", text: $lessonGrammarPage.title)
 				TextField("Desc", text: $lessonGrammarPage.desc)
 			}
+			.textFieldStyle(.roundedBorder)
 			
 			Button {
 				removeFuntion()

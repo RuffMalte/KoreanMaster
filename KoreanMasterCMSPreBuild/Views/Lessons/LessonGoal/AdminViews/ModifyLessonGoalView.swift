@@ -35,15 +35,7 @@ struct ModifyLessonGoalView: View {
 					}
 				}
 			} label: {
-				HStack {
-					Label("Examples", systemImage: "text.book.closed.fill")
-					Spacer()
-					Label(lessonGoal.lessonGoalExamples?.count.description ?? "Unknown", systemImage: "number")
-						.font(.system(.headline, design: .monospaced, weight: .regular))
-					
-					Image(systemName: "chevron.right")
-				}
-				.font(.system(.headline, design: .rounded, weight: .bold))
+				NavLinkHeaderView(headerText: "Examples", headerSFIcon: "text.book.closed.fill", count: lessonGoal.lessonGoalExamples?.count ?? 999)
 			}
 
 		} header: {

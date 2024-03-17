@@ -67,26 +67,6 @@ class DocumentReferenceGenerator {
 		}
 	}
 	
-	// Adjustments are not needed here as this method is fine for creating new subdocuments within lessons
-	func getNewDocumentRef(forCollection collection: CollectionType) -> DocumentReference {
-		guard let lessonName = lessonName else {
-			fatalError("New document reference requested without specifying lesson name.")
-		}
-		let lessonRef = getLessonsCollectionRef().document(lessonName)
-		switch collection {
-		case .goalsExamples:
-			return lessonRef.collection("goalsExamples").document()
-		case .grammarPages:
-			return lessonRef.collection("LessonGrammarPages").document()
-		case .practiceMultipleChoice:
-			return lessonRef.collection("multipleChoice").document()
-		case .practiceSentenceBuilding:
-			return lessonRef.collection("sentenceBuild").document()
-		case .cultureSongs:
-			return lessonRef.collection("songs").document()
-		}
-	}
-	
 	// Method for getting subcollection references from a specific document
 	func getCollectionRef(forDetail detailType: DocumentType, subCollection: CollectionType) -> CollectionReference {
 		guard let lessonName = lessonName else {

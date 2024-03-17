@@ -308,6 +308,7 @@ class LessonGrammarPage: Identifiable, Codable {
 	}
 }
 
+@Observable
 class LessonPractice: Identifiable, Codable {
 	var id: String
 	var title: String
@@ -332,13 +333,14 @@ class LessonPractice: Identifiable, Codable {
 	
 	func toFirebase() -> [String: Any] {
 		return [
-			"id": id,
-			"title": title,
-			"desc": desc
+			"_id": id,
+			"_title": title,
+			"_desc": desc
 		]
 	}
 }
 
+@Observable
 class LessonpracticeMultipleChoice: Identifiable, Codable {
 	var id: String
 	var question: String
@@ -358,6 +360,7 @@ class LessonpracticeMultipleChoice: Identifiable, Codable {
 	}
 }
 
+@Observable
 class LessonpracticeSentenceBuilding: Identifiable, Codable {
 	var id: String
 	var question: String

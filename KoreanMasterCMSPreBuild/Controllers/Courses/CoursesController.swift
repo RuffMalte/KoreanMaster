@@ -56,8 +56,42 @@ class CoursesController: ObservableObject {
 			assignTo(items)
 		}
 	}
-
 	
+	private func deleteObsoleteDocuments<T: Identifiable>(
+		refGenerator: DocumentReferenceGenerator,
+		detailType: DocumentReferenceGenerator.DocumentType,
+		subCollectionType: DocumentReferenceGenerator.CollectionType,
+		updatedData: [T],
+		completion: @escaping (Error?) -> Void) where T.ID == String {
+			
+			let subCollectionRef = refGenerator.getCollectionRef(forDetail: detailType, subCollection: subCollectionType)
+			
+			subCollectionRef.getDocuments { (snapshot, error) in
+				guard let documents = snapshot?.documents else {
+					completion(error)
+					return
+				}
+				
+				// Find out which documents need to be deleted
+				let existingIds = documents.map { $0.documentID }
+				let updatedIds = updatedData.map { $0.id }
+				let idsToDelete = existingIds.filter { !updatedIds.contains($0) }
+				
+				// Delete obsolete documents
+				for id in idsToDelete {
+					subCollectionRef.document(id).delete { error in
+						if let error = error {
+							completion(error)
+							return
+						}
+					}
+				}
+				
+				// Completion with nil error if all deletions (if any) were initiated successfully
+				completion(nil)
+			}
+		}
+
 	
 	///if the lesson already exists, it will be overwritten, otherwise a new lesson will be created
 	func SaveLesson(lesson: Lesson, language: String, completion: @escaping (Bool) -> Void) {
@@ -86,6 +120,16 @@ class CoursesController: ObservableObject {
 				// Set lessonGoals Example
 				if let lessonGoalExamples = lessonGoal.lessonGoalExamples {
 					let examplesCollectionRef = refGenerator.getCollectionRef(forDetail: .goal, subCollection: .goalsExamples)
+					
+					// Delete obsolete documents
+					self.deleteObsoleteDocuments(refGenerator: refGenerator, detailType: .goal, subCollectionType: .goalsExamples, updatedData: lessonGoalExamples) { error in
+						if let error = error {
+							print("Error deleting obsolete lessonGoalExamples: \(error)")
+							return
+						}
+					}
+					
+					// Add new documents
 					for example in lessonGoalExamples {
 						let exampleRef = examplesCollectionRef.document(example.id)
 						try batch.setData(from: example, forDocument: exampleRef)
@@ -107,6 +151,16 @@ class CoursesController: ObservableObject {
 				// Set LessonGrammar Pages
 				if let grammarPages = grammar.LessonGrammarPages {
 					let grammarPagesCollectionRef = refGenerator.getCollectionRef(forDetail: .grammar, subCollection: .grammarPages)
+					
+					// Delete obsolete grammar pages
+					self.deleteObsoleteDocuments(refGenerator: refGenerator, detailType: .grammar, subCollectionType: .grammarPages, updatedData: grammarPages) { error in
+						if let error = error {
+							print("Error deleting obsolete grammar pages: \(error)")
+							return
+						}
+					}
+					
+					// Add new grammar pages
 					for page in grammarPages {
 						let pageRef = grammarPagesCollectionRef.document(page.id)
 						try batch.setData(from: page, forDocument: pageRef)
@@ -122,8 +176,18 @@ class CoursesController: ObservableObject {
 				// Set lessonPractice multipleChoice
 				if let multipleChoices = lessonPractice.mulitpleChoice {
 					let multipleChoiceCollectionRef = refGenerator.getCollectionRef(forDetail: .practice, subCollection: .practiceMultipleChoice)
+					
+					// Delete obsolete multipleChoice
+					self.deleteObsoleteDocuments(refGenerator: refGenerator, detailType: .practice, subCollectionType: .practiceMultipleChoice, updatedData: multipleChoices) { error in
+						if let errror = error {
+							print("Error deleting obsolete multipleChoice: \(String(describing: error))")
+							return
+						}
+					}
+					
+					// Add new multipleChoice
 					for multipleChoice in multipleChoices {
-						let choiceRef = multipleChoiceCollectionRef.document(multipleChoice.id)  // Creates a new document reference within the collection
+						let choiceRef = multipleChoiceCollectionRef.document(multipleChoice.id)
 						try batch.setData(from: multipleChoice, forDocument: choiceRef)
 					}
 				}
@@ -131,8 +195,18 @@ class CoursesController: ObservableObject {
 				// Set lessonPractice sentenceBuilding
 				if let sentenceBuildings = lessonPractice.sentenceBuilding {
 					let sentenceBuildingCollectionRef = refGenerator.getCollectionRef(forDetail: .practice, subCollection: .practiceSentenceBuilding)
+					
+					// Delete obsolete sentenceBuilding
+					self.deleteObsoleteDocuments(refGenerator: refGenerator, detailType: .practice, subCollectionType: .practiceSentenceBuilding, updatedData: sentenceBuildings) { error in
+						if let error = error {
+							print("Error deleting obsolete sentenceBuilding: \(error)")
+							return
+						}
+					}
+					
+					// Add new sentenceBuilding
 					for sentenceBuilding in sentenceBuildings {
-						let sentenceRef = sentenceBuildingCollectionRef.document(sentenceBuilding.id)  // Creates a new document reference within the collection
+						let sentenceRef = sentenceBuildingCollectionRef.document(sentenceBuilding.id)
 						try batch.setData(from: sentenceBuilding, forDocument: sentenceRef)
 					}
 				}
@@ -146,8 +220,18 @@ class CoursesController: ObservableObject {
 				// Set lessonCultureReferences songs
 				if let songs = lessonCultureReferences.songs {
 					let songsCollectionRef = refGenerator.getCollectionRef(forDetail: .cultureReferences, subCollection: .cultureSongs)
+					
+					// Delete obsolete songs
+					self.deleteObsoleteDocuments(refGenerator: refGenerator, detailType: .cultureReferences, subCollectionType: .cultureSongs, updatedData: songs) { error in
+						if let error = error {
+							print("Error deleting obsolete songs: \(error)")
+							return
+						}
+					}
+					
+					// Add new songs
 					for song in songs {
-						let songRef = songsCollectionRef.document(song.id)  // Creates a new document reference within the collection
+						let songRef = songsCollectionRef.document(song.id)
 						try batch.setData(from: song, forDocument: songRef)
 					}
 				}
@@ -170,9 +254,9 @@ class CoursesController: ObservableObject {
 	
 	func getFullLesson(lessonName: String, language: String, completion: @escaping (Lesson?, Error?) -> Void) {
 		let refGenerator = DocumentReferenceGenerator(lessonName: lessonName, language: language)
-		let lesson = Lesson.empty  // Assume 'Lesson.empty' initializes an empty lesson
+		let lesson = Lesson.empty
 		self.isLoadingSingleLesson = true
-		self.encounteredError = nil  // Reset the error before starting
+		self.encounteredError = nil
 		
 		
 		

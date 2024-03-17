@@ -33,32 +33,20 @@ struct ModifyLessonGrammarView: View {
 						})
 						.padding(.vertical, 5)
 					}
-					
-					
-					
 				}
 			} label: {
-				HStack {
-					Label("Lesson Grammar Pages", systemImage: "sparkles.rectangle.stack.fill")
-						
-					Spacer()
-					Label(lessonGrammar.LessonGrammarPages?.count.description ?? "Unkown", systemImage: "number")
-						.font(.system(.headline, design: .monospaced, weight: .regular))
-					
-					Image(systemName: "chevron.right")
-				}
-				.font(.system(.headline, design: .rounded, weight: .bold))
+				NavLinkHeaderView(headerText: "Lesson Grammar Pages", headerSFIcon: "sparkles.rectangle.stack.fill", count: lessonGrammar.LessonGrammarPages?.count ?? 0)
 			}
 
 			
 			
 			
 		} header: {
-			Text("New Vocab for this Lesson")
+			Text("Grammar for this Lesson")
 				.font(.system(.title2, design: .rounded, weight: .bold))
 				.foregroundStyle(.tint)
 		}
-
+		.textFieldStyle(.roundedBorder)
     }
 }
 

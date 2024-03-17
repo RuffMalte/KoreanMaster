@@ -66,29 +66,31 @@ struct ModifyVLessonVocabUsedView: View {
 						.disabled(searchText.isEmpty && filterdVocabs.isEmpty)
 					}
 					ScrollView(.horizontal) {
-						ForEach(filterdVocabs) { vocab in
-							if filterdVocabs.isEmpty {
-								Text("No Vocab found")
-							} else {
-								Button {
-									if vocabUsed.vocabIDs.contains(vocab.id) {
-										vocabs.removeAll { $0.id == vocab.id }
-										vocabUsed.vocabIDs.removeAll { $0 == vocab.id }
-									} else {
-										vocabs.append(vocab)
-										vocabUsed.vocabIDs.append(vocab.id)
-									}
-								} label: {
-									HStack {
+						HStack {
+							ForEach(filterdVocabs) { vocab in
+								if filterdVocabs.isEmpty {
+									Text("No Vocab found")
+								} else {
+									Button {
 										if vocabUsed.vocabIDs.contains(vocab.id) {
-											Image(systemName: "checkmark.circle.fill")
+											vocabs.removeAll { $0.id == vocab.id }
+											vocabUsed.vocabIDs.removeAll { $0 == vocab.id }
+										} else {
+											vocabs.append(vocab)
+											vocabUsed.vocabIDs.append(vocab.id)
 										}
-										
-										Text(vocab.localizedVocab)
+									} label: {
+										HStack {
+											if vocabUsed.vocabIDs.contains(vocab.id) {
+												Image(systemName: "checkmark.circle.fill")
+											}
+											
+											Text(vocab.localizedVocab)
+										}
 									}
+									
+									
 								}
-								
-								
 							}
 						}
 					}
