@@ -14,11 +14,6 @@ jobs:
         with:
           xcode-version: latest
 
-      - name: Install dependencies
-        run: |
-          sudo gem install cocoapods
-          pod install --repo-update
-
       - name: Build and Test
         run: |
           xcodebuild -workspace KoreanMasterCMSPreBuild.xcworkspace -scheme KoreanMasterCMSPreBuild -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 13,OS=15.5' build test
