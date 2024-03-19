@@ -9,31 +9,46 @@ import XCTest
 
 final class VocabControllerTests: XCTestCase {
 
-//	var vocabController: VocabController!
-//	
-//	override func setUp() {
-//		super.setUp()
-//		vocabController = VocabController()
-//		
-//		
-//		
-//		
-//		
-//	}
-//	
-//	
-//	func testGetVocabForWordSuccess() {
-//		let word = "apple"
-//		let expectation = self.expectation(description: "GetVocabForWordSuccess")
-//		
-//		vocabController.getVocabForWord(word: word) { vocab, error in
-//			XCTAssertNil(error, "There was an unexpected error during vocab lookup: \(error!.localizedDescription)")
-//			XCTAssertNotNil(vocab, "The vocab should not be nil.")
-//			XCTAssertEqual(vocab?.word, word, "The vocab word does not match the expected value.")
-//			expectation.fulfill()
-//		}
-//		
-//		waitForExpectations(timeout: 10, handler: nil)
-//	}
-
+	var vocabController: VocabController!
+	
+	override func setUp() {
+		super.setUp()
+		vocabController = VocabController()
+	}
+	
+	
+	func testGetVocabForWordSuccess() {
+		let creatExpectation = self.expectation(description: "create vocab")
+		let newVocab = Vocab(id: "TEST", koreanVocab: "test", koreanSentence: "test", localizedVocab: "test", selectedLanguage: "test", partOfSpeech: "test", localizedSentence: "test", wikiUrl: "test")
+		vocabController.saveVocab(vocab: newVocab, language: "English") { bool, error in
+			XCTAssertNil(error)
+			XCTAssertTrue(bool)
+			creatExpectation.fulfill()
+		}
+		waitForExpectations(timeout: 20, handler: nil)
+		
+		
+		let getExpectation = self.expectation(description: "get vocab")
+		vocabController.getVocab(with: ["TEST"], language: "English") { vocab, error in
+			XCTAssertNil(error)
+			XCTAssertNotNil(vocab)
+			
+			
+			XCTAssertEqual(vocab.count, 1)
+			XCTAssertEqual(vocab.first?.localizedVocab, "test")
+			getExpectation.fulfill()
+		}
+		waitForExpectations(timeout: 20, handler: nil)
+		
+		
+		
+		let deleteExpectation = self.expectation(description: "delete vocab")
+		vocabController.deleteVocabs(with: ["TEST"], language: "English") { bool, error in
+			XCTAssertNil(error)
+			XCTAssertTrue(bool)
+			deleteExpectation.fulfill()
+		}
+		
+		waitForExpectations(timeout: 20, handler: nil)
+	}
 }
