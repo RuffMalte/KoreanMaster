@@ -55,6 +55,16 @@
 		2EA7BE022B9B405500AAA532 /* ModifyVLessonVocabUsedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA7BE012B9B405500AAA532 /* ModifyVLessonVocabUsedView.swift */; };
 		2EA7BE072B9B80EE00AAA532 /* AllVocabListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA7BE062B9B80EE00AAA532 /* AllVocabListView.swift */; };
 		2EA8D34C2BA9FBDC003067E2 /* ModifyLessonPraticeSentenceBuildingCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA8D34B2BA9FBDC003067E2 /* ModifyLessonPraticeSentenceBuildingCellView.swift */; };
+		2EA8D3502BAA0460003067E2 /* TranslationControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA8D34F2BAA0460003067E2 /* TranslationControllerTests.swift */; };
+		2EA8D3512BAA0529003067E2 /* TranslationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8D83C42BA2F8170039DE57 /* TranslationController.swift */; };
+		2EA8D3522BAA05A1003067E2 /* APIKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7E3A4A2BA3012E00CD9353 /* APIKeys.swift */; };
+		2EA8D3542BAA080E003067E2 /* DictionaryControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA8D3532BAA080E003067E2 /* DictionaryControllerTests.swift */; };
+		2EA8D3552BAA0818003067E2 /* DictionaryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7E3A5F2BA33D5A00CD9353 /* DictionaryController.swift */; };
+		2EA8D3562BAA08B4003067E2 /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7E3A622BA33F4A00CD9353 /* Dictionary.swift */; };
+		2EA8D35A2BAA0916003067E2 /* VocabControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA8D3592BAA0916003067E2 /* VocabControllerTests.swift */; };
+		2EA8D35B2BAA0924003067E2 /* VocabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7E3A4D2BA317F900CD9353 /* VocabController.swift */; };
+		2EA8D35C2BAA092B003067E2 /* Vocab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7E3A502BA318BF00CD9353 /* Vocab.swift */; };
+		2EA8D35D2BAA0A01003067E2 /* DocumentReferenceGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EAC1C5D2B98BC0900F713F7 /* DocumentReferenceGenerator.swift */; };
 		2EAC1C332B93853B00F713F7 /* LanguageCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EAC1C322B93853B00F713F7 /* LanguageCellView.swift */; };
 		2EAC1C362B93AAB800F713F7 /* JSONView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EAC1C352B93AAB800F713F7 /* JSONView.swift */; };
 		2EAC1C3D2B93B77900F713F7 /* CoursesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EAC1C3C2B93B77900F713F7 /* CoursesController.swift */; };
@@ -138,6 +148,9 @@
 		2EA7BE012B9B405500AAA532 /* ModifyVLessonVocabUsedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyVLessonVocabUsedView.swift; sourceTree = "<group>"; };
 		2EA7BE062B9B80EE00AAA532 /* AllVocabListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllVocabListView.swift; sourceTree = "<group>"; };
 		2EA8D34B2BA9FBDC003067E2 /* ModifyLessonPraticeSentenceBuildingCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyLessonPraticeSentenceBuildingCellView.swift; sourceTree = "<group>"; };
+		2EA8D34F2BAA0460003067E2 /* TranslationControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationControllerTests.swift; sourceTree = "<group>"; };
+		2EA8D3532BAA080E003067E2 /* DictionaryControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryControllerTests.swift; sourceTree = "<group>"; };
+		2EA8D3592BAA0916003067E2 /* VocabControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocabControllerTests.swift; sourceTree = "<group>"; };
 		2EAC1C322B93853B00F713F7 /* LanguageCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageCellView.swift; sourceTree = "<group>"; };
 		2EAC1C352B93AAB800F713F7 /* JSONView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONView.swift; sourceTree = "<group>"; };
 		2EAC1C3C2B93B77900F713F7 /* CoursesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursesController.swift; sourceTree = "<group>"; };
@@ -272,6 +285,8 @@
 		2E6C519C2B92930400626F95 /* ControllerTest */ = {
 			isa = PBXGroup;
 			children = (
+				2EA8D3582BAA08FE003067E2 /* Helper */,
+				2EA8D3572BAA08F6003067E2 /* Vocab */,
 			);
 			path = ControllerTest;
 			sourceTree = "<group>";
@@ -752,6 +767,23 @@
 			path = AdminViews;
 			sourceTree = "<group>";
 		};
+		2EA8D3572BAA08F6003067E2 /* Vocab */ = {
+			isa = PBXGroup;
+			children = (
+				2EA8D3592BAA0916003067E2 /* VocabControllerTests.swift */,
+			);
+			path = Vocab;
+			sourceTree = "<group>";
+		};
+		2EA8D3582BAA08FE003067E2 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				2EA8D3532BAA080E003067E2 /* DictionaryControllerTests.swift */,
+				2EA8D34F2BAA0460003067E2 /* TranslationControllerTests.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
 		2EAC1C342B93AAAA00F713F7 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
@@ -1077,7 +1109,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2EA8D3502BAA0460003067E2 /* TranslationControllerTests.swift in Sources */,
+				2EA8D35C2BAA092B003067E2 /* Vocab.swift in Sources */,
+				2EA8D35D2BAA0A01003067E2 /* DocumentReferenceGenerator.swift in Sources */,
+				2EA8D3552BAA0818003067E2 /* DictionaryController.swift in Sources */,
+				2EA8D35B2BAA0924003067E2 /* VocabController.swift in Sources */,
+				2EA8D3542BAA080E003067E2 /* DictionaryControllerTests.swift in Sources */,
+				2EA8D3512BAA0529003067E2 /* TranslationController.swift in Sources */,
+				2EA8D3562BAA08B4003067E2 /* Dictionary.swift in Sources */,
+				2EA8D3522BAA05A1003067E2 /* APIKeys.swift in Sources */,
 				2E6C51962B9292DC00626F95 /* KoreanMasterCMSPreBuildTests.swift in Sources */,
+				2EA8D35A2BAA0916003067E2 /* VocabControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

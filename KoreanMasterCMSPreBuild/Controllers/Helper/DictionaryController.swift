@@ -40,21 +40,4 @@ class DictionaryController: ObservableObject {
 		
 		task.resume()
 	}
-	
-	
-//	func createVocabFromDict(_ dict: Dictionary) -> Vocab {
-//		let vocab = Vocab.empty
-//		vocab.word = dict.word
-//		vocab.phonetic = dict.phonetic
-//		vocab.origin = dict.origin
-//		vocab.meanings = dict.meanings?.map { meaning in
-//			Meaning(partOfSpeech: meaning.partOfSpeech, definitions: meaning.definitions?.map { definition in
-//				Definition(definition: definition.definition, example: definition.example, synonyms: definition.synonyms, antonyms: definition.antonyms)
-//			})
-//		}
-//		
-//		return vocab
-//	}
-	
-	
 }
