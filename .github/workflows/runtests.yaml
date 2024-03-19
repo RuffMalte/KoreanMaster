@@ -9,8 +9,8 @@ jobs:
       matrix:
         include:
           - xcode: "15.3"
-          - macOS: "17.2"
-    name: test iOS (${{ matrix.ios }})
+          - macOS: "14.3"
+    name: test macos (${{ matrix.macOS }})
     steps:
       - uses: actions/checkout@v1
       - name: Select Xcode
