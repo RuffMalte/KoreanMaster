@@ -47,7 +47,7 @@ struct ModifyLessonTagItemView: View {
 				
 			if isFocused {
 				MaltesColorPicker(color: $tagItem.tagColor, colorPickerStyle: .menu)
-				
+					.tint(tagItem.tagColor.toColor)
 				Button {
 					removeFuntion()
 				} label: {

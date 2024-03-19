@@ -41,6 +41,22 @@ struct ModifyLessonPraticeView: View {
 
 				NavigationLink {
 					List {
+						Button {
+							let newSentencePratice = LessonpracticeSentenceBuilding(question: "", answers: [], correctAnswer: "")
+							lessonPractice.sentenceBuilding?.append(newSentencePratice)
+						} label: {
+							Label("Add new Sentence Building Question", systemImage: "plus")
+						
+						}
+						
+						ForEach(lessonPractice.sentenceBuilding ?? []) { sb in
+							ModifyLessonPraticeSentenceBuildingCellView(lessonPraticeSentenceBuilding: sb, removeFuntion: {
+								lessonPractice.sentenceBuilding?.removeAll(where: { $0.id == sb.id })
+							})
+							.padding(.vertical, 5)
+						}
+						
+						
 						
 					}
 				} label: {

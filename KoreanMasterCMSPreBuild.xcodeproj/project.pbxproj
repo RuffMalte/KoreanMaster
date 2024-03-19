@@ -54,6 +54,7 @@
 		2EA7BDFE2B9B17EE00AAA532 /* MaltesColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA7BDFD2B9B17EE00AAA532 /* MaltesColorPicker.swift */; };
 		2EA7BE022B9B405500AAA532 /* ModifyVLessonVocabUsedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA7BE012B9B405500AAA532 /* ModifyVLessonVocabUsedView.swift */; };
 		2EA7BE072B9B80EE00AAA532 /* AllVocabListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA7BE062B9B80EE00AAA532 /* AllVocabListView.swift */; };
+		2EA8D34C2BA9FBDC003067E2 /* ModifyLessonPraticeSentenceBuildingCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA8D34B2BA9FBDC003067E2 /* ModifyLessonPraticeSentenceBuildingCellView.swift */; };
 		2EAC1C332B93853B00F713F7 /* LanguageCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EAC1C322B93853B00F713F7 /* LanguageCellView.swift */; };
 		2EAC1C362B93AAB800F713F7 /* JSONView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EAC1C352B93AAB800F713F7 /* JSONView.swift */; };
 		2EAC1C3D2B93B77900F713F7 /* CoursesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EAC1C3C2B93B77900F713F7 /* CoursesController.swift */; };
@@ -136,6 +137,7 @@
 		2EA7BDFD2B9B17EE00AAA532 /* MaltesColorPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaltesColorPicker.swift; sourceTree = "<group>"; };
 		2EA7BE012B9B405500AAA532 /* ModifyVLessonVocabUsedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyVLessonVocabUsedView.swift; sourceTree = "<group>"; };
 		2EA7BE062B9B80EE00AAA532 /* AllVocabListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllVocabListView.swift; sourceTree = "<group>"; };
+		2EA8D34B2BA9FBDC003067E2 /* ModifyLessonPraticeSentenceBuildingCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyLessonPraticeSentenceBuildingCellView.swift; sourceTree = "<group>"; };
 		2EAC1C322B93853B00F713F7 /* LanguageCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageCellView.swift; sourceTree = "<group>"; };
 		2EAC1C352B93AAB800F713F7 /* JSONView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONView.swift; sourceTree = "<group>"; };
 		2EAC1C3C2B93B77900F713F7 /* CoursesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursesController.swift; sourceTree = "<group>"; };
@@ -623,6 +625,7 @@
 		2E7E3A8A2BA6ED0900CD9353 /* SentenceBuilding */ = {
 			isa = PBXGroup;
 			children = (
+				2EA8D34A2BA9FBCA003067E2 /* AdminViews */,
 			);
 			path = SentenceBuilding;
 			sourceTree = "<group>";
@@ -739,6 +742,14 @@
 				2E7E3A522BA31C4500CD9353 /* AdminViews */,
 			);
 			path = Vocab;
+			sourceTree = "<group>";
+		};
+		2EA8D34A2BA9FBCA003067E2 /* AdminViews */ = {
+			isa = PBXGroup;
+			children = (
+				2EA8D34B2BA9FBDC003067E2 /* ModifyLessonPraticeSentenceBuildingCellView.swift */,
+			);
+			path = AdminViews;
 			sourceTree = "<group>";
 		};
 		2EAC1C342B93AAAA00F713F7 /* Helper */ = {
@@ -1135,6 +1146,7 @@
 				2EA7BDFE2B9B17EE00AAA532 /* MaltesColorPicker.swift in Sources */,
 				2EDF0C012B9A08FF001132AD /* ModifyLessonView.swift in Sources */,
 				2E7E3A6F2BA5D4F000CD9353 /* ModifyLessonGoalExampleListCellView.swift in Sources */,
+				2EA8D34C2BA9FBDC003067E2 /* ModifyLessonPraticeSentenceBuildingCellView.swift in Sources */,
 				2EA7BDF42B9B113500AAA532 /* ModifyLessonTagItemView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
