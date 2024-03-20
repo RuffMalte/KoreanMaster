@@ -11,6 +11,7 @@
 		2E13E3A02BAB551700C15721 /* DeepLConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E13E39F2BAB551700C15721 /* DeepLConfig.swift */; };
 		2E5B3D792BA1AFA00028FCB2 /* AllWelcomeMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5B3D782BA1AFA00028FCB2 /* AllWelcomeMessages.swift */; };
 		2E5B3D7C2BA1B0740028FCB2 /* WelcomeMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5B3D7B2BA1B0740028FCB2 /* WelcomeMessage.swift */; };
+		2E666E052BAB958B00C59FEB /* DeepLConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E13E39F2BAB551700C15721 /* DeepLConfig.swift */; };
 		2E6C517B2B927C7000626F95 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6C517A2B927C7000626F95 /* MainTabView.swift */; };
 		2E6C51802B927ECB00626F95 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6C517F2B927ECB00626F95 /* ProfileView.swift */; };
 		2E6C51832B92817100626F95 /* MainSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6C51822B92817100626F95 /* MainSettingsView.swift */; };
@@ -114,6 +115,7 @@
 		2E13E39F2BAB551700C15721 /* DeepLConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepLConfig.swift; sourceTree = "<group>"; };
 		2E5B3D782BA1AFA00028FCB2 /* AllWelcomeMessages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllWelcomeMessages.swift; sourceTree = "<group>"; };
 		2E5B3D7B2BA1B0740028FCB2 /* WelcomeMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeMessage.swift; sourceTree = "<group>"; };
+		2E666E042BAB948700C59FEB /* KoreanMasterCMSPreBuild.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = KoreanMasterCMSPreBuild.xctestplan; sourceTree = "<group>"; };
 		2E6C517A2B927C7000626F95 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		2E6C517F2B927ECB00626F95 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		2E6C51822B92817100626F95 /* MainSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSettingsView.swift; sourceTree = "<group>"; };
@@ -961,6 +963,7 @@
 		2EF41AC02B927A36007431ED = {
 			isa = PBXGroup;
 			children = (
+				2E666E042BAB948700C59FEB /* KoreanMasterCMSPreBuild.xctestplan */,
 				2EF41ACB2B927A36007431ED /* KoreanMasterCMSPreBuild */,
 				2E6C51942B9292DC00626F95 /* KoreanMasterCMSPreBuildTests */,
 				2EF41ACA2B927A36007431ED /* Products */,
@@ -1156,6 +1159,7 @@
 				2EF1F17A2BAB290C00B1426C /* WelcomeMessagesControllerTests.swift in Sources */,
 				2EF1F17B2BAB293800B1426C /* LoginController.swift in Sources */,
 				2EF1F17D2BAB2E3B00B1426C /* ColorEnum.swift in Sources */,
+				2E666E052BAB958B00C59FEB /* DeepLConfig.swift in Sources */,
 				2EF1F17C2BAB2A0C00B1426C /* WelcomeMessage.swift in Sources */,
 				2EA8D35D2BAA0A01003067E2 /* DocumentReferenceGenerator.swift in Sources */,
 				2EF1F1872BAB384C00B1426C /* CourseControllerTests.swift in Sources */,
