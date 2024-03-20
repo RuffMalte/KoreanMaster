@@ -21,17 +21,31 @@ struct AllLessonsListView: View {
 			if courseCon.isLoadingAllLessons {
 				ProgressView()
 			} else {
-				List {
-					ForEach(allLessonsLocalized.localizedLessons) { localized in
-						NavigationLink {
-							LocallizedLessonListView(locallizedLesson: localized, currentLanguage: localized.language)
+				if allLessonsLocalized.localizedLessons.isEmpty {
+					ContentUnavailableView {
+						Label("No Lessons found", systemImage: "exclamationmark.triangle")
+					} actions: {
+						Button {
+							self.getLessonsForLangauges()
 						} label: {
-							Text("\(localized.language) \(localized.info)")
+							Label("Fetch all Lessons", systemImage: "arrow.clockwise")
+						}
+						.buttonStyle(.borderedProminent)
+					}
+
+				} else {
+					List {
+						ForEach(allLessonsLocalized.localizedLessons) { localized in
+							NavigationLink {
+								LocallizedLessonListView(locallizedLesson: localized, currentLanguage: localized.language)
+							} label: {
+								Text("\(localized.language) \(localized.info)")
+							}
 						}
 					}
+					.listStyle(SidebarListStyle())
+					.navigationTitle("Courses")
 				}
-				.listStyle(SidebarListStyle())
-				.navigationTitle("Courses")
 			}
 		}
 		.onAppear {
