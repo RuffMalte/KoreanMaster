@@ -20,6 +20,7 @@ class AllLessonsLocalized: Codable {
 }
 
 class LocalizedLessons: Identifiable, Codable {
+	var id: String
 	var language: String
 	var info: String
 	
@@ -27,10 +28,12 @@ class LocalizedLessons: Identifiable, Codable {
 	var lessons: [Lesson]
 	
 	init(
+		id: String = UUID().uuidString,
 		language: String,
 		info: String,
 		lessons: [Lesson]
 	) {
+		self.id = id
 		self.language = language
 		self.info = info
 		self.lessons = lessons

@@ -10,7 +10,7 @@ import SwiftUI
 ///if the optional is not set it will create a new lesson
 struct ModifyLessonView: View {
 	
-	@State var lesson: Lesson
+	@State var lesson: Lesson?
 	@State var currentLanguage: String
 	@EnvironmentObject var courseCon: CoursesController
 
@@ -19,37 +19,37 @@ struct ModifyLessonView: View {
 		Form {
 			if courseCon.isLoadingSingleLesson {
 				ProgressView()
-			} else {
+			} else if let curLesson = lesson {
 				GeometryReader { reader in
 					HStack {
 						ScrollView(.vertical) {
 							VStack(alignment: .leading) {
-								ModifyLessonInfoView(lessonInfo: lesson.lessonInfo)
+								ModifyLessonInfoView(lessonInfo: curLesson.lessonInfo)
 								
 								Divider()
 								
-								ModifyLessonTagsView(lessonTag: lesson.lessonTag)
+								ModifyLessonTagsView(lessonTag: curLesson.lessonTag)
 								
 								Divider()
 								
-								if let lessonGoal = lesson.lessonGoal {
+								if let lessonGoal = curLesson.lessonGoal {
 									ModifyLessonGoalView(lessonGoal: lessonGoal)
 								}
 								
 								Divider()
 								
-								if let vocabUsed = lesson.newLessonVocabUsed {
+								if let vocabUsed = curLesson.newLessonVocabUsed {
 									ModifyVLessonVocabUsedView(vocabUsed: vocabUsed, language: currentLanguage)
 								}
 								Divider()
 								
-								if let lessonGrammar = lesson.lessonGrammar {
+								if let lessonGrammar = curLesson.lessonGrammar {
 									ModifyLessonGrammarView(lessonGrammar: lessonGrammar, language: currentLanguage)
 								}
 								
 								Divider()
 								
-								if let lessonPractice = lesson.lessonPractice {
+								if let lessonPractice = curLesson.lessonPractice {
 									ModifyLessonPraticeView(lessonPractice: lessonPractice, language: currentLanguage)
 								}
 								
@@ -69,34 +69,46 @@ struct ModifyLessonView: View {
 			}
 		}
 		.onAppear {
-			courseCon.getFullLesson(lessonName: lesson.lessonInfo.lessonName, language: currentLanguage) { Lesson, error in
-				if let Lesson = Lesson {
-					self.lesson = Lesson
+			if let lesson = lesson {
+				courseCon.getFullLesson(lessonName: lesson.lessonInfo.lessonName, language: currentLanguage) { Lesson, error in
+					if let Lesson = Lesson {
+						self.lesson = Lesson
+					}
 				}
+			} else {
+				let newLesson = Lesson.new
+				newLesson.id = UUID().uuidString
+				self.lesson = newLesson
 			}
+			
 		}
 		.textFieldStyle(.roundedBorder)
-		.navigationTitle(lesson.lessonInfo.lessonName)		
+		.navigationTitle(lesson?.lessonInfo.lessonName ?? "New Lesson")
 		.toolbar {
 			ToolbarItem(placement: .primaryAction) {
-				NavigationLink {
-					JSONView(model: lesson)
-				} label: {
-					Label("JSON", systemImage: "ellipsis.curlybraces")
+				if let lesson = lesson {
+					NavigationLink {
+						JSONView(model: lesson)
+					} label: {
+						Label("JSON", systemImage: "ellipsis.curlybraces")
+					}
 				}
 			}
 			ToolbarItem(placement: .primaryAction) {
 				Button {
-					courseCon.SaveLesson(lesson: lesson, language: currentLanguage) { bool in
-						if bool {
-							print("Lesson added")
-						} else {
-							print("Lesson not added")
+					if let lesson = lesson {
+						courseCon.SaveLesson(lesson: lesson, language: currentLanguage) { bool in
+							if bool {
+								print("Lesson added")
+							} else {
+								print("Lesson not added")
+							}
 						}
 					}
 				} label: {
 					Label("Save", systemImage: "square.and.arrow.down")
 				}
+					
 			}
 		}
 	}

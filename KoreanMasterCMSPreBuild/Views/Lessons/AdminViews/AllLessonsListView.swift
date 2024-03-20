@@ -35,7 +35,7 @@ struct AllLessonsListView: View {
 			}
 		}
 		.onAppear {
-			self.getLessonsForLangauges()
+//			self.getLessonsForLangauges()
 		}
 		.toolbar {
 			ToolbarItem(placement: .primaryAction) {
@@ -55,10 +55,12 @@ struct AllLessonsListView: View {
 			courseCon.getAllLessons(language: language.language) { lessons, error in
 				guard error != nil else {
 					let newLocalized = LocalizedLessons(
+						id: UUID().uuidString,
 						language: language.language,
 						info: language.languageFlag,
 						lessons: lessons
 					)
+					
 					if allLessonsLocalized.localizedLessons.contains(where: { $0.language == newLocalized.language }) {
 						allLessonsLocalized.localizedLessons.removeAll(where: { $0.language == newLocalized.language })
 					}

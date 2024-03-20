@@ -15,7 +15,7 @@ import FirebaseFirestore
 
 /// Helper class to generate Firestore document references based on document type or collection
 class DocumentReferenceGenerator {
-	private let lessonName: String?
+	let lessonName: String?
 	private let language: String
 	private var db: Firestore {
 		Firestore.firestore()
