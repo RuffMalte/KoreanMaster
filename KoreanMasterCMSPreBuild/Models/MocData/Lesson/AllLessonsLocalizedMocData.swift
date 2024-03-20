@@ -33,7 +33,6 @@ extension LocalizedLessons {
 
 extension Lesson {
 	static var detailExample: Lesson = Lesson(
-		id: "0",
 		lessonInfo: LessonInfo.detailExample,
 		lessonTags: LessonTag.example,
 		lessonGoal: LessonGoal.example,
@@ -47,13 +46,26 @@ extension Lesson {
 		lessonInfo: LessonInfo.empty,
 		lessonTags: LessonTag.empty
 	)
+	
+	static var new: Lesson {
+		return Lesson(
+			id: UUID().uuidString,
+			lessonInfo: LessonInfo.empty,
+			lessonTags: LessonTag.empty,
+			lessonGoal: LessonGoal.example,
+			newLessonVocabUsed: NewLessonVocabUsed.example,
+			lessonGrammar: LessonGrammar.example,
+			lessonPractice: LessonPractice.example,
+			lessonCultureReferences: LessonCultureReference.example
+		)
+	}
 }
 
 extension LessonInfo {
 	static var detailExample: LessonInfo = LessonInfo(
 		section: 1,
 		unit: 1,
-		lessonName: "Lesson 1",
+		lessonName: "Lesson 2",
 		heading: "The Korean Alphabet",
 		desc: "Learn the Korean Alphabet",
 		difficulty: "Easy",
@@ -65,7 +77,7 @@ extension LessonInfo {
 	static var empty: LessonInfo = LessonInfo(
 		section: 0,
 		unit: 0,
-		lessonName: "",
+		lessonName: "New",
 		heading: "",
 		desc: "",
 		difficulty: "",
@@ -116,6 +128,12 @@ extension LessonGoal {
 		goalText: "Goal Text",
 		title: "TITLEEEE",
 		lessonGoalExamples: LessonGoalExample.mutlipleExample
+	)
+	
+	static var new: LessonGoal = LessonGoal(
+		goalText: "Goal Text",
+		title: "TITLEEEE",
+		lessonGoalExamples: []
 	)
 }
 

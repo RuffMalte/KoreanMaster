@@ -7,10 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2E13E39C2BAB54F800C15721 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2E13E39B2BAB54F800C15721 /* GoogleService-Info.plist */; };
+		2E13E3A02BAB551700C15721 /* DeepLConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E13E39F2BAB551700C15721 /* DeepLConfig.swift */; };
 		2E5B3D792BA1AFA00028FCB2 /* AllWelcomeMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5B3D782BA1AFA00028FCB2 /* AllWelcomeMessages.swift */; };
 		2E5B3D7C2BA1B0740028FCB2 /* WelcomeMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5B3D7B2BA1B0740028FCB2 /* WelcomeMessage.swift */; };
 		2E6C517B2B927C7000626F95 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6C517A2B927C7000626F95 /* MainTabView.swift */; };
-		2E6C517D2B927DEF00626F95 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2E6C517C2B927DEF00626F95 /* GoogleService-Info.plist */; };
 		2E6C51802B927ECB00626F95 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6C517F2B927ECB00626F95 /* ProfileView.swift */; };
 		2E6C51832B92817100626F95 /* MainSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6C51822B92817100626F95 /* MainSettingsView.swift */; };
 		2E6C51862B92835C00626F95 /* UserListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6C51852B92835C00626F95 /* UserListView.swift */; };
@@ -26,7 +27,6 @@
 		2E6C51AF2B936DA300626F95 /* LanguagesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6C51AE2B936DA300626F95 /* LanguagesListView.swift */; };
 		2E6C51B22B93820700626F95 /* ModifyLanguageSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6C51B12B93820700626F95 /* ModifyLanguageSheetView.swift */; };
 		2E6C51B62B93825A00626F95 /* LanguageFromMocData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6C51B52B93825A00626F95 /* LanguageFromMocData.swift */; };
-		2E7E3A4B2BA3012E00CD9353 /* APIKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7E3A4A2BA3012E00CD9353 /* APIKeys.swift */; };
 		2E7E3A4E2BA317F900CD9353 /* VocabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7E3A4D2BA317F900CD9353 /* VocabController.swift */; };
 		2E7E3A512BA318BF00CD9353 /* Vocab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7E3A502BA318BF00CD9353 /* Vocab.swift */; };
 		2E7E3A552BA31C9100CD9353 /* VocabDetailSmallCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7E3A542BA31C9100CD9353 /* VocabDetailSmallCellView.swift */; };
@@ -57,7 +57,6 @@
 		2EA8D34C2BA9FBDC003067E2 /* ModifyLessonPraticeSentenceBuildingCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA8D34B2BA9FBDC003067E2 /* ModifyLessonPraticeSentenceBuildingCellView.swift */; };
 		2EA8D3502BAA0460003067E2 /* TranslationControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA8D34F2BAA0460003067E2 /* TranslationControllerTests.swift */; };
 		2EA8D3512BAA0529003067E2 /* TranslationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8D83C42BA2F8170039DE57 /* TranslationController.swift */; };
-		2EA8D3522BAA05A1003067E2 /* APIKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7E3A4A2BA3012E00CD9353 /* APIKeys.swift */; };
 		2EA8D3542BAA080E003067E2 /* DictionaryControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA8D3532BAA080E003067E2 /* DictionaryControllerTests.swift */; };
 		2EA8D3552BAA0818003067E2 /* DictionaryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7E3A5F2BA33D5A00CD9353 /* DictionaryController.swift */; };
 		2EA8D3562BAA08B4003067E2 /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7E3A622BA33F4A00CD9353 /* Dictionary.swift */; };
@@ -111,10 +110,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2E13E39B2BAB54F800C15721 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		2E13E39F2BAB551700C15721 /* DeepLConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepLConfig.swift; sourceTree = "<group>"; };
 		2E5B3D782BA1AFA00028FCB2 /* AllWelcomeMessages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllWelcomeMessages.swift; sourceTree = "<group>"; };
 		2E5B3D7B2BA1B0740028FCB2 /* WelcomeMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeMessage.swift; sourceTree = "<group>"; };
 		2E6C517A2B927C7000626F95 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
-		2E6C517C2B927DEF00626F95 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2E6C517F2B927ECB00626F95 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		2E6C51822B92817100626F95 /* MainSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSettingsView.swift; sourceTree = "<group>"; };
 		2E6C51852B92835C00626F95 /* UserListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListView.swift; sourceTree = "<group>"; };
@@ -131,7 +131,6 @@
 		2E6C51AE2B936DA300626F95 /* LanguagesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguagesListView.swift; sourceTree = "<group>"; };
 		2E6C51B12B93820700626F95 /* ModifyLanguageSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyLanguageSheetView.swift; sourceTree = "<group>"; };
 		2E6C51B52B93825A00626F95 /* LanguageFromMocData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageFromMocData.swift; sourceTree = "<group>"; };
-		2E7E3A4A2BA3012E00CD9353 /* APIKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKeys.swift; sourceTree = "<group>"; };
 		2E7E3A4D2BA317F900CD9353 /* VocabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocabController.swift; sourceTree = "<group>"; };
 		2E7E3A502BA318BF00CD9353 /* Vocab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vocab.swift; sourceTree = "<group>"; };
 		2E7E3A542BA31C9100CD9353 /* VocabDetailSmallCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocabDetailSmallCellView.swift; sourceTree = "<group>"; };
@@ -209,6 +208,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2E13E39D2BAB550000C15721 /* Static */ = {
+			isa = PBXGroup;
+			children = (
+				2E13E39E2BAB550400C15721 /* API */,
+			);
+			path = Static;
+			sourceTree = "<group>";
+		};
+		2E13E39E2BAB550400C15721 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				2E13E39F2BAB551700C15721 /* DeepLConfig.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
 		2E5B3D772BA1AF0A0028FCB2 /* WelcomeMessage */ = {
 			isa = PBXGroup;
 			children = (
@@ -372,22 +387,6 @@
 				2E6C51B52B93825A00626F95 /* LanguageFromMocData.swift */,
 			);
 			path = Language;
-			sourceTree = "<group>";
-		};
-		2E7E3A482BA300F400CD9353 /* Static */ = {
-			isa = PBXGroup;
-			children = (
-				2E7E3A492BA300FF00CD9353 /* API */,
-			);
-			path = Static;
-			sourceTree = "<group>";
-		};
-		2E7E3A492BA300FF00CD9353 /* API */ = {
-			isa = PBXGroup;
-			children = (
-				2E7E3A4A2BA3012E00CD9353 /* APIKeys.swift */,
-			);
-			path = API;
 			sourceTree = "<group>";
 		};
 		2E7E3A4C2BA317CB00CD9353 /* Vocab */ = {
@@ -980,14 +979,14 @@
 		2EF41ACB2B927A36007431ED /* KoreanMasterCMSPreBuild */ = {
 			isa = PBXGroup;
 			children = (
+				2E13E39D2BAB550000C15721 /* Static */,
 				2EF41ACC2B927A36007431ED /* KoreanMasterCMSPreBuildApp.swift */,
-				2E7E3A482BA300F400CD9353 /* Static */,
 				2EF41ADE2B927AC9007431ED /* Models */,
 				2EF41ADC2B927ABD007431ED /* Controllers */,
 				2EF41ADB2B927A9A007431ED /* Views */,
 				2EF41AD02B927A38007431ED /* Assets.xcassets */,
+				2E13E39B2BAB54F800C15721 /* GoogleService-Info.plist */,
 				2EF41AD22B927A38007431ED /* KoreanMasterCMSPreBuild.entitlements */,
-				2E6C517C2B927DEF00626F95 /* GoogleService-Info.plist */,
 				2EF41AD32B927A38007431ED /* Preview Content */,
 			);
 			path = KoreanMasterCMSPreBuild;
@@ -1140,7 +1139,7 @@
 			files = (
 				2EF41AD52B927A38007431ED /* Preview Assets.xcassets in Resources */,
 				2EF41AD12B927A38007431ED /* Assets.xcassets in Resources */,
-				2E6C517D2B927DEF00626F95 /* GoogleService-Info.plist in Resources */,
+				2E13E39C2BAB54F800C15721 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1168,7 +1167,6 @@
 				2EF1F17E2BAB2E3F00B1426C /* Lesson.swift in Sources */,
 				2EF1F1812BAB2E4800B1426C /* FirestoreUser.swift in Sources */,
 				2EA8D3562BAA08B4003067E2 /* Dictionary.swift in Sources */,
-				2EA8D3522BAA05A1003067E2 /* APIKeys.swift in Sources */,
 				2EF1F1882BAB38A500B1426C /* CoursesController.swift in Sources */,
 				2E6C51962B9292DC00626F95 /* KoreanMasterCMSPreBuildTests.swift in Sources */,
 				2EF1F1802BAB2E4600B1426C /* LoginOptions.swift in Sources */,
@@ -1206,7 +1204,6 @@
 				2EA7BE022B9B405500AAA532 /* ModifyVLessonVocabUsedView.swift in Sources */,
 				2E6C51A12B93567500626F95 /* UserCellView.swift in Sources */,
 				2E7E3A752BA63EA300CD9353 /* ModifyLessonGrammarView.swift in Sources */,
-				2E7E3A4B2BA3012E00CD9353 /* APIKeys.swift in Sources */,
 				2E6C518E2B92888200626F95 /* LoginController.swift in Sources */,
 				2E7E3A5B2BA31F6A00CD9353 /* LocalizedVocabListView.swift in Sources */,
 				2E6C51AF2B936DA300626F95 /* LanguagesListView.swift in Sources */,
@@ -1240,6 +1237,7 @@
 				2E7E3A552BA31C9100CD9353 /* VocabDetailSmallCellView.swift in Sources */,
 				2EDF0C062B9A39D4001132AD /* ModifyLessonInfoView.swift in Sources */,
 				2EA7BDFE2B9B17EE00AAA532 /* MaltesColorPicker.swift in Sources */,
+				2E13E3A02BAB551700C15721 /* DeepLConfig.swift in Sources */,
 				2EDF0C012B9A08FF001132AD /* ModifyLessonView.swift in Sources */,
 				2E7E3A6F2BA5D4F000CD9353 /* ModifyLessonGoalExampleListCellView.swift in Sources */,
 				2EA8D34C2BA9FBDC003067E2 /* ModifyLessonPraticeSentenceBuildingCellView.swift in Sources */,

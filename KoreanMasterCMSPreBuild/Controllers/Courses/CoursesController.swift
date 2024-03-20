@@ -102,7 +102,10 @@ class CoursesController: ObservableObject {
 		let refGenerator = DocumentReferenceGenerator(lessonName: lesson.lessonInfo.lessonName, language: language)
 		
 		do {
-			batch.setData(["LessonName":lesson.lessonInfo.lessonName], forDocument: refGenerator.getLessonsCollectionRef().document(lesson.lessonInfo.lessonName))
+			batch.setData([
+				"LessonName":lesson.lessonInfo.lessonName,
+				"id":lesson.id
+			], forDocument: refGenerator.getLessonsCollectionRef().document(lesson.lessonInfo.lessonName))
 			
 			// Set info
 			let lessonInfoRef = refGenerator.getDocumentRef(forType: .info)
@@ -365,39 +368,40 @@ class CoursesController: ObservableObject {
 		let lessonsCollectionRef = languageRefGenerator.getLessonsCollectionRef()
 		isLoadingAllLessons = true
 		
-		lessonsCollectionRef.getDocuments { (snapshot, error) in
+		lessonsCollectionRef.getDocuments { snapshot, error in
 			var lessons: [Lesson] = []
-			let dispatchGroup = DispatchGroup()
 			
-			if let snapshot = snapshot {
-				for document in snapshot.documents {
-					dispatchGroup.enter()
-					let lessonName = document.documentID
-					let refGenerator = DocumentReferenceGenerator(lessonName: lessonName, language: language)
+			guard let snapshot = snapshot else {
+				self.isLoadingAllLessons = false
+				completion([], error)
+				return
+			}
+			
+			for document in snapshot.documents {
+				let refGenerator = DocumentReferenceGenerator(lessonName: document.documentID, language: language)
+				
+				let newLesson = Lesson.new
 					
-					let newLesson = Lesson.empty
-					newLesson.id = lessonName
-					
-					// Fetch 'info' and 'tags' documents inside details collection
-					self.fetchDetails(refGenerator: refGenerator, completion: { fetchedLesson, fetchError in
-						if let fetchedLesson = fetchedLesson {
-							lessons.append(fetchedLesson)
-						} else {
-							print("Error fetching details for lesson \(lessonName): \(fetchError?.localizedDescription ?? "Unknown error")")
-						}
-						dispatchGroup.leave()
-					})
+				self.fetchDetailsDocumentData(refGenerator: refGenerator, forType: .info) { (info: LessonInfo?) in
+					if let info = info {
+						newLesson.lessonInfo = info
+					}
 				}
 				
-				// Once all lessons have been processed
-				dispatchGroup.notify(queue: .main) {
-					completion(lessons, nil)
-					self.isLoadingAllLessons = false
+				self.fetchDetailsDocumentData(refGenerator: refGenerator, forType: .tags) { (tags: LessonTag?) in
+					if let tags = tags {
+						newLesson.lessonTag = tags
+					}
 				}
-			} else if let error = error {
-				completion([], error)
+				
+			
+				lessons.append(newLesson)
 			}
+
+			self.isLoadingAllLessons = false
+			completion(lessons, nil)
 		}
+	
 	}
 	
 	func deleteLesson(lesson: Lesson, language: String, completion: @escaping (Bool) -> Void) {

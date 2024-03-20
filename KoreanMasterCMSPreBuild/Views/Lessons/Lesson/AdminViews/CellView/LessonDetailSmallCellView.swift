@@ -10,7 +10,9 @@ import SwiftUI
 struct LessonDetailSmallCellView: View {
 	
 	var lesson: Lesson
-	
+	var currentLanguage: String
+	@EnvironmentObject var courseCon: CoursesController
+
     var body: some View {
 		VStack(alignment: .leading) {
 			HStack {
@@ -37,9 +39,18 @@ struct LessonDetailSmallCellView: View {
 			}
 			
 		}
+		.contextMenu {
+			Button {
+				courseCon.deleteLesson(lesson: lesson, language: currentLanguage) { bool in
+					print("deleted: \(bool)")
+				}
+			} label: {
+				Label("Delete", systemImage: "trash")
+			}
+		}
     }
 }
 
 #Preview {
-	LessonDetailSmallCellView(lesson: Lesson.detailExample)
+	LessonDetailSmallCellView(lesson: Lesson.detailExample, currentLanguage: "English")
 }

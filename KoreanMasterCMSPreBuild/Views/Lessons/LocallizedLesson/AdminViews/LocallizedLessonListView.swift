@@ -20,11 +20,11 @@ struct LocallizedLessonListView: View {
 				ModifyLocalizedLessonView(localizedLesson: locallizedLesson)
 
 				
-				ForEach(locallizedLesson.lessons) { lesson in
+				ForEach(locallizedLesson.lessons, id: \.id) { lesson in
 					NavigationLink {
 						ModifyLessonView(lesson: lesson, currentLanguage: currentLanguage)
 					} label: {
-						LessonDetailSmallCellView(lesson: lesson)
+						LessonDetailSmallCellView(lesson: lesson, currentLanguage: currentLanguage)
 					}
 				}
 			}
@@ -32,17 +32,12 @@ struct LocallizedLessonListView: View {
  		.navigationTitle(locallizedLesson.language)
 		.toolbar {
 			ToolbarItem(placement: .primaryAction) {
-				Button {
-					courseCon.SaveLesson(lesson: Lesson.detailExample, language: currentLanguage) { bool in
-						if bool {
-							print("Lesson added")
-						} else {
-							print("Lesson not added")
-						}
-					}
+				NavigationLink {
+					ModifyLessonView(currentLanguage: currentLanguage)
 				} label: {
-					Label("Add new Lesson", systemImage: "plus")
+					Label("Add Lesson", systemImage: "plus")
 				}
+				
 			}
 		}
     }
