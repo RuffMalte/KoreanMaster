@@ -342,24 +342,28 @@ class LoginController: ObservableObject {
 		}
 	}
 	
-	func getWelcomeMessages(language: String, completion: @escaping ([LocalizedWelcomeMessage], Error?) -> Void) {
+	func getWelcomeMessages(language: String, ids: [String]? = nil, completion: @escaping ([LocalizedWelcomeMessage], Error?) -> Void) {
 		let refGenerator = DocumentReferenceGenerator(language: language)
-		let welcomeMesssageRefGen = refGenerator.getWelcomeMessagesRef()
+		let welcomeMessageRefGen = refGenerator.getWelcomeMessagesRef()
 		self.isloadingMessages = true
 		
-		welcomeMesssageRefGen.getDocuments { querySnapshot, error in
+		welcomeMessageRefGen.getDocuments { querySnapshot, error in
 			var messages: [LocalizedWelcomeMessage] = []
 			let dispatchGroup = DispatchGroup()
-
+			
 			if let snapshot = querySnapshot {
 				for document in snapshot.documents {
 					dispatchGroup.enter()
 					do {
 						let message = try document.data(as: LocalizedWelcomeMessage.self)
-						messages.append(message)
+						// Check if the ids array is nil or empty, or if it contains the message's id
+						if ids == nil || ids!.isEmpty || ids!.contains(message.id) {
+							messages.append(message)
+						}
 						dispatchGroup.leave()
 					} catch {
 						print("Error decoding welcome message from Firestore: \(error)")
+						dispatchGroup.leave()
 					}
 				}
 				
@@ -375,7 +379,7 @@ class LoginController: ObservableObject {
 		}
 		
 	}
-	
+
 	func deleteWelcomeMessage(with message: LocalizedWelcomeMessage, language: String, completion: @escaping (Bool) -> Void) {
 		let refGenerator = DocumentReferenceGenerator(language: language)
 		let messageRef = refGenerator.getDocWelcomeMessageRef(withId: message.id)
