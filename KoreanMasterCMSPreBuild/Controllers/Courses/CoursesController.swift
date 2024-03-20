@@ -179,7 +179,7 @@ class CoursesController: ObservableObject {
 					
 					// Delete obsolete multipleChoice
 					self.deleteObsoleteDocuments(refGenerator: refGenerator, detailType: .practice, subCollectionType: .practiceMultipleChoice, updatedData: multipleChoices) { error in
-						if let errror = error {
+						if error != nil {
 							print("Error deleting obsolete multipleChoice: \(String(describing: error))")
 							return
 						}
@@ -333,7 +333,6 @@ class CoursesController: ObservableObject {
 	private func fetchDetails(refGenerator: DocumentReferenceGenerator, completion: @escaping (Lesson?, Error?) -> Void) {
 		let dispatchGroup = DispatchGroup()
 		let lesson = Lesson.empty
-		var encounteredError: Error?
 		
 		dispatchGroup.enter()
 		self.fetchDetailsDocumentData(refGenerator: refGenerator, forType: .info) { (info: LessonInfo?) in
@@ -353,7 +352,7 @@ class CoursesController: ObservableObject {
 		
 		// Wait for all data fetching to complete
 		dispatchGroup.notify(queue: .main) {
-			if let error = encounteredError {
+			if let error = self.encounteredError {
 				completion(nil, error)
 			} else {
 				completion(lesson, nil)
@@ -401,7 +400,23 @@ class CoursesController: ObservableObject {
 		}
 	}
 	
-	
+	func deleteLesson(lesson: Lesson, language: String, completion: @escaping (Bool) -> Void) {
+		let refGenerator = DocumentReferenceGenerator(lessonName: lesson.lessonInfo.lessonName, language: language)
+		
+		
+		let mainLessonPath = refGenerator.getLessonsCollectionRef()
+		
+		mainLessonPath.document(lesson.lessonInfo.lessonName).delete() { error in
+			if let error = error {
+				print("Error removing document: \(error)")
+				completion(false)
+			} else {
+				completion(true)
+			}
+		}
+		
+		
+	}
 	
 	
 }
