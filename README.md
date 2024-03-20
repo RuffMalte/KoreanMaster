@@ -31,14 +31,17 @@ We are continuously working to add more features and enhance your learning exper
 ## Build Steps
 
 ### Learner's App
+1. **Setup:**
+   - Ensure you have Xcode installed on your macOS device.
+   - Clone the repository to your local machine.
 
-1. **Firebase Configuration:**
+2. **Firebase Configuration:**
    - Obtain `GoogleService-Info.plist` for Firebase:
      - Contact the developer to obtain the file, or
      - Create your own Firebase project and download the file.
    - Add `GoogleService-Info.plist` to the app's root directory.
 
-2. **Build and Run:**
+3. **Build and Run:**
    - Open the project in Xcode.
    - Resolve any dependencies.
    - Build and run the app.
