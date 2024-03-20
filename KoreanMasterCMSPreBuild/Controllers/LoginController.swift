@@ -200,18 +200,29 @@ class LoginController: ObservableObject {
 	
 	//MARK: Admin
 	
-	func getAllFirestoreUsers() {
+	func getAllFirestoreUsers(with ids: [String]? = nil) {
 		let usersCollection = Firestore.firestore().collection("users")
 		usersCollection.getDocuments { querySnapshot, error in
 			if let error = error {
 				print("Error reading all users from Firestore: \(error)")
 			} else {
-				self.allFirestoreUsers = querySnapshot?.documents.compactMap { document in
-					try? document.data(as: FirestoreUser.self)
-				} ?? []
+				var users: [FirestoreUser] = []
+				let documents = querySnapshot?.documents ?? []
+				
+				for document in documents {
+					if let user = try? document.data(as: FirestoreUser.self) {
+						// If 'ids' is nil or empty, add all users. Otherwise, only add users whose ID is in 'ids'.
+						if ids == nil || ids!.isEmpty || ids!.contains(user.id) {
+							users.append(user)
+						}
+					}
+				}
+				
+				self.allFirestoreUsers = users
 			}
 		}
 	}
+
 	
 	func changeUserAdminStatus(with id: String) {
 		let usersCollection = Firestore.firestore().collection("users")

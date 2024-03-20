@@ -88,6 +88,10 @@
 		2EF1F17F2BAB2E4200B1426C /* CourseLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6C51AB2B93668D00626F95 /* CourseLanguage.swift */; };
 		2EF1F1802BAB2E4600B1426C /* LoginOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6C518B2B92847300626F95 /* LoginOptions.swift */; };
 		2EF1F1812BAB2E4800B1426C /* FirestoreUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6C519E2B92944000626F95 /* FirestoreUser.swift */; };
+		2EF1F1842BAB30C000B1426C /* CreateUserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF1F1832BAB30C000B1426C /* CreateUserTests.swift */; };
+		2EF1F1872BAB384C00B1426C /* CourseControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF1F1862BAB384C00B1426C /* CourseControllerTests.swift */; };
+		2EF1F1882BAB38A500B1426C /* CoursesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EAC1C3C2B93B77900F713F7 /* CoursesController.swift */; };
+		2EF1F1892BAB39CE00B1426C /* AllLessonsLocalizedMocData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EAC1C572B98729200F713F7 /* AllLessonsLocalizedMocData.swift */; };
 		2EF41ACD2B927A36007431ED /* KoreanMasterCMSPreBuildApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF41ACC2B927A36007431ED /* KoreanMasterCMSPreBuildApp.swift */; };
 		2EF41ACF2B927A36007431ED /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF41ACE2B927A36007431ED /* ContentView.swift */; };
 		2EF41AD12B927A38007431ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2EF41AD02B927A38007431ED /* Assets.xcassets */; };
@@ -175,6 +179,8 @@
 		2EDF0C0D2B9A3C1B001132AD /* LessonDetailSmallCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonDetailSmallCellView.swift; sourceTree = "<group>"; };
 		2EDF0C142B9A6663001132AD /* ModifyLessonTagsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyLessonTagsView.swift; sourceTree = "<group>"; };
 		2EF1F1792BAB290C00B1426C /* WelcomeMessagesControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeMessagesControllerTests.swift; sourceTree = "<group>"; };
+		2EF1F1832BAB30C000B1426C /* CreateUserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUserTests.swift; sourceTree = "<group>"; };
+		2EF1F1862BAB384C00B1426C /* CourseControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseControllerTests.swift; sourceTree = "<group>"; };
 		2EF41AC92B927A36007431ED /* KoreanMasterCMSPreBuild.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KoreanMasterCMSPreBuild.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2EF41ACC2B927A36007431ED /* KoreanMasterCMSPreBuildApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KoreanMasterCMSPreBuildApp.swift; sourceTree = "<group>"; };
 		2EF41ACE2B927A36007431ED /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -294,6 +300,8 @@
 		2E6C519C2B92930400626F95 /* ControllerTest */ = {
 			isa = PBXGroup;
 			children = (
+				2EF1F1852BAB383F00B1426C /* Course */,
+				2EF1F1822BAB309800B1426C /* CreateUser */,
 				2EF1F1782BAB28F400B1426C /* WelcomeMessages */,
 				2EA8D3582BAA08FE003067E2 /* Helper */,
 				2EA8D3572BAA08F6003067E2 /* Vocab */,
@@ -935,6 +943,22 @@
 			path = WelcomeMessages;
 			sourceTree = "<group>";
 		};
+		2EF1F1822BAB309800B1426C /* CreateUser */ = {
+			isa = PBXGroup;
+			children = (
+				2EF1F1832BAB30C000B1426C /* CreateUserTests.swift */,
+			);
+			path = CreateUser;
+			sourceTree = "<group>";
+		};
+		2EF1F1852BAB383F00B1426C /* Course */ = {
+			isa = PBXGroup;
+			children = (
+				2EF1F1862BAB384C00B1426C /* CourseControllerTests.swift */,
+			);
+			path = Course;
+			sourceTree = "<group>";
+		};
 		2EF41AC02B927A36007431ED = {
 			isa = PBXGroup;
 			children = (
@@ -1129,11 +1153,13 @@
 			files = (
 				2EA8D3502BAA0460003067E2 /* TranslationControllerTests.swift in Sources */,
 				2EA8D35C2BAA092B003067E2 /* Vocab.swift in Sources */,
+				2EF1F1842BAB30C000B1426C /* CreateUserTests.swift in Sources */,
 				2EF1F17A2BAB290C00B1426C /* WelcomeMessagesControllerTests.swift in Sources */,
 				2EF1F17B2BAB293800B1426C /* LoginController.swift in Sources */,
 				2EF1F17D2BAB2E3B00B1426C /* ColorEnum.swift in Sources */,
 				2EF1F17C2BAB2A0C00B1426C /* WelcomeMessage.swift in Sources */,
 				2EA8D35D2BAA0A01003067E2 /* DocumentReferenceGenerator.swift in Sources */,
+				2EF1F1872BAB384C00B1426C /* CourseControllerTests.swift in Sources */,
 				2EA8D3552BAA0818003067E2 /* DictionaryController.swift in Sources */,
 				2EA8D35B2BAA0924003067E2 /* VocabController.swift in Sources */,
 				2EA8D3542BAA080E003067E2 /* DictionaryControllerTests.swift in Sources */,
@@ -1143,8 +1169,10 @@
 				2EF1F1812BAB2E4800B1426C /* FirestoreUser.swift in Sources */,
 				2EA8D3562BAA08B4003067E2 /* Dictionary.swift in Sources */,
 				2EA8D3522BAA05A1003067E2 /* APIKeys.swift in Sources */,
+				2EF1F1882BAB38A500B1426C /* CoursesController.swift in Sources */,
 				2E6C51962B9292DC00626F95 /* KoreanMasterCMSPreBuildTests.swift in Sources */,
 				2EF1F1802BAB2E4600B1426C /* LoginOptions.swift in Sources */,
+				2EF1F1892BAB39CE00B1426C /* AllLessonsLocalizedMocData.swift in Sources */,
 				2EA8D35A2BAA0916003067E2 /* VocabControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

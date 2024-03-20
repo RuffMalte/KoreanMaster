@@ -50,5 +50,16 @@ final class VocabControllerTests: XCTestCase {
 		}
 		
 		waitForExpectations(timeout: 20, handler: nil)
+		
+		
+		let getAfterDeleteExpectation = self.expectation(description: "get vocab after delete")
+		vocabController.getVocab(with: ["TEST"], language: "English") { vocab, error in
+			XCTAssertNil(error)
+			XCTAssertNotNil(vocab)
+			
+			XCTAssertEqual(vocab.count, 0)
+			getAfterDeleteExpectation.fulfill()
+		}
+		waitForExpectations(timeout: 20, handler: nil)
 	}
 }
