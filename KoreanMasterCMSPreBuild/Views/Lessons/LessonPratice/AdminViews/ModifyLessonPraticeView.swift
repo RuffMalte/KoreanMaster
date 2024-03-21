@@ -22,8 +22,7 @@ struct ModifyLessonPraticeView: View {
 				NavigationLink {
 					List {
 						Button {
-							let newAnser = LessonPraticeMultipleChoiceAnswer(answer: "")
-							lessonPractice.mulitpleChoice?.append(LessonpracticeMultipleChoice(question: "", answers: [], correctAnswer: newAnser))
+							lessonPractice.mulitpleChoice?.append(LessonpracticeMultipleChoice.empty)
 						} label: {
 							Label("Add new Multiplechoice Question", systemImage: "plus")
 						}
@@ -42,8 +41,7 @@ struct ModifyLessonPraticeView: View {
 				NavigationLink {
 					List {
 						Button {
-							let newSentencePratice = LessonpracticeSentenceBuilding(question: "", answers: [], correctAnswer: "")
-							lessonPractice.sentenceBuilding?.append(newSentencePratice)
+							lessonPractice.sentenceBuilding?.append(LessonpracticeSentenceBuilding.empty)
 						} label: {
 							Label("Add new Sentence Building Question", systemImage: "plus")
 						

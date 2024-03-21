@@ -16,16 +16,11 @@ struct ModifyLessonTagsView: View {
 			ScrollView(.horizontal, showsIndicators: false) {
 				HStack {
 					Button {
-						let newLessonTag = lessonTag
-						
-						let emptyTag = LessonTagItem(tagName: "", tagColor: .blue)
 						if lessonTag.lessonTagItems != nil {
-							newLessonTag.lessonTagItems?.append(emptyTag)
+							lessonTag.lessonTagItems?.append(LessonTagItem.emtpy)
 						} else {
-							newLessonTag.lessonTagItems = [emptyTag]
+							lessonTag.lessonTagItems = [LessonTagItem.emtpy]
 						}
-						lessonTag = LessonTag(title: newLessonTag.title, lessonTagItems: newLessonTag.lessonTagItems ?? [])
-						
 					} label: {
 						Image(systemName: "plus")
 					}

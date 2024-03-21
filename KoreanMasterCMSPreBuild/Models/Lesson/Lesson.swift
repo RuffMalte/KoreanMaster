@@ -129,6 +129,7 @@ class LessonInfo: Identifiable, Codable {
 	}
 }
 
+@Observable
 class LessonTag: Identifiable, Codable {
 	var title: String
 	var lessonTagItems: [LessonTagItem]?

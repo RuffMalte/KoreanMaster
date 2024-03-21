@@ -90,7 +90,9 @@ extension LessonInfo {
 extension LessonTag {
 	static var example: LessonTag = LessonTag(title: "Title", lessonTagItems: LessonTagItem.multipleExamples)
 	
-	static var empty: LessonTag = LessonTag(title: "", lessonTagItems: [])
+	static var empty: LessonTag {
+		return LessonTag(title: "", lessonTagItems: [])
+	}
 }
 
 extension LessonTagItem {
@@ -103,7 +105,9 @@ extension LessonTagItem {
 		LessonTagItem(tagName: "Tag", tagColor: .pink),
 	]
 	
-	static var emtpy: LessonTagItem = LessonTagItem(tagName: "", tagColor: .blue)
+	static var emtpy: LessonTagItem {
+		return LessonTagItem(tagName: "", tagColor: .blue)
+	}
 }
 
 extension LikedBy {
@@ -130,11 +134,13 @@ extension LessonGoal {
 		lessonGoalExamples: LessonGoalExample.mutlipleExample
 	)
 	
-	static var new: LessonGoal = LessonGoal(
-		goalText: "Goal Text",
-		title: "TITLEEEE",
-		lessonGoalExamples: []
-	)
+	static var new: LessonGoal {
+		return LessonGoal(
+			goalText: "Goal Text",
+			title: "TITLEEEE",
+			lessonGoalExamples: []
+		)
+	}
 }
 
 extension LessonGoalExample {
@@ -143,7 +149,9 @@ extension LessonGoalExample {
 		LessonGoalExample(title: "Title", koreanText: "ko text 2", translatedText: "org text 2"),
 		LessonGoalExample(title: "Title", koreanText: "ko text 3", translatedText: "org text 3")
 	]
-	static var empty = LessonGoalExample(title: "", koreanText: "", translatedText: "")
+	static var empty: LessonGoalExample {
+		return LessonGoalExample(title: "", koreanText: "", translatedText: "")
+	}
 }
 
 extension NewLessonVocabUsed {
@@ -166,7 +174,9 @@ extension LessonGrammarPage {
 		LessonGrammarPage(title: "Title 3", desc: "desc", example: "example")
 	]
 	
-	static var empty: LessonGrammarPage = LessonGrammarPage(title: "", desc: "", example: "")
+	static var empty: LessonGrammarPage {
+		return LessonGrammarPage(title: "", desc: "", example: "")
+	}
 }
 
 extension LessonPractice {
@@ -185,10 +195,17 @@ extension LessonpracticeMultipleChoice {
 									 correctAnswer: LessonPraticeMultipleChoiceAnswer.example
 									)
 	]
+	
+	static var empty: LessonpracticeMultipleChoice {
+		return LessonpracticeMultipleChoice(question: "", answers: [], correctAnswer: LessonPraticeMultipleChoiceAnswer.example)
+	}
+	
 }
 
 extension LessonPraticeMultipleChoiceAnswer {
-	static var example = LessonPraticeMultipleChoiceAnswer(answer: "")
+	static var example: LessonPraticeMultipleChoiceAnswer {
+		return LessonPraticeMultipleChoiceAnswer(answer: "")
+	}
 }
 
 extension LessonpracticeSentenceBuilding {
@@ -198,6 +215,10 @@ extension LessonpracticeSentenceBuilding {
 		LessonpracticeSentenceBuilding(question: "adawdw", answers: ["a", "b"], correctAnswer: "a"),
 		LessonpracticeSentenceBuilding(question: "adawdw", answers: ["a", "b"], correctAnswer: "a")
 	]
+	
+	static var empty: LessonpracticeSentenceBuilding {
+		return LessonpracticeSentenceBuilding(question: "", answers: [], correctAnswer: "")
+	}
 }
 
 extension LessonCultureReference {

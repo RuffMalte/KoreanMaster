@@ -21,8 +21,7 @@ struct ModifyLessonGrammarView: View {
 			NavigationLink {
 				List {
 					Button {
-						let newPage = LessonGrammarPage(title: "", desc: "", example: "")
-						lessonGrammar.LessonGrammarPages?.append(newPage)
+						lessonGrammar.LessonGrammarPages?.append(LessonGrammarPage.empty)
 					} label: {
 						Label("Add New Page", systemImage: "plus")
 					}

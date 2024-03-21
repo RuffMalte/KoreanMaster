@@ -75,10 +75,6 @@ struct AllLessonsListView: View {
 						lessons: lessons
 					)
 					
-					for lesson in newLocalized.lessons {
-						print("Lesson ID: \(lesson.id) - \(lesson.lessonInfo.lessonName) - \(lesson.lessonInfo.heading) - \(lesson.lessonInfo.section) - \(lesson.lessonInfo.unit)")
-					}
-					
 					if allLessonsLocalized.localizedLessons.contains(where: { $0.language == newLocalized.language }) {
 						allLessonsLocalized.localizedLessons.removeAll(where: { $0.language == newLocalized.language })
 					}

@@ -43,6 +43,7 @@ struct ModifyLessonGoalView: View {
 				.font(.system(.title2, design: .rounded, weight: .bold))
 				.foregroundStyle(.tint)
 		}
+		.navigationTitle("Lesson Goal")
 	}
 	
 }
