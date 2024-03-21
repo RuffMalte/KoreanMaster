@@ -124,5 +124,19 @@ class DocumentReferenceGenerator {
 	func getVocabDocRef(withId id: String) -> DocumentReference {
 		return db.collection(self.vocabPath).document(id)
 	}
+	
+	
+	private var difficultyPath: String {
+		"lessonsTEST/\(language)/difficulty"
+	}
+	
+	func getDifficultyCollectionPath() -> CollectionReference {
+		return db.collection(self.difficultyPath)
+	}
+	
+	func getDifficultyDocRef(withId id: String) -> DocumentReference {
+		return db.collection(self.difficultyPath).document(id)
+	}
+	
 }
 

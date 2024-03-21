@@ -24,6 +24,12 @@
 		2E666E242BAC99BE00C59FEB /* InSessionSwitchSubLessonButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E666E232BAC99BE00C59FEB /* InSessionSwitchSubLessonButtonView.swift */; };
 		2E666E262BACB43A00C59FEB /* InSessionSwitchBackToSubLessonButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E666E252BACB43A00C59FEB /* InSessionSwitchBackToSubLessonButtonView.swift */; };
 		2E666E292BACC01A00C59FEB /* ConfettiSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 2E666E282BACC01A00C59FEB /* ConfettiSwiftUI */; };
+		2E666E2D2BACC82A00C59FEB /* DifficultyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E666E2C2BACC82A00C59FEB /* DifficultyController.swift */; };
+		2E666E312BACCBB800C59FEB /* AllDificultiesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E666E302BACCBB800C59FEB /* AllDificultiesView.swift */; };
+		2E666E342BACCD4F00C59FEB /* ModifyDificultySheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E666E332BACCD4F00C59FEB /* ModifyDificultySheetView.swift */; };
+		2E666E362BACCD9F00C59FEB /* LocalizedDifficultyListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E666E352BACCD9F00C59FEB /* LocalizedDifficultyListView.swift */; };
+		2E666E392BACD23E00C59FEB /* LessonDifficultyDetailSmallCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E666E382BACD23E00C59FEB /* LessonDifficultyDetailSmallCellView.swift */; };
+		2E666E3C2BACD4DC00C59FEB /* LessonDifficultyPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E666E3B2BACD4DC00C59FEB /* LessonDifficultyPickerView.swift */; };
 		2E6C517B2B927C7000626F95 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6C517A2B927C7000626F95 /* MainTabView.swift */; };
 		2E6C51802B927ECB00626F95 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6C517F2B927ECB00626F95 /* ProfileView.swift */; };
 		2E6C51832B92817100626F95 /* MainSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6C51822B92817100626F95 /* MainSettingsView.swift */; };
@@ -139,6 +145,12 @@
 		2E666E212BAC902600C59FEB /* InSessionLessonInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InSessionLessonInfoView.swift; sourceTree = "<group>"; };
 		2E666E232BAC99BE00C59FEB /* InSessionSwitchSubLessonButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InSessionSwitchSubLessonButtonView.swift; sourceTree = "<group>"; };
 		2E666E252BACB43A00C59FEB /* InSessionSwitchBackToSubLessonButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InSessionSwitchBackToSubLessonButtonView.swift; sourceTree = "<group>"; };
+		2E666E2C2BACC82A00C59FEB /* DifficultyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DifficultyController.swift; sourceTree = "<group>"; };
+		2E666E302BACCBB800C59FEB /* AllDificultiesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllDificultiesView.swift; sourceTree = "<group>"; };
+		2E666E332BACCD4F00C59FEB /* ModifyDificultySheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyDificultySheetView.swift; sourceTree = "<group>"; };
+		2E666E352BACCD9F00C59FEB /* LocalizedDifficultyListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedDifficultyListView.swift; sourceTree = "<group>"; };
+		2E666E382BACD23E00C59FEB /* LessonDifficultyDetailSmallCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonDifficultyDetailSmallCellView.swift; sourceTree = "<group>"; };
+		2E666E3B2BACD4DC00C59FEB /* LessonDifficultyPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonDifficultyPickerView.swift; sourceTree = "<group>"; };
 		2E6C517A2B927C7000626F95 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		2E6C517F2B927ECB00626F95 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		2E6C51822B92817100626F95 /* MainSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSettingsView.swift; sourceTree = "<group>"; };
@@ -272,6 +284,7 @@
 				2E8D83BD2BA1CE9C0039DE57 /* CellViews */,
 				2E8D83B62BA1CD330039DE57 /* Modify */,
 				2E5B3D782BA1AFA00028FCB2 /* AllWelcomeMessages.swift */,
+				2E8D83B42BA1C4230039DE57 /* LocalizedWelcomeMessageListView.swift */,
 			);
 			path = AdminViews;
 			sourceTree = "<group>";
@@ -357,6 +370,69 @@
 				2E666E212BAC902600C59FEB /* InSessionLessonInfoView.swift */,
 			);
 			path = InSession;
+			sourceTree = "<group>";
+		};
+		2E666E2A2BACC7FB00C59FEB /* CourseControllers */ = {
+			isa = PBXGroup;
+			children = (
+				2EAC1C5D2B98BC0900F713F7 /* DocumentReferenceGenerator.swift */,
+				2EAC1C5C2B98BBF600F713F7 /* Courses */,
+				2E666E2B2BACC81600C59FEB /* Difficulty */,
+				2E7E3A4C2BA317CB00CD9353 /* Vocab */,
+			);
+			path = CourseControllers;
+			sourceTree = "<group>";
+		};
+		2E666E2B2BACC81600C59FEB /* Difficulty */ = {
+			isa = PBXGroup;
+			children = (
+				2E666E2C2BACC82A00C59FEB /* DifficultyController.swift */,
+			);
+			path = Difficulty;
+			sourceTree = "<group>";
+		};
+		2E666E2E2BACCAAA00C59FEB /* Difficulty */ = {
+			isa = PBXGroup;
+			children = (
+				2E666E2F2BACCAB300C59FEB /* AdminViews */,
+			);
+			path = Difficulty;
+			sourceTree = "<group>";
+		};
+		2E666E2F2BACCAB300C59FEB /* AdminViews */ = {
+			isa = PBXGroup;
+			children = (
+				2E666E3A2BACD4CD00C59FEB /* Picker */,
+				2E666E372BACD23700C59FEB /* CellView */,
+				2E666E322BACCD1300C59FEB /* Modify */,
+				2E666E302BACCBB800C59FEB /* AllDificultiesView.swift */,
+				2E666E352BACCD9F00C59FEB /* LocalizedDifficultyListView.swift */,
+			);
+			path = AdminViews;
+			sourceTree = "<group>";
+		};
+		2E666E322BACCD1300C59FEB /* Modify */ = {
+			isa = PBXGroup;
+			children = (
+				2E666E332BACCD4F00C59FEB /* ModifyDificultySheetView.swift */,
+			);
+			path = Modify;
+			sourceTree = "<group>";
+		};
+		2E666E372BACD23700C59FEB /* CellView */ = {
+			isa = PBXGroup;
+			children = (
+				2E666E382BACD23E00C59FEB /* LessonDifficultyDetailSmallCellView.swift */,
+			);
+			path = CellView;
+			sourceTree = "<group>";
+		};
+		2E666E3A2BACD4CD00C59FEB /* Picker */ = {
+			isa = PBXGroup;
+			children = (
+				2E666E3B2BACD4DC00C59FEB /* LessonDifficultyPickerView.swift */,
+			);
+			path = Picker;
 			sourceTree = "<group>";
 		};
 		2E6C51792B927C6500626F95 /* MainTabView */ = {
@@ -978,7 +1054,6 @@
 			isa = PBXGroup;
 			children = (
 				2EAC1C5A2B989EBB00F713F7 /* AllLessonsListView.swift */,
-				2E8D83B42BA1C4230039DE57 /* LocalizedWelcomeMessageListView.swift */,
 			);
 			path = AdminViews;
 			sourceTree = "<group>";
@@ -1010,6 +1085,7 @@
 		2EDF0C0B2B9A3BF4001132AD /* Lesson */ = {
 			isa = PBXGroup;
 			children = (
+				2E666E2E2BACCAAA00C59FEB /* Difficulty */,
 				2E666E0D2BAC644900C59FEB /* InSession */,
 				2E7E3A832BA6E77100CD9353 /* AdminViews */,
 			);
@@ -1136,9 +1212,7 @@
 		2EF41ADC2B927ABD007431ED /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				2EAC1C5D2B98BC0900F713F7 /* DocumentReferenceGenerator.swift */,
-				2E7E3A4C2BA317CB00CD9353 /* Vocab */,
-				2EAC1C5C2B98BBF600F713F7 /* Courses */,
+				2E666E2A2BACC7FB00C59FEB /* CourseControllers */,
 				2E6C51A72B935AC700626F95 /* Helper */,
 				2E6C518D2B92888200626F95 /* LoginController.swift */,
 			);
@@ -1310,7 +1384,9 @@
 				2EDF0C042B9A170C001132AD /* LocallizedLessonListView.swift in Sources */,
 				2EDF0C082B9A3A60001132AD /* ModifyLocalizedLessonView.swift in Sources */,
 				2E7E3A512BA318BF00CD9353 /* Vocab.swift in Sources */,
+				2E666E2D2BACC82A00C59FEB /* DifficultyController.swift in Sources */,
 				2E8D83BB2BA1CE240039DE57 /* LocalizedWelcomeMessageMocData.swift in Sources */,
+				2E666E312BACCBB800C59FEB /* AllDificultiesView.swift in Sources */,
 				2E8D83B82BA1CD500039DE57 /* ModifyWelcomeMessageSheetView.swift in Sources */,
 				2E7E3A892BA6EA6C00CD9353 /* NavLinkHeaderView.swift in Sources */,
 				2EAC1C362B93AAB800F713F7 /* JSONView.swift in Sources */,
@@ -1337,9 +1413,11 @@
 				2EA7BDFB2B9B14C800AAA532 /* ColorEnum.swift in Sources */,
 				2EAC1C542B97AA1C00F713F7 /* LessonTagSmallView.swift in Sources */,
 				2E8D83B52BA1C4230039DE57 /* LocalizedWelcomeMessageListView.swift in Sources */,
+				2E666E362BACCD9F00C59FEB /* LocalizedDifficultyListView.swift in Sources */,
 				2E7E3A912BA7868C00CD9353 /* ModifyMultipleChoiceAnswerView.swift in Sources */,
 				2E666E0F2BAC66AD00C59FEB /* InSessionLessonMainView.swift in Sources */,
 				2E6C51B22B93820700626F95 /* ModifyLanguageSheetView.swift in Sources */,
+				2E666E392BACD23E00C59FEB /* LessonDifficultyDetailSmallCellView.swift in Sources */,
 				2EA7BE072B9B80EE00AAA532 /* AllVocabListView.swift in Sources */,
 				2E6C519F2B92944000626F95 /* FirestoreUser.swift in Sources */,
 				2E7E3A8E2BA6EDA200CD9353 /* ModifyLessonPraticeMultipleChoiceCellView.swift in Sources */,
@@ -1359,12 +1437,14 @@
 				2E6C51AC2B93668D00626F95 /* CourseLanguage.swift in Sources */,
 				2E666E262BACB43A00C59FEB /* InSessionSwitchBackToSubLessonButtonView.swift in Sources */,
 				2E7E3A632BA33F4A00CD9353 /* Dictionary.swift in Sources */,
+				2E666E342BACCD4F00C59FEB /* ModifyDificultySheetView.swift in Sources */,
 				2E666E082BAC353F00C59FEB /* ModifyLessonCultureRefrence.swift in Sources */,
 				2E666E1B2BAC865600C59FEB /* InSessionLessonHeaderView.swift in Sources */,
 				2E7E3A602BA33D5A00CD9353 /* DictionaryController.swift in Sources */,
 				2E7E3A652BA5B86000CD9353 /* VocabDetailListSmallCellView.swift in Sources */,
 				2E8D83C52BA2F8170039DE57 /* TranslationController.swift in Sources */,
 				2EAC1C582B98729200F713F7 /* AllLessonsLocalizedMocData.swift in Sources */,
+				2E666E3C2BACD4DC00C59FEB /* LessonDifficultyPickerView.swift in Sources */,
 				2EAC1C512B97A5DD00F713F7 /* Lesson.swift in Sources */,
 				2E7E3A552BA31C9100CD9353 /* VocabDetailSmallCellView.swift in Sources */,
 				2EDF0C062B9A39D4001132AD /* ModifyLessonInfoView.swift in Sources */,

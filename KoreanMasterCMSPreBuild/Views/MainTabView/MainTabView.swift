@@ -60,6 +60,13 @@ struct MainTabView: View {
 				} label: {
 					Label("Welcome Messages", systemImage: "message.fill")
 				}
+				
+				NavigationLink {
+					AllDificultiesView()
+				} label: {
+					Label("Difficulties", systemImage: "exclamationmark.triangle.fill")
+				}
+
 
 			}
 			

@@ -68,7 +68,7 @@ extension LessonInfo {
 		lessonName: "Lesson 2",
 		heading: "The Korean Alphabet",
 		desc: "Learn the Korean Alphabet",
-		difficulty: "Easy",
+		difficultyID: "",
 		xpToGain: 100,
 		likedBy: LikedBy.multipleExample,
 		commentedBy: CommentedBy.multipleExample
@@ -80,11 +80,22 @@ extension LessonInfo {
 		lessonName: "New",
 		heading: "",
 		desc: "",
-		difficulty: "",
+		difficultyID: "",
 		xpToGain: 0,
 		likedBy: [],
 		commentedBy: []
 	)
+}
+
+extension LessonDiffuculty {
+	static var example: LessonDiffuculty {
+		return  LessonDiffuculty(difficulty: "Simple")
+	}
+	
+	static var new: LessonDiffuculty {
+		return LessonDiffuculty(difficulty: "")
+	}
+	
 }
 
 extension LessonTag {

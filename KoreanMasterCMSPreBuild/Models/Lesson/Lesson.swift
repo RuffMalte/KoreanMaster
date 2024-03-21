@@ -88,7 +88,7 @@ class LessonInfo: Identifiable, Codable {
 	var lessonName: String
 	var heading: String
 	var desc: String
-	var difficulty: String
+	var difficultyID: String
 	var xpToGain: Int
 	
 	
@@ -101,7 +101,7 @@ class LessonInfo: Identifiable, Codable {
 		lessonName: String,
 		heading: String,
 		desc: String,
-		difficulty: String,
+		difficultyID: String,
 		xpToGain: Int,
 		likedBy: [LikedBy]? = nil,
 		commentedBy: [CommentedBy]? = nil
@@ -111,7 +111,7 @@ class LessonInfo: Identifiable, Codable {
 		self.lessonName = lessonName
 		self.heading = heading
 		self.desc = desc
-		self.difficulty = difficulty
+		self.difficultyID = difficultyID
 		self.xpToGain = xpToGain
 		self.likedBy = likedBy
 		self.commentedBy = commentedBy
@@ -124,9 +124,40 @@ class LessonInfo: Identifiable, Codable {
 			"_lessonName": lessonName,
 			"_heading": heading,
 			"_desc": desc,
-			"_difficulty": difficulty,
+			"_difficultyID": difficultyID,
 			"_xpToGain": xpToGain
 		]
+	}}
+
+
+@Observable
+class LessonDiffuculty: Identifiable, Codable, Hashable {
+	
+	static func == (lhs: LessonDiffuculty, rhs: LessonDiffuculty) -> Bool {
+		return lhs.id == rhs.id
+	}
+	
+	func hash(into hasher: inout Hasher) {
+		hasher.combine(id)
+	}
+	
+
+	
+	var id: String
+	var difficulty: String
+	var color: ColorEnum
+	var SFicon: String
+	
+	init(
+		id: String = UUID().uuidString,
+		difficulty: String,
+		color: ColorEnum = .blue,
+		SFicon: String = "circle"
+	) {
+		self.id = id
+		self.difficulty = difficulty
+		self.color = color
+		self.SFicon = SFicon
 	}
 }
 

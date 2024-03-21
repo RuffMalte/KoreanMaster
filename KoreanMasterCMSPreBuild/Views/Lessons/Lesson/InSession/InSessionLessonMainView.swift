@@ -17,7 +17,10 @@ struct InSessionLessonMainView: View {
 
 	@State private var isShowingDebug = false
 	@EnvironmentObject var loginCon: LoginController
-
+	
+	@StateObject var difficultyCon: DifficultyController = DifficultyController()
+	@State private var lessonDifficulty: LessonDiffuculty?
+	
     var body: some View {
 		VStack {
 			if ((loginCon.currentFirestoreUser?.isAdminLesson) != nil) {
@@ -58,10 +61,21 @@ struct InSessionLessonMainView: View {
 				Text(lesson.lessonInfo.lessonName)
 				Spacer()
 				HStack {
-					Text(lesson.lessonInfo.difficulty)
-					Text(" - ")
+					if let lessonDifficulty = lessonDifficulty {
+						HStack {
+							Label {
+								Text(lessonDifficulty.difficulty)
+							} icon: {
+								Image(systemName: lessonDifficulty.SFicon)
+							}
+							.foregroundStyle(lessonDifficulty.color.toColor)
+							
+							Text(" - ")
+						}
+					}
 					Text(lesson.lessonInfo.xpToGain.description)
 				}
+				
 			}
 			.font(.system(.headline, design: .rounded, weight: .bold))
 			

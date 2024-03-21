@@ -1,13 +1,13 @@
 //
-//  AllWelcomeMessages.swift
+//  AllDificultiesView.swift
 //  KoreanMasterCMSPreBuild
 //
-//  Created by Malte Ruff on 13.03.24.
+//  Created by Malte Ruff on 21.03.24.
 //
 
 import SwiftUI
 
-struct AllWelcomeMessages: View {
+struct AllDificultiesView: View {
 	
 	@EnvironmentObject var loginCon: LoginController
 	
@@ -16,24 +16,18 @@ struct AllWelcomeMessages: View {
 			List {
 				ForEach(loginCon.allLanguages) { language in
 					NavigationLink {
-						LocalizedWelcomeMessageListView(language: language.language)
+						LocalizedDifficultyListView(language: language.language)
 					} label: {
 						LanguageSmallDetailCellView(language: language)
 					}
 				}
 			}
 			.listStyle(SidebarListStyle())
-			.navigationTitle("Welcome Messages")
-			
-			
-			
-			
-			
+			.navigationTitle("Difficulties")
 		}
-		
     }
 }
 
 #Preview {
-    AllWelcomeMessages()
+    AllDificultiesView()
 }

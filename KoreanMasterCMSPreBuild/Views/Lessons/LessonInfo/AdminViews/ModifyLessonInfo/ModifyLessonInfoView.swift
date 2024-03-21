@@ -10,6 +10,7 @@ import SwiftUI
 struct ModifyLessonInfoView: View {
 	
 	@State var lessonInfo: LessonInfo
+	var language: String
 	
     var body: some View {
 		Section {
@@ -23,6 +24,9 @@ struct ModifyLessonInfoView: View {
 				TextField("Heading", text: $lessonInfo.heading)
 				TextField("Description", text: $lessonInfo.desc)
 				//TODO: comments and likes
+				
+				LessonDifficultyPickerView(selectedDifficultyID: $lessonInfo.difficultyID, language: language)
+				
 			}
 		} header: {
 			Text("Lesson Info")
@@ -33,5 +37,5 @@ struct ModifyLessonInfoView: View {
 }
 
 #Preview {
-	ModifyLessonInfoView(lessonInfo: LessonInfo.detailExample)
+	ModifyLessonInfoView(lessonInfo: LessonInfo.detailExample, language: "English")
 }
