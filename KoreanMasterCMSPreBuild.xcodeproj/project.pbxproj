@@ -14,6 +14,14 @@
 		2E666E052BAB958B00C59FEB /* DeepLConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E13E39F2BAB551700C15721 /* DeepLConfig.swift */; };
 		2E666E082BAC353F00C59FEB /* ModifyLessonCultureRefrence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E666E072BAC353F00C59FEB /* ModifyLessonCultureRefrence.swift */; };
 		2E666E0C2BAC35FB00C59FEB /* ModifyCultureRefrenceSongView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E666E0B2BAC35FB00C59FEB /* ModifyCultureRefrenceSongView.swift */; };
+		2E666E0F2BAC66AD00C59FEB /* InSessionLessonMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E666E0E2BAC66AD00C59FEB /* InSessionLessonMainView.swift */; };
+		2E666E132BAC716A00C59FEB /* LessonCommentSmallNavButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E666E122BAC716A00C59FEB /* LessonCommentSmallNavButtonView.swift */; };
+		2E666E152BAC73D900C59FEB /* LessonLikeSmallNavButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E666E142BAC73D900C59FEB /* LessonLikeSmallNavButtonView.swift */; };
+		2E666E182BAC82B900C59FEB /* InSessionLessonGoalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E666E172BAC82B900C59FEB /* InSessionLessonGoalView.swift */; };
+		2E666E1B2BAC865600C59FEB /* InSessionLessonHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E666E1A2BAC865600C59FEB /* InSessionLessonHeaderView.swift */; };
+		2E666E1F2BAC89A100C59FEB /* InSessionLessonGoalExampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E666E1E2BAC89A100C59FEB /* InSessionLessonGoalExampleView.swift */; };
+		2E666E222BAC902600C59FEB /* InSessionLessonInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E666E212BAC902600C59FEB /* InSessionLessonInfoView.swift */; };
+		2E666E242BAC99BE00C59FEB /* InSessionSwitchSubLessonButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E666E232BAC99BE00C59FEB /* InSessionSwitchSubLessonButtonView.swift */; };
 		2E6C517B2B927C7000626F95 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6C517A2B927C7000626F95 /* MainTabView.swift */; };
 		2E6C51802B927ECB00626F95 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6C517F2B927ECB00626F95 /* ProfileView.swift */; };
 		2E6C51832B92817100626F95 /* MainSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6C51822B92817100626F95 /* MainSettingsView.swift */; };
@@ -120,6 +128,14 @@
 		2E666E042BAB948700C59FEB /* KoreanMasterCMSPreBuild.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = KoreanMasterCMSPreBuild.xctestplan; sourceTree = "<group>"; };
 		2E666E072BAC353F00C59FEB /* ModifyLessonCultureRefrence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyLessonCultureRefrence.swift; sourceTree = "<group>"; };
 		2E666E0B2BAC35FB00C59FEB /* ModifyCultureRefrenceSongView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyCultureRefrenceSongView.swift; sourceTree = "<group>"; };
+		2E666E0E2BAC66AD00C59FEB /* InSessionLessonMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InSessionLessonMainView.swift; sourceTree = "<group>"; };
+		2E666E122BAC716A00C59FEB /* LessonCommentSmallNavButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonCommentSmallNavButtonView.swift; sourceTree = "<group>"; };
+		2E666E142BAC73D900C59FEB /* LessonLikeSmallNavButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonLikeSmallNavButtonView.swift; sourceTree = "<group>"; };
+		2E666E172BAC82B900C59FEB /* InSessionLessonGoalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InSessionLessonGoalView.swift; sourceTree = "<group>"; };
+		2E666E1A2BAC865600C59FEB /* InSessionLessonHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InSessionLessonHeaderView.swift; sourceTree = "<group>"; };
+		2E666E1E2BAC89A100C59FEB /* InSessionLessonGoalExampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InSessionLessonGoalExampleView.swift; sourceTree = "<group>"; };
+		2E666E212BAC902600C59FEB /* InSessionLessonInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InSessionLessonInfoView.swift; sourceTree = "<group>"; };
+		2E666E232BAC99BE00C59FEB /* InSessionSwitchSubLessonButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InSessionSwitchSubLessonButtonView.swift; sourceTree = "<group>"; };
 		2E6C517A2B927C7000626F95 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		2E6C517F2B927ECB00626F95 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		2E6C51822B92817100626F95 /* MainSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSettingsView.swift; sourceTree = "<group>"; };
@@ -278,6 +294,64 @@
 				2E666E0B2BAC35FB00C59FEB /* ModifyCultureRefrenceSongView.swift */,
 			);
 			path = AdminView;
+			sourceTree = "<group>";
+		};
+		2E666E0D2BAC644900C59FEB /* InSession */ = {
+			isa = PBXGroup;
+			children = (
+				2E666E1C2BAC865C00C59FEB /* Helper */,
+				2E666E0E2BAC66AD00C59FEB /* InSessionLessonMainView.swift */,
+			);
+			path = InSession;
+			sourceTree = "<group>";
+		};
+		2E666E102BAC714600C59FEB /* Comments */ = {
+			isa = PBXGroup;
+			children = (
+				2E666E122BAC716A00C59FEB /* LessonCommentSmallNavButtonView.swift */,
+			);
+			path = Comments;
+			sourceTree = "<group>";
+		};
+		2E666E112BAC714C00C59FEB /* Likes */ = {
+			isa = PBXGroup;
+			children = (
+				2E666E142BAC73D900C59FEB /* LessonLikeSmallNavButtonView.swift */,
+			);
+			path = Likes;
+			sourceTree = "<group>";
+		};
+		2E666E162BAC829C00C59FEB /* InSession */ = {
+			isa = PBXGroup;
+			children = (
+				2E666E172BAC82B900C59FEB /* InSessionLessonGoalView.swift */,
+			);
+			path = InSession;
+			sourceTree = "<group>";
+		};
+		2E666E1C2BAC865C00C59FEB /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				2E666E1A2BAC865600C59FEB /* InSessionLessonHeaderView.swift */,
+				2E666E232BAC99BE00C59FEB /* InSessionSwitchSubLessonButtonView.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		2E666E1D2BAC896D00C59FEB /* inSession */ = {
+			isa = PBXGroup;
+			children = (
+				2E666E1E2BAC89A100C59FEB /* InSessionLessonGoalExampleView.swift */,
+			);
+			path = inSession;
+			sourceTree = "<group>";
+		};
+		2E666E202BAC901800C59FEB /* InSession */ = {
+			isa = PBXGroup;
+			children = (
+				2E666E212BAC902600C59FEB /* InSessionLessonInfoView.swift */,
+			);
+			path = InSession;
 			sourceTree = "<group>";
 		};
 		2E6C51792B927C6500626F95 /* MainTabView */ = {
@@ -490,6 +564,7 @@
 		2E7E3A662BA5D09100CD9353 /* LessonGoal */ = {
 			isa = PBXGroup;
 			children = (
+				2E666E162BAC829C00C59FEB /* InSession */,
 				2E7E3A6B2BA5D45000CD9353 /* LessonGoalExample */,
 				2E7E3A672BA5D0C100CD9353 /* AdminViews */,
 			);
@@ -515,6 +590,7 @@
 		2E7E3A6B2BA5D45000CD9353 /* LessonGoalExample */ = {
 			isa = PBXGroup;
 			children = (
+				2E666E1D2BAC896D00C59FEB /* inSession */,
 				2E7E3A6C2BA5D45C00CD9353 /* AdminViews */,
 			);
 			path = LessonGoalExample;
@@ -929,6 +1005,7 @@
 		2EDF0C0B2B9A3BF4001132AD /* Lesson */ = {
 			isa = PBXGroup;
 			children = (
+				2E666E0D2BAC644900C59FEB /* InSession */,
 				2E7E3A832BA6E77100CD9353 /* AdminViews */,
 			);
 			path = Lesson;
@@ -945,6 +1022,9 @@
 		2EDF0C0F2B9A649D001132AD /* LessonInfo */ = {
 			isa = PBXGroup;
 			children = (
+				2E666E202BAC901800C59FEB /* InSession */,
+				2E666E112BAC714C00C59FEB /* Likes */,
+				2E666E102BAC714600C59FEB /* Comments */,
 				2E7E3A822BA6E76600CD9353 /* AdminViews */,
 			);
 			path = LessonInfo;
@@ -1012,8 +1092,8 @@
 		2EF41ACB2B927A36007431ED /* KoreanMasterCMSPreBuild */ = {
 			isa = PBXGroup;
 			children = (
-				2E13E39D2BAB550000C15721 /* Static */,
 				2EF41ACC2B927A36007431ED /* KoreanMasterCMSPreBuildApp.swift */,
+				2E13E39D2BAB550000C15721 /* Static */,
 				2EF41ADE2B927AC9007431ED /* Models */,
 				2EF41ADC2B927ABD007431ED /* Controllers */,
 				2EF41ADB2B927A9A007431ED /* Views */,
@@ -1213,10 +1293,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E666E132BAC716A00C59FEB /* LessonCommentSmallNavButtonView.swift in Sources */,
 				2E5B3D792BA1AFA00028FCB2 /* AllWelcomeMessages.swift in Sources */,
 				2E6C51802B927ECB00626F95 /* ProfileView.swift in Sources */,
 				2E6C51B62B93825A00626F95 /* LanguageFromMocData.swift in Sources */,
 				2E6C51892B92840600626F95 /* LoginView.swift in Sources */,
+				2E666E182BAC82B900C59FEB /* InSessionLessonGoalView.swift in Sources */,
+				2E666E222BAC902600C59FEB /* InSessionLessonInfoView.swift in Sources */,
 				2EDF0C042B9A170C001132AD /* LocallizedLessonListView.swift in Sources */,
 				2EDF0C082B9A3A60001132AD /* ModifyLocalizedLessonView.swift in Sources */,
 				2E7E3A512BA318BF00CD9353 /* Vocab.swift in Sources */,
@@ -1227,6 +1310,7 @@
 				2E6C518C2B92847300626F95 /* LoginOptions.swift in Sources */,
 				2EDF0C152B9A6663001132AD /* ModifyLessonTagsView.swift in Sources */,
 				2EAC1C482B94B88100F713F7 /* LanguageSmallDetailCellView.swift in Sources */,
+				2E666E1F2BAC89A100C59FEB /* InSessionLessonGoalExampleView.swift in Sources */,
 				2EAC1C332B93853B00F713F7 /* LanguageCellView.swift in Sources */,
 				2EAC1C3D2B93B77900F713F7 /* CoursesController.swift in Sources */,
 				2E7E3A692BA5D0E500CD9353 /* ModifyLessonGoalView.swift in Sources */,
@@ -1241,11 +1325,13 @@
 				2E6C518E2B92888200626F95 /* LoginController.swift in Sources */,
 				2E7E3A5B2BA31F6A00CD9353 /* LocalizedVocabListView.swift in Sources */,
 				2E6C51AF2B936DA300626F95 /* LanguagesListView.swift in Sources */,
+				2E666E242BAC99BE00C59FEB /* InSessionSwitchSubLessonButtonView.swift in Sources */,
 				2EAC1C5B2B989EBB00F713F7 /* AllLessonsListView.swift in Sources */,
 				2EA7BDFB2B9B14C800AAA532 /* ColorEnum.swift in Sources */,
 				2EAC1C542B97AA1C00F713F7 /* LessonTagSmallView.swift in Sources */,
 				2E8D83B52BA1C4230039DE57 /* LocalizedWelcomeMessageListView.swift in Sources */,
 				2E7E3A912BA7868C00CD9353 /* ModifyMultipleChoiceAnswerView.swift in Sources */,
+				2E666E0F2BAC66AD00C59FEB /* InSessionLessonMainView.swift in Sources */,
 				2E6C51B22B93820700626F95 /* ModifyLanguageSheetView.swift in Sources */,
 				2EA7BE072B9B80EE00AAA532 /* AllVocabListView.swift in Sources */,
 				2E6C519F2B92944000626F95 /* FirestoreUser.swift in Sources */,
@@ -1254,6 +1340,7 @@
 				2E7E3A5E2BA3318E00CD9353 /* ModifyVocabSheetView.swift in Sources */,
 				2E5B3D7C2BA1B0740028FCB2 /* WelcomeMessage.swift in Sources */,
 				2E6C51832B92817100626F95 /* MainSettingsView.swift in Sources */,
+				2E666E152BAC73D900C59FEB /* LessonLikeSmallNavButtonView.swift in Sources */,
 				2E7E3A862BA6E8B000CD9353 /* ModifyLessonPraticeView.swift in Sources */,
 				2E6C51A92B935AD300626F95 /* PasteboardController.swift in Sources */,
 				2E7E3A4E2BA317F900CD9353 /* VocabController.swift in Sources */,
@@ -1265,6 +1352,7 @@
 				2E6C51AC2B93668D00626F95 /* CourseLanguage.swift in Sources */,
 				2E7E3A632BA33F4A00CD9353 /* Dictionary.swift in Sources */,
 				2E666E082BAC353F00C59FEB /* ModifyLessonCultureRefrence.swift in Sources */,
+				2E666E1B2BAC865600C59FEB /* InSessionLessonHeaderView.swift in Sources */,
 				2E7E3A602BA33D5A00CD9353 /* DictionaryController.swift in Sources */,
 				2E7E3A652BA5B86000CD9353 /* VocabDetailListSmallCellView.swift in Sources */,
 				2E8D83C52BA2F8170039DE57 /* TranslationController.swift in Sources */,

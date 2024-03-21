@@ -66,7 +66,7 @@ struct ModifyLessonView: View {
 						.frame(width: reader.size.width / 2, height: reader.size.height, alignment: .center)
 						
 						
-						Text("Lesson Preview")
+						InSessionLessonMainView(lesson: curLesson)
 							.frame(width: reader.size.width / 2, height: reader.size.height, alignment: .center)
 					}
 				}

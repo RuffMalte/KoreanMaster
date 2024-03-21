@@ -30,11 +30,15 @@ class DocumentReferenceGenerator {
 		"lessonsTEST/\(language)/lessons"  // Adjusted path
 	}
 	
-	enum DocumentType: String {
+	enum DocumentType: String, CaseIterable {
 		case info, tags, goal, vocabUsed, grammar, practice, cultureReferences
+		
+	}
+	enum InSessionLessonType: String, CaseIterable {
+		case info, goal, vocabUsed, grammar, practice, cultureReferences
 	}
 	
-	enum CollectionType: String {
+	enum CollectionType: String, CaseIterable {
 		case goalsExamples, grammarPages, practiceMultipleChoice, practiceSentenceBuilding, cultureSongs
 	}
 	

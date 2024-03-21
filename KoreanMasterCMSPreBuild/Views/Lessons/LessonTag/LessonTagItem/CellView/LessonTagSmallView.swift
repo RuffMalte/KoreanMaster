@@ -15,7 +15,7 @@ struct LessonTagSmallView: View {
         Text(lessonTag.tagName)
 			.font(.system(.footnote, design: .rounded, weight: .bold))
 			.foregroundStyle(lessonTag.tagColor.toColor)
-			.padding(5)
+			.padding(8)
 			.background {
 				RoundedRectangle(cornerRadius: 5)
 					.foregroundStyle(lessonTag.tagColor.toColor.opacity(0.2))
