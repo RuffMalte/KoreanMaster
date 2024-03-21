@@ -22,6 +22,8 @@
 		2E666E1F2BAC89A100C59FEB /* InSessionLessonGoalExampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E666E1E2BAC89A100C59FEB /* InSessionLessonGoalExampleView.swift */; };
 		2E666E222BAC902600C59FEB /* InSessionLessonInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E666E212BAC902600C59FEB /* InSessionLessonInfoView.swift */; };
 		2E666E242BAC99BE00C59FEB /* InSessionSwitchSubLessonButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E666E232BAC99BE00C59FEB /* InSessionSwitchSubLessonButtonView.swift */; };
+		2E666E262BACB43A00C59FEB /* InSessionSwitchBackToSubLessonButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E666E252BACB43A00C59FEB /* InSessionSwitchBackToSubLessonButtonView.swift */; };
+		2E666E292BACC01A00C59FEB /* ConfettiSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 2E666E282BACC01A00C59FEB /* ConfettiSwiftUI */; };
 		2E6C517B2B927C7000626F95 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6C517A2B927C7000626F95 /* MainTabView.swift */; };
 		2E6C51802B927ECB00626F95 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6C517F2B927ECB00626F95 /* ProfileView.swift */; };
 		2E6C51832B92817100626F95 /* MainSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6C51822B92817100626F95 /* MainSettingsView.swift */; };
@@ -136,6 +138,7 @@
 		2E666E1E2BAC89A100C59FEB /* InSessionLessonGoalExampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InSessionLessonGoalExampleView.swift; sourceTree = "<group>"; };
 		2E666E212BAC902600C59FEB /* InSessionLessonInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InSessionLessonInfoView.swift; sourceTree = "<group>"; };
 		2E666E232BAC99BE00C59FEB /* InSessionSwitchSubLessonButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InSessionSwitchSubLessonButtonView.swift; sourceTree = "<group>"; };
+		2E666E252BACB43A00C59FEB /* InSessionSwitchBackToSubLessonButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InSessionSwitchBackToSubLessonButtonView.swift; sourceTree = "<group>"; };
 		2E6C517A2B927C7000626F95 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		2E6C517F2B927ECB00626F95 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		2E6C51822B92817100626F95 /* MainSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSettingsView.swift; sourceTree = "<group>"; };
@@ -222,6 +225,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E666E292BACC01A00C59FEB /* ConfettiSwiftUI in Frameworks */,
 				2EF41AE12B927B37007431ED /* FirebaseAuth in Frameworks */,
 				2EF41AE32B927B37007431ED /* FirebaseFirestore in Frameworks */,
 			);
@@ -334,6 +338,7 @@
 			children = (
 				2E666E1A2BAC865600C59FEB /* InSessionLessonHeaderView.swift */,
 				2E666E232BAC99BE00C59FEB /* InSessionSwitchSubLessonButtonView.swift */,
+				2E666E252BACB43A00C59FEB /* InSessionSwitchBackToSubLessonButtonView.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -1192,6 +1197,7 @@
 			packageProductDependencies = (
 				2EF41AE02B927B37007431ED /* FirebaseAuth */,
 				2EF41AE22B927B37007431ED /* FirebaseFirestore */,
+				2E666E282BACC01A00C59FEB /* ConfettiSwiftUI */,
 			);
 			productName = KoreanMasterCMSPreBuild;
 			productReference = 2EF41AC92B927A36007431ED /* KoreanMasterCMSPreBuild.app */;
@@ -1227,6 +1233,7 @@
 			mainGroup = 2EF41AC02B927A36007431ED;
 			packageReferences = (
 				2EF41ADF2B927B37007431ED /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				2E666E272BACC01A00C59FEB /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */,
 			);
 			productRefGroup = 2EF41ACA2B927A36007431ED /* Products */;
 			projectDirPath = "";
@@ -1350,6 +1357,7 @@
 				2E7E3A7B2BA644E200CD9353 /* ModifyLessonGrammarPageListCellView.swift in Sources */,
 				2E6C517B2B927C7000626F95 /* MainTabView.swift in Sources */,
 				2E6C51AC2B93668D00626F95 /* CourseLanguage.swift in Sources */,
+				2E666E262BACB43A00C59FEB /* InSessionSwitchBackToSubLessonButtonView.swift in Sources */,
 				2E7E3A632BA33F4A00CD9353 /* Dictionary.swift in Sources */,
 				2E666E082BAC353F00C59FEB /* ModifyLessonCultureRefrence.swift in Sources */,
 				2E666E1B2BAC865600C59FEB /* InSessionLessonHeaderView.swift in Sources */,
@@ -1653,6 +1661,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		2E666E272BACC01A00C59FEB /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/simibac/ConfettiSwiftUI.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.1.0;
+			};
+		};
 		2EF41ADF2B927B37007431ED /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
@@ -1664,6 +1680,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		2E666E282BACC01A00C59FEB /* ConfettiSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2E666E272BACC01A00C59FEB /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */;
+			productName = ConfettiSwiftUI;
+		};
 		2EF41AE02B927B37007431ED /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 2EF41ADF2B927B37007431ED /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;

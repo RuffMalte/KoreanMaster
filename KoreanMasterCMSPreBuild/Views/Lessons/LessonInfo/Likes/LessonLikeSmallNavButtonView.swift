@@ -6,13 +6,17 @@
 //
 
 import SwiftUI
+import ConfettiSwiftUI
 
 struct LessonLikeSmallNavButtonView: View {
 	
 	@State var likedBy: [LikedBy]
 	
+	@State private var counter = 0
+	
     var body: some View {
 		Button {
+			counter += 1
 			//TODO: add logic
 		} label: {
 			VStack {
@@ -29,6 +33,21 @@ struct LessonLikeSmallNavButtonView: View {
 			}
 		}
 		.buttonStyle(.plain)
+		.confettiCannon(
+			counter: $counter,
+			num: 1,
+			confettis: [
+				.sfSymbol(symbolName: "heart.fill"),
+				.sfSymbol(symbolName: "sparkle"),				
+			],
+			confettiSize: 20,
+			rainHeight: 100,
+			fadesOut: true,
+			radius: 100,
+			repetitions: 6,
+			repetitionInterval: 0.1
+		)
+		
     }
 }
 

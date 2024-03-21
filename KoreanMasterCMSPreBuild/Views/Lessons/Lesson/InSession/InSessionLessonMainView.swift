@@ -21,8 +21,22 @@ struct InSessionLessonMainView: View {
     var body: some View {
 		VStack {
 			if ((loginCon.currentFirestoreUser?.isAdminLesson) != nil) {
-				HStack {
-					Toggle("Debug", isOn: $isShowingDebug)
+				VStack {
+					Text("Admin Controls")
+						.font(.system(.headline, design: .rounded, weight: .bold))
+						.foregroundStyle(.tint)
+					HStack {
+						Spacer()
+						Toggle("Degbug Mode", isOn: $isShowingDebug)
+						InSessionSwitchBackToSubLessonButtonView(switchLesson: switchBackToSubLesson)
+						InSessionSwitchSubLessonButtonView(switchLesson: switchToNextSubLesson)
+						Spacer()
+					}
+				}
+				.padding()
+				.background {
+					RoundedRectangle(cornerRadius: 10)
+						.foregroundStyle(.bar)
 				}
 			}
 			
@@ -105,6 +119,16 @@ struct InSessionLessonMainView: View {
 				RoundedRectangle(cornerRadius: 20)
 					.foregroundStyle(.secondary.opacity(0.2))
 			}
+			.overlay {
+				VStack {
+					Spacer()
+					HStack {
+						Spacer()
+						InSessionSwitchBackToSubLessonButtonView(switchLesson: switchBackToSubLesson)
+							.padding()
+					}
+				}
+			}
 			
 		}
 		.padding()
@@ -116,6 +140,18 @@ struct InSessionLessonMainView: View {
 		let nextIndex = currentIndex + 1
 		
 		if nextIndex < allCases.count {
+			withAnimation {
+				selectedTypeIndex = nextIndex
+				currentTab = allCases[nextIndex]
+			}
+		}
+	}
+	private func switchBackToSubLesson() {
+		let allCases = DocumentReferenceGenerator.InSessionLessonType.allCases
+		let currentIndex = allCases.firstIndex(of: currentTab) ?? 0
+		let nextIndex = currentIndex - 1
+		
+		if nextIndex >= 0 {
 			withAnimation {
 				selectedTypeIndex = nextIndex
 				currentTab = allCases[nextIndex]

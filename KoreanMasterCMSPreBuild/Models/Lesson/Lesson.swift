@@ -41,7 +41,7 @@ class LocalizedLessons: Identifiable, Codable {
 	
 }
 
-
+@Observable
 class Lesson: Identifiable, Codable {
 	
 	var id: String
@@ -80,6 +80,7 @@ class Lesson: Identifiable, Codable {
 	
 }
 
+@Observable
 class LessonInfo: Identifiable, Codable {
 	var section: Int
 	var unit: Int
@@ -118,13 +119,13 @@ class LessonInfo: Identifiable, Codable {
 	
 	func toFirebase() -> [String: Any] {
 		return [
-			"section": section,
-			"unit": unit,
-			"lessonName": lessonName,
-			"heading": heading,
-			"desc": desc,
-			"difficulty": difficulty,
-			"xpToGain": xpToGain
+			"_section": section,
+			"_unit": unit,
+			"_lessonName": lessonName,
+			"_heading": heading,
+			"_desc": desc,
+			"_difficulty": difficulty,
+			"_xpToGain": xpToGain
 		]
 	}
 }
