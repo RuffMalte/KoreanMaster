@@ -30,6 +30,8 @@
 		2E666E362BACCD9F00C59FEB /* LocalizedDifficultyListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E666E352BACCD9F00C59FEB /* LocalizedDifficultyListView.swift */; };
 		2E666E392BACD23E00C59FEB /* LessonDifficultyDetailSmallCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E666E382BACD23E00C59FEB /* LessonDifficultyDetailSmallCellView.swift */; };
 		2E666E3C2BACD4DC00C59FEB /* LessonDifficultyPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E666E3B2BACD4DC00C59FEB /* LessonDifficultyPickerView.swift */; };
+		2E666E3E2BACE30A00C59FEB /* DifficultyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E666E2C2BACC82A00C59FEB /* DifficultyController.swift */; };
+		2E666E402BACE32900C59FEB /* LessonDifficultyControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E666E3F2BACE32900C59FEB /* LessonDifficultyControllerTests.swift */; };
 		2E6C517B2B927C7000626F95 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6C517A2B927C7000626F95 /* MainTabView.swift */; };
 		2E6C51802B927ECB00626F95 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6C517F2B927ECB00626F95 /* ProfileView.swift */; };
 		2E6C51832B92817100626F95 /* MainSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6C51822B92817100626F95 /* MainSettingsView.swift */; };
@@ -151,6 +153,7 @@
 		2E666E352BACCD9F00C59FEB /* LocalizedDifficultyListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedDifficultyListView.swift; sourceTree = "<group>"; };
 		2E666E382BACD23E00C59FEB /* LessonDifficultyDetailSmallCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonDifficultyDetailSmallCellView.swift; sourceTree = "<group>"; };
 		2E666E3B2BACD4DC00C59FEB /* LessonDifficultyPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonDifficultyPickerView.swift; sourceTree = "<group>"; };
+		2E666E3F2BACE32900C59FEB /* LessonDifficultyControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonDifficultyControllerTests.swift; sourceTree = "<group>"; };
 		2E6C517A2B927C7000626F95 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		2E6C517F2B927ECB00626F95 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		2E6C51822B92817100626F95 /* MainSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSettingsView.swift; sourceTree = "<group>"; };
@@ -435,6 +438,14 @@
 			path = Picker;
 			sourceTree = "<group>";
 		};
+		2E666E3D2BACE30000C59FEB /* Difficulty */ = {
+			isa = PBXGroup;
+			children = (
+				2E666E3F2BACE32900C59FEB /* LessonDifficultyControllerTests.swift */,
+			);
+			path = Difficulty;
+			sourceTree = "<group>";
+		};
 		2E6C51792B927C6500626F95 /* MainTabView */ = {
 			isa = PBXGroup;
 			children = (
@@ -500,6 +511,7 @@
 		2E6C519C2B92930400626F95 /* ControllerTest */ = {
 			isa = PBXGroup;
 			children = (
+				2E666E3D2BACE30000C59FEB /* Difficulty */,
 				2EF1F1852BAB383F00B1426C /* Course */,
 				2EF1F1822BAB309800B1426C /* CreateUser */,
 				2EF1F1782BAB28F400B1426C /* WelcomeMessages */,
@@ -1348,6 +1360,7 @@
 				2EA8D35C2BAA092B003067E2 /* Vocab.swift in Sources */,
 				2EF1F1842BAB30C000B1426C /* CreateUserTests.swift in Sources */,
 				2EF1F17A2BAB290C00B1426C /* WelcomeMessagesControllerTests.swift in Sources */,
+				2E666E3E2BACE30A00C59FEB /* DifficultyController.swift in Sources */,
 				2EF1F17B2BAB293800B1426C /* LoginController.swift in Sources */,
 				2EF1F17D2BAB2E3B00B1426C /* ColorEnum.swift in Sources */,
 				2E666E052BAB958B00C59FEB /* DeepLConfig.swift in Sources */,
@@ -1358,6 +1371,7 @@
 				2EA8D35B2BAA0924003067E2 /* VocabController.swift in Sources */,
 				2EA8D3542BAA080E003067E2 /* DictionaryControllerTests.swift in Sources */,
 				2EA8D3512BAA0529003067E2 /* TranslationController.swift in Sources */,
+				2E666E402BACE32900C59FEB /* LessonDifficultyControllerTests.swift in Sources */,
 				2EF1F17F2BAB2E4200B1426C /* CourseLanguage.swift in Sources */,
 				2EF1F17E2BAB2E3F00B1426C /* Lesson.swift in Sources */,
 				2EF1F1812BAB2E4800B1426C /* FirestoreUser.swift in Sources */,
