@@ -53,6 +53,11 @@ struct ModifyLessonView: View {
 									ModifyLessonPraticeView(lessonPractice: lessonPractice, language: currentLanguage)
 								}
 								
+								Divider()
+								
+								if let lessonCultureReferences = curLesson.lessonCultureReferences {
+									ModifyLessonCultureRefrence(lessonCultureRefrence: lessonCultureReferences)
+								}
 								
 								Spacer()
 							}

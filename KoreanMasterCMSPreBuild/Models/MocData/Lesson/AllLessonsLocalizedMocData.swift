@@ -225,17 +225,21 @@ extension LessonCultureReference {
 	static var example: LessonCultureReference = LessonCultureReference(
 		title: "Title",
 		desc: "desc",
-		songs: LessonCultureReferenceSongs.multipleExample
+		songs: LessonCultureReferenceSong.multipleExample
 	)
 }
 
 
-extension LessonCultureReferenceSongs {
-	static var multipleExample: [LessonCultureReferenceSongs] = [
-		LessonCultureReferenceSongs(title: "AA", desc: "awd", image: "awd", link: "adw"),
-		LessonCultureReferenceSongs(title: "AA", desc: "awd", image: "awd", link: "adw"),
-		LessonCultureReferenceSongs(title: "AA", desc: "awd", image: "awd", link: "adw"),
-		LessonCultureReferenceSongs(title: "AA", desc: "awd", image: "awd", link: "adw")
-	
+extension LessonCultureReferenceSong {
+	static var multipleExample: [LessonCultureReferenceSong] = [
+		LessonCultureReferenceSong(title: "AA", desc: "awd", image: "awd", link: "adw"),
+		LessonCultureReferenceSong(title: "AA", desc: "awd", image: "awd", link: "adw"),
+		LessonCultureReferenceSong(title: "AA", desc: "awd", image: "awd", link: "adw"),
+		LessonCultureReferenceSong(title: "AA", desc: "awd", image: "awd", link: "adw")
 	]
+	
+	
+	static var empty: LessonCultureReferenceSong {
+		return LessonCultureReferenceSong(title: "", desc: "", image: "", link: "")
+	}
 }

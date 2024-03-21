@@ -404,18 +404,19 @@ class LessonpracticeSentenceBuilding: Identifiable, Codable {
 	}
 }
 
+@Observable
 class LessonCultureReference: Identifiable, Codable {
 	var id: String
 	var title: String
 	var desc: String
 	
-	var songs: [LessonCultureReferenceSongs]?
+	var songs: [LessonCultureReferenceSong]?
 	
 	init(
 		id: String = UUID().uuidString,
 		title: String,
 		desc: String,
-	 	songs: [LessonCultureReferenceSongs] = []
+	 	songs: [LessonCultureReferenceSong] = []
 	) {
 		self.id = id
 		self.title = title
@@ -425,14 +426,15 @@ class LessonCultureReference: Identifiable, Codable {
 	
 	func toFirebase() -> [String: Any] {
 		return [
-			"id": id,
-			"title": title,
-			"desc": desc
+			"_id": id,
+			"_title": title,
+			"_desc": desc
 		]
 	}
 }
 
-class LessonCultureReferenceSongs: Identifiable, Codable {
+@Observable
+class LessonCultureReferenceSong: Identifiable, Codable {
 	var id: String
 	var title: String
 	var desc: String

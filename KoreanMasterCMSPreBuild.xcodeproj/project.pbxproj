@@ -12,6 +12,8 @@
 		2E5B3D792BA1AFA00028FCB2 /* AllWelcomeMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5B3D782BA1AFA00028FCB2 /* AllWelcomeMessages.swift */; };
 		2E5B3D7C2BA1B0740028FCB2 /* WelcomeMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5B3D7B2BA1B0740028FCB2 /* WelcomeMessage.swift */; };
 		2E666E052BAB958B00C59FEB /* DeepLConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E13E39F2BAB551700C15721 /* DeepLConfig.swift */; };
+		2E666E082BAC353F00C59FEB /* ModifyLessonCultureRefrence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E666E072BAC353F00C59FEB /* ModifyLessonCultureRefrence.swift */; };
+		2E666E0C2BAC35FB00C59FEB /* ModifyCultureRefrenceSongView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E666E0B2BAC35FB00C59FEB /* ModifyCultureRefrenceSongView.swift */; };
 		2E6C517B2B927C7000626F95 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6C517A2B927C7000626F95 /* MainTabView.swift */; };
 		2E6C51802B927ECB00626F95 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6C517F2B927ECB00626F95 /* ProfileView.swift */; };
 		2E6C51832B92817100626F95 /* MainSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6C51822B92817100626F95 /* MainSettingsView.swift */; };
@@ -116,6 +118,8 @@
 		2E5B3D782BA1AFA00028FCB2 /* AllWelcomeMessages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllWelcomeMessages.swift; sourceTree = "<group>"; };
 		2E5B3D7B2BA1B0740028FCB2 /* WelcomeMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeMessage.swift; sourceTree = "<group>"; };
 		2E666E042BAB948700C59FEB /* KoreanMasterCMSPreBuild.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = KoreanMasterCMSPreBuild.xctestplan; sourceTree = "<group>"; };
+		2E666E072BAC353F00C59FEB /* ModifyLessonCultureRefrence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyLessonCultureRefrence.swift; sourceTree = "<group>"; };
+		2E666E0B2BAC35FB00C59FEB /* ModifyCultureRefrenceSongView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyCultureRefrenceSongView.swift; sourceTree = "<group>"; };
 		2E6C517A2B927C7000626F95 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		2E6C517F2B927ECB00626F95 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		2E6C51822B92817100626F95 /* MainSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSettingsView.swift; sourceTree = "<group>"; };
@@ -250,6 +254,30 @@
 				2E5B3D782BA1AFA00028FCB2 /* AllWelcomeMessages.swift */,
 			);
 			path = AdminViews;
+			sourceTree = "<group>";
+		};
+		2E666E062BAC352700C59FEB /* AdminViews */ = {
+			isa = PBXGroup;
+			children = (
+				2E666E072BAC353F00C59FEB /* ModifyLessonCultureRefrence.swift */,
+			);
+			path = AdminViews;
+			sourceTree = "<group>";
+		};
+		2E666E092BAC35CB00C59FEB /* LessonCultureSongs */ = {
+			isa = PBXGroup;
+			children = (
+				2E666E0A2BAC35D600C59FEB /* AdminView */,
+			);
+			path = LessonCultureSongs;
+			sourceTree = "<group>";
+		};
+		2E666E0A2BAC35D600C59FEB /* AdminView */ = {
+			isa = PBXGroup;
+			children = (
+				2E666E0B2BAC35FB00C59FEB /* ModifyCultureRefrenceSongView.swift */,
+			);
+			path = AdminView;
 			sourceTree = "<group>";
 		};
 		2E6C51792B927C6500626F95 /* MainTabView */ = {
@@ -586,6 +614,8 @@
 		2E7E3A7D2BA6E6CD00CD9353 /* LessonCultureRefrence */ = {
 			isa = PBXGroup;
 			children = (
+				2E666E092BAC35CB00C59FEB /* LessonCultureSongs */,
+				2E666E062BAC352700C59FEB /* AdminViews */,
 			);
 			path = LessonCultureRefrence;
 			sourceTree = "<group>";
@@ -1227,12 +1257,14 @@
 				2E7E3A862BA6E8B000CD9353 /* ModifyLessonPraticeView.swift in Sources */,
 				2E6C51A92B935AD300626F95 /* PasteboardController.swift in Sources */,
 				2E7E3A4E2BA317F900CD9353 /* VocabController.swift in Sources */,
+				2E666E0C2BAC35FB00C59FEB /* ModifyCultureRefrenceSongView.swift in Sources */,
 				2EF41ACD2B927A36007431ED /* KoreanMasterCMSPreBuildApp.swift in Sources */,
 				2E7E3A582BA31CAE00CD9353 /* VocabMocData.swift in Sources */,
 				2E7E3A7B2BA644E200CD9353 /* ModifyLessonGrammarPageListCellView.swift in Sources */,
 				2E6C517B2B927C7000626F95 /* MainTabView.swift in Sources */,
 				2E6C51AC2B93668D00626F95 /* CourseLanguage.swift in Sources */,
 				2E7E3A632BA33F4A00CD9353 /* Dictionary.swift in Sources */,
+				2E666E082BAC353F00C59FEB /* ModifyLessonCultureRefrence.swift in Sources */,
 				2E7E3A602BA33D5A00CD9353 /* DictionaryController.swift in Sources */,
 				2E7E3A652BA5B86000CD9353 /* VocabDetailListSmallCellView.swift in Sources */,
 				2E8D83C52BA2F8170039DE57 /* TranslationController.swift in Sources */,
