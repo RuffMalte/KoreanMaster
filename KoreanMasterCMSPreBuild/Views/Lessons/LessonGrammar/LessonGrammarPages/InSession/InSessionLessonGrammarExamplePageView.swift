@@ -13,6 +13,15 @@ struct InSessionLessonGrammarExamplePageView: View {
 	
 	
     var body: some View {
-        Text(examplePage.title)
+		VStack {
+			Text(examplePage.title)
+				.font(.system(.headline, design: .rounded, weight: .bold))
+			
+			Text(examplePage.desc)
+				.font(.system(.subheadline, design: .default, weight: .regular))
+			
+			Text(examplePage.example)
+				.font(.system(.body, design: .default, weight: .regular))
+		}
     }
 }
