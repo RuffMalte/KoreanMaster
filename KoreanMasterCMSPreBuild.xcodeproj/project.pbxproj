@@ -39,6 +39,7 @@
 		2E666E4D2BADA72B00C59FEB /* InSessionLessonGrammarExamplePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E666E4C2BADA72B00C59FEB /* InSessionLessonGrammarExamplePageView.swift */; };
 		2E666E502BADC64400C59FEB /* InSessionLessonPraticeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E666E4F2BADC64400C59FEB /* InSessionLessonPraticeView.swift */; };
 		2E666E522BADD08600C59FEB /* InSessionLessonPageinatedItemsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E666E512BADD08600C59FEB /* InSessionLessonPageinatedItemsView.swift */; };
+		2E666E552BADDB7300C59FEB /* InSessionLessonMultipleChoiceItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E666E542BADDB7300C59FEB /* InSessionLessonMultipleChoiceItemView.swift */; };
 		2E6C517B2B927C7000626F95 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6C517A2B927C7000626F95 /* MainTabView.swift */; };
 		2E6C51802B927ECB00626F95 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6C517F2B927ECB00626F95 /* ProfileView.swift */; };
 		2E6C51832B92817100626F95 /* MainSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6C51822B92817100626F95 /* MainSettingsView.swift */; };
@@ -168,6 +169,7 @@
 		2E666E4C2BADA72B00C59FEB /* InSessionLessonGrammarExamplePageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InSessionLessonGrammarExamplePageView.swift; sourceTree = "<group>"; };
 		2E666E4F2BADC64400C59FEB /* InSessionLessonPraticeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InSessionLessonPraticeView.swift; sourceTree = "<group>"; };
 		2E666E512BADD08600C59FEB /* InSessionLessonPageinatedItemsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InSessionLessonPageinatedItemsView.swift; sourceTree = "<group>"; };
+		2E666E542BADDB7300C59FEB /* InSessionLessonMultipleChoiceItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InSessionLessonMultipleChoiceItemView.swift; sourceTree = "<group>"; };
 		2E6C517A2B927C7000626F95 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		2E6C517F2B927ECB00626F95 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		2E6C51822B92817100626F95 /* MainSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSettingsView.swift; sourceTree = "<group>"; };
@@ -491,6 +493,14 @@
 			isa = PBXGroup;
 			children = (
 				2E666E4F2BADC64400C59FEB /* InSessionLessonPraticeView.swift */,
+			);
+			path = InSession;
+			sourceTree = "<group>";
+		};
+		2E666E532BADDB5100C59FEB /* InSession */ = {
+			isa = PBXGroup;
+			children = (
+				2E666E542BADDB7300C59FEB /* InSessionLessonMultipleChoiceItemView.swift */,
 			);
 			path = InSession;
 			sourceTree = "<group>";
@@ -918,6 +928,7 @@
 		2E7E3A8B2BA6ED1200CD9353 /* MultipleChoice */ = {
 			isa = PBXGroup;
 			children = (
+				2E666E532BADDB5100C59FEB /* InSession */,
 				2E7E3A8C2BA6ED5E00CD9353 /* AdminViews */,
 			);
 			path = MultipleChoice;
@@ -1447,6 +1458,7 @@
 				2E6C51B62B93825A00626F95 /* LanguageFromMocData.swift in Sources */,
 				2E6C51892B92840600626F95 /* LoginView.swift in Sources */,
 				2E666E182BAC82B900C59FEB /* InSessionLessonGoalView.swift in Sources */,
+				2E666E552BADDB7300C59FEB /* InSessionLessonMultipleChoiceItemView.swift in Sources */,
 				2E666E222BAC902600C59FEB /* InSessionLessonInfoView.swift in Sources */,
 				2EDF0C042B9A170C001132AD /* LocallizedLessonListView.swift in Sources */,
 				2EDF0C082B9A3A60001132AD /* ModifyLocalizedLessonView.swift in Sources */,

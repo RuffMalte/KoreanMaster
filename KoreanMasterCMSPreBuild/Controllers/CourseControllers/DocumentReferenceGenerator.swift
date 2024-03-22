@@ -42,6 +42,10 @@ class DocumentReferenceGenerator {
 		case goalsExamples, grammarPages, practiceMultipleChoice, practiceSentenceBuilding, cultureSongs
 	}
 	
+	enum PraticeType: String, CaseIterable {
+		case multipleChoice, sentenceBuilding
+	}
+	
 	// Returns a reference to the collection of lesson documents for a specific language
 	func getLessonsCollectionRef() -> CollectionReference {
 		return db.collection(mainLessonPath)

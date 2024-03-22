@@ -25,6 +25,7 @@ struct ModifyLessonPraticeSentenceBuildingCellView: View {
 			}
 		}
 		.textFieldStyle(.roundedBorder)
+		.navigationTitle("Sentence Building")
     }
 }
 

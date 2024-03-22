@@ -20,18 +20,34 @@ struct ModifyLessonPraticeView: View {
 			
 			HStack {
 				NavigationLink {
-					List {
-						Button {
-							lessonPractice.mulitpleChoice?.append(LessonpracticeMultipleChoice.empty)
-						} label: {
-							Label("Add new Multiplechoice Question", systemImage: "plus")
-						}
-						
-						ForEach(lessonPractice.mulitpleChoice ?? []) { mp in
-							ModifyLessonPraticeMultipleChoiceCellView(multipleChoice: mp, removeFuntion: {
-								lessonPractice.mulitpleChoice?.removeAll(where: { $0.id == mp.id })
-							})
-								.padding(.vertical, 5)
+					GeometryReader { geo in
+						HStack {
+							List {
+								Button {
+									lessonPractice.mulitpleChoice?.append(LessonpracticeMultipleChoice.empty)
+								} label: {
+									Label("Add new Multiplechoice Question", systemImage: "plus")
+								}
+								
+								ForEach(lessonPractice.mulitpleChoice ?? []) { mp in
+									ModifyLessonPraticeMultipleChoiceCellView(multipleChoice: mp, removeFuntion: {
+										lessonPractice.mulitpleChoice?.removeAll(where: { $0.id == mp.id })
+									})
+									.padding(.vertical, 5)
+								}
+							}
+							.frame(width: geo.size.width / 2, height: geo.size.height)
+							
+							InSessionLessonPraticeView(
+								pratice: lessonPractice,
+								switchLesson: {},
+								currentPraticeMode: .multipleChoice,
+								isAbleToSwitchLesson: false
+							)
+							.padding()
+							.frame(width: geo.size.width / 2, height: geo.size.height)
+
+							
 						}
 					}
 				} label: {
@@ -39,23 +55,33 @@ struct ModifyLessonPraticeView: View {
 				}
 
 				NavigationLink {
-					List {
-						Button {
-							lessonPractice.sentenceBuilding?.append(LessonpracticeSentenceBuilding.empty)
-						} label: {
-							Label("Add new Sentence Building Question", systemImage: "plus")
-						
+					GeometryReader { geo in
+						HStack {
+							List {
+								Button {
+									lessonPractice.sentenceBuilding?.append(LessonpracticeSentenceBuilding.empty)
+								} label: {
+									Label("Add new Sentence Building Question", systemImage: "plus")
+									
+								}
+								
+								ForEach(lessonPractice.sentenceBuilding ?? []) { sb in
+									ModifyLessonPraticeSentenceBuildingCellView(lessonPraticeSentenceBuilding: sb, removeFuntion: {
+										lessonPractice.sentenceBuilding?.removeAll(where: { $0.id == sb.id })
+									})
+									.padding(.vertical, 5)
+								}
+							}
+							
+							InSessionLessonPraticeView(
+								pratice: lessonPractice,
+								switchLesson: {},
+								currentPraticeMode: .sentenceBuilding,
+								isAbleToSwitchLesson: false
+							)
+							.padding()
+							.frame(width: geo.size.width / 2, height: geo.size.height)
 						}
-						
-						ForEach(lessonPractice.sentenceBuilding ?? []) { sb in
-							ModifyLessonPraticeSentenceBuildingCellView(lessonPraticeSentenceBuilding: sb, removeFuntion: {
-								lessonPractice.sentenceBuilding?.removeAll(where: { $0.id == sb.id })
-							})
-							.padding(.vertical, 5)
-						}
-						
-						
-						
 					}
 				} label: {
 					NavLinkHeaderView(headerText: "Sentence Building", headerSFIcon: "slider.horizontal.2.rectangle.and.arrow.triangle.2.circlepath", count: lessonPractice.sentenceBuilding?.count ?? 999)

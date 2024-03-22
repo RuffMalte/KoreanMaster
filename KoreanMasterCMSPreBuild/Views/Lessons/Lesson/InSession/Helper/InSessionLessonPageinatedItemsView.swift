@@ -25,7 +25,14 @@ struct InSessionLessonPageinatedItemsView<Item, ContentView>: View where Item: I
 				itemView(items[currentIndex])
 				
 				if currentIndex + 1 == items.count {
-					InSessionSwitchSubLessonButtonView(switchLesson: onEnd)
+					HStack {
+						Button("Previous") {
+							withAnimation {
+								currentIndex = max(currentIndex - 1, 0)
+							}
+						}
+						InSessionSwitchSubLessonButtonView(switchLesson: onEnd)
+					}
 				} else {
 					HStack {
 						Button("Previous") {

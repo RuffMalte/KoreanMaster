@@ -52,7 +52,7 @@ struct InSessionLessonMainView: View {
 						}
 					case .practice:
 						if let practice = lesson.lessonPractice {
-							InSessionLessonPraticeView(pratice: practice)
+							InSessionLessonPraticeView(pratice: practice, switchLesson: switchToNextSubLesson)
 						}
 					case .cultureReferences:
 						Text("cultureReferences")
