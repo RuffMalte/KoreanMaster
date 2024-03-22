@@ -41,6 +41,9 @@
 		2E666E522BADD08600C59FEB /* InSessionLessonPageinatedItemsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E666E512BADD08600C59FEB /* InSessionLessonPageinatedItemsView.swift */; };
 		2E666E552BADDB7300C59FEB /* InSessionLessonMultipleChoiceItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E666E542BADDB7300C59FEB /* InSessionLessonMultipleChoiceItemView.swift */; };
 		2E666E582BAE030800C59FEB /* InSessionLessonSentenceBuildingItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E666E572BAE030800C59FEB /* InSessionLessonSentenceBuildingItemView.swift */; };
+		2E666E5A2BAE1EFA00C59FEB /* InSessionLessonPraticeShowAnswerButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E666E592BAE1EFA00C59FEB /* InSessionLessonPraticeShowAnswerButtonView.swift */; };
+		2E666E5D2BAE20E500C59FEB /* InSessionLessonNavNextButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E666E5C2BAE20E500C59FEB /* InSessionLessonNavNextButtonView.swift */; };
+		2E666E5F2BAE21AE00C59FEB /* InSessionLessonNavBackButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E666E5E2BAE21AE00C59FEB /* InSessionLessonNavBackButtonView.swift */; };
 		2E6C517B2B927C7000626F95 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6C517A2B927C7000626F95 /* MainTabView.swift */; };
 		2E6C51802B927ECB00626F95 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6C517F2B927ECB00626F95 /* ProfileView.swift */; };
 		2E6C51832B92817100626F95 /* MainSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6C51822B92817100626F95 /* MainSettingsView.swift */; };
@@ -172,6 +175,9 @@
 		2E666E512BADD08600C59FEB /* InSessionLessonPageinatedItemsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InSessionLessonPageinatedItemsView.swift; sourceTree = "<group>"; };
 		2E666E542BADDB7300C59FEB /* InSessionLessonMultipleChoiceItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InSessionLessonMultipleChoiceItemView.swift; sourceTree = "<group>"; };
 		2E666E572BAE030800C59FEB /* InSessionLessonSentenceBuildingItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InSessionLessonSentenceBuildingItemView.swift; sourceTree = "<group>"; };
+		2E666E592BAE1EFA00C59FEB /* InSessionLessonPraticeShowAnswerButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InSessionLessonPraticeShowAnswerButtonView.swift; sourceTree = "<group>"; };
+		2E666E5C2BAE20E500C59FEB /* InSessionLessonNavNextButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InSessionLessonNavNextButtonView.swift; sourceTree = "<group>"; };
+		2E666E5E2BAE21AE00C59FEB /* InSessionLessonNavBackButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InSessionLessonNavBackButtonView.swift; sourceTree = "<group>"; };
 		2E6C517A2B927C7000626F95 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		2E6C517F2B927ECB00626F95 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		2E6C51822B92817100626F95 /* MainSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSettingsView.swift; sourceTree = "<group>"; };
@@ -370,11 +376,8 @@
 		2E666E1C2BAC865C00C59FEB /* Helper */ = {
 			isa = PBXGroup;
 			children = (
-				2E666E1A2BAC865600C59FEB /* InSessionLessonHeaderView.swift */,
-				2E666E232BAC99BE00C59FEB /* InSessionSwitchSubLessonButtonView.swift */,
-				2E666E252BACB43A00C59FEB /* InSessionSwitchBackToSubLessonButtonView.swift */,
-				2E666E412BACE46F00C59FEB /* InSessionLessonHeroSectionView.swift */,
-				2E666E512BADD08600C59FEB /* InSessionLessonPageinatedItemsView.swift */,
+				2E666E622BAE2A7600C59FEB /* Header */,
+				2E666E5B2BAE206D00C59FEB /* Navigation */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -495,6 +498,7 @@
 			isa = PBXGroup;
 			children = (
 				2E666E4F2BADC64400C59FEB /* InSessionLessonPraticeView.swift */,
+				2E666E592BAE1EFA00C59FEB /* InSessionLessonPraticeShowAnswerButtonView.swift */,
 			);
 			path = InSession;
 			sourceTree = "<group>";
@@ -513,6 +517,35 @@
 				2E666E572BAE030800C59FEB /* InSessionLessonSentenceBuildingItemView.swift */,
 			);
 			path = InSession;
+			sourceTree = "<group>";
+		};
+		2E666E5B2BAE206D00C59FEB /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				2E666E252BACB43A00C59FEB /* InSessionSwitchBackToSubLessonButtonView.swift */,
+				2E666E232BAC99BE00C59FEB /* InSessionSwitchSubLessonButtonView.swift */,
+				2E666E602BAE2A4000C59FEB /* Pagination */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		2E666E602BAE2A4000C59FEB /* Pagination */ = {
+			isa = PBXGroup;
+			children = (
+				2E666E5E2BAE21AE00C59FEB /* InSessionLessonNavBackButtonView.swift */,
+				2E666E5C2BAE20E500C59FEB /* InSessionLessonNavNextButtonView.swift */,
+				2E666E512BADD08600C59FEB /* InSessionLessonPageinatedItemsView.swift */,
+			);
+			path = Pagination;
+			sourceTree = "<group>";
+		};
+		2E666E622BAE2A7600C59FEB /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				2E666E412BACE46F00C59FEB /* InSessionLessonHeroSectionView.swift */,
+				2E666E1A2BAC865600C59FEB /* InSessionLessonHeaderView.swift */,
+			);
+			path = Header;
 			sourceTree = "<group>";
 		};
 		2E6C51792B927C6500626F95 /* MainTabView */ = {
@@ -1480,6 +1513,7 @@
 				2E8D83B82BA1CD500039DE57 /* ModifyWelcomeMessageSheetView.swift in Sources */,
 				2E7E3A892BA6EA6C00CD9353 /* NavLinkHeaderView.swift in Sources */,
 				2EAC1C362B93AAB800F713F7 /* JSONView.swift in Sources */,
+				2E666E5D2BAE20E500C59FEB /* InSessionLessonNavNextButtonView.swift in Sources */,
 				2E6C518C2B92847300626F95 /* LoginOptions.swift in Sources */,
 				2EDF0C152B9A6663001132AD /* ModifyLessonTagsView.swift in Sources */,
 				2EAC1C482B94B88100F713F7 /* LanguageSmallDetailCellView.swift in Sources */,
@@ -1495,6 +1529,7 @@
 				2EAC1C5E2B98BC0900F713F7 /* DocumentReferenceGenerator.swift in Sources */,
 				2EA7BE022B9B405500AAA532 /* ModifyVLessonVocabUsedView.swift in Sources */,
 				2E6C51A12B93567500626F95 /* UserCellView.swift in Sources */,
+				2E666E5F2BAE21AE00C59FEB /* InSessionLessonNavBackButtonView.swift in Sources */,
 				2E7E3A752BA63EA300CD9353 /* ModifyLessonGrammarView.swift in Sources */,
 				2E6C518E2B92888200626F95 /* LoginController.swift in Sources */,
 				2E7E3A5B2BA31F6A00CD9353 /* LocalizedVocabListView.swift in Sources */,
@@ -1521,6 +1556,7 @@
 				2E6C51832B92817100626F95 /* MainSettingsView.swift in Sources */,
 				2E666E152BAC73D900C59FEB /* LessonLikeSmallNavButtonView.swift in Sources */,
 				2E7E3A862BA6E8B000CD9353 /* ModifyLessonPraticeView.swift in Sources */,
+				2E666E5A2BAE1EFA00C59FEB /* InSessionLessonPraticeShowAnswerButtonView.swift in Sources */,
 				2E6C51A92B935AD300626F95 /* PasteboardController.swift in Sources */,
 				2E7E3A4E2BA317F900CD9353 /* VocabController.swift in Sources */,
 				2E666E522BADD08600C59FEB /* InSessionLessonPageinatedItemsView.swift in Sources */,

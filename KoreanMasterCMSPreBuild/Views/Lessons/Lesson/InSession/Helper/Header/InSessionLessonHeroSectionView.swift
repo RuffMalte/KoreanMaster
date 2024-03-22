@@ -34,7 +34,7 @@ struct InSessionLessonHeroSectionView: View {
 						Spacer()
 						Toggle("Degbug Mode", isOn: $isShowingDebug)
 						InSessionSwitchBackToSubLessonButtonView(switchLesson: switchBackToSubLesson)
-						InSessionSwitchSubLessonButtonView(switchLesson: switchToNextSubLesson)
+						InSessionSwitchSubLessonButtonView(switchLesson: switchToNextSubLesson, isInAdminPanel: true)
 						Spacer()
 					}
 				}

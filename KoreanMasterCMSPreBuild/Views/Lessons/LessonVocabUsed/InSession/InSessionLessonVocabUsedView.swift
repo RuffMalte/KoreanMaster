@@ -24,16 +24,22 @@ struct InSessionLessonVocabUsedView: View {
 	
     var body: some View {
 		InSessionLessonHeaderView(title: vocab.title, subtitle: vocab.helpText) {
-			if isLoading {
-				ProgressView()
-			} else {
-				ScrollView {
-					LazyVGrid(columns: vGridItemLayout) {
-						ForEach(fetchVocabs, id: \.id) { vocab in
-							InSessionLessonVocabUsedItemView(vocab: vocab)
+			VStack {
+				Spacer()
+				if isLoading {
+					ProgressView()
+				} else {
+					VStack {
+						ScrollView {
+							LazyVGrid(columns: vGridItemLayout) {
+								ForEach(fetchVocabs, id: \.id) { vocab in
+									InSessionLessonVocabUsedItemView(vocab: vocab)
+								}
+							}
 						}
+						Spacer()
+						InSessionSwitchSubLessonButtonView(switchLesson: switchLesson)
 					}
-					InSessionSwitchSubLessonButtonView(switchLesson: switchLesson)
 				}
 			}
 		}

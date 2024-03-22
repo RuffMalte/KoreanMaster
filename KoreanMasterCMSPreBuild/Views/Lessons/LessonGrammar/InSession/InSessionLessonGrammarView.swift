@@ -17,11 +17,13 @@ struct InSessionLessonGrammarView: View {
 	
 	var body: some View {
 		InSessionLessonHeaderView(title: grammar.title, subtitle: grammar.desc) {
-			InSessionLessonPageinatedItemsView(
-				items: grammar.LessonGrammarPages ?? [],
-				onEnd: switchLesson
-			) { page in
-				InSessionLessonGrammarExamplePageView(examplePage: page)
+			VStack {
+				InSessionLessonPageinatedItemsView(
+					items: grammar.LessonGrammarPages ?? [],
+					onEnd: switchLesson
+				) { page in
+					InSessionLessonGrammarExamplePageView(examplePage: page)
+				}
 			}
 		}
 	}

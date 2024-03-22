@@ -18,9 +18,13 @@ struct InSessionLessonPraticeSentenceBuildingItemView: View {
 	
     var body: some View {
 		VStack {
+			Spacer()
+			
 			Text(sentenceB.question)
 				.font(.title)
 				.padding()
+			
+			Spacer()
 			
 			VStack {
 				ForEach(sentenceB.answers.indices, id: \.self) { index in
@@ -56,7 +60,7 @@ struct InSessionLessonPraticeSentenceBuildingItemView: View {
 				}
 			}
 			
-			
+			Spacer()
 			
 		}
     }

@@ -16,9 +16,12 @@ struct InSessionLessonGoalView: View {
     var body: some View {
 		InSessionLessonHeaderView(title: lessonGoal.title, subtitle: lessonGoal.goalText) {
 			VStack(spacing: 10) {
+				Spacer()
 				ForEach(lessonGoal.lessonGoalExamples ?? []) { example in
 					InSessionLessonGoalExampleView(example: example)
 				}
+				
+				Spacer()
 				
 				InSessionSwitchSubLessonButtonView(switchLesson: switchLesson)
 				

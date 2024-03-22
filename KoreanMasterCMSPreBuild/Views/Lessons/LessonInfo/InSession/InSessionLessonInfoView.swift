@@ -16,6 +16,8 @@ struct InSessionLessonInfoView: View {
     var body: some View {
 		InSessionLessonHeaderView(title: lessonInfo.lessonName, subtitle: lessonInfo.heading) {
 			VStack(spacing: 10) {
+				Spacer()
+				
 				VStack {
 					Label("Description", systemImage: "book.fill")
 						.font(.system(.title3, design: .rounded, weight: .bold))
@@ -23,6 +25,7 @@ struct InSessionLessonInfoView: View {
 						.font(.system(.subheadline, design: .default, weight: .thin))
 				}
 				
+				Spacer()
 				
 				InSessionSwitchSubLessonButtonView(switchLesson: switchLesson)
 				

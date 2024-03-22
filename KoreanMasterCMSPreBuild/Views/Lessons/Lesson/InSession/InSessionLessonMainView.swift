@@ -69,12 +69,12 @@ struct InSessionLessonMainView: View {
 			}
 			.overlay {
 				VStack {
-					Spacer()
 					HStack {
 						Spacer()
 						InSessionSwitchBackToSubLessonButtonView(switchLesson: switchBackToSubLesson)
 							.padding()
 					}
+					Spacer()
 				}
 			}
 			

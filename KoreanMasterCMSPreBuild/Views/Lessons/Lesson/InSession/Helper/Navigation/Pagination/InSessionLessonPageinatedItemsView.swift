@@ -7,10 +7,6 @@
 
 import SwiftUI
 
-import SwiftUI
-
-import SwiftUI
-
 struct InSessionLessonPageinatedItemsView<Item, ContentView>: View where Item: Identifiable, ContentView: View {
 	private var items: [Item]
 	@State private var currentIndex = 0
@@ -32,38 +28,44 @@ struct InSessionLessonPageinatedItemsView<Item, ContentView>: View where Item: I
 	var body: some View {
 		VStack {
 			if items.indices.contains(currentIndex) {
+				
+				Spacer()
+				
 				itemView(items[currentIndex])
 					.onChange(of: currentIndex) { oldValue, newValue in
-						showNavigationButtons = false
-						hasAnswerBeenSelected = false
+						withAnimation {
+							showNavigationButtons = false
+							hasAnswerBeenSelected = false
+						}
 					}
+				
+				Spacer()
 				
 				if currentIndex + 1 == items.count {
 					if showNavigationButtons {
 						HStack {
-							Button("Previous") {
-								withAnimation {
-									currentIndex = max(currentIndex - 1, 0)
-								}
-							}
+							InSessionLessonNavBackButtonView(currentIndex: $currentIndex)
+								.disabled(currentIndex == 0)
 							InSessionSwitchSubLessonButtonView(switchLesson: onEnd)
 						}
+					} else {
+						InSessionLessonPraticeShowAnswerButtonView(
+							showNavigationButtons: $showNavigationButtons,
+							hasAnswerBeenSelected: $hasAnswerBeenSelected)
 					}
 				} else {
 					if showNavigationButtons {
 						HStack {
-							Button("Previous") {
-								withAnimation {
-									currentIndex = max(currentIndex - 1, 0)
-								}
-							}
-							
-							Button("Next") {
-								withAnimation {
-									currentIndex = min(currentIndex + 1, items.count - 1)
-								}
-							}
+							InSessionLessonNavBackButtonView(currentIndex: $currentIndex)
+								.disabled(currentIndex == 0)
+							InSessionLessonNavNextButtonView(
+								currentIndex: $currentIndex,
+								amount: items.count)
 						}
+					} else {
+						InSessionLessonPraticeShowAnswerButtonView(
+							showNavigationButtons: $showNavigationButtons,
+							hasAnswerBeenSelected: $hasAnswerBeenSelected)
 					}
 				}
 			} else {

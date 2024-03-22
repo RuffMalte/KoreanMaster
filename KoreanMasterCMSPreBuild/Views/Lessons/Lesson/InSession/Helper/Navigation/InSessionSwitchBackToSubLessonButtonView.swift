@@ -16,8 +16,14 @@ struct InSessionSwitchBackToSubLessonButtonView: View {
 			switchLesson()
 		} label: {
 			Image(systemName: "arrow.turn.up.left")
+				.font(.subheadline)
+				.padding(8)
+				.background {
+					RoundedRectangle(cornerRadius: 8)
+						.foregroundStyle(.bar)
+				}
 		}
-		.buttonStyle(.bordered)
+		.buttonStyle(.plain)
     }
 }
 
