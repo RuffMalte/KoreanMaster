@@ -37,6 +37,7 @@
 		2E666E472BAD9B1800C59FEB /* InSessionLessonVocabUsedItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E666E462BAD9B1800C59FEB /* InSessionLessonVocabUsedItemView.swift */; };
 		2E666E4A2BADA45F00C59FEB /* InSessionLessonGrammarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E666E492BADA45F00C59FEB /* InSessionLessonGrammarView.swift */; };
 		2E666E4D2BADA72B00C59FEB /* InSessionLessonGrammarExamplePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E666E4C2BADA72B00C59FEB /* InSessionLessonGrammarExamplePageView.swift */; };
+		2E666E502BADC64400C59FEB /* InSessionLessonPraticeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E666E4F2BADC64400C59FEB /* InSessionLessonPraticeView.swift */; };
 		2E6C517B2B927C7000626F95 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6C517A2B927C7000626F95 /* MainTabView.swift */; };
 		2E6C51802B927ECB00626F95 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6C517F2B927ECB00626F95 /* ProfileView.swift */; };
 		2E6C51832B92817100626F95 /* MainSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6C51822B92817100626F95 /* MainSettingsView.swift */; };
@@ -164,6 +165,7 @@
 		2E666E462BAD9B1800C59FEB /* InSessionLessonVocabUsedItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InSessionLessonVocabUsedItemView.swift; sourceTree = "<group>"; };
 		2E666E492BADA45F00C59FEB /* InSessionLessonGrammarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InSessionLessonGrammarView.swift; sourceTree = "<group>"; };
 		2E666E4C2BADA72B00C59FEB /* InSessionLessonGrammarExamplePageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InSessionLessonGrammarExamplePageView.swift; sourceTree = "<group>"; };
+		2E666E4F2BADC64400C59FEB /* InSessionLessonPraticeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InSessionLessonPraticeView.swift; sourceTree = "<group>"; };
 		2E6C517A2B927C7000626F95 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		2E6C517F2B927ECB00626F95 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		2E6C51822B92817100626F95 /* MainSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSettingsView.swift; sourceTree = "<group>"; };
@@ -478,6 +480,14 @@
 			isa = PBXGroup;
 			children = (
 				2E666E4C2BADA72B00C59FEB /* InSessionLessonGrammarExamplePageView.swift */,
+			);
+			path = InSession;
+			sourceTree = "<group>";
+		};
+		2E666E4E2BADC63100C59FEB /* InSession */ = {
+			isa = PBXGroup;
+			children = (
+				2E666E4F2BADC64400C59FEB /* InSessionLessonPraticeView.swift */,
 			);
 			path = InSession;
 			sourceTree = "<group>";
@@ -811,6 +821,7 @@
 		2E7E3A7C2BA6E6C500CD9353 /* LessonPratice */ = {
 			isa = PBXGroup;
 			children = (
+				2E666E4E2BADC63100C59FEB /* InSession */,
 				2E7E3A7E2BA6E72800CD9353 /* AdminViews */,
 				2E7E3A8B2BA6ED1200CD9353 /* MultipleChoice */,
 				2E7E3A8A2BA6ED0900CD9353 /* SentenceBuilding */,
@@ -1495,6 +1506,7 @@
 				2E7E3A632BA33F4A00CD9353 /* Dictionary.swift in Sources */,
 				2E666E342BACCD4F00C59FEB /* ModifyDificultySheetView.swift in Sources */,
 				2E666E082BAC353F00C59FEB /* ModifyLessonCultureRefrence.swift in Sources */,
+				2E666E502BADC64400C59FEB /* InSessionLessonPraticeView.swift in Sources */,
 				2E666E1B2BAC865600C59FEB /* InSessionLessonHeaderView.swift in Sources */,
 				2E7E3A602BA33D5A00CD9353 /* DictionaryController.swift in Sources */,
 				2E7E3A652BA5B86000CD9353 /* VocabDetailListSmallCellView.swift in Sources */,

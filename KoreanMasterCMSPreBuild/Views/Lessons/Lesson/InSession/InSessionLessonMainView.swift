@@ -44,14 +44,16 @@ struct InSessionLessonMainView: View {
 						}
 					case .vocabUsed:
 						if let vocabUsed = lesson.newLessonVocabUsed {
-							InSessionLessonVocabUsedView(vocab: vocabUsed, currentLanguage: currentLanguage, switchLesson: switchToNextSubLesson	)
+							InSessionLessonVocabUsedView(vocab: vocabUsed, currentLanguage: currentLanguage, switchLesson: switchToNextSubLesson)
 						}
 					case .grammar:
 						if let grammar = lesson.lessonGrammar {
-							InSessionLessonGrammarView(grammar: grammar)
+							InSessionLessonGrammarView(grammar: grammar, switchLesson: switchToNextSubLesson)
 						}
 					case .practice:
-						Text("Ipracticenfo")
+						if let practice = lesson.lessonPractice {
+							InSessionLessonPraticeView(pratice: practice)
+						}
 					case .cultureReferences:
 						Text("cultureReferences")
 					}

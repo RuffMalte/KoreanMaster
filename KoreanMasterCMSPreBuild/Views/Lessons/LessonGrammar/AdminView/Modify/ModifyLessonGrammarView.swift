@@ -52,7 +52,7 @@ struct ModifyLessonGrammarView: View {
 						.frame(width: geo.size.width / 2, height: geo.size.height)
 						.onAppear(perform: reorderPages)
 						
-						InSessionLessonGrammarView(grammar: lessonGrammar)
+						InSessionLessonGrammarView(grammar: lessonGrammar, switchLesson: {})
 							.padding()
 							.frame(width: geo.size.width / 2, height: geo.size.height)
 

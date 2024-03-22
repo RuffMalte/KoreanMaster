@@ -11,6 +11,8 @@ import SwiftUI
 
 struct InSessionLessonGrammarView: View {
 	@State var grammar: LessonGrammar
+	var switchLesson: () -> Void
+
 	@State private var currentExampleIndex = 0
 	
 	var body: some View {
@@ -20,20 +22,23 @@ struct InSessionLessonGrammarView: View {
 					InSessionLessonGrammarExamplePageView(examplePage: pages[currentExampleIndex])
 					
 					
-					HStack {
-						Button("Previous") {
-							withAnimation {
-								currentExampleIndex = max(currentExampleIndex - 1, 0)
+					if currentExampleIndex + 1 == pages.count {
+						InSessionSwitchSubLessonButtonView(switchLesson: switchLesson)
+					} else {
+						HStack {
+							Button("Previous") {
+								withAnimation {
+									currentExampleIndex = max(currentExampleIndex - 1, 0)
+								}
 							}
-						}
-						
-						Button("Next") {
-							withAnimation {
-								currentExampleIndex = min(currentExampleIndex + 1, pages.count - 1)
+							
+							Button("Next") {
+								withAnimation {
+									currentExampleIndex = min(currentExampleIndex + 1, pages.count - 1)
+								}
 							}
 						}
 					}
-					
 				} else {
 					ContentUnavailableView("No Pages found", systemImage: "exclamationmark.triangle.fill")
 				}
