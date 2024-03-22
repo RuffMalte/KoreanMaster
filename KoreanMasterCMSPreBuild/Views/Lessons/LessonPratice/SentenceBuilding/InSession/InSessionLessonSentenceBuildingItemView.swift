@@ -46,7 +46,7 @@ struct InSessionLessonPraticeSentenceBuildingItemView: View {
 						.padding()
 						.background {
 							if hasAnswerBeenSelected {
-								RoundedRectangle(cornerRadius: 10)
+								RoundedRectangle(cornerRadius: 16)
 									.foregroundStyle(getButtonColor(for: index))
 							} else {
 								RoundedRectangle(cornerRadius: 16)

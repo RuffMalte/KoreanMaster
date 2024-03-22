@@ -15,12 +15,14 @@ struct InSessionLessonPageinatedItemsView<Item, ContentView>: View where Item: I
 	@Binding private var showNavigationButtons: Bool
 	@Binding private var hasAnswerBeenSelected: Bool
 
+	var isLastPaginated: Bool
 	
 
-	init(items: [Item], showNavigationButtons: Binding<Bool> = .constant(true), hasAnswerBeenSelected: Binding<Bool> = .constant(true), onEnd: @escaping () -> Void, @ViewBuilder itemView: @escaping (Item) -> ContentView) {
+	init(items: [Item], showNavigationButtons: Binding<Bool> = .constant(true), hasAnswerBeenSelected: Binding<Bool> = .constant(true), isLastPaginated: Bool = false, onEnd: @escaping () -> Void, @ViewBuilder itemView: @escaping (Item) -> ContentView) {
 		self.items = items
 		self._showNavigationButtons = showNavigationButtons
 		self._hasAnswerBeenSelected = hasAnswerBeenSelected
+		self.isLastPaginated = isLastPaginated
 		self.onEnd = onEnd
 		self.itemView = itemView
 	}
@@ -46,7 +48,12 @@ struct InSessionLessonPageinatedItemsView<Item, ContentView>: View where Item: I
 						HStack {
 							InSessionLessonNavBackButtonView(currentIndex: $currentIndex)
 								.disabled(currentIndex == 0)
-							InSessionSwitchSubLessonButtonView(switchLesson: onEnd)
+							
+							if isLastPaginated {
+								InSessionSwitchSubLessonButtonView(switchLesson: onEnd, isDone: true)
+							} else {
+								InSessionSwitchSubLessonButtonView(switchLesson: onEnd)
+							}
 						}
 					} else {
 						InSessionLessonPraticeShowAnswerButtonView(

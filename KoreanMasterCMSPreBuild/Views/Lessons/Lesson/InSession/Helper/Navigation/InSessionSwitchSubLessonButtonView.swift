@@ -10,6 +10,7 @@ import SwiftUI
 struct InSessionSwitchSubLessonButtonView: View {
 	
 	var switchLesson: () -> Void
+	var isDone: Bool = false
 	var isInAdminPanel: Bool = false
 	
     var body: some View {
@@ -28,19 +29,35 @@ struct InSessionSwitchSubLessonButtonView: View {
 				HStack {
 					HStack {
 						Spacer()
-						Label {
-							Image(systemName: "arrow.right")
-						} icon: {
-							Text("Continue")
+						if isDone {
+							Label {
+								Image(systemName: "checkmark")
+							} icon: {
+								Text("Done")
+							}
+						} else {
+							Label {
+								Image(systemName: "arrow.right")
+							} icon: {
+								Text("Continue")
+							}
 						}
-						.font(.headline)
-						
 						Spacer()
 					}
+					.font(.headline)
 					.padding()
 					.background {
-						RoundedRectangle(cornerRadius: 16)
-							.foregroundStyle(.tint)
+						if isDone {
+							RoundedRectangle(cornerRadius: 16)
+								.foregroundStyle(.bar)
+								.overlay {
+									RoundedRectangle(cornerRadius: 16)
+										.stroke(.tint, style: StrokeStyle(lineWidth: 3, dash: [20, 5]))
+								}
+						} else {
+							RoundedRectangle(cornerRadius: 16)
+								.foregroundStyle(.tint)
+						}
 					}
 				}
 			}

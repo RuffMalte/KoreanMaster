@@ -55,7 +55,9 @@ struct InSessionLessonMainView: View {
 							InSessionLessonPraticeView(pratice: practice, switchLesson: switchToNextSubLesson)
 						}
 					case .cultureReferences:
-						Text("cultureReferences")
+						if let refrence = lesson.lessonCultureReferences {
+							InSessionLessonCultureRefrenceView(culture: refrence, switchLesson: switchToNextSubLesson)
+						}
 					}
 					Spacer()
 					
