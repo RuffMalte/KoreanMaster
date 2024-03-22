@@ -10,6 +10,7 @@ import SwiftUI
 struct InSessionLessonHeroSectionView: View {
 	
 	@Binding var lesson: Lesson
+	var currentLanguage: String
 	@Binding var selectedTypeIndex: Int
 	@Binding var currentTab: DocumentReferenceGenerator.InSessionLessonType
 	@Binding var isShowingDebug: Bool
@@ -76,7 +77,6 @@ struct InSessionLessonHeroSectionView: View {
 					}
 					Text(lesson.lessonInfo.xpToGain.description)
 				}
-				
 			}
 			.font(.system(.headline, design: .rounded, weight: .bold))
 			
@@ -104,5 +104,19 @@ struct InSessionLessonHeroSectionView: View {
 			}
 			
 		}
+		.onAppear {
+			getDiff()
+		}
+		.onChange(of: lesson.lessonInfo.difficultyID) { oldValue, newValue in
+			getDiff()
+		}
     }
+	
+	func getDiff() {
+		difficultyCon.getDifficulties(with: [lesson.lessonInfo.difficultyID], language: currentLanguage) { diffs, error in
+			if error == nil && diffs.count > 0 && diffs.count < 2 {
+				lessonDifficulty = diffs[0]
+			}
+		}
+	}
 }

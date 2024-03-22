@@ -10,7 +10,7 @@ import SwiftUI
 struct InSessionLessonMainView: View {
 	
 	@State var lesson: Lesson
-	
+	var currentLanguage: String
 	
 	@State private var currentTab: DocumentReferenceGenerator.InSessionLessonType = .info
 	@State private var selectedTypeIndex = 0
@@ -22,6 +22,7 @@ struct InSessionLessonMainView: View {
 		VStack {
 			InSessionLessonHeroSectionView(
 				lesson: $lesson,
+				currentLanguage: currentLanguage,
 				selectedTypeIndex: $selectedTypeIndex,
 				currentTab: $currentTab,
 				isShowingDebug: $isShowingDebug,
@@ -42,7 +43,9 @@ struct InSessionLessonMainView: View {
 							InSessionLessonGoalView(lessonGoal: lessonGoal, switchLesson: switchToNextSubLesson)
 						}
 					case .vocabUsed:
-						Text("vocabUsed")
+						if let vocabUsed = lesson.newLessonVocabUsed {
+							InSessionLessonVocabUsedView(vocab: vocabUsed, currentLanguage: currentLanguage, switchLesson: switchToNextSubLesson)
+						}
 					case .grammar:
 						Text("grammar")
 					case .practice:
@@ -102,5 +105,5 @@ struct InSessionLessonMainView: View {
 }
 
 #Preview {
-	InSessionLessonMainView(lesson: Lesson.detailExample)
+	InSessionLessonMainView(lesson: Lesson.detailExample, currentLanguage: "English")
 }

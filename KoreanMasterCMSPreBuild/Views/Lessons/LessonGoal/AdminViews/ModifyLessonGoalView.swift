@@ -19,20 +19,30 @@ struct ModifyLessonGoalView: View {
 			TextField("Goal text", text: $lessonGoal.goalText)
 			
 			NavigationLink {
-				List {
-					Button {
-						lessonGoal.lessonGoalExamples?.append(LessonGoalExample.empty)
-					} label: {
-						Label("Add Example", systemImage: "plus")
+				GeometryReader { geo in
+					HStack {
+						List {
+							Button {
+								lessonGoal.lessonGoalExamples?.append(LessonGoalExample.empty)
+							} label: {
+								Label("Add Example", systemImage: "plus")
+							}
+							
+							
+							ForEach(lessonGoal.lessonGoalExamples ?? []) { example in
+								ModifyLessonGoalExampleListCellView(lessonGoalExample: example, removeFuntion: {
+									lessonGoal.lessonGoalExamples?.removeAll(where: { $0.id == example.id })
+								})
+								.padding(.vertical, 5)
+							}
+						}
+						.frame(width: geo.size.width / 2, height: geo.size.height)
+						
+						InSessionLessonGoalView(lessonGoal: lessonGoal) {}
+							.padding()
+							.frame(width: geo.size.width / 2, height: geo.size.height)
 					}
-					
-					
-					ForEach(lessonGoal.lessonGoalExamples ?? []) { example in
-						ModifyLessonGoalExampleListCellView(lessonGoalExample: example, removeFuntion: {
-							lessonGoal.lessonGoalExamples?.removeAll(where: { $0.id == example.id })
-						})
-						.padding(.vertical, 5)
-					}
+					.navigationTitle("Lesson Goal Examples")
 				}
 			} label: {
 				NavLinkHeaderView(headerText: "Examples", headerSFIcon: "text.book.closed.fill", count: lessonGoal.lessonGoalExamples?.count ?? 999)

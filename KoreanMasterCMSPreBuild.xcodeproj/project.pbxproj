@@ -33,6 +33,9 @@
 		2E666E3E2BACE30A00C59FEB /* DifficultyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E666E2C2BACC82A00C59FEB /* DifficultyController.swift */; };
 		2E666E402BACE32900C59FEB /* LessonDifficultyControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E666E3F2BACE32900C59FEB /* LessonDifficultyControllerTests.swift */; };
 		2E666E422BACE46F00C59FEB /* InSessionLessonHeroSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E666E412BACE46F00C59FEB /* InSessionLessonHeroSectionView.swift */; };
+		2E666E452BAD8E5100C59FEB /* InSessionLessonVocabUsedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E666E442BAD8E5100C59FEB /* InSessionLessonVocabUsedView.swift */; };
+		2E666E472BAD9B1800C59FEB /* InSessionLessonVocabUsedItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E666E462BAD9B1800C59FEB /* InSessionLessonVocabUsedItemView.swift */; };
+		2E666E4A2BADA45F00C59FEB /* InSessionLessonGrammarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E666E492BADA45F00C59FEB /* InSessionLessonGrammarView.swift */; };
 		2E6C517B2B927C7000626F95 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6C517A2B927C7000626F95 /* MainTabView.swift */; };
 		2E6C51802B927ECB00626F95 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6C517F2B927ECB00626F95 /* ProfileView.swift */; };
 		2E6C51832B92817100626F95 /* MainSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6C51822B92817100626F95 /* MainSettingsView.swift */; };
@@ -156,6 +159,9 @@
 		2E666E3B2BACD4DC00C59FEB /* LessonDifficultyPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonDifficultyPickerView.swift; sourceTree = "<group>"; };
 		2E666E3F2BACE32900C59FEB /* LessonDifficultyControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonDifficultyControllerTests.swift; sourceTree = "<group>"; };
 		2E666E412BACE46F00C59FEB /* InSessionLessonHeroSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InSessionLessonHeroSectionView.swift; sourceTree = "<group>"; };
+		2E666E442BAD8E5100C59FEB /* InSessionLessonVocabUsedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InSessionLessonVocabUsedView.swift; sourceTree = "<group>"; };
+		2E666E462BAD9B1800C59FEB /* InSessionLessonVocabUsedItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InSessionLessonVocabUsedItemView.swift; sourceTree = "<group>"; };
+		2E666E492BADA45F00C59FEB /* InSessionLessonGrammarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InSessionLessonGrammarView.swift; sourceTree = "<group>"; };
 		2E6C517A2B927C7000626F95 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		2E6C517F2B927ECB00626F95 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		2E6C51822B92817100626F95 /* MainSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSettingsView.swift; sourceTree = "<group>"; };
@@ -449,6 +455,23 @@
 			path = Difficulty;
 			sourceTree = "<group>";
 		};
+		2E666E432BAD8DF900C59FEB /* InSession */ = {
+			isa = PBXGroup;
+			children = (
+				2E666E442BAD8E5100C59FEB /* InSessionLessonVocabUsedView.swift */,
+				2E666E462BAD9B1800C59FEB /* InSessionLessonVocabUsedItemView.swift */,
+			);
+			path = InSession;
+			sourceTree = "<group>";
+		};
+		2E666E482BADA44700C59FEB /* InSession */ = {
+			isa = PBXGroup;
+			children = (
+				2E666E492BADA45F00C59FEB /* InSessionLessonGrammarView.swift */,
+			);
+			path = InSession;
+			sourceTree = "<group>";
+		};
 		2E6C51792B927C6500626F95 /* MainTabView */ = {
 			isa = PBXGroup;
 			children = (
@@ -712,6 +735,7 @@
 			isa = PBXGroup;
 			children = (
 				2E7E3A762BA6401B00CD9353 /* LessonGrammarPages */,
+				2E666E482BADA44700C59FEB /* InSession */,
 				2E7E3A712BA63DCB00CD9353 /* AdminView */,
 			);
 			path = LessonGrammar;
@@ -959,6 +983,7 @@
 		2EA7BDFF2B9B400500AAA532 /* LessonVocabUsed */ = {
 			isa = PBXGroup;
 			children = (
+				2E666E432BAD8DF900C59FEB /* InSession */,
 				2E7E3A7F2BA6E73300CD9353 /* AdminViews */,
 			);
 			path = LessonVocabUsed;
@@ -1412,6 +1437,7 @@
 				2EAC1C482B94B88100F713F7 /* LanguageSmallDetailCellView.swift in Sources */,
 				2E666E1F2BAC89A100C59FEB /* InSessionLessonGoalExampleView.swift in Sources */,
 				2EAC1C332B93853B00F713F7 /* LanguageCellView.swift in Sources */,
+				2E666E452BAD8E5100C59FEB /* InSessionLessonVocabUsedView.swift in Sources */,
 				2EAC1C3D2B93B77900F713F7 /* CoursesController.swift in Sources */,
 				2E7E3A692BA5D0E500CD9353 /* ModifyLessonGoalView.swift in Sources */,
 				2E6C51862B92835C00626F95 /* UserListView.swift in Sources */,
@@ -1438,6 +1464,7 @@
 				2E666E392BACD23E00C59FEB /* LessonDifficultyDetailSmallCellView.swift in Sources */,
 				2EA7BE072B9B80EE00AAA532 /* AllVocabListView.swift in Sources */,
 				2E6C519F2B92944000626F95 /* FirestoreUser.swift in Sources */,
+				2E666E472BAD9B1800C59FEB /* InSessionLessonVocabUsedItemView.swift in Sources */,
 				2E7E3A8E2BA6EDA200CD9353 /* ModifyLessonPraticeMultipleChoiceCellView.swift in Sources */,
 				2EF41ACF2B927A36007431ED /* ContentView.swift in Sources */,
 				2E7E3A5E2BA3318E00CD9353 /* ModifyVocabSheetView.swift in Sources */,
@@ -1461,6 +1488,7 @@
 				2E7E3A602BA33D5A00CD9353 /* DictionaryController.swift in Sources */,
 				2E7E3A652BA5B86000CD9353 /* VocabDetailListSmallCellView.swift in Sources */,
 				2E8D83C52BA2F8170039DE57 /* TranslationController.swift in Sources */,
+				2E666E4A2BADA45F00C59FEB /* InSessionLessonGrammarView.swift in Sources */,
 				2EAC1C582B98729200F713F7 /* AllLessonsLocalizedMocData.swift in Sources */,
 				2E666E3C2BACD4DC00C59FEB /* LessonDifficultyPickerView.swift in Sources */,
 				2EAC1C512B97A5DD00F713F7 /* Lesson.swift in Sources */,

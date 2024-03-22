@@ -278,6 +278,7 @@ class LessonGoalExample: Identifiable, Codable {
 	}
 }
 
+@Observable
 class NewLessonVocabUsed: Identifiable, Codable {
 	var id: String
 	var title: String
