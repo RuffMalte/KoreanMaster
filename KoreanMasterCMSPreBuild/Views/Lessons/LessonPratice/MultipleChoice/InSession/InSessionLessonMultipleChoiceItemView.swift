@@ -10,26 +10,32 @@ import SwiftUI
 struct InSessionLessonMultipleChoiceItemView: View {
 	
 	var multipleChoice: LessonpracticeMultipleChoice
+	@Binding var showNavigationButtons: Bool
+	@Binding var hasAnswerBeenSelected: Bool
 	
-    var body: some View {
+	var body: some View {
 		VStack {
 			Text(multipleChoice.question)
 				.font(.title)
 				.padding()
 			
 			ForEach(multipleChoice.answers.indices, id: \.self) { index in
-				Button {
-					if multipleChoice.answers[index].isCorret{
+				Button(action: {
+					hasAnswerBeenSelected = true
+					showNavigationButtons = true
+					
+					if multipleChoice.answers[index].isCorret {
 						print("Correct")
 					} else {
 						print("Wrong")
 					}
-				} label: {
+				}) {
 					Text(multipleChoice.answers[index].answer)
 						.font(.title2)
-						.padding()
 				}
+				.disabled(hasAnswerBeenSelected)
 			}
 		}
-    }
+	}
 }
+

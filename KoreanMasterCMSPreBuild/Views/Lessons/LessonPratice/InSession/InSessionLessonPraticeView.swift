@@ -15,6 +15,9 @@ struct InSessionLessonPraticeView: View {
 	@State var currentPraticeMode: DocumentReferenceGenerator.PraticeType = .multipleChoice
 	var isAbleToSwitchLesson: Bool = true
 	
+	@State var showNavigationButtons = false
+	@State var hasAnswerBeenSelected: Bool = false
+
 	
     var body: some View {
 		InSessionLessonHeaderView(title: pratice.title, subtitle: pratice.desc) {
@@ -23,15 +26,23 @@ struct InSessionLessonPraticeView: View {
 				case .multipleChoice:
 					InSessionLessonPageinatedItemsView(
 						items: pratice.mulitpleChoice ?? [],
+						showNavigationButtons: $showNavigationButtons,
+						hasAnswerBeenSelected: $hasAnswerBeenSelected,
 						onEnd: isAbleToSwitchLesson ? switchPraticeMode : {}
 					) { mp in
-						InSessionLessonMultipleChoiceItemView(multipleChoice: mp)
+						InSessionLessonMultipleChoiceItemView(
+							multipleChoice: mp,
+							showNavigationButtons: $showNavigationButtons,
+							hasAnswerBeenSelected: $hasAnswerBeenSelected
+						)
 					}
 					
 				case .sentenceBuilding:
 					InSessionLessonPageinatedItemsView(
 						items: pratice.sentenceBuilding ?? [],
-						onEnd: isAbleToSwitchLesson ? switchPraticeMode : {}
+						showNavigationButtons: $showNavigationButtons,
+						hasAnswerBeenSelected: $hasAnswerBeenSelected,
+						onEnd: isAbleToSwitchLesson ? switchLesson : {}
 					) { sb in
 						Text(sb.question)
 					}
