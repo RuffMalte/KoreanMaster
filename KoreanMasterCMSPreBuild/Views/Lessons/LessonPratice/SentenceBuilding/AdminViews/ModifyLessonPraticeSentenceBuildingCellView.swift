@@ -17,6 +17,22 @@ struct ModifyLessonPraticeSentenceBuildingCellView: View {
 			VStack {
 				TextField("Question", text: $lessonPraticeSentenceBuilding.question)
 				TextField("Answer", text: $lessonPraticeSentenceBuilding.correctAnswer)
+				
+				ScrollView(.horizontal) {
+					HStack {
+						Button {
+							lessonPraticeSentenceBuilding.answers.append("new")
+						} label: {
+							Image(systemName: "plus")
+						}
+						ForEach(lessonPraticeSentenceBuilding.answers.indices, id: \.self) { index in
+							TextField("Answer", text: $lessonPraticeSentenceBuilding.answers[index])
+						}
+					}
+				}
+				
+				
+				
 			}
 			Button {
 				removeFuntion()

@@ -44,7 +44,15 @@ struct InSessionLessonPraticeView: View {
 						hasAnswerBeenSelected: $hasAnswerBeenSelected,
 						onEnd: isAbleToSwitchLesson ? switchLesson : {}
 					) { sb in
-						Text(sb.question)
+						InSessionLessonPraticeSentenceBuildingItemView(
+							sentenceB: sb,
+							showNavigationButtons: $showNavigationButtons,
+							hasAnswerBeenSelected: $hasAnswerBeenSelected
+						)
+						.onAppear {
+							showNavigationButtons = false
+							hasAnswerBeenSelected = false
+						}
 					}
 					
 				}
