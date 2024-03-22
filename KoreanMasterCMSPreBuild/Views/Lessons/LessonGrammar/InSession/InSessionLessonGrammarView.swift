@@ -17,34 +17,11 @@ struct InSessionLessonGrammarView: View {
 	
 	var body: some View {
 		InSessionLessonHeaderView(title: grammar.title, subtitle: grammar.desc) {
-			VStack {
-				if let pages = grammar.LessonGrammarPages, pages.indices.contains(currentExampleIndex) {
-					InSessionLessonGrammarExamplePageView(examplePage: pages[currentExampleIndex])
-					
-					
-					if currentExampleIndex + 1 == pages.count {
-						InSessionSwitchSubLessonButtonView(switchLesson: switchLesson)
-					} else {
-						HStack {
-							Button("Previous") {
-								withAnimation {
-									currentExampleIndex = max(currentExampleIndex - 1, 0)
-								}
-							}
-							
-							Button("Next") {
-								withAnimation {
-									currentExampleIndex = min(currentExampleIndex + 1, pages.count - 1)
-								}
-							}
-						}
-					}
-				} else {
-					ContentUnavailableView("No Pages found", systemImage: "exclamationmark.triangle.fill")
-				}
-
-				
-				
+			InSessionLessonPageinatedItemsView(
+				items: grammar.LessonGrammarPages ?? [],
+				onEnd: switchLesson
+			) { page in
+				InSessionLessonGrammarExamplePageView(examplePage: page)
 			}
 		}
 	}
