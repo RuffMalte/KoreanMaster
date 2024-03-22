@@ -331,17 +331,20 @@ class LessonGrammarPage: Identifiable, Codable {
 	var title: String
 	var desc: String
 	var example: String
+	var order: Int
 	
 	init(
 		id: String = UUID().uuidString,
 		title: String,
 		desc: String,
-		example: String
+		example: String,
+		order: Int = 0
 	) {
 		self.id = id
 		self.title = title
 		self.desc = desc
 		self.example = example
+		self.order = order
 	}
 }
 

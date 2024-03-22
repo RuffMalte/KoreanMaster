@@ -10,16 +10,36 @@ import SwiftUI
 struct ModifyLessonGrammarPageListCellView: View {
 	
 	@State var lessonGrammarPage: LessonGrammarPage
+	var increaseOrder: () -> Void
+	var decreaseOrder: () -> Void
 	var removeFuntion: () -> Void
 
     var body: some View {
 		HStack {
+			
+			VStack {
+				Button(action: decreaseOrder) {
+					Image(systemName: "arrow.up")
+				}
+				.disabled(lessonGrammarPage.order <= 1)
+
+
+				Text("Page \(lessonGrammarPage.order)")
+
+				Button(action: increaseOrder) {
+					Image(systemName: "arrow.down")
+				}
+				.disabled(lessonGrammarPage.order >= 100)
+				
+			}
+			
 			VStack {
 				Text(lessonGrammarPage.id)
 					.font(.system(.subheadline, design: .monospaced, weight: .regular))
 				
 				TextField("Title", text: $lessonGrammarPage.title)
 				TextField("Desc", text: $lessonGrammarPage.desc)
+				TextField("Example", text: $lessonGrammarPage.example)
 			}
 			.textFieldStyle(.roundedBorder)
 			
@@ -32,6 +52,3 @@ struct ModifyLessonGrammarPageListCellView: View {
     }
 }
 
-#Preview {
-	ModifyLessonGrammarPageListCellView(lessonGrammarPage: LessonGrammarPage.multipleExample[0], removeFuntion: {print("removing")})
-}
