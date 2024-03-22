@@ -36,6 +36,7 @@
 		2E666E452BAD8E5100C59FEB /* InSessionLessonVocabUsedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E666E442BAD8E5100C59FEB /* InSessionLessonVocabUsedView.swift */; };
 		2E666E472BAD9B1800C59FEB /* InSessionLessonVocabUsedItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E666E462BAD9B1800C59FEB /* InSessionLessonVocabUsedItemView.swift */; };
 		2E666E4A2BADA45F00C59FEB /* InSessionLessonGrammarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E666E492BADA45F00C59FEB /* InSessionLessonGrammarView.swift */; };
+		2E666E4D2BADA72B00C59FEB /* InSessionLessonGrammarExamplePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E666E4C2BADA72B00C59FEB /* InSessionLessonGrammarExamplePageView.swift */; };
 		2E6C517B2B927C7000626F95 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6C517A2B927C7000626F95 /* MainTabView.swift */; };
 		2E6C51802B927ECB00626F95 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6C517F2B927ECB00626F95 /* ProfileView.swift */; };
 		2E6C51832B92817100626F95 /* MainSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6C51822B92817100626F95 /* MainSettingsView.swift */; };
@@ -162,6 +163,7 @@
 		2E666E442BAD8E5100C59FEB /* InSessionLessonVocabUsedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InSessionLessonVocabUsedView.swift; sourceTree = "<group>"; };
 		2E666E462BAD9B1800C59FEB /* InSessionLessonVocabUsedItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InSessionLessonVocabUsedItemView.swift; sourceTree = "<group>"; };
 		2E666E492BADA45F00C59FEB /* InSessionLessonGrammarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InSessionLessonGrammarView.swift; sourceTree = "<group>"; };
+		2E666E4C2BADA72B00C59FEB /* InSessionLessonGrammarExamplePageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InSessionLessonGrammarExamplePageView.swift; sourceTree = "<group>"; };
 		2E6C517A2B927C7000626F95 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		2E6C517F2B927ECB00626F95 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		2E6C51822B92817100626F95 /* MainSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSettingsView.swift; sourceTree = "<group>"; };
@@ -472,6 +474,14 @@
 			path = InSession;
 			sourceTree = "<group>";
 		};
+		2E666E4B2BADA71B00C59FEB /* InSession */ = {
+			isa = PBXGroup;
+			children = (
+				2E666E4C2BADA72B00C59FEB /* InSessionLessonGrammarExamplePageView.swift */,
+			);
+			path = InSession;
+			sourceTree = "<group>";
+		};
 		2E6C51792B927C6500626F95 /* MainTabView */ = {
 			isa = PBXGroup;
 			children = (
@@ -768,6 +778,7 @@
 		2E7E3A762BA6401B00CD9353 /* LessonGrammarPages */ = {
 			isa = PBXGroup;
 			children = (
+				2E666E4B2BADA71B00C59FEB /* InSession */,
 				2E7E3A772BA6402600CD9353 /* AdminView */,
 			);
 			path = LessonGrammarPages;
@@ -1493,6 +1504,7 @@
 				2E666E3C2BACD4DC00C59FEB /* LessonDifficultyPickerView.swift in Sources */,
 				2EAC1C512B97A5DD00F713F7 /* Lesson.swift in Sources */,
 				2E7E3A552BA31C9100CD9353 /* VocabDetailSmallCellView.swift in Sources */,
+				2E666E4D2BADA72B00C59FEB /* InSessionLessonGrammarExamplePageView.swift in Sources */,
 				2EDF0C062B9A39D4001132AD /* ModifyLessonInfoView.swift in Sources */,
 				2EA7BDFE2B9B17EE00AAA532 /* MaltesColorPicker.swift in Sources */,
 				2E13E3A02BAB551700C15721 /* DeepLConfig.swift in Sources */,

@@ -44,10 +44,12 @@ struct InSessionLessonMainView: View {
 						}
 					case .vocabUsed:
 						if let vocabUsed = lesson.newLessonVocabUsed {
-							InSessionLessonVocabUsedView(vocab: vocabUsed, currentLanguage: currentLanguage, switchLesson: switchToNextSubLesson)
+							InSessionLessonVocabUsedView(vocab: vocabUsed, currentLanguage: currentLanguage, switchLesson: switchToNextSubLesson	)
 						}
 					case .grammar:
-						Text("grammar")
+						if let grammar = lesson.lessonGrammar {
+							InSessionLessonGrammarView(grammar: grammar)
+						}
 					case .practice:
 						Text("Ipracticenfo")
 					case .cultureReferences:
@@ -61,7 +63,7 @@ struct InSessionLessonMainView: View {
 			.padding()
 			.background {
 				RoundedRectangle(cornerRadius: 20)
-					.foregroundStyle(.secondary.opacity(0.2))
+					.foregroundStyle(.secondary.opacity(0.2))	
 			}
 			.overlay {
 				VStack {

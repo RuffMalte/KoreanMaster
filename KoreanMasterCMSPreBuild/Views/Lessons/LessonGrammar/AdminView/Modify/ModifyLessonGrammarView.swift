@@ -19,18 +19,30 @@ struct ModifyLessonGrammarView: View {
 			
 			
 			NavigationLink {
-				List {
-					Button {
-						lessonGrammar.LessonGrammarPages?.append(LessonGrammarPage.empty)
-					} label: {
-						Label("Add New Page", systemImage: "plus")
-					}
+				GeometryReader { geo in
+					HStack {
+						List {
+							Button {
+								lessonGrammar.LessonGrammarPages?.append(LessonGrammarPage.empty)
+							} label: {
+								Label("Add New Page", systemImage: "plus")
+							}
+							
+							ForEach(lessonGrammar.LessonGrammarPages ?? []) { page in
+								ModifyLessonGrammarPageListCellView(lessonGrammarPage: page, removeFuntion: {
+									lessonGrammar.LessonGrammarPages?.removeAll(where: { $0.id == page.id })
+								})
+								.padding(.vertical, 5)
+							}
+						}
+						.frame(width: geo.size.width / 2, height: geo.size.height)
+						
+						
+						InSessionLessonGrammarView(grammar: lessonGrammar)
+							.padding()
+							.frame(width: geo.size.width / 2, height: geo.size.height)
 
-					ForEach(lessonGrammar.LessonGrammarPages ?? []) { page in
-						ModifyLessonGrammarPageListCellView(lessonGrammarPage: page, removeFuntion: {
-							lessonGrammar.LessonGrammarPages?.removeAll(where: { $0.id == page.id })
-						})
-						.padding(.vertical, 5)
+						
 					}
 				}
 			} label: {
