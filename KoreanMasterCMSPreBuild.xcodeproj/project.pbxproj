@@ -46,6 +46,7 @@
 		2E666E5F2BAE21AE00C59FEB /* InSessionLessonNavBackButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E666E5E2BAE21AE00C59FEB /* InSessionLessonNavBackButtonView.swift */; };
 		2E666E652BAE312300C59FEB /* InSessionLessonCultureRefrenceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E666E642BAE312300C59FEB /* InSessionLessonCultureRefrenceView.swift */; };
 		2E666E682BAE31D300C59FEB /* InSessionLessonSongItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E666E672BAE31D300C59FEB /* InSessionLessonSongItemView.swift */; };
+		2E666E6B2BAE3BAD00C59FEB /* YouTubePlayerKit in Frameworks */ = {isa = PBXBuildFile; productRef = 2E666E6A2BAE3BAD00C59FEB /* YouTubePlayerKit */; };
 		2E6C517B2B927C7000626F95 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6C517A2B927C7000626F95 /* MainTabView.swift */; };
 		2E6C51802B927ECB00626F95 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6C517F2B927ECB00626F95 /* ProfileView.swift */; };
 		2E6C51832B92817100626F95 /* MainSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6C51822B92817100626F95 /* MainSettingsView.swift */; };
@@ -270,6 +271,7 @@
 			files = (
 				2E666E292BACC01A00C59FEB /* ConfettiSwiftUI in Frameworks */,
 				2EF41AE12B927B37007431ED /* FirebaseAuth in Frameworks */,
+				2E666E6B2BAE3BAD00C59FEB /* YouTubePlayerKit in Frameworks */,
 				2EF41AE32B927B37007431ED /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1414,6 +1416,7 @@
 				2EF41AE02B927B37007431ED /* FirebaseAuth */,
 				2EF41AE22B927B37007431ED /* FirebaseFirestore */,
 				2E666E282BACC01A00C59FEB /* ConfettiSwiftUI */,
+				2E666E6A2BAE3BAD00C59FEB /* YouTubePlayerKit */,
 			);
 			productName = KoreanMasterCMSPreBuild;
 			productReference = 2EF41AC92B927A36007431ED /* KoreanMasterCMSPreBuild.app */;
@@ -1450,6 +1453,7 @@
 			packageReferences = (
 				2EF41ADF2B927B37007431ED /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				2E666E272BACC01A00C59FEB /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */,
+				2E666E692BAE3BAD00C59FEB /* XCRemoteSwiftPackageReference "YouTubePlayerKit" */,
 			);
 			productRefGroup = 2EF41ACA2B927A36007431ED /* Products */;
 			projectDirPath = "";
@@ -1907,6 +1911,14 @@
 				minimumVersion = 1.1.0;
 			};
 		};
+		2E666E692BAE3BAD00C59FEB /* XCRemoteSwiftPackageReference "YouTubePlayerKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SvenTiigi/YouTubePlayerKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.7.0;
+			};
+		};
 		2EF41ADF2B927B37007431ED /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
@@ -1922,6 +1934,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 2E666E272BACC01A00C59FEB /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */;
 			productName = ConfettiSwiftUI;
+		};
+		2E666E6A2BAE3BAD00C59FEB /* YouTubePlayerKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2E666E692BAE3BAD00C59FEB /* XCRemoteSwiftPackageReference "YouTubePlayerKit" */;
+			productName = YouTubePlayerKit;
 		};
 		2EF41AE02B927B37007431ED /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;

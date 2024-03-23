@@ -474,20 +474,23 @@ class LessonCultureReferenceSong: Identifiable, Codable {
 	var id: String
 	var title: String
 	var desc: String
-	var image: String
-	var link: String
+	var youtubeLinkID: String
+	var youtubeStartTimestamp: Int
+	var youtubeEndTimestamp: Int
 	
 	init(
 		id: String = UUID().uuidString,
 		title: String,
 		desc: String,
-		image: String,
-		link: String
+		youtubeLinkID: String,
+		youtubeStartTimestamp: Int,
+		youtubeEndTimestamp: Int
 	) {
 		self.id = id
 		self.title = title
 		self.desc = desc
-		self.image = image
-		self.link = link
+		self.youtubeLinkID = youtubeLinkID
+		self.youtubeStartTimestamp = youtubeStartTimestamp
+		self.youtubeEndTimestamp = youtubeEndTimestamp
 	}
 }

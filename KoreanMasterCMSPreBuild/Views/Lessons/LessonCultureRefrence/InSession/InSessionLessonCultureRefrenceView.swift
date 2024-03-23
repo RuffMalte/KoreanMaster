@@ -11,6 +11,7 @@ struct InSessionLessonCultureRefrenceView: View {
 	
 	@State var culture: LessonCultureReference
 	var switchLesson: () -> Void
+	var endLesson: () -> Void
 	
     var body: some View {
 		InSessionLessonHeaderView(title: culture.title, subtitle: culture.desc) {
@@ -18,11 +19,12 @@ struct InSessionLessonCultureRefrenceView: View {
 				InSessionLessonPageinatedItemsView(
 					items: culture.songs ?? [],
 					isLastPaginated: true,
-					onEnd: switchLesson
+					onEnd: endLesson
 				) { song in
 					InSessionLessonSongItemView(song: song)
 				}
 			}
 		}
+		
     }
 }

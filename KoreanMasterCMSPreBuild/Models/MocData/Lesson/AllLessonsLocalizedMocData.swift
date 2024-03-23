@@ -242,15 +242,41 @@ extension LessonCultureReference {
 
 
 extension LessonCultureReferenceSong {
-	static var multipleExample: [LessonCultureReferenceSong] = [
-		LessonCultureReferenceSong(title: "AA", desc: "awd", image: "awd", link: "adw"),
-		LessonCultureReferenceSong(title: "AA", desc: "awd", image: "awd", link: "adw"),
-		LessonCultureReferenceSong(title: "AA", desc: "awd", image: "awd", link: "adw"),
-		LessonCultureReferenceSong(title: "AA", desc: "awd", image: "awd", link: "adw")
-	]
+	static var multipleExample: [LessonCultureReferenceSong] {
+		return [
+			LessonCultureReferenceSong(
+				title: "Never gonna give you up",
+				desc: "Never gonna let you down",
+				youtubeLinkID: "dQw4w9WgXcQ",
+				youtubeStartTimestamp: 20,
+				youtubeEndTimestamp: 30
+			),
+			LessonCultureReferenceSong(
+				title: "Never gonna give you up",
+				desc: "Never gonna let you down",
+				youtubeLinkID: "dQw4w9WgXcQ",
+				youtubeStartTimestamp: 20,
+				youtubeEndTimestamp: 30
+			),
+			LessonCultureReferenceSong(
+				title: "Never gonna give you up",
+				desc: "Never gonna let you down",
+				youtubeLinkID: "dQw4w9WgXcQ",
+				youtubeStartTimestamp: 20,
+				youtubeEndTimestamp: 30
+			)
+		]
+		
+		
+	}
 	
 	
 	static var empty: LessonCultureReferenceSong {
-		return LessonCultureReferenceSong(title: "", desc: "", image: "", link: "")
+		return LessonCultureReferenceSong(
+			title: "",
+			desc: "",
+			youtubeLinkID: "",
+			youtubeStartTimestamp: 0,
+			youtubeEndTimestamp: 0)
 	}
 }

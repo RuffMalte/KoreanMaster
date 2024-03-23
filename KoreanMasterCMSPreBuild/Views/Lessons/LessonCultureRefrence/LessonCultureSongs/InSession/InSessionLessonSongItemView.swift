@@ -6,22 +6,37 @@
 //
 
 import SwiftUI
+import YouTubePlayerKit
 
 struct InSessionLessonSongItemView: View {
 	
-	@State var song: LessonCultureReferenceSong
+	var song: LessonCultureReferenceSong
 	
     var body: some View {
 		VStack {
-			AsyncImage(url: URL(string: song.image)) { image in
-				image
-					.resizable()
-					.aspectRatio(contentMode: .fit)
-					.cornerRadius(10)
-			} placeholder: {
-				ProgressView()
+			YouTubePlayerView(
+				YouTubePlayer(
+					source: .video(
+						id: song.youtubeLinkID,
+						startSeconds: song.youtubeStartTimestamp,
+						endSeconds: song.youtubeEndTimestamp
+					), 
+					configuration: .init(
+						loopEnabled: true
+					)
+				)
+			) { state in
+				switch state {
+				case .idle:
+					ProgressView()
+				case .ready:
+					EmptyView()
+				case .error(let error):
+					Text(verbatim: "YouTube player couldn't be loaded")
+				}
 			}
-			
+			.clipShape(RoundedRectangle(cornerRadius: 16))
+
 			Text(song.title)
 				.font(.system(.title3, design: .rounded, weight: .bold))
 				.padding()
@@ -30,9 +45,6 @@ struct InSessionLessonSongItemView: View {
 				.font(.system(.body, design: .default, weight: .regular))
 				.padding()
 			
-			
-			Link("Link", destination: URL(string: song.link)!)
-				.font(.system(.body, design: .default, weight: .bold))
 		}
     }
 }

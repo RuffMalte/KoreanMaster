@@ -56,7 +56,7 @@ struct InSessionLessonMainView: View {
 						}
 					case .cultureReferences:
 						if let refrence = lesson.lessonCultureReferences {
-							InSessionLessonCultureRefrenceView(culture: refrence, switchLesson: switchToNextSubLesson)
+							InSessionLessonCultureRefrenceView(culture: refrence, switchLesson: switchToNextSubLesson, endLesson: endLesson)
 						}
 					}
 					Spacer()
@@ -107,6 +107,9 @@ struct InSessionLessonMainView: View {
 				currentTab = allCases[nextIndex]
 			}
 		}
+	}
+	private func endLesson() {
+		print("Ending lesson")
 	}
 }
 
