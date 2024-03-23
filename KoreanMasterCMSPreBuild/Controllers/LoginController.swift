@@ -270,43 +270,45 @@ class LoginController: ObservableObject {
 	}
 
 	
-	func changeUserAdminStatus(with id: String) {
+	func changeUserAdminStatus(with id: String, completion: @escaping (Bool, Error?) -> Void) {
 		let usersCollection = Firestore.firestore().collection("users")
 		usersCollection.document(id).getDocument { document, error in
 			if let error = error {
-				print("Error reading user from Firestore: \(error)")
+				completion(false, error)
 			} else {
 				if let document = document, document.exists {
 					do {
 						let user = try document.data(as: FirestoreUser.self)
 						user.isAdmin.toggle()
 						try usersCollection.document(id).setData(from: user)
+						completion(true, nil)
 					} catch {
-						print("Error decoding user from Firestore: \(error)")
+						completion(false, error)
 					}
 				} else {
-					print("User does not exist")
+					completion(false, nil)
 				}
 			}
 		}
 	}
 	
-	func changeUserAdminLessonStatus(with id: String) {
+	func changeUserAdminLessonStatus(with id: String, completion: @escaping (Bool, Error?) -> Void) {
 		let usersCollection = Firestore.firestore().collection("users")
 		usersCollection.document(id).getDocument { document, error in
 			if let error = error {
-				print("Error reading user from Firestore: \(error)")
+				completion(false, error)
 			} else {
 				if let document = document, document.exists {
 					do {
 						let user = try document.data(as: FirestoreUser.self)
 						user.isAdminLesson.toggle()
 						try usersCollection.document(id).setData(from: user)
+						completion(true, nil)
 					} catch {
-						print("Error decoding user from Firestore: \(error)")
+						completion(false, error)
 					}
 				} else {
-					print("User does not exist")
+					completion(false, nil)
 				}
 			}
 		}

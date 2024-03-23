@@ -22,6 +22,7 @@ final class CreateUserTests: XCTestCase {
 		let createExpectation = self.expectation(description: "create user")
 		let testFireStoreUser: FirestoreUser = FirestoreUser(id: "TestID", email: "email2", displayName: "displayname", isAdmin: true, isAdminLesson: true, languageSelected: "English")
 		
+		//MARK: creating
 		loginController.createFirestoreUser(preselectedUser: testFireStoreUser) { isFinished, error in
 			XCTAssertTrue(isFinished, "User creation should be finished.")
 			XCTAssertNil(error, "Error should be nil.")
@@ -53,12 +54,47 @@ final class CreateUserTests: XCTestCase {
 		
 		
 		
-		//TODO: Admin tests
+		
+		//MARK: Admin Update
+		let updateAdminExpectation = self.expectation(description: "update user admin status")
+		loginController.changeUserAdminStatus(with: testFireStoreUser.id) { bool, error in
+			XCTAssertNil(error, "Error should be nil.")
+			XCTAssertEqual(bool, true, "Bool should be true.")
+			updateAdminExpectation.fulfill()
+		}
+		waitForExpectations(timeout: 20, handler: nil)
 		
 		
 		
+		let updateLessonAdminExpectation = self.expectation(description: "update user lesson admin status")
+		loginController.changeUserAdminLessonStatus(with: testFireStoreUser.id) { bool, error in
+			XCTAssertNil(error, "Error should be nil.")
+			XCTAssertEqual(bool, true, "Bool should be true.")
+			updateLessonAdminExpectation.fulfill()
+		}
+		waitForExpectations(timeout: 20, handler: nil)
+		
+		let adminStatusExpectation = self.expectation(description: "check user admin status")
+		loginController.readFirestoreUser(with: testFireStoreUser.id) { user, bool, error in
+			XCTAssertNil(error, "Error should be nil.")
+			XCTAssertEqual(bool, true, "Bool should be true.")
+			XCTAssertNotNil(user, "User should not be nil.")
+			
+			XCTAssertEqual(user?.id, testFireStoreUser.id, "User id should be equal.")
+			XCTAssertEqual(user?.email, testFireStoreUser.email, "User email should be equal.")
+			XCTAssertEqual(user?.displayName, testFireStoreUser.displayName, "User displayName should be equal.")
+			XCTAssertEqual(user?.isAdmin, !testFireStoreUser.isAdmin, "User isAdmin should be equal.")
+			XCTAssertEqual(user?.isAdminLesson, !testFireStoreUser.isAdminLesson, "User isAdminLesson should be equal.")
+			XCTAssertEqual(user?.languageSelected, testFireStoreUser.languageSelected, "User languageSelected should be equal.")
+			
+			
+			adminStatusExpectation.fulfill()
+		}
+		waitForExpectations(timeout: 20, handler: nil)
 		
 		
+		
+		//MARK: Deletion
 		let deleteExpectation = self.expectation(description: "delete user")
 		loginController.deleteFirestoreUser(with: testFireStoreUser.id) { isFinished, error in
 			XCTAssertTrue(isFinished, "User deletion should be finished.")

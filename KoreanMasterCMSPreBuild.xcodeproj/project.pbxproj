@@ -410,7 +410,6 @@
 		2E666E2A2BACC7FB00C59FEB /* CourseControllers */ = {
 			isa = PBXGroup;
 			children = (
-				2EAC1C5D2B98BC0900F713F7 /* DocumentReferenceGenerator.swift */,
 				2EAC1C5C2B98BBF600F713F7 /* Courses */,
 				2E666E2B2BACC81600C59FEB /* Difficulty */,
 				2E7E3A4C2BA317CB00CD9353 /* Vocab */,
@@ -647,12 +646,9 @@
 			isa = PBXGroup;
 			children = (
 				2E666E6C2BAF369400C59FEB /* DocumentRefGen */,
-				2E666E3D2BACE30000C59FEB /* Difficulty */,
 				2EF1F1852BAB383F00B1426C /* Course */,
 				2EF1F1822BAB309800B1426C /* CreateUser */,
-				2EF1F1782BAB28F400B1426C /* WelcomeMessages */,
 				2EA8D3582BAA08FE003067E2 /* Helper */,
-				2EA8D3572BAA08F6003067E2 /* Vocab */,
 			);
 			path = ControllerTest;
 			sourceTree = "<group>";
@@ -1302,6 +1298,9 @@
 			isa = PBXGroup;
 			children = (
 				2EF1F1862BAB384C00B1426C /* CourseControllerTests.swift */,
+				2E666E3D2BACE30000C59FEB /* Difficulty */,
+				2EF1F1782BAB28F400B1426C /* WelcomeMessages */,
+				2EA8D3572BAA08F6003067E2 /* Vocab */,
 			);
 			path = Course;
 			sourceTree = "<group>";
@@ -1367,9 +1366,10 @@
 		2EF41ADC2B927ABD007431ED /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				2EAC1C5D2B98BC0900F713F7 /* DocumentReferenceGenerator.swift */,
+				2E6C518D2B92888200626F95 /* LoginController.swift */,
 				2E666E2A2BACC7FB00C59FEB /* CourseControllers */,
 				2E6C51A72B935AC700626F95 /* Helper */,
-				2E6C518D2B92888200626F95 /* LoginController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";

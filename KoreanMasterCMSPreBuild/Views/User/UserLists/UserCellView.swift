@@ -54,7 +54,11 @@ struct UserCellView: View {
 			Divider()
 			
 			Button {
-				loginCon.changeUserAdminStatus(with: user.id)
+				loginCon.changeUserAdminStatus(with: user.id) { bool, error in
+					if let error = error {
+						print(error.localizedDescription)
+					}
+				}
 			} label: {
 				Label("Change admin status", systemImage: user.isAdmin ? "star.slash.fill" : "star.fill")
 					.foregroundStyle(.yellow)
@@ -62,7 +66,11 @@ struct UserCellView: View {
 			.labelStyle(.titleAndIcon)
 
 			Button {
-				loginCon.changeUserAdminLessonStatus(with: user.id)
+				loginCon.changeUserAdminLessonStatus(with: user.id) { bool, error in
+					if let error = error {
+						print(error.localizedDescription)
+					}
+				}
 			} label: {
 				Label("Change Lesson admin status", systemImage: user.isAdminLesson ? "graduationcap" : "graduationcap.fill")
 					.foregroundStyle(.green)
