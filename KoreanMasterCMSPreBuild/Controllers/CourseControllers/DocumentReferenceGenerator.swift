@@ -16,7 +16,7 @@ import FirebaseFirestore
 /// Helper class to generate Firestore document references based on document type or collection
 class DocumentReferenceGenerator {
 	let lessonName: String?
-	private let language: String
+	let language: String
 	private var db: Firestore {
 		Firestore.firestore()
 	}
@@ -26,8 +26,12 @@ class DocumentReferenceGenerator {
 		self.language = language
 	}
 	
-	private var mainLessonPath: String {
-		"lessonsTEST/\(language)/lessons"  // Adjusted path
+	var mainPath: String {
+		"lessonData/\(language)"
+	}
+	
+	var mainLessonPath: String {
+		"\(self.mainPath)/lessons"
 	}
 	
 	enum DocumentType: String, CaseIterable {
@@ -103,8 +107,8 @@ class DocumentReferenceGenerator {
 	}
 	
 	
-	private var welcomeMessagePath: String {
-		"lessonsTEST/\(language)/welcomeMessage"
+	var welcomeMessagePath: String {
+		"\(self.mainPath)/welcomeMessage"
 	}
 	
 	func getDocWelcomeMessageRef(withId id: String) -> DocumentReference {
@@ -117,8 +121,8 @@ class DocumentReferenceGenerator {
 	}
 	
 	
-	private var vocabPath: String {
-		"lessonsTEST/\(language)/vocab"
+	var vocabPath: String {
+		"\(self.mainPath)/vocab"
 	}
 	
 	func getVocabCollectionRef() -> CollectionReference {
@@ -130,8 +134,8 @@ class DocumentReferenceGenerator {
 	}
 	
 	
-	private var difficultyPath: String {
-		"lessonsTEST/\(language)/difficulty"
+	var difficultyPath: String {
+		"\(self.mainPath)/difficulty"
 	}
 	
 	func getDifficultyCollectionPath() -> CollectionReference {

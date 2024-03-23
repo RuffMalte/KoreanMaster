@@ -45,7 +45,15 @@ class LoginController: ObservableObject {
 		Auth.auth().addStateDidChangeListener { auth, user in
 			if user != nil {
 				self.user = auth.currentUser
-				self.readFirestoreUser()
+				self.readFirestoreUser { user, bool, error in
+					if let error = error {
+						print(error)
+					}
+					if let user = user {
+						self.currentFirestoreUser = user
+					}
+						
+				}
 				self.loggedIn = true
 			} else {
 				self.loginOption = .create
@@ -76,7 +84,9 @@ class LoginController: ObservableObject {
 				self.loggedIn = true
 				self.isLoadingAccountSignIn = false
 				
-				self.createFirestoreUser(displayName: displayName)
+				self.createFirestoreUser(displayName: displayName) { isFinished, error in
+					//TODO: Handle error
+				}
 			}
 		}
 	}
@@ -98,7 +108,14 @@ class LoginController: ObservableObject {
 			if let error = error {
 				print(error)
 			} else {
-				self.readFirestoreUser()
+				self.readFirestoreUser { user, bool, error in
+					if let error = error {
+						print(error)
+					}
+					if let user = user {
+						self.currentFirestoreUser = user
+					}
+				}
 				self.loggedIn = true
 				self.isLoadingAccountSignIn = false
 
@@ -108,7 +125,12 @@ class LoginController: ObservableObject {
 	
 	func deleteCurrentUser() {
 		self.isLoadingAccountSignIn = true
-		self.deleteFirestoreUser(with: self.user?.uid ?? "")
+		guard let user = user else { return }
+		self.deleteFirestoreUser(with: user.uid) { bool, error in
+			if let error = error {
+				print(error)
+			}
+		}
 		
 		Auth.auth().currentUser?.delete { error in
 			if let error = error as NSError? {
@@ -147,51 +169,75 @@ class LoginController: ObservableObject {
 	
 	//MARK: User for FireStore
 	
-	func createFirestoreUser(displayName: String? = nil) {
-		guard let user = user else { return }
-		
+	func createFirestoreUser(displayName: String? = nil, preselectedUser: FirestoreUser? = nil, completion: @escaping (Bool, Error?) -> Void) {
 		let usersCollection = Firestore.firestore().collection("users")
-		let newUser = FirestoreUser(id: user.uid, email: user.email ?? "", displayName: displayName ?? user.displayName ?? "")
 		
 		do {
-			try usersCollection.document(user.uid).setData(from: newUser)
-			self.currentFirestoreUser = newUser
+			if let preselectedUser = preselectedUser {
+				try usersCollection.document(preselectedUser.id).setData(from: preselectedUser) { error in
+					if let error = error {
+						completion(false, error)
+					} else {
+						self.currentFirestoreUser = preselectedUser
+						completion(true, nil)
+					}
+				}
+			} else {
+				guard let user = user else { return }
+				let newUser = FirestoreUser(id: user.uid, email: user.email ?? "", displayName: displayName ?? user.displayName ?? "")
+				try usersCollection.document(newUser.id).setData(from: newUser) { error in
+					if let error = error {
+						completion(false, error)
+					} else {
+						self.currentFirestoreUser = newUser
+						completion(true, nil)
+					}
+				}
+			}
 		} catch {
-			print("Error writing user to Firestore: \(error)")
+			completion(false, error)
 		}
 	}
 
-	func readFirestoreUser() {
-		guard let user = user else { return }
-		
+	func readFirestoreUser(with id: String? = nil, completion: @escaping (FirestoreUser?, Bool, Error?) -> Void) {
 		let usersCollection = Firestore.firestore().collection("users")
-		usersCollection.document(user.uid).getDocument { document, error in
+		
+		if id == nil {
+			guard user != nil else { return }
+		}
+		
+		usersCollection.document(id != nil ? id! : user!.uid.description).getDocument { document, error in
 			if let error = error {
-				print("Error reading user from Firestore: \(error)")
+				completion(nil, false, error)
 			} else {
 				if let document = document, document.exists {
 					do {
-						self.currentFirestoreUser = try document.data(as: FirestoreUser.self)
+						let fetchedFirestoreUser = try document.data(as: FirestoreUser.self)
+						completion(fetchedFirestoreUser, true, nil)
 					} catch {
 						print("Error decoding user from Firestore: \(error)")
+						completion(nil, false, error)
 					}
 				} else {
 					print("User does not exist")
+					completion(nil, false, nil)
 				}
 			}
 		}
 	}
 	
-	func deleteFirestoreUser(with id: String) {
-		print("Deleting user from Firestore")
+	func deleteFirestoreUser(with id: String, completion: @escaping (Bool, Error?) -> Void) {
+		guard !id.isEmpty else { return }
 		
 		let usersCollection = Firestore.firestore().collection("users")
+		
+		
 		usersCollection.document(id).delete { error in
 			if let error = error {
-				print("Error deleting user from Firestore: \(error)")
+				completion(false, error)
 			} else {
 				self.currentFirestoreUser = nil
-				print("User successfully deleted from Firestore.")
+				completion(true, nil)
 			}
 		}
 	}

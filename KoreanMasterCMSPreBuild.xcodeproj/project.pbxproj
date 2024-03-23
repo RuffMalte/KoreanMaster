@@ -47,6 +47,7 @@
 		2E666E652BAE312300C59FEB /* InSessionLessonCultureRefrenceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E666E642BAE312300C59FEB /* InSessionLessonCultureRefrenceView.swift */; };
 		2E666E682BAE31D300C59FEB /* InSessionLessonSongItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E666E672BAE31D300C59FEB /* InSessionLessonSongItemView.swift */; };
 		2E666E6B2BAE3BAD00C59FEB /* YouTubePlayerKit in Frameworks */ = {isa = PBXBuildFile; productRef = 2E666E6A2BAE3BAD00C59FEB /* YouTubePlayerKit */; };
+		2E666E6E2BAF36B700C59FEB /* DocumentRefrenceGeneratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E666E6D2BAF36B700C59FEB /* DocumentRefrenceGeneratorTests.swift */; };
 		2E6C517B2B927C7000626F95 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6C517A2B927C7000626F95 /* MainTabView.swift */; };
 		2E6C51802B927ECB00626F95 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6C517F2B927ECB00626F95 /* ProfileView.swift */; };
 		2E6C51832B92817100626F95 /* MainSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6C51822B92817100626F95 /* MainSettingsView.swift */; };
@@ -183,6 +184,7 @@
 		2E666E5E2BAE21AE00C59FEB /* InSessionLessonNavBackButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InSessionLessonNavBackButtonView.swift; sourceTree = "<group>"; };
 		2E666E642BAE312300C59FEB /* InSessionLessonCultureRefrenceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InSessionLessonCultureRefrenceView.swift; sourceTree = "<group>"; };
 		2E666E672BAE31D300C59FEB /* InSessionLessonSongItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InSessionLessonSongItemView.swift; sourceTree = "<group>"; };
+		2E666E6D2BAF36B700C59FEB /* DocumentRefrenceGeneratorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentRefrenceGeneratorTests.swift; sourceTree = "<group>"; };
 		2E6C517A2B927C7000626F95 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		2E6C517F2B927ECB00626F95 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		2E6C51822B92817100626F95 /* MainSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSettingsView.swift; sourceTree = "<group>"; };
@@ -571,6 +573,14 @@
 			path = InSession;
 			sourceTree = "<group>";
 		};
+		2E666E6C2BAF369400C59FEB /* DocumentRefGen */ = {
+			isa = PBXGroup;
+			children = (
+				2E666E6D2BAF36B700C59FEB /* DocumentRefrenceGeneratorTests.swift */,
+			);
+			path = DocumentRefGen;
+			sourceTree = "<group>";
+		};
 		2E6C51792B927C6500626F95 /* MainTabView */ = {
 			isa = PBXGroup;
 			children = (
@@ -636,6 +646,7 @@
 		2E6C519C2B92930400626F95 /* ControllerTest */ = {
 			isa = PBXGroup;
 			children = (
+				2E666E6C2BAF369400C59FEB /* DocumentRefGen */,
 				2E666E3D2BACE30000C59FEB /* Difficulty */,
 				2EF1F1852BAB383F00B1426C /* Course */,
 				2EF1F1822BAB309800B1426C /* CreateUser */,
@@ -1492,6 +1503,7 @@
 			files = (
 				2EA8D3502BAA0460003067E2 /* TranslationControllerTests.swift in Sources */,
 				2EA8D35C2BAA092B003067E2 /* Vocab.swift in Sources */,
+				2E666E6E2BAF36B700C59FEB /* DocumentRefrenceGeneratorTests.swift in Sources */,
 				2EF1F1842BAB30C000B1426C /* CreateUserTests.swift in Sources */,
 				2EF1F17A2BAB290C00B1426C /* WelcomeMessagesControllerTests.swift in Sources */,
 				2E666E3E2BACE30A00C59FEB /* DifficultyController.swift in Sources */,

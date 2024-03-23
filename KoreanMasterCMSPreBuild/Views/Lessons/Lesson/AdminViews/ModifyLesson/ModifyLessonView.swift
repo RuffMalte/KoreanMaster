@@ -16,7 +16,7 @@ struct ModifyLessonView: View {
 
 	
     var body: some View {
-		Form {
+		VStack {
 			if courseCon.isLoadingSingleLesson {
 				ProgressView()
 			} else if let curLesson = lesson {

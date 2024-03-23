@@ -18,10 +18,9 @@ struct MainTabView: View {
 		
 		TabView {
 			
-			Text("Home")
+			AllLessonsListView()
 				.tabItem {
-					Image(systemName: "house")
-					Text("Home")
+					Label("Courses", systemImage: "book.fill")
 				}
 			
 		}
