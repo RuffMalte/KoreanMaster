@@ -28,6 +28,7 @@ struct InSessionLessonNavBackButtonView: View {
 					RoundedRectangle(cornerRadius: 16)
 						.foregroundStyle(.bar)
 				}
+				.shadow(radius: 5)
 			}
 		}
 		.buttonStyle(.plain)

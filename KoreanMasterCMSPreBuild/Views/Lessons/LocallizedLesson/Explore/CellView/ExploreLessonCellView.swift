@@ -26,8 +26,11 @@ struct ExploreLessonCellView: View {
 						.foregroundColor(.purple)
 						.font(.system(.title, weight: .bold))
 				}
+				.frame(width: 80, height: 80)
+
 				Text(lesson.lessonInfo.lessonName)
 					.font(.system(.title3, design: .rounded, weight: .bold))
+					.lineLimit(1)
 			}
 		}
 		.buttonStyle(.plain)

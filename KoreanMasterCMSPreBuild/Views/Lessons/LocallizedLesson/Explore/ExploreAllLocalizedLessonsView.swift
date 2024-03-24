@@ -33,7 +33,6 @@ struct ExploreAllLocalizedLessonsView: View {
 									isShowingLesson.toggle()
 
 								})
-									.frame(width: 100, height: 100)
 								Spacer()
 							} else if index % 4 == 1 || index % 4 == 3 {
 								// Middle aligned
@@ -43,7 +42,6 @@ struct ExploreAllLocalizedLessonsView: View {
 									isShowingLesson.toggle()
 
 								})
-								.frame(width: 100, height: 100)
 								Spacer()
 							} else if index % 4 == 2 {
 								// Right aligned
@@ -53,7 +51,6 @@ struct ExploreAllLocalizedLessonsView: View {
 									isShowingLesson.toggle()
 
 								})
-								.frame(width: 100, height: 100)
 							}
 						}
 					}

@@ -79,6 +79,9 @@ struct AllLessonsListView: View {
 					if allLessonsLocalized.localizedLessons.contains(where: { $0.language == newLocalized.language }) {
 						allLessonsLocalized.localizedLessons.removeAll(where: { $0.language == newLocalized.language })
 					}
+					
+					newLocalized.lessons = newLocalized.sortLessons()
+					
 					allLessonsLocalized.localizedLessons.append(newLocalized)
 					return
 				}

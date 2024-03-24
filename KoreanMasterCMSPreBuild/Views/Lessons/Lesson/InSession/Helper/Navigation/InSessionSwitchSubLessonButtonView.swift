@@ -25,6 +25,7 @@ struct InSessionSwitchSubLessonButtonView: View {
 						RoundedRectangle(cornerRadius: 8)
 							.foregroundStyle(.bar)
 					}
+					.shadow(radius: 5)
 			} else {
 				HStack {
 					HStack {
@@ -59,6 +60,7 @@ struct InSessionSwitchSubLessonButtonView: View {
 								.foregroundStyle(.tint)
 						}
 					}
+					.shadow(radius: 5)
 				}
 			}
 		}

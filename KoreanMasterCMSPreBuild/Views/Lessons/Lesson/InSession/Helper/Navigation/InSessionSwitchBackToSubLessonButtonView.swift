@@ -22,6 +22,7 @@ struct InSessionSwitchBackToSubLessonButtonView: View {
 					RoundedRectangle(cornerRadius: 8)
 						.foregroundStyle(.bar)
 				}
+				.shadow(radius: 5)
 		}
 		.buttonStyle(.plain)
     }
