@@ -12,6 +12,11 @@ struct ModifyLessonView: View {
 	
 	@State var lesson: Lesson?
 	@State var currentLanguage: String
+	
+	var preSelectedSection: Int?
+	var preSelectedUnit: Int?
+	var preSelectedColor: ColorEnum?
+	
 	@EnvironmentObject var courseCon: CoursesController
 
 	
@@ -87,6 +92,13 @@ struct ModifyLessonView: View {
 			} else {
 				let newLesson = Lesson.new
 				newLesson.id = UUID().uuidString
+				
+				if let section = preSelectedSection, let unit = preSelectedUnit, let color = preSelectedColor {
+					newLesson.lessonInfo.section = section
+					newLesson.lessonInfo.unit = unit + 1
+					newLesson.lessonInfo.color = color
+				}
+				
 				self.lesson = newLesson
 			}
 			

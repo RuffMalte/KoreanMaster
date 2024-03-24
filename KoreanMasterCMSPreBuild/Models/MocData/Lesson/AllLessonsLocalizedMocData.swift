@@ -93,6 +93,7 @@ extension LessonInfo {
 			commentedBy: []
 		)
 	}
+	
 }
 
 extension LessonDiffuculty {
