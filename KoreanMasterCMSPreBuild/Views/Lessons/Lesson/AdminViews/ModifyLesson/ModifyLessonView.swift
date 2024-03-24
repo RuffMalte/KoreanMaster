@@ -75,7 +75,7 @@ struct ModifyLessonView: View {
 		}
 		.onAppear {
 			if let lesson = lesson {
-				courseCon.getFullLesson(lessonName: lesson.lessonInfo.lessonName, language: currentLanguage) { Lesson, error in
+				courseCon.getFullLesson(lessonID: lesson.id, language: currentLanguage) { Lesson, error in
 					if let Lesson = Lesson {
 						self.lesson = Lesson
 					}

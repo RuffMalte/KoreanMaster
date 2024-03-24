@@ -15,14 +15,14 @@ import FirebaseFirestore
 
 /// Helper class to generate Firestore document references based on document type or collection
 class DocumentReferenceGenerator {
-	let lessonName: String?
+	let lessonID: String?
 	let language: String
 	private var db: Firestore {
 		Firestore.firestore()
 	}
 	
-	init(lessonName: String? = nil, language: String) {
-		self.lessonName = lessonName
+	init(lessonID: String? = nil, language: String) {
+		self.lessonID = lessonID
 		self.language = language
 	}
 	
@@ -57,7 +57,7 @@ class DocumentReferenceGenerator {
 	
 	// Returns a reference to a specific lesson document
 	func getDocumentRef(forType type: DocumentType) -> DocumentReference {
-		guard let lessonName = lessonName else {
+		guard let lessonName = lessonID else {
 			fatalError("Document reference requested without specifying lesson name.")
 		}
 		let lessonRef = getLessonsCollectionRef().document(lessonName)
@@ -81,7 +81,7 @@ class DocumentReferenceGenerator {
 	
 	// Method for getting subcollection references from a specific document
 	func getCollectionRef(forDetail detailType: DocumentType, subCollection: CollectionType) -> CollectionReference {
-		guard let lessonName = lessonName else {
+		guard let lessonName = lessonID else {
 			fatalError("Collection reference requested without specifying lesson name.")
 		}
 		

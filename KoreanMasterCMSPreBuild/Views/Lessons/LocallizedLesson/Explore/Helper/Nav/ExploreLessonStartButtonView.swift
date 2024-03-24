@@ -22,7 +22,10 @@ struct ExploreLessonStartButtonView: View {
 					Label {
 						Image(systemName: "signpost.right.fill")
 					} icon: {
-						Text("Start")
+						HStack(spacing: 5) {
+							Text("Start")
+							Text("+\(xpToGain) XP")
+						}
 					}
 					.font(.headline)
 					
@@ -30,7 +33,7 @@ struct ExploreLessonStartButtonView: View {
 				}
 				.padding()
 				.background {
-					RoundedRectangle(cornerRadius: 16)
+					RoundedRectangle(cornerRadius: 8)
 						.foregroundStyle(.bar)
 				}
 			}

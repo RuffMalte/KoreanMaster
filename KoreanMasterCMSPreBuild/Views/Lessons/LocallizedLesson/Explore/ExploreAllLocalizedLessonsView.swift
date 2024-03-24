@@ -5,6 +5,12 @@
 //  Created by Malte Ruff on 23.03.24.
 //
 
+//TODO: Implement section and unit sorting With new Views
+//admin controls
+//tag sorting
+//search
+
+
 import SwiftUI
 
 struct ExploreAllLocalizedLessonsView: View {

@@ -99,13 +99,13 @@ class CoursesController: ObservableObject {
 		let batch = db.batch()
 		
 		// Get document references from a separate function or class
-		let refGenerator = DocumentReferenceGenerator(lessonName: lesson.lessonInfo.lessonName, language: language)
+		let refGenerator = DocumentReferenceGenerator(lessonID: lesson.id, language: language)
 		
 		do {
 			batch.setData([
 				"LessonName":lesson.lessonInfo.lessonName,
 				"id":lesson.id
-			], forDocument: refGenerator.getLessonsCollectionRef().document(lesson.lessonInfo.lessonName))
+			], forDocument: refGenerator.getLessonsCollectionRef().document(lesson.id))
 			
 			// Set info
 			let lessonInfoRef = refGenerator.getDocumentRef(forType: .info)
@@ -255,13 +255,13 @@ class CoursesController: ObservableObject {
 		}
 	}
 	
-	func getFullLesson(lessonName: String, language: String, completion: @escaping (Lesson?, Error?) -> Void) {
-		let refGenerator = DocumentReferenceGenerator(lessonName: lessonName, language: language)
+	func getFullLesson(lessonID: String, language: String, completion: @escaping (Lesson?, Error?) -> Void) {
+		let refGenerator = DocumentReferenceGenerator(lessonID: lessonID, language: language)
 		let lesson = Lesson.empty
 		self.isLoadingSingleLesson = true
 		self.encounteredError = nil
 		
-		
+		lesson.id = lessonID
 		
 		fetchDetailsDocumentData(refGenerator: refGenerator, forType: .info) { (info: LessonInfo?) in
 			if let info = info {
@@ -378,10 +378,11 @@ class CoursesController: ObservableObject {
 			}
 			
 			for document in snapshot.documents {
-				let refGenerator = DocumentReferenceGenerator(lessonName: document.documentID, language: language)
+				let refGenerator = DocumentReferenceGenerator(lessonID: document.documentID, language: language)
 				
 				let newLesson = Lesson.new
 					
+				newLesson.id = document.documentID
 				self.fetchDetailsDocumentData(refGenerator: refGenerator, forType: .info) { (info: LessonInfo?) in
 					if let info = info {
 						newLesson.lessonInfo = info
@@ -405,7 +406,7 @@ class CoursesController: ObservableObject {
 	}
 	
 	func deleteLesson(lesson: Lesson, language: String, completion: @escaping (Bool) -> Void) {
-		let refGenerator = DocumentReferenceGenerator(lessonName: lesson.lessonInfo.lessonName, language: language)
+		let refGenerator = DocumentReferenceGenerator(lessonID: lesson.id, language: language)
 		
 		
 		let mainLessonPath = refGenerator.getLessonsCollectionRef()
