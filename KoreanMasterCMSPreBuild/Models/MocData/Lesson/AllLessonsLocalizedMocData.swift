@@ -72,6 +72,8 @@ extension LessonInfo {
 		desc: "Learn the Korean Alphabet",
 		difficultyID: "",
 		xpToGain: 100,
+		icon: "abc",
+		color: .orange,
 		likedBy: LikedBy.multipleExample,
 		commentedBy: CommentedBy.multipleExample
 	)
@@ -85,6 +87,8 @@ extension LessonInfo {
 			desc: "",
 			difficultyID: "",
 			xpToGain: 0,
+			icon: "",
+			color: .orange,
 			likedBy: [],
 			commentedBy: []
 		)

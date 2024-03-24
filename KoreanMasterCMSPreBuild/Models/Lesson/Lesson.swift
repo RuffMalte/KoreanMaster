@@ -95,6 +95,8 @@ class LessonInfo: Identifiable, Codable {
 	var difficultyID: String
 	var xpToGain: Int
 	
+	var icon: String
+	var color: ColorEnum
 	
 	var likedBy: [LikedBy]?
 	var commentedBy: [CommentedBy]?
@@ -107,6 +109,8 @@ class LessonInfo: Identifiable, Codable {
 		desc: String,
 		difficultyID: String,
 		xpToGain: Int,
+		icon: String,
+		color: ColorEnum,
 		likedBy: [LikedBy]? = nil,
 		commentedBy: [CommentedBy]? = nil
 	) {
@@ -117,6 +121,8 @@ class LessonInfo: Identifiable, Codable {
 		self.desc = desc
 		self.difficultyID = difficultyID
 		self.xpToGain = xpToGain
+		self.icon = icon
+		self.color = color
 		self.likedBy = likedBy
 		self.commentedBy = commentedBy
 	}

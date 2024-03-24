@@ -24,8 +24,12 @@ struct ModifyLessonView: View {
 					HStack {
 						ScrollView(.vertical) {
 							VStack(alignment: .leading) {
-								ModifyLessonInfoView(lessonInfo: curLesson.lessonInfo, language: currentLanguage)
-								
+								HStack {
+									VStack(alignment: .leading) {
+										ModifyLessonInfoView(lessonInfo: curLesson.lessonInfo, language: currentLanguage)
+									}
+									ExploreLessonCellView(lesson: curLesson) { _ in }
+								}
 								Divider()
 								
 								ModifyLessonTagsView(lessonTag: curLesson.lessonTag)

@@ -13,12 +13,12 @@ final class DocumentRefrenceGeneratorTests: XCTestCase {
 	
 	override func setUp() {
 		super.setUp()
-		documentRefrenceGenerator = DocumentReferenceGenerator(lessonName: "TestLesson", language: "TestLanguage")
+		documentRefrenceGenerator = DocumentReferenceGenerator(lessonID: "TestLesson", language: "TestLanguage")
 	}
 	
 	func testInitialization() {
 		XCTAssertEqual(documentRefrenceGenerator.language, "TestLanguage", "Language should be set to 'TestLanguage'.")
-		XCTAssertNotNil(documentRefrenceGenerator.lessonName, "lessonName should not be initially nil.")
+		XCTAssertNotNil(documentRefrenceGenerator.lessonID, "lessonID should not be initially nil.")
 	}
 
 	

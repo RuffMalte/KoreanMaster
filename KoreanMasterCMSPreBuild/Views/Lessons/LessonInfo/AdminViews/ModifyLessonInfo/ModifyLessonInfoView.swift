@@ -25,6 +25,20 @@ struct ModifyLessonInfoView: View {
 				TextField("Description", text: $lessonInfo.desc)
 				//TODO: comments and likes
 				
+				TextField("XP to gain", value: $lessonInfo.xpToGain, format: .number)
+				
+				
+				HStack {
+					MaltesSFIconPicker(selectedIcon: $lessonInfo.icon, displayStyle: .medium)
+					Spacer()
+					MaltesColorPicker(color: $lessonInfo.color, colorPickerStyle: .menu)
+				}
+				.padding(8)
+				.background {
+					RoundedRectangle(cornerRadius: 8)
+						.foregroundStyle(Color.background)
+				}
+				
 				LessonDifficultyPickerView(selectedDifficultyID: $lessonInfo.difficultyID, language: language)
 				
 			}

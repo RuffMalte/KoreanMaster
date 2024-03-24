@@ -21,9 +21,9 @@ struct ExploreLessonCellView: View {
 		} label: {
 			VStack {
 				ZStack {
-					CheckmarkCircle(isChecked: true, mainColor: .purple)
-					Image(systemName: "book")
-						.foregroundColor(.purple)
+					CheckmarkCircle(isChecked: true, mainColor: lesson.lessonInfo.color.toColor)
+					Image(systemName: lesson.lessonInfo.icon)
+						.foregroundColor(lesson.lessonInfo.color.toColor)
 						.font(.system(.title, weight: .bold))
 				}
 				.frame(width: 80, height: 80)
@@ -36,8 +36,8 @@ struct ExploreLessonCellView: View {
 		.buttonStyle(.plain)
 		.popover(isPresented: $showDetail, attachmentAnchor: .point(.bottom), arrowEdge: .bottom) {
 			ZStack {
-				Color.purple
-					.opacity(0.5)
+				lesson.lessonInfo.color.toColor
+					.opacity(0.3)
 					//https://stackoverflow.com/questions/61733224/swiftui-popover-background-color
 					.scaleEffect(2.5)
 				
@@ -84,7 +84,7 @@ struct CheckmarkCircle: View {
 	
 	var body: some View {
 		Circle()
-			.foregroundStyle(mainColor.opacity(0.5))
+			.foregroundStyle(mainColor.opacity(0.3))
 			.padding(9)
 			.overlay {
 				Circle()

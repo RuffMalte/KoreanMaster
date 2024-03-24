@@ -30,7 +30,7 @@ final class CourseControllerTests: XCTestCase {
 		
 		
 		let getExpectation = self.expectation(description: "get course")
-		courseController.getFullLesson(lessonName: newLesson.lessonInfo.lessonName, language: "English") { lesson, error in
+		courseController.getFullLesson(lessonID: newLesson.lessonInfo.lessonName, language: "English") { lesson, error in
 			XCTAssertNil(error)
 			XCTAssertNotNil(lesson)
 			XCTAssertEqual(lesson?.lessonInfo.lessonName, "TEST")
@@ -65,7 +65,7 @@ final class CourseControllerTests: XCTestCase {
 		
 		
 		let getExpectation2 = self.expectation(description: "get course")
-		courseController.getFullLesson(lessonName: newLesson.lessonInfo.lessonName, language: "English") { lesson, error in
+		courseController.getFullLesson(lessonID: newLesson.lessonInfo.lessonName, language: "English") { lesson, error in
 			XCTAssertNotNil(lesson)
 			XCTAssertNil(error)
 			getExpectation2.fulfill()
