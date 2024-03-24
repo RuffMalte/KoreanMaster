@@ -12,6 +12,8 @@ struct InSessionLessonMainView: View {
 	@State var lesson: Lesson
 	var currentLanguage: String
 	
+	var endLessonFunction: () -> Void
+	
 	@State private var currentTab: DocumentReferenceGenerator.InSessionLessonType = .info
 	@State private var selectedTypeIndex = 0
 
@@ -56,7 +58,7 @@ struct InSessionLessonMainView: View {
 						}
 					case .cultureReferences:
 						if let refrence = lesson.lessonCultureReferences {
-							InSessionLessonCultureRefrenceView(culture: refrence, switchLesson: switchToNextSubLesson, endLesson: endLesson)
+							InSessionLessonCultureRefrenceView(culture: refrence, switchLesson: switchToNextSubLesson, endLesson: endLessonFunction)
 						}
 					}
 					Spacer()
@@ -114,5 +116,5 @@ struct InSessionLessonMainView: View {
 }
 
 #Preview {
-	InSessionLessonMainView(lesson: Lesson.detailExample, currentLanguage: "English")
+	InSessionLessonMainView(lesson: Lesson.detailExample, currentLanguage: "English", endLessonFunction: {print("ending Lesson")})
 }

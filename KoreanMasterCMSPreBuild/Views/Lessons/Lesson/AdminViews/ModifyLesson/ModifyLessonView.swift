@@ -66,7 +66,7 @@ struct ModifyLessonView: View {
 						.frame(width: reader.size.width / 2, height: reader.size.height, alignment: .center)
 						
 						
-						InSessionLessonMainView(lesson: curLesson, currentLanguage: currentLanguage)
+						InSessionLessonMainView(lesson: curLesson, currentLanguage: currentLanguage, endLessonFunction: { print("Ending lesson Debug")})
 							.frame(width: reader.size.width / 2, height: reader.size.height, alignment: .center)
 					}
 				}

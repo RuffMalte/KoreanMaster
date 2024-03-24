@@ -11,6 +11,7 @@ struct ExploreLessonCellView: View {
 	
 	var lesson: Lesson
 	
+	var complition: (Lesson) -> Void
 	
 	@State private var showDetail = false
 	
@@ -35,7 +36,7 @@ struct ExploreLessonCellView: View {
 				Color.purple
 					.opacity(0.5)
 					//https://stackoverflow.com/questions/61733224/swiftui-popover-background-color
-					.scaleEffect(1.5)
+					.scaleEffect(2.5)
 				
 				VStack(alignment: .leading, spacing: 10) {
 					VStack(alignment: .leading) {
@@ -60,22 +61,17 @@ struct ExploreLessonCellView: View {
 					VStack {
 						ExploreLessonStartButtonView(
 							startLessonFunction: {
-								print("hello")
+								complition(lesson)
 							},
 							xpToGain: lesson.lessonInfo.xpToGain
 						)
 						.buttonStyle(.plain)
 					}
-					
-					
-					
 				}
 			}
 			.frame(width: 150)
 			.padding()
-			
 		}
-		
     }
 }
 
@@ -111,5 +107,7 @@ struct CheckmarkCircle: View {
 
 
 #Preview {
-	ExploreLessonCellView(lesson: Lesson.detailExample)
+	ExploreLessonCellView(lesson: Lesson.detailExample) { string in
+		print("Start lesson: \(string)")
+	}
 }
