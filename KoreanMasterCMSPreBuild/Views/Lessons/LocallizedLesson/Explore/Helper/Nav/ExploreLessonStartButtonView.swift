@@ -19,13 +19,9 @@ struct ExploreLessonStartButtonView: View {
 			HStack {
 				HStack {
 					Spacer()
-					Label {
-						Image(systemName: "signpost.right.fill")
-					} icon: {
-						HStack(spacing: 5) {
-							Text("Start")
-							Text("+\(xpToGain) XP")
-						}
+					HStack(spacing: 5) {
+						Text("Start")
+						Text("+\(xpToGain) XP")
 					}
 					.font(.headline)
 					

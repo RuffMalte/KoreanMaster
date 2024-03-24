@@ -35,15 +35,8 @@ struct LocallizedLessonListView: View {
 				}
 				.frame(width: geo.size.width / 2)
 				
-				
-				
 				ExploreAllLocalizedLessonsView(locallizedLesson: locallizedLesson)
 				.frame(width: geo.size.width / 2)
-
-				
-				
-				
-				
 			}
 		}
  		.navigationTitle(locallizedLesson.language)

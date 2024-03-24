@@ -139,7 +139,9 @@ class LessonInfo: Identifiable, Codable {
 			"_heading": heading,
 			"_desc": desc,
 			"_difficultyID": difficultyID,
-			"_xpToGain": xpToGain
+			"_xpToGain": xpToGain,
+			"_icon": icon,
+			"_color": color.rawValue,
 		]
 	}}
 

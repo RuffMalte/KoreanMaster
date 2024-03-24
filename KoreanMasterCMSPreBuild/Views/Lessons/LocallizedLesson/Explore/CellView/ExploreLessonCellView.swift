@@ -24,7 +24,7 @@ struct ExploreLessonCellView: View {
 					CheckmarkCircle(isChecked: true, mainColor: lesson.lessonInfo.color.toColor)
 					Image(systemName: lesson.lessonInfo.icon)
 						.foregroundColor(lesson.lessonInfo.color.toColor)
-						.font(.system(.title, weight: .bold))
+						.font(.system(.largeTitle, weight: .bold))
 				}
 				.frame(width: 80, height: 80)
 

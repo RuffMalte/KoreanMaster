@@ -35,7 +35,7 @@ struct InSessionLessonPraticeSentenceBuildingItemView: View {
 						if sentenceB.answers[index] == sentenceB.correctAnswer {
 							confettiCon += 1
 						}
-						
+						 
 					}) {
 						HStack {
 							Spacer()
