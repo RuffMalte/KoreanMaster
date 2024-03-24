@@ -117,6 +117,10 @@ class LessonInfo: Identifiable, Codable {
 		self.commentedBy = commentedBy
 	}
 	
+	func getSectionUnit() -> String {
+		return "\(section) - \(unit)"
+	}
+	
 	func toFirebase() -> [String: Any] {
 		return [
 			"_section": section,

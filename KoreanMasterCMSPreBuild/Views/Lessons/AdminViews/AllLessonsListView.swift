@@ -59,6 +59,7 @@ struct AllLessonsListView: View {
 					Label("Fetch all Lessons", systemImage: "arrow.clockwise")
 				}
 				.buttonStyle(.borderedProminent)
+				.keyboardShortcut("g", modifiers: [.command, .shift])
 			}
 		}
 		

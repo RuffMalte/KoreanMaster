@@ -14,19 +14,36 @@ struct LocallizedLessonListView: View {
 	@State var currentLanguage: String
 	@EnvironmentObject var courseCon: CoursesController
 	
-    var body: some View {
-		Form {
-			List {
-				ModifyLocalizedLessonView(localizedLesson: locallizedLesson)
-
-				
-				ForEach(locallizedLesson.lessons, id: \.id) { lesson in
-					NavigationLink {
-						ModifyLessonView(lesson: lesson, currentLanguage: currentLanguage)
-					} label: {
-						LessonDetailSmallCellView(lesson: lesson, currentLanguage: currentLanguage)
+	var body: some View {
+		GeometryReader { geo in
+			HStack {
+				Group {
+					Form {
+						List {
+							ModifyLocalizedLessonView(localizedLesson: locallizedLesson)
+							
+							
+							ForEach(locallizedLesson.lessons, id: \.id) { lesson in
+								NavigationLink {
+									ModifyLessonView(lesson: lesson, currentLanguage: currentLanguage)
+								} label: {
+									LessonDetailSmallCellView(lesson: lesson, currentLanguage: currentLanguage)
+								}
+							}
+						}
 					}
 				}
+				.frame(width: geo.size.width / 2)
+				
+				
+				
+				ExploreAllLocalizedLessonsView(locallizedLesson: locallizedLesson)
+				.frame(width: geo.size.width / 2)
+
+				
+				
+				
+				
 			}
 		}
  		.navigationTitle(locallizedLesson.language)
