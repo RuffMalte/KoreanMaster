@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2E13E39C2BAB54F800C15721 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2E13E39B2BAB54F800C15721 /* GoogleService-Info.plist */; };
 		2E13E3A02BAB551700C15721 /* DeepLConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E13E39F2BAB551700C15721 /* DeepLConfig.swift */; };
+		2E383EB72BB0D28E0090B5C0 /* ExploreSectionLessonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E383EB62BB0D28E0090B5C0 /* ExploreSectionLessonView.swift */; };
 		2E5B3D792BA1AFA00028FCB2 /* AllWelcomeMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5B3D782BA1AFA00028FCB2 /* AllWelcomeMessages.swift */; };
 		2E5B3D7C2BA1B0740028FCB2 /* WelcomeMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5B3D7B2BA1B0740028FCB2 /* WelcomeMessage.swift */; };
 		2E666E052BAB958B00C59FEB /* DeepLConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E13E39F2BAB551700C15721 /* DeepLConfig.swift */; };
@@ -154,6 +155,7 @@
 /* Begin PBXFileReference section */
 		2E13E39B2BAB54F800C15721 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2E13E39F2BAB551700C15721 /* DeepLConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepLConfig.swift; sourceTree = "<group>"; };
+		2E383EB62BB0D28E0090B5C0 /* ExploreSectionLessonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreSectionLessonView.swift; sourceTree = "<group>"; };
 		2E5B3D782BA1AFA00028FCB2 /* AllWelcomeMessages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllWelcomeMessages.swift; sourceTree = "<group>"; };
 		2E5B3D7B2BA1B0740028FCB2 /* WelcomeMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeMessage.swift; sourceTree = "<group>"; };
 		2E666E042BAB948700C59FEB /* KoreanMasterCMSPreBuild.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = KoreanMasterCMSPreBuild.xctestplan; sourceTree = "<group>"; };
@@ -731,9 +733,10 @@
 		2E7803662BAF7AFF0083F15A /* Explore */ = {
 			isa = PBXGroup;
 			children = (
-				2E78036B2BB022CF0083F15A /* CellView */,
 				2E7803672BAF7B3E0083F15A /* ExploreAllLocalizedLessonsView.swift */,
+				2E78036B2BB022CF0083F15A /* CellView */,
 				2E7803692BAF7BCE0083F15A /* Helper */,
+				2E383EB62BB0D28E0090B5C0 /* ExploreSectionLessonView.swift */,
 			);
 			path = Explore;
 			sourceTree = "<group>";
@@ -1661,6 +1664,7 @@
 				2E78036D2BB023260083F15A /* ExploreLessonCellView.swift in Sources */,
 				2E7E3A582BA31CAE00CD9353 /* VocabMocData.swift in Sources */,
 				2E7E3A7B2BA644E200CD9353 /* ModifyLessonGrammarPageListCellView.swift in Sources */,
+				2E383EB72BB0D28E0090B5C0 /* ExploreSectionLessonView.swift in Sources */,
 				2E6C517B2B927C7000626F95 /* MainTabView.swift in Sources */,
 				2E7803742BB092510083F15A /* MaltesSFIconPicker.swift in Sources */,
 				2E6C51AC2B93668D00626F95 /* CourseLanguage.swift in Sources */,

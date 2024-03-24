@@ -25,47 +25,19 @@ struct LocallizedLessonListView: View {
 						List {
 							ModifyLocalizedLessonView(localizedLesson: locallizedLesson)
 							
+							listView
 							
-							ForEach(locallizedLesson.getSortedSection().keys.sorted(), id: \.self) { section in
-								DisclosureGroup {
-									ForEach(locallizedLesson.getSortedSection()[section]?.sorted(by: { $0.lessonInfo.unit < $1.lessonInfo.unit }) ?? [], id: \.id) { lesson in
-										NavigationLink {
-											ModifyLessonView(lesson: lesson, currentLanguage: locallizedLesson.language)
-										} label: {
-											LessonDetailSmallCellView(lesson: lesson, currentLanguage: locallizedLesson.language)
-										}
-									}
-								} label: {
-									HStack {
-										Text("Section: \(section)")
-										Spacer()
-										NavigationLink {
-											ModifyLessonView(
-												currentLanguage: currentLanguage,
-												preSelectedSection: section,
-												preSelectedUnit: locallizedLesson.getSortedSection()[section]?.count ?? 0,
-												preSelectedColor: locallizedLesson.getSortedSection()[section]?.first?.lessonInfo.color
-											)
-										} label: {
-											Label("Add Unit", systemImage: "plus")
-										}
-									}
-									.background {
-										locallizedLesson.getSortedSection()[section]?.first?.lessonInfo.color.toColor.opacity(0.2)
-									}
-									.font(.system(.title3, design: .rounded, weight: .bold))
-								}
-							}
 						}
 					}
 				}
 				.frame(width: geo.size.width / 2)
 				
-				ExploreAllLocalizedLessonsView(locallizedLesson: locallizedLesson)
+				
+				ExploreSectionLessonView(locallizedLesson: locallizedLesson, currentLanguage: currentLanguage)
 				.frame(width: geo.size.width / 2)
 			}
 		}
- 		.navigationTitle(locallizedLesson.language)
+ 		.navigationTitle(currentLanguage)
 		.toolbar {
 			ToolbarItem(placement: .primaryAction) {
 				NavigationLink {
@@ -77,6 +49,39 @@ struct LocallizedLessonListView: View {
 			}
 		}
     }
+	
+	var listView: some View {
+		ForEach(locallizedLesson.getSortedSection().keys.sorted(), id: \.self) { section in
+			DisclosureGroup {
+				ForEach(locallizedLesson.getSortedSection()[section]?.sorted(by: { $0.lessonInfo.unit < $1.lessonInfo.unit }) ?? [], id: \.id) { lesson in
+					NavigationLink {
+						ModifyLessonView(lesson: lesson, currentLanguage: currentLanguage)
+					} label: {
+						LessonDetailSmallCellView(lesson: lesson, currentLanguage: currentLanguage)
+					}
+				}
+			} label: {
+				HStack {
+					Text("Section: \(section)")
+					Spacer()
+					NavigationLink {
+						ModifyLessonView(
+							currentLanguage: currentLanguage,
+							preSelectedSection: section,
+							preSelectedUnit: locallizedLesson.getSortedSection()[section]?.count ?? 0,
+							preSelectedColor: locallizedLesson.getSortedSection()[section]?.first?.lessonInfo.color
+						)
+					} label: {
+						Label("Add Unit", systemImage: "plus")
+					}
+				}
+				.background {
+					locallizedLesson.getSortedSection()[section]?.first?.lessonInfo.color.toColor.opacity(0.2)
+				}
+				.font(.system(.title3, design: .rounded, weight: .bold))
+			}
+		}
+	}
 }
 
 #Preview {

@@ -15,7 +15,8 @@ import SwiftUI
 
 struct ExploreAllLocalizedLessonsView: View {
 	
-	var locallizedLesson: LocalizedLessons
+	var lessons: [Lesson]
+	var currentLanguage: String
 	
 	@State var selectedLesson: Lesson?
 	@State private var isShowingLesson = false
@@ -24,7 +25,7 @@ struct ExploreAllLocalizedLessonsView: View {
 			Spacer()
 			ScrollView {
 				VStack(spacing: 20) {
-					ForEach(Array(locallizedLesson.lessons.enumerated()), id: \.element.id) { index, lesson in
+					ForEach(Array(lessons.enumerated()), id: \.element.id) { index, lesson in
 						HStack {
 							if index % 4 == 0 {
 								// Left aligned
@@ -71,7 +72,7 @@ struct ExploreAllLocalizedLessonsView: View {
 		})
 		.sheet(isPresented: $isShowingLesson) {
 			if let selectedLesson = selectedLesson {
-				InSessionLessonMainView(lesson: selectedLesson, currentLanguage: locallizedLesson.language) {
+				InSessionLessonMainView(lesson: selectedLesson, currentLanguage: currentLanguage) {
 					isShowingLesson = false
 				}
 			}
