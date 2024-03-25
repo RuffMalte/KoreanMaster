@@ -15,7 +15,8 @@ import SwiftUI
 
 struct ExploreAllLocalizedLessonsView: View {
 	
-	var locallizedLesson: LocalizedLessons
+	var lessons: [Lesson]
+	var currentLanguage: String
 	
 	@State var selectedLesson: Lesson?
 	@State private var isShowingLesson = false
@@ -99,7 +100,7 @@ struct ExploreAllLocalizedLessonsView: View {
 		})
 		.sheet(isPresented: $isShowingLesson) {
 			if let selectedLesson = selectedLesson {
-				InSessionLessonMainView(lesson: selectedLesson, currentLanguage: locallizedLesson.language) {
+				InSessionLessonMainView(lesson: selectedLesson, currentLanguage: currentLanguage) {
 					isShowingLesson = false
 				}
 			}

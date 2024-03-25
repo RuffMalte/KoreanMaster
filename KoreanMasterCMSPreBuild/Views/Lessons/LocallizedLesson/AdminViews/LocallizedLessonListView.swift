@@ -25,17 +25,19 @@ struct LocallizedLessonListView: View {
 						List {
 							ModifyLocalizedLessonView(localizedLesson: locallizedLesson)
 							
-							list
+							listView
+							
 						}
 					}
 				}
 				.frame(width: geo.size.width / 2)
 				
-				ExploreAllLocalizedLessonsView(locallizedLesson: locallizedLesson)
+				
+				ExploreSectionLessonView(locallizedLesson: locallizedLesson, currentLanguage: currentLanguage)
 				.frame(width: geo.size.width / 2)
 			}
 		}
- 		.navigationTitle(locallizedLesson.language)
+ 		.navigationTitle(currentLanguage)
 		.toolbar {
 			ToolbarItem(placement: .primaryAction) {
 				NavigationLink {
@@ -48,14 +50,14 @@ struct LocallizedLessonListView: View {
 		}
     }
 	
-	var list: some View {
+	var listView: some View {
 		ForEach(locallizedLesson.getSortedSection().keys.sorted(), id: \.self) { section in
 			DisclosureGroup {
 				ForEach(locallizedLesson.getSortedSection()[section]?.sorted(by: { $0.lessonInfo.unit < $1.lessonInfo.unit }) ?? [], id: \.id) { lesson in
 					NavigationLink {
-						ModifyLessonView(lesson: lesson, currentLanguage: locallizedLesson.language)
+						ModifyLessonView(lesson: lesson, currentLanguage: currentLanguage)
 					} label: {
-						LessonDetailSmallCellView(lesson: lesson, currentLanguage: locallizedLesson.language)
+						LessonDetailSmallCellView(lesson: lesson, currentLanguage: currentLanguage)
 					}
 				}
 			} label: {
