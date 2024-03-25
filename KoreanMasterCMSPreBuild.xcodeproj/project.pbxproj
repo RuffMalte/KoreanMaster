@@ -7,12 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2E13E39C2BAB54F800C15721 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2E13E39B2BAB54F800C15721 /* GoogleService-Info.plist */; };
-		2E13E3A02BAB551700C15721 /* DeepLConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E13E39F2BAB551700C15721 /* DeepLConfig.swift */; };
 		2E383EB72BB0D28E0090B5C0 /* ExploreSectionLessonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E383EB62BB0D28E0090B5C0 /* ExploreSectionLessonView.swift */; };
 		2E5B3D792BA1AFA00028FCB2 /* AllWelcomeMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5B3D782BA1AFA00028FCB2 /* AllWelcomeMessages.swift */; };
 		2E5B3D7C2BA1B0740028FCB2 /* WelcomeMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5B3D7B2BA1B0740028FCB2 /* WelcomeMessage.swift */; };
-		2E666E052BAB958B00C59FEB /* DeepLConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E13E39F2BAB551700C15721 /* DeepLConfig.swift */; };
 		2E666E082BAC353F00C59FEB /* ModifyLessonCultureRefrence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E666E072BAC353F00C59FEB /* ModifyLessonCultureRefrence.swift */; };
 		2E666E0C2BAC35FB00C59FEB /* ModifyCultureRefrenceSongView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E666E0B2BAC35FB00C59FEB /* ModifyCultureRefrenceSongView.swift */; };
 		2E666E0F2BAC66AD00C59FEB /* InSessionLessonMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E666E0E2BAC66AD00C59FEB /* InSessionLessonMainView.swift */; };
@@ -116,6 +113,8 @@
 		2EAC1C582B98729200F713F7 /* AllLessonsLocalizedMocData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EAC1C572B98729200F713F7 /* AllLessonsLocalizedMocData.swift */; };
 		2EAC1C5B2B989EBB00F713F7 /* AllLessonsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EAC1C5A2B989EBB00F713F7 /* AllLessonsListView.swift */; };
 		2EAC1C5E2B98BC0900F713F7 /* DocumentReferenceGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EAC1C5D2B98BC0900F713F7 /* DocumentReferenceGenerator.swift */; };
+		2ED4D05F2BB210B7009BE46C /* DeepLConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED4D05E2BB210B7009BE46C /* DeepLConfig.swift */; };
+		2ED4D0612BB2110C009BE46C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2ED4D0602BB2110C009BE46C /* GoogleService-Info.plist */; };
 		2EDF0C012B9A08FF001132AD /* ModifyLessonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDF0C002B9A08FF001132AD /* ModifyLessonView.swift */; };
 		2EDF0C042B9A170C001132AD /* LocallizedLessonListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDF0C032B9A170C001132AD /* LocallizedLessonListView.swift */; };
 		2EDF0C062B9A39D4001132AD /* ModifyLessonInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDF0C052B9A39D4001132AD /* ModifyLessonInfoView.swift */; };
@@ -153,8 +152,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2E13E39B2BAB54F800C15721 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		2E13E39F2BAB551700C15721 /* DeepLConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepLConfig.swift; sourceTree = "<group>"; };
 		2E383EB62BB0D28E0090B5C0 /* ExploreSectionLessonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreSectionLessonView.swift; sourceTree = "<group>"; };
 		2E5B3D782BA1AFA00028FCB2 /* AllWelcomeMessages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllWelcomeMessages.swift; sourceTree = "<group>"; };
 		2E5B3D7B2BA1B0740028FCB2 /* WelcomeMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeMessage.swift; sourceTree = "<group>"; };
@@ -254,6 +251,8 @@
 		2EAC1C572B98729200F713F7 /* AllLessonsLocalizedMocData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllLessonsLocalizedMocData.swift; sourceTree = "<group>"; };
 		2EAC1C5A2B989EBB00F713F7 /* AllLessonsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllLessonsListView.swift; sourceTree = "<group>"; };
 		2EAC1C5D2B98BC0900F713F7 /* DocumentReferenceGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentReferenceGenerator.swift; sourceTree = "<group>"; };
+		2ED4D05E2BB210B7009BE46C /* DeepLConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepLConfig.swift; sourceTree = "<group>"; };
+		2ED4D0602BB2110C009BE46C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2EDF0C002B9A08FF001132AD /* ModifyLessonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyLessonView.swift; sourceTree = "<group>"; };
 		2EDF0C032B9A170C001132AD /* LocallizedLessonListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocallizedLessonListView.swift; sourceTree = "<group>"; };
 		2EDF0C052B9A39D4001132AD /* ModifyLessonInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyLessonInfoView.swift; sourceTree = "<group>"; };
@@ -293,22 +292,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2E13E39D2BAB550000C15721 /* Static */ = {
-			isa = PBXGroup;
-			children = (
-				2E13E39E2BAB550400C15721 /* API */,
-			);
-			path = Static;
-			sourceTree = "<group>";
-		};
-		2E13E39E2BAB550400C15721 /* API */ = {
-			isa = PBXGroup;
-			children = (
-				2E13E39F2BAB551700C15721 /* DeepLConfig.swift */,
-			);
-			path = API;
-			sourceTree = "<group>";
-		};
 		2E5B3D772BA1AF0A0028FCB2 /* WelcomeMessage */ = {
 			isa = PBXGroup;
 			children = (
@@ -1257,6 +1240,22 @@
 			path = Courses;
 			sourceTree = "<group>";
 		};
+		2ED4D05C2BB2108B009BE46C /* Static */ = {
+			isa = PBXGroup;
+			children = (
+				2ED4D05D2BB2109C009BE46C /* API */,
+			);
+			path = Static;
+			sourceTree = "<group>";
+		};
+		2ED4D05D2BB2109C009BE46C /* API */ = {
+			isa = PBXGroup;
+			children = (
+				2ED4D05E2BB210B7009BE46C /* DeepLConfig.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
 		2EDF0BFD2B9A0805001132AD /* AdminViews */ = {
 			isa = PBXGroup;
 			children = (
@@ -1386,13 +1385,13 @@
 			children = (
 				2EF41ACC2B927A36007431ED /* KoreanMasterCMSPreBuildApp.swift */,
 				2E78036E2BB0341B0083F15A /* SystemExtension */,
-				2E13E39D2BAB550000C15721 /* Static */,
+				2ED4D05C2BB2108B009BE46C /* Static */,
 				2EF41ADE2B927AC9007431ED /* Models */,
 				2EF41ADC2B927ABD007431ED /* Controllers */,
 				2EF41ADB2B927A9A007431ED /* Views */,
 				2EF41AD02B927A38007431ED /* Assets.xcassets */,
-				2E13E39B2BAB54F800C15721 /* GoogleService-Info.plist */,
 				2EF41AD22B927A38007431ED /* KoreanMasterCMSPreBuild.entitlements */,
+				2ED4D0602BB2110C009BE46C /* GoogleService-Info.plist */,
 				2EF41AD32B927A38007431ED /* Preview Content */,
 			);
 			path = KoreanMasterCMSPreBuild;
@@ -1548,7 +1547,7 @@
 			files = (
 				2EF41AD52B927A38007431ED /* Preview Assets.xcassets in Resources */,
 				2EF41AD12B927A38007431ED /* Assets.xcassets in Resources */,
-				2E13E39C2BAB54F800C15721 /* GoogleService-Info.plist in Resources */,
+				2ED4D0612BB2110C009BE46C /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1567,7 +1566,6 @@
 				2E666E3E2BACE30A00C59FEB /* DifficultyController.swift in Sources */,
 				2EF1F17B2BAB293800B1426C /* LoginController.swift in Sources */,
 				2EF1F17D2BAB2E3B00B1426C /* ColorEnum.swift in Sources */,
-				2E666E052BAB958B00C59FEB /* DeepLConfig.swift in Sources */,
 				2EF1F17C2BAB2A0C00B1426C /* WelcomeMessage.swift in Sources */,
 				2EA8D35D2BAA0A01003067E2 /* DocumentReferenceGenerator.swift in Sources */,
 				2EF1F1872BAB384C00B1426C /* CourseControllerTests.swift in Sources */,
@@ -1616,6 +1614,7 @@
 				2EAC1C482B94B88100F713F7 /* LanguageSmallDetailCellView.swift in Sources */,
 				2E666E1F2BAC89A100C59FEB /* InSessionLessonGoalExampleView.swift in Sources */,
 				2EAC1C332B93853B00F713F7 /* LanguageCellView.swift in Sources */,
+				2ED4D05F2BB210B7009BE46C /* DeepLConfig.swift in Sources */,
 				2E666E452BAD8E5100C59FEB /* InSessionLessonVocabUsedView.swift in Sources */,
 				2EAC1C3D2B93B77900F713F7 /* CoursesController.swift in Sources */,
 				2E7E3A692BA5D0E500CD9353 /* ModifyLessonGoalView.swift in Sources */,
@@ -1686,7 +1685,6 @@
 				2E666E4D2BADA72B00C59FEB /* InSessionLessonGrammarExamplePageView.swift in Sources */,
 				2EDF0C062B9A39D4001132AD /* ModifyLessonInfoView.swift in Sources */,
 				2EA7BDFE2B9B17EE00AAA532 /* MaltesColorPicker.swift in Sources */,
-				2E13E3A02BAB551700C15721 /* DeepLConfig.swift in Sources */,
 				2E666E652BAE312300C59FEB /* InSessionLessonCultureRefrenceView.swift in Sources */,
 				2EDF0C012B9A08FF001132AD /* ModifyLessonView.swift in Sources */,
 				2E7E3A6F2BA5D4F000CD9353 /* ModifyLessonGoalExampleListCellView.swift in Sources */,

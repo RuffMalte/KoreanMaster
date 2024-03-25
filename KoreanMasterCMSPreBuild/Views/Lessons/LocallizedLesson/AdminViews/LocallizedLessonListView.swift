@@ -32,8 +32,7 @@ struct LocallizedLessonListView: View {
 				}
 				.frame(width: geo.size.width / 2)
 				
-				
-				ExploreSectionLessonView(locallizedLesson: locallizedLesson, currentLanguage: currentLanguage)
+				ExploreAllLocalizedLessonsView(lessons: locallizedLesson.lessons, currentLanguage: currentLanguage)
 				.frame(width: geo.size.width / 2)
 			}
 		}

@@ -29,7 +29,7 @@ struct ExploreAllLocalizedLessonsView: View {
 			ScrollView {
 				ScrollViewReader { proxy in
 					VStack(spacing: 20) {
-						ForEach(Array(locallizedLesson.lessons.enumerated()), id: \.element.id) { index, lesson in
+						ForEach(Array(lessons.enumerated()), id: \.element.id) { index, lesson in
 							HStack {
 								if index % 4 == 0 {
 									// Left aligned
