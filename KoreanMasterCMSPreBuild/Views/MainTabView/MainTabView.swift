@@ -70,10 +70,11 @@ struct MainTabView: View {
 			}
 			
 		} detail: {
-			ContentUnavailableView("Select something to edit",
-			   systemImage: "graduationcap.fill",
-			   description: Text("Select a course, lesson, or vocabulary to edit it.")
-			)
+			AllLessonsListView()
+//			ContentUnavailableView("Select something to edit",
+//			   systemImage: "graduationcap.fill",
+//			   description: Text("Select a course, lesson, or vocabulary to edit it.")
+//			)
 		}
 		.toolbar(content: {
 			ToolbarItem(placement: .automatic) {
