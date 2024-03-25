@@ -19,47 +19,75 @@ struct ExploreAllLocalizedLessonsView: View {
 	
 	@State var selectedLesson: Lesson?
 	@State private var isShowingLesson = false
+	
+	@State private var scrollToLessonId: String? // ID of the lesson to scroll to
+
     var body: some View {
 		HStack {
 			Spacer()
 			ScrollView {
-				VStack(spacing: 20) {
-					ForEach(Array(locallizedLesson.lessons.enumerated()), id: \.element.id) { index, lesson in
-						HStack {
-							if index % 4 == 0 {
-								// Left aligned
-								ExploreLessonCellView(lesson: lesson, complition: { lesson in
-									self.selectedLesson = lesson
-									isShowingLesson.toggle()
-
-								})
-								Spacer()
-							} else if index % 4 == 1 || index % 4 == 3 {
-								// Middle aligned
-								Spacer()
-								ExploreLessonCellView(lesson: lesson, complition: { lesson in
-									self.selectedLesson = lesson
-									isShowingLesson.toggle()
-
-								})
-								Spacer()
-							} else if index % 4 == 2 {
-								// Right aligned
-								Spacer()
-								ExploreLessonCellView(lesson: lesson, complition: { lesson in
-									self.selectedLesson = lesson
-									isShowingLesson.toggle()
-
-								})
+				ScrollViewReader { proxy in
+					VStack(spacing: 20) {
+						ForEach(Array(locallizedLesson.lessons.enumerated()), id: \.element.id) { index, lesson in
+							HStack {
+								if index % 4 == 0 {
+									// Left aligned
+									ExploreLessonCellView(lesson: lesson, complition: { lesson in
+										self.selectedLesson = lesson
+										isShowingLesson.toggle()
+										
+									})
+									.id(lesson.lessonInfo.lessonName)
+									Spacer()
+								} else if index % 4 == 1 || index % 4 == 3 {
+									// Middle aligned
+									Spacer()
+									ExploreLessonCellView(lesson: lesson, complition: { lesson in
+										self.selectedLesson = lesson
+										isShowingLesson.toggle()
+										
+									})
+									.id(lesson.lessonInfo.lessonName)
+									Spacer()
+								} else if index % 4 == 2 {
+									// Right aligned
+									Spacer()
+									ExploreLessonCellView(lesson: lesson, complition: { lesson in
+										self.selectedLesson = lesson
+										isShowingLesson.toggle()
+										
+									})
+									.id(lesson.lessonInfo.lessonName)
+								}
 							}
 						}
 					}
+					.onChange(of: scrollToLessonId, { oldValue, newValue in
+						withAnimation {
+							proxy.scrollTo(newValue, anchor: .top)
+						}
+					})
 				}
 				.padding()
 			}
+			.overlay {
+				VStack {
+					Spacer()
+					HStack {
+						Spacer()
+						Button {
+							withAnimation {
+								//TODO: add logic to skip to next lesson
+							}
+						} label: {
+							Image(systemName: "arrow.up")
+						}
+						.buttonStyle(.borderedProminent)
+						.padding()
+					}
+				}
+			}
 			.frame(width: 250)
-			
-			
 			
 			Spacer()
 		}
