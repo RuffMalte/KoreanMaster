@@ -105,6 +105,7 @@ struct CheckmarkCircle: View {
 						}
 					}
 			}
+			.shadow(radius: 10)
 	}
 }
 
