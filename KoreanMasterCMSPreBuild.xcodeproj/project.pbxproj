@@ -84,11 +84,16 @@
 		2E7E3A892BA6EA6C00CD9353 /* NavLinkHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7E3A882BA6EA6C00CD9353 /* NavLinkHeaderView.swift */; };
 		2E7E3A8E2BA6EDA200CD9353 /* ModifyLessonPraticeMultipleChoiceCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7E3A8D2BA6EDA200CD9353 /* ModifyLessonPraticeMultipleChoiceCellView.swift */; };
 		2E7E3A912BA7868C00CD9353 /* ModifyMultipleChoiceAnswerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7E3A902BA7868C00CD9353 /* ModifyMultipleChoiceAnswerView.swift */; };
+		2E80FC332BB3654D00DD8582 /* UserManageAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E80FC322BB3654D00DD8582 /* UserManageAccountView.swift */; };
+		2E80FC352BB365A700DD8582 /* NoUserSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E80FC342BB365A700DD8582 /* NoUserSettingsView.swift */; };
 		2E8D83B52BA1C4230039DE57 /* LocalizedWelcomeMessageListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8D83B42BA1C4230039DE57 /* LocalizedWelcomeMessageListView.swift */; };
 		2E8D83B82BA1CD500039DE57 /* ModifyWelcomeMessageSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8D83B72BA1CD500039DE57 /* ModifyWelcomeMessageSheetView.swift */; };
 		2E8D83BB2BA1CE240039DE57 /* LocalizedWelcomeMessageMocData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8D83BA2BA1CE240039DE57 /* LocalizedWelcomeMessageMocData.swift */; };
 		2E8D83C12BA1CEDC0039DE57 /* WelcomeMessageDetailSmallCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8D83C02BA1CEDC0039DE57 /* WelcomeMessageDetailSmallCellView.swift */; };
 		2E8D83C52BA2F8170039DE57 /* TranslationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8D83C42BA2F8170039DE57 /* TranslationController.swift */; };
+		2E990C152BB35976003DBA2C /* MaltesColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA7BDFD2B9B17EE00AAA532 /* MaltesColorPicker.swift */; };
+		2E990C162BB35979003DBA2C /* MaltesSFIconPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7803732BB092510083F15A /* MaltesSFIconPicker.swift */; };
+		2E990C182BB3615F003DBA2C /* Haptics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E990C172BB3615F003DBA2C /* Haptics.swift */; };
 		2EA7BDF42B9B113500AAA532 /* ModifyLessonTagItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA7BDF32B9B113500AAA532 /* ModifyLessonTagItemView.swift */; };
 		2EA7BDFB2B9B14C800AAA532 /* ColorEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA7BDFA2B9B14C800AAA532 /* ColorEnum.swift */; };
 		2EA7BDFE2B9B17EE00AAA532 /* MaltesColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA7BDFD2B9B17EE00AAA532 /* MaltesColorPicker.swift */; };
@@ -113,8 +118,69 @@
 		2EAC1C582B98729200F713F7 /* AllLessonsLocalizedMocData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EAC1C572B98729200F713F7 /* AllLessonsLocalizedMocData.swift */; };
 		2EAC1C5B2B989EBB00F713F7 /* AllLessonsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EAC1C5A2B989EBB00F713F7 /* AllLessonsListView.swift */; };
 		2EAC1C5E2B98BC0900F713F7 /* DocumentReferenceGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EAC1C5D2B98BC0900F713F7 /* DocumentReferenceGenerator.swift */; };
+		2EC21C4F2BB3330C00B1F04E /* Lesson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EAC1C502B97A5DD00F713F7 /* Lesson.swift */; };
+		2EC21C502BB3331900B1F04E /* AllLessonsLocalizedMocData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EAC1C572B98729200F713F7 /* AllLessonsLocalizedMocData.swift */; };
+		2EC21C512BB3334200B1F04E /* InSessionLessonMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E666E0E2BAC66AD00C59FEB /* InSessionLessonMainView.swift */; };
+		2EC21C522BB3336F00B1F04E /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6C518D2B92888200626F95 /* LoginController.swift */; };
+		2EC21C532BB3337100B1F04E /* DocumentReferenceGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EAC1C5D2B98BC0900F713F7 /* DocumentReferenceGenerator.swift */; };
+		2EC21C542BB3339A00B1F04E /* InSessionLessonHeroSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E666E412BACE46F00C59FEB /* InSessionLessonHeroSectionView.swift */; };
+		2EC21C552BB3339E00B1F04E /* InSessionLessonHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E666E1A2BAC865600C59FEB /* InSessionLessonHeaderView.swift */; };
+		2EC21C562BB333A500B1F04E /* InSessionSwitchBackToSubLessonButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E666E252BACB43A00C59FEB /* InSessionSwitchBackToSubLessonButtonView.swift */; };
+		2EC21C572BB333A800B1F04E /* InSessionSwitchSubLessonButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E666E232BAC99BE00C59FEB /* InSessionSwitchSubLessonButtonView.swift */; };
+		2EC21C582BB333AC00B1F04E /* InSessionLessonNavBackButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E666E5E2BAE21AE00C59FEB /* InSessionLessonNavBackButtonView.swift */; };
+		2EC21C592BB333AF00B1F04E /* InSessionLessonNavNextButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E666E5C2BAE20E500C59FEB /* InSessionLessonNavNextButtonView.swift */; };
+		2EC21C5A2BB333B200B1F04E /* InSessionLessonPageinatedItemsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E666E512BADD08600C59FEB /* InSessionLessonPageinatedItemsView.swift */; };
+		2EC21C5B2BB333C800B1F04E /* InSessionLessonInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E666E212BAC902600C59FEB /* InSessionLessonInfoView.swift */; };
+		2EC21C5C2BB333D700B1F04E /* LessonTagSmallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EAC1C532B97AA1C00F713F7 /* LessonTagSmallView.swift */; };
+		2EC21C5D2BB333DF00B1F04E /* InSessionLessonGoalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E666E172BAC82B900C59FEB /* InSessionLessonGoalView.swift */; };
+		2EC21C5E2BB333E500B1F04E /* InSessionLessonGoalExampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E666E1E2BAC89A100C59FEB /* InSessionLessonGoalExampleView.swift */; };
+		2EC21C5F2BB333ED00B1F04E /* InSessionLessonVocabUsedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E666E442BAD8E5100C59FEB /* InSessionLessonVocabUsedView.swift */; };
+		2EC21C602BB333F000B1F04E /* InSessionLessonVocabUsedItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E666E462BAD9B1800C59FEB /* InSessionLessonVocabUsedItemView.swift */; };
+		2EC21C612BB333F600B1F04E /* InSessionLessonGrammarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E666E492BADA45F00C59FEB /* InSessionLessonGrammarView.swift */; };
+		2EC21C622BB333FB00B1F04E /* InSessionLessonGrammarExamplePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E666E4C2BADA72B00C59FEB /* InSessionLessonGrammarExamplePageView.swift */; };
+		2EC21C632BB3340100B1F04E /* InSessionLessonPraticeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E666E4F2BADC64400C59FEB /* InSessionLessonPraticeView.swift */; };
+		2EC21C642BB3340400B1F04E /* InSessionLessonPraticeShowAnswerButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E666E592BAE1EFA00C59FEB /* InSessionLessonPraticeShowAnswerButtonView.swift */; };
+		2EC21C652BB3340800B1F04E /* InSessionLessonMultipleChoiceItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E666E542BADDB7300C59FEB /* InSessionLessonMultipleChoiceItemView.swift */; };
+		2EC21C662BB3340D00B1F04E /* InSessionLessonSentenceBuildingItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E666E572BAE030800C59FEB /* InSessionLessonSentenceBuildingItemView.swift */; };
+		2EC21C672BB3341200B1F04E /* InSessionLessonCultureRefrenceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E666E642BAE312300C59FEB /* InSessionLessonCultureRefrenceView.swift */; };
+		2EC21C682BB3341800B1F04E /* InSessionLessonSongItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E666E672BAE31D300C59FEB /* InSessionLessonSongItemView.swift */; };
+		2EC21C6A2BB3344600B1F04E /* YouTubePlayerKit in Frameworks */ = {isa = PBXBuildFile; productRef = 2EC21C692BB3344600B1F04E /* YouTubePlayerKit */; };
+		2EC21C6C2BB3345600B1F04E /* ConfettiSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 2EC21C6B2BB3345600B1F04E /* ConfettiSwiftUI */; };
+		2EC21C6D2BB3346A00B1F04E /* VocabMocData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7E3A572BA31CAE00CD9353 /* VocabMocData.swift */; };
+		2EC21C6E2BB3346E00B1F04E /* LocalizedWelcomeMessageMocData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8D83BA2BA1CE240039DE57 /* LocalizedWelcomeMessageMocData.swift */; };
+		2EC21C6F2BB3347300B1F04E /* LanguageFromMocData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6C51B52B93825A00626F95 /* LanguageFromMocData.swift */; };
+		2EC21C702BB3347600B1F04E /* UserMocData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6C51A52B9356DC00626F95 /* UserMocData.swift */; };
+		2EC21C712BB3347A00B1F04E /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7E3A622BA33F4A00CD9353 /* Dictionary.swift */; };
+		2EC21C722BB3347F00B1F04E /* Vocab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7E3A502BA318BF00CD9353 /* Vocab.swift */; };
+		2EC21C732BB3348400B1F04E /* WelcomeMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5B3D7B2BA1B0740028FCB2 /* WelcomeMessage.swift */; };
+		2EC21C742BB3348800B1F04E /* ColorEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA7BDFA2B9B14C800AAA532 /* ColorEnum.swift */; };
+		2EC21C752BB3348D00B1F04E /* CourseLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6C51AB2B93668D00626F95 /* CourseLanguage.swift */; };
+		2EC21C762BB3349200B1F04E /* LoginOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6C518B2B92847300626F95 /* LoginOptions.swift */; };
+		2EC21C772BB3349400B1F04E /* FirestoreUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6C519E2B92944000626F95 /* FirestoreUser.swift */; };
+		2EC21C782BB3349B00B1F04E /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E78036F2BB034290083F15A /* ColorExtension.swift */; };
+		2EC21C792BB334A000B1F04E /* DeepLConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED4D05E2BB210B7009BE46C /* DeepLConfig.swift */; };
+		2EC21C7A2BB334AE00B1F04E /* PasteboardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6C51A82B935AD300626F95 /* PasteboardController.swift */; };
+		2EC21C7B2BB334B100B1F04E /* TranslationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8D83C42BA2F8170039DE57 /* TranslationController.swift */; };
+		2EC21C7C2BB334B300B1F04E /* DictionaryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7E3A5F2BA33D5A00CD9353 /* DictionaryController.swift */; };
+		2EC21C7D2BB334B900B1F04E /* DifficultyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E666E2C2BACC82A00C59FEB /* DifficultyController.swift */; };
+		2EC21C7E2BB334BD00B1F04E /* VocabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7E3A4D2BA317F900CD9353 /* VocabController.swift */; };
+		2EC21C7F2BB334E200B1F04E /* LessonLikeSmallNavButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E666E142BAC73D900C59FEB /* LessonLikeSmallNavButtonView.swift */; };
+		2EC21C802BB334E500B1F04E /* LessonCommentSmallNavButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E666E122BAC716A00C59FEB /* LessonCommentSmallNavButtonView.swift */; };
+		2EC21C842BB3357B00B1F04E /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC21C832BB3357B00B1F04E /* MainTabView.swift */; };
+		2EC21C852BB336D000B1F04E /* CoursesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EAC1C3C2B93B77900F713F7 /* CoursesController.swift */; };
+		2EC21C862BB341B000B1F04E /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6C51882B92840600626F95 /* LoginView.swift */; };
+		2EC21C8A2BB3457300B1F04E /* WithEnviromentObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC21C892BB3457300B1F04E /* WithEnviromentObjects.swift */; };
+		2EC21C8E2BB34C7C00B1F04E /* UserMainProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC21C8D2BB34C7C00B1F04E /* UserMainProfileView.swift */; };
+		2EC21C902BB3521800B1F04E /* UserProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC21C8F2BB3521800B1F04E /* UserProfileHeaderView.swift */; };
 		2ED4D05F2BB210B7009BE46C /* DeepLConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED4D05E2BB210B7009BE46C /* DeepLConfig.swift */; };
 		2ED4D0612BB2110C009BE46C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2ED4D0602BB2110C009BE46C /* GoogleService-Info.plist */; };
+		2ED4D0692BB32D0C009BE46C /* KoreanMasterAppPreBuildApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED4D0682BB32D0C009BE46C /* KoreanMasterAppPreBuildApp.swift */; };
+		2ED4D06B2BB32D0C009BE46C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED4D06A2BB32D0C009BE46C /* ContentView.swift */; };
+		2ED4D06D2BB32D0E009BE46C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2ED4D06C2BB32D0E009BE46C /* Assets.xcassets */; };
+		2ED4D0712BB32D0E009BE46C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2ED4D0702BB32D0E009BE46C /* Preview Assets.xcassets */; };
+		2ED4D0762BB32DA1009BE46C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2ED4D0752BB32DA1009BE46C /* GoogleService-Info.plist */; };
+		2ED4D0782BB33007009BE46C /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 2ED4D0772BB33007009BE46C /* FirebaseAuth */; };
+		2ED4D07A2BB33007009BE46C /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 2ED4D0792BB33007009BE46C /* FirebaseFirestore */; };
 		2EDF0C012B9A08FF001132AD /* ModifyLessonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDF0C002B9A08FF001132AD /* ModifyLessonView.swift */; };
 		2EDF0C042B9A170C001132AD /* LocallizedLessonListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDF0C032B9A170C001132AD /* LocallizedLessonListView.swift */; };
 		2EDF0C062B9A39D4001132AD /* ModifyLessonInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDF0C052B9A39D4001132AD /* ModifyLessonInfoView.swift */; };
@@ -228,11 +294,14 @@
 		2E7E3A882BA6EA6C00CD9353 /* NavLinkHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavLinkHeaderView.swift; sourceTree = "<group>"; };
 		2E7E3A8D2BA6EDA200CD9353 /* ModifyLessonPraticeMultipleChoiceCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyLessonPraticeMultipleChoiceCellView.swift; sourceTree = "<group>"; };
 		2E7E3A902BA7868C00CD9353 /* ModifyMultipleChoiceAnswerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyMultipleChoiceAnswerView.swift; sourceTree = "<group>"; };
+		2E80FC322BB3654D00DD8582 /* UserManageAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManageAccountView.swift; sourceTree = "<group>"; };
+		2E80FC342BB365A700DD8582 /* NoUserSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoUserSettingsView.swift; sourceTree = "<group>"; };
 		2E8D83B42BA1C4230039DE57 /* LocalizedWelcomeMessageListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedWelcomeMessageListView.swift; sourceTree = "<group>"; };
 		2E8D83B72BA1CD500039DE57 /* ModifyWelcomeMessageSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyWelcomeMessageSheetView.swift; sourceTree = "<group>"; };
 		2E8D83BA2BA1CE240039DE57 /* LocalizedWelcomeMessageMocData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedWelcomeMessageMocData.swift; sourceTree = "<group>"; };
 		2E8D83C02BA1CEDC0039DE57 /* WelcomeMessageDetailSmallCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeMessageDetailSmallCellView.swift; sourceTree = "<group>"; };
 		2E8D83C42BA2F8170039DE57 /* TranslationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationController.swift; sourceTree = "<group>"; };
+		2E990C172BB3615F003DBA2C /* Haptics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Haptics.swift; sourceTree = "<group>"; };
 		2EA7BDF32B9B113500AAA532 /* ModifyLessonTagItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyLessonTagItemView.swift; sourceTree = "<group>"; };
 		2EA7BDFA2B9B14C800AAA532 /* ColorEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorEnum.swift; sourceTree = "<group>"; };
 		2EA7BDFD2B9B17EE00AAA532 /* MaltesColorPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaltesColorPicker.swift; sourceTree = "<group>"; };
@@ -251,8 +320,19 @@
 		2EAC1C572B98729200F713F7 /* AllLessonsLocalizedMocData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllLessonsLocalizedMocData.swift; sourceTree = "<group>"; };
 		2EAC1C5A2B989EBB00F713F7 /* AllLessonsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllLessonsListView.swift; sourceTree = "<group>"; };
 		2EAC1C5D2B98BC0900F713F7 /* DocumentReferenceGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentReferenceGenerator.swift; sourceTree = "<group>"; };
+		2EC21C832BB3357B00B1F04E /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		2EC21C892BB3457300B1F04E /* WithEnviromentObjects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithEnviromentObjects.swift; sourceTree = "<group>"; };
+		2EC21C8D2BB34C7C00B1F04E /* UserMainProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMainProfileView.swift; sourceTree = "<group>"; };
+		2EC21C8F2BB3521800B1F04E /* UserProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileHeaderView.swift; sourceTree = "<group>"; };
 		2ED4D05E2BB210B7009BE46C /* DeepLConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepLConfig.swift; sourceTree = "<group>"; };
 		2ED4D0602BB2110C009BE46C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		2ED4D0662BB32D0C009BE46C /* KoreanMasterAppPreBuild.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KoreanMasterAppPreBuild.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2ED4D0682BB32D0C009BE46C /* KoreanMasterAppPreBuildApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KoreanMasterAppPreBuildApp.swift; sourceTree = "<group>"; };
+		2ED4D06A2BB32D0C009BE46C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		2ED4D06C2BB32D0E009BE46C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2ED4D06E2BB32D0E009BE46C /* KoreanMasterAppPreBuild.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = KoreanMasterAppPreBuild.entitlements; sourceTree = "<group>"; };
+		2ED4D0702BB32D0E009BE46C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		2ED4D0752BB32DA1009BE46C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2EDF0C002B9A08FF001132AD /* ModifyLessonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyLessonView.swift; sourceTree = "<group>"; };
 		2EDF0C032B9A170C001132AD /* LocallizedLessonListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocallizedLessonListView.swift; sourceTree = "<group>"; };
 		2EDF0C052B9A39D4001132AD /* ModifyLessonInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyLessonInfoView.swift; sourceTree = "<group>"; };
@@ -275,6 +355,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2ED4D0632BB32D0C009BE46C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2ED4D0782BB33007009BE46C /* FirebaseAuth in Frameworks */,
+				2ED4D07A2BB33007009BE46C /* FirebaseFirestore in Frameworks */,
+				2EC21C6C2BB3345600B1F04E /* ConfettiSwiftUI in Frameworks */,
+				2EC21C6A2BB3344600B1F04E /* YouTubePlayerKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1240,6 +1331,52 @@
 			path = Courses;
 			sourceTree = "<group>";
 		};
+		2EC21C812BB3351300B1F04E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2ED4D06A2BB32D0C009BE46C /* ContentView.swift */,
+				2EC21C822BB3351C00B1F04E /* MainTabView */,
+				2EC21C8B2BB34B9600B1F04E /* Lesson */,
+				2EC21C8C2BB34BA800B1F04E /* User */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		2EC21C822BB3351C00B1F04E /* MainTabView */ = {
+			isa = PBXGroup;
+			children = (
+				2EC21C832BB3357B00B1F04E /* MainTabView.swift */,
+			);
+			path = MainTabView;
+			sourceTree = "<group>";
+		};
+		2EC21C882BB3456200B1F04E /* SystemExtension */ = {
+			isa = PBXGroup;
+			children = (
+				2EC21C892BB3457300B1F04E /* WithEnviromentObjects.swift */,
+				2E990C172BB3615F003DBA2C /* Haptics.swift */,
+			);
+			path = SystemExtension;
+			sourceTree = "<group>";
+		};
+		2EC21C8B2BB34B9600B1F04E /* Lesson */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Lesson;
+			sourceTree = "<group>";
+		};
+		2EC21C8C2BB34BA800B1F04E /* User */ = {
+			isa = PBXGroup;
+			children = (
+				2EC21C8D2BB34C7C00B1F04E /* UserMainProfileView.swift */,
+				2EC21C8F2BB3521800B1F04E /* UserProfileHeaderView.swift */,
+				2E80FC322BB3654D00DD8582 /* UserManageAccountView.swift */,
+				2E80FC342BB365A700DD8582 /* NoUserSettingsView.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
 		2ED4D05C2BB2108B009BE46C /* Static */ = {
 			isa = PBXGroup;
 			children = (
@@ -1254,6 +1391,28 @@
 				2ED4D05E2BB210B7009BE46C /* DeepLConfig.swift */,
 			);
 			path = API;
+			sourceTree = "<group>";
+		};
+		2ED4D0672BB32D0C009BE46C /* KoreanMasterAppPreBuild */ = {
+			isa = PBXGroup;
+			children = (
+				2EC21C882BB3456200B1F04E /* SystemExtension */,
+				2ED4D0682BB32D0C009BE46C /* KoreanMasterAppPreBuildApp.swift */,
+				2EC21C812BB3351300B1F04E /* Views */,
+				2ED4D06C2BB32D0E009BE46C /* Assets.xcassets */,
+				2ED4D0752BB32DA1009BE46C /* GoogleService-Info.plist */,
+				2ED4D06E2BB32D0E009BE46C /* KoreanMasterAppPreBuild.entitlements */,
+				2ED4D06F2BB32D0E009BE46C /* Preview Content */,
+			);
+			path = KoreanMasterAppPreBuild;
+			sourceTree = "<group>";
+		};
+		2ED4D06F2BB32D0E009BE46C /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				2ED4D0702BB32D0E009BE46C /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 		2EDF0BFD2B9A0805001132AD /* AdminViews */ = {
@@ -1367,6 +1526,7 @@
 				2E666E042BAB948700C59FEB /* KoreanMasterCMSPreBuild.xctestplan */,
 				2EF41ACB2B927A36007431ED /* KoreanMasterCMSPreBuild */,
 				2E6C51942B9292DC00626F95 /* KoreanMasterCMSPreBuildTests */,
+				2ED4D0672BB32D0C009BE46C /* KoreanMasterAppPreBuild */,
 				2EF41ACA2B927A36007431ED /* Products */,
 			);
 			sourceTree = "<group>";
@@ -1376,6 +1536,7 @@
 			children = (
 				2EF41AC92B927A36007431ED /* KoreanMasterCMSPreBuild.app */,
 				2E6C51932B9292DC00626F95 /* KoreanMasterCMSPreBuildTests.xctest */,
+				2ED4D0662BB32D0C009BE46C /* KoreanMasterAppPreBuild.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1467,6 +1628,29 @@
 			productReference = 2E6C51932B9292DC00626F95 /* KoreanMasterCMSPreBuildTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		2ED4D0652BB32D0C009BE46C /* KoreanMasterAppPreBuild */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2ED4D0722BB32D0E009BE46C /* Build configuration list for PBXNativeTarget "KoreanMasterAppPreBuild" */;
+			buildPhases = (
+				2ED4D0622BB32D0C009BE46C /* Sources */,
+				2ED4D0632BB32D0C009BE46C /* Frameworks */,
+				2ED4D0642BB32D0C009BE46C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KoreanMasterAppPreBuild;
+			packageProductDependencies = (
+				2ED4D0772BB33007009BE46C /* FirebaseAuth */,
+				2ED4D0792BB33007009BE46C /* FirebaseFirestore */,
+				2EC21C692BB3344600B1F04E /* YouTubePlayerKit */,
+				2EC21C6B2BB3345600B1F04E /* ConfettiSwiftUI */,
+			);
+			productName = KoreanMasterAppPreBuild;
+			productReference = 2ED4D0662BB32D0C009BE46C /* KoreanMasterAppPreBuild.app */;
+			productType = "com.apple.product-type.application";
+		};
 		2EF41AC82B927A36007431ED /* KoreanMasterCMSPreBuild */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2EF41AD82B927A38007431ED /* Build configuration list for PBXNativeTarget "KoreanMasterCMSPreBuild" */;
@@ -1497,12 +1681,15 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1520;
+				LastSwiftUpdateCheck = 1530;
 				LastUpgradeCheck = 1530;
 				TargetAttributes = {
 					2E6C51922B9292DC00626F95 = {
 						CreatedOnToolsVersion = 15.2;
 						TestTargetID = 2EF41AC82B927A36007431ED;
+					};
+					2ED4D0652BB32D0C009BE46C = {
+						CreatedOnToolsVersion = 15.3;
 					};
 					2EF41AC82B927A36007431ED = {
 						CreatedOnToolsVersion = 15.2;
@@ -1529,6 +1716,7 @@
 			targets = (
 				2EF41AC82B927A36007431ED /* KoreanMasterCMSPreBuild */,
 				2E6C51922B9292DC00626F95 /* KoreanMasterCMSPreBuildTests */,
+				2ED4D0652BB32D0C009BE46C /* KoreanMasterAppPreBuild */,
 			);
 		};
 /* End PBXProject section */
@@ -1538,6 +1726,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2ED4D0642BB32D0C009BE46C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2ED4D0712BB32D0E009BE46C /* Preview Assets.xcassets in Resources */,
+				2ED4D06D2BB32D0E009BE46C /* Assets.xcassets in Resources */,
+				2ED4D0762BB32DA1009BE46C /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1583,6 +1781,72 @@
 				2EF1F1802BAB2E4600B1426C /* LoginOptions.swift in Sources */,
 				2EF1F1892BAB39CE00B1426C /* AllLessonsLocalizedMocData.swift in Sources */,
 				2EA8D35A2BAA0916003067E2 /* VocabControllerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2ED4D0622BB32D0C009BE46C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2EC21C6E2BB3346E00B1F04E /* LocalizedWelcomeMessageMocData.swift in Sources */,
+				2EC21C532BB3337100B1F04E /* DocumentReferenceGenerator.swift in Sources */,
+				2EC21C582BB333AC00B1F04E /* InSessionLessonNavBackButtonView.swift in Sources */,
+				2EC21C7B2BB334B100B1F04E /* TranslationController.swift in Sources */,
+				2E80FC332BB3654D00DD8582 /* UserManageAccountView.swift in Sources */,
+				2EC21C562BB333A500B1F04E /* InSessionSwitchBackToSubLessonButtonView.swift in Sources */,
+				2EC21C702BB3347600B1F04E /* UserMocData.swift in Sources */,
+				2EC21C512BB3334200B1F04E /* InSessionLessonMainView.swift in Sources */,
+				2EC21C672BB3341200B1F04E /* InSessionLessonCultureRefrenceView.swift in Sources */,
+				2EC21C5F2BB333ED00B1F04E /* InSessionLessonVocabUsedView.swift in Sources */,
+				2EC21C592BB333AF00B1F04E /* InSessionLessonNavNextButtonView.swift in Sources */,
+				2EC21C752BB3348D00B1F04E /* CourseLanguage.swift in Sources */,
+				2EC21C602BB333F000B1F04E /* InSessionLessonVocabUsedItemView.swift in Sources */,
+				2EC21C792BB334A000B1F04E /* DeepLConfig.swift in Sources */,
+				2EC21C5A2BB333B200B1F04E /* InSessionLessonPageinatedItemsView.swift in Sources */,
+				2EC21C762BB3349200B1F04E /* LoginOptions.swift in Sources */,
+				2EC21C7F2BB334E200B1F04E /* LessonLikeSmallNavButtonView.swift in Sources */,
+				2EC21C6D2BB3346A00B1F04E /* VocabMocData.swift in Sources */,
+				2E990C162BB35979003DBA2C /* MaltesSFIconPicker.swift in Sources */,
+				2EC21C632BB3340100B1F04E /* InSessionLessonPraticeView.swift in Sources */,
+				2EC21C622BB333FB00B1F04E /* InSessionLessonGrammarExamplePageView.swift in Sources */,
+				2E80FC352BB365A700DD8582 /* NoUserSettingsView.swift in Sources */,
+				2EC21C642BB3340400B1F04E /* InSessionLessonPraticeShowAnswerButtonView.swift in Sources */,
+				2EC21C682BB3341800B1F04E /* InSessionLessonSongItemView.swift in Sources */,
+				2EC21C522BB3336F00B1F04E /* LoginController.swift in Sources */,
+				2EC21C782BB3349B00B1F04E /* ColorExtension.swift in Sources */,
+				2EC21C612BB333F600B1F04E /* InSessionLessonGrammarView.swift in Sources */,
+				2EC21C732BB3348400B1F04E /* WelcomeMessage.swift in Sources */,
+				2EC21C5C2BB333D700B1F04E /* LessonTagSmallView.swift in Sources */,
+				2EC21C572BB333A800B1F04E /* InSessionSwitchSubLessonButtonView.swift in Sources */,
+				2EC21C862BB341B000B1F04E /* LoginView.swift in Sources */,
+				2EC21C4F2BB3330C00B1F04E /* Lesson.swift in Sources */,
+				2EC21C802BB334E500B1F04E /* LessonCommentSmallNavButtonView.swift in Sources */,
+				2E990C152BB35976003DBA2C /* MaltesColorPicker.swift in Sources */,
+				2EC21C742BB3348800B1F04E /* ColorEnum.swift in Sources */,
+				2EC21C652BB3340800B1F04E /* InSessionLessonMultipleChoiceItemView.swift in Sources */,
+				2EC21C902BB3521800B1F04E /* UserProfileHeaderView.swift in Sources */,
+				2EC21C7A2BB334AE00B1F04E /* PasteboardController.swift in Sources */,
+				2EC21C842BB3357B00B1F04E /* MainTabView.swift in Sources */,
+				2EC21C542BB3339A00B1F04E /* InSessionLessonHeroSectionView.swift in Sources */,
+				2EC21C8A2BB3457300B1F04E /* WithEnviromentObjects.swift in Sources */,
+				2EC21C552BB3339E00B1F04E /* InSessionLessonHeaderView.swift in Sources */,
+				2ED4D06B2BB32D0C009BE46C /* ContentView.swift in Sources */,
+				2EC21C5B2BB333C800B1F04E /* InSessionLessonInfoView.swift in Sources */,
+				2EC21C712BB3347A00B1F04E /* Dictionary.swift in Sources */,
+				2EC21C7E2BB334BD00B1F04E /* VocabController.swift in Sources */,
+				2EC21C772BB3349400B1F04E /* FirestoreUser.swift in Sources */,
+				2EC21C5E2BB333E500B1F04E /* InSessionLessonGoalExampleView.swift in Sources */,
+				2EC21C502BB3331900B1F04E /* AllLessonsLocalizedMocData.swift in Sources */,
+				2EC21C722BB3347F00B1F04E /* Vocab.swift in Sources */,
+				2EC21C6F2BB3347300B1F04E /* LanguageFromMocData.swift in Sources */,
+				2EC21C8E2BB34C7C00B1F04E /* UserMainProfileView.swift in Sources */,
+				2EC21C852BB336D000B1F04E /* CoursesController.swift in Sources */,
+				2EC21C7D2BB334B900B1F04E /* DifficultyController.swift in Sources */,
+				2EC21C5D2BB333DF00B1F04E /* InSessionLessonGoalView.swift in Sources */,
+				2EC21C662BB3340D00B1F04E /* InSessionLessonSentenceBuildingItemView.swift in Sources */,
+				2E990C182BB3615F003DBA2C /* Haptics.swift in Sources */,
+				2ED4D0692BB32D0C009BE46C /* KoreanMasterAppPreBuildApp.swift in Sources */,
+				2EC21C7C2BB334B300B1F04E /* DictionaryController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1747,6 +2011,86 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KoreanMasterCMSPreBuild.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/KoreanMasterCMSPreBuild";
+			};
+			name = Release;
+		};
+		2ED4D0732BB32D0E009BE46C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = KoreanMasterAppPreBuild/KoreanMasterAppPreBuild.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"KoreanMasterAppPreBuild/Preview Content\"";
+				DEVELOPMENT_TEAM = DRJ4KKKV4T;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Korean Master";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 14.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.MalteRuff.KoreanMasterAppPreBuild;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2ED4D0742BB32D0E009BE46C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = KoreanMasterAppPreBuild/KoreanMasterAppPreBuild.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"KoreanMasterAppPreBuild/Preview Content\"";
+				DEVELOPMENT_TEAM = DRJ4KKKV4T;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Korean Master";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 14.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.MalteRuff.KoreanMasterAppPreBuild;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -1956,6 +2300,15 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		2ED4D0722BB32D0E009BE46C /* Build configuration list for PBXNativeTarget "KoreanMasterAppPreBuild" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2ED4D0732BB32D0E009BE46C /* Debug */,
+				2ED4D0742BB32D0E009BE46C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		2EF41AC42B927A36007431ED /* Build configuration list for PBXProject "KoreanMasterCMSPreBuild" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -2013,6 +2366,26 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 2E666E692BAE3BAD00C59FEB /* XCRemoteSwiftPackageReference "YouTubePlayerKit" */;
 			productName = YouTubePlayerKit;
+		};
+		2EC21C692BB3344600B1F04E /* YouTubePlayerKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2E666E692BAE3BAD00C59FEB /* XCRemoteSwiftPackageReference "YouTubePlayerKit" */;
+			productName = YouTubePlayerKit;
+		};
+		2EC21C6B2BB3345600B1F04E /* ConfettiSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2E666E272BACC01A00C59FEB /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */;
+			productName = ConfettiSwiftUI;
+		};
+		2ED4D0772BB33007009BE46C /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2EF41ADF2B927B37007431ED /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		2ED4D0792BB33007009BE46C /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2EF41ADF2B927B37007431ED /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
 		};
 		2EF41AE02B927B37007431ED /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;

@@ -13,9 +13,19 @@ struct InSessionSwitchSubLessonButtonView: View {
 	var isDone: Bool = false
 	var isInAdminPanel: Bool = false
 	
+	@State private var showProgressView = false
+	
     var body: some View {
 		Button {
-			switchLesson()
+			withAnimation {
+				self.showProgressView = true
+				
+				DispatchQueue.main.asyncAfter(deadline: .now() + 0.05 + Double.random(in: 0.0...0.1)) {
+					self.showProgressView = false
+					
+					switchLesson()
+				}
+			}
 		} label: {
 			if isInAdminPanel {
 				Image(systemName: "arrow.turn.up.right")
@@ -65,6 +75,15 @@ struct InSessionSwitchSubLessonButtonView: View {
 			}
 		}
 		.buttonStyle(.plain)
+		.overlay(
+			ZStack {
+				if showProgressView {
+					RoundedRectangle(cornerRadius: 16)
+						.foregroundStyle(.tint)
+					ProgressView()
+				}
+			}
+		)
     }
 }
 

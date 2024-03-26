@@ -99,6 +99,15 @@ class LoginController: ObservableObject {
 				print(error)
 			}
 		}
+		if let user = self.user {
+			self.changeFirebaseDisplayName(withId: user.uid, displayName: displayName) { displayName, error in
+				if let error = error {
+					print(error)
+				} else if let displayName = displayName {
+					self.currentFirestoreUser?.displayName = displayName
+				}
+			}
+		}
 	}
 
 	func loginUser(email: String, password: String) {
@@ -242,6 +251,18 @@ class LoginController: ObservableObject {
 		}
 	}
 	
+	func changeFirebaseDisplayName(withId: String, displayName: String, completion: @escaping (String?, Error?) -> Void) {
+		let usersCollection = Firestore.firestore().collection("users")
+		
+		usersCollection.document(withId).updateData(["displayName": displayName]) { error in
+			if let error = error {
+				print("Error updating user: \(error)")
+				completion(nil, error)
+			}
+			completion(displayName, nil)
+		}
+		completion(nil, nil)
+	}
 	
 	
 	//MARK: Admin
