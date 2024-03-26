@@ -67,6 +67,7 @@ struct ExploreAllLocalizedLessonsView: View {
 						withAnimation {
 							proxy.scrollTo(newValue, anchor: .top)
 							scrollToLessonId = nil
+							scrollToLessonId = nil
 						}
 					})
 				}
@@ -79,7 +80,7 @@ struct ExploreAllLocalizedLessonsView: View {
 						Spacer()
 						Button {
 							withAnimation {
-								scrollToLessonId = "Lesson 2"
+								scrollToLessonId = lessons.first?.lessonInfo.lessonName
 								//TODO: add logic to skip to next lesson
 							}
 						} label: {
