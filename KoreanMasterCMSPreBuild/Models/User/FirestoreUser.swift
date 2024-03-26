@@ -14,7 +14,7 @@ class FirestoreUser: Identifiable, Encodable, Decodable {
 	var isAdmin: Bool
 	var isAdminLesson: Bool
 	var languageSelected: String
-	
+		
 	init(
 		id: String,
 		email: String,

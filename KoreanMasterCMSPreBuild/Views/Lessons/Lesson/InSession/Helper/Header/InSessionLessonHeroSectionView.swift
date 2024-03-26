@@ -25,7 +25,7 @@ struct InSessionLessonHeroSectionView: View {
 	
     var body: some View {
 		VStack {
-			if ((loginCon.currentFirestoreUser?.isAdminLesson) != nil) {
+			if loginCon.currentFirestoreUser?.isAdminLesson ?? false {
 				VStack {
 					Text("Admin Controls")
 						.font(.system(.headline, design: .rounded, weight: .bold))

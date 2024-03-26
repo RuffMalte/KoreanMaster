@@ -1,16 +1,15 @@
 //
-//  KoreanMasterCMSPreBuildApp.swift
-//  KoreanMasterCMSPreBuild
+//  KoreanMasterAppPreBuildApp.swift
+//  KoreanMasterAppPreBuild
 //
-//  Created by Malte Ruff on 01.03.24.
+//  Created by Malte Ruff on 26.03.24.
 //
 
 import SwiftUI
 import Firebase
 
-
 @main
-struct KoreanMasterCMSPreBuildApp: App {
+struct KoreanMasterAppPreBuildApp: App {
 	
 	init() {
 		FirebaseApp.configure()
@@ -18,8 +17,7 @@ struct KoreanMasterCMSPreBuildApp: App {
 		let settings = FirestoreSettings()
 		
 		// Use memory-only cache
-		settings.cacheSettings =
-		MemoryCacheSettings(garbageCollectorSettings: MemoryLRUGCSettings())
+		settings.cacheSettings = MemoryCacheSettings(garbageCollectorSettings: MemoryLRUGCSettings())
 		
 		// Use persistent disk cache, with 100 MB cache size
 		settings.cacheSettings = PersistentCacheSettings(sizeBytes: 100 * 1024 * 1024 as NSNumber)
@@ -33,26 +31,22 @@ struct KoreanMasterCMSPreBuildApp: App {
 	@StateObject var coursesController = CoursesController()
 	
     var body: some Scene {
-		Group {
-			WindowGroup {
-				if loginController.isInitialLoading {
-					ProgressView()
+        WindowGroup {
+			if loginController.isInitialLoading {
+				ProgressView()
+			} else {
+				if loginController.loggedIn {
+					ContentView()
 				} else {
-					if loginController.loggedIn {
-						ContentView()
+					if loginController.isLoadingAccountSignIn {
+						ProgressView()
 					} else {
-						if loginController.isLoadingAccountSignIn {
-							ProgressView()
-						} else {
-							LoginView(selectedLoginOption: loginController.loginOption)
-						}
+						LoginView(selectedLoginOption: loginController.loginOption)
 					}
 				}
-				
 			}
-		}
+        }
 		.environmentObject(coursesController)
 		.environmentObject(loginController)
-
     }
 }

@@ -15,7 +15,7 @@ struct MaltesColorPicker: View {
 	
 	enum colorPickerStyle {
 		case menu
-		case picker
+		case list
 	}
 	
 	
@@ -28,24 +28,42 @@ struct MaltesColorPicker: View {
 						Button {
 							self.color = color
 						} label: {
-							//TODO: Text presentation, since macos cant handle color the menu, find better way
 							Text(color.toColorString)
-
-//							Image(systemName: "circle.fill")
-//								.foregroundStyle(color.toColor)
 						}
 					}
 				} label: {
 					Text(color.toColorString)
-
-//					Image(systemName: "circle.fill")
-//						.foregroundStyle(color.toColor)
 				}
 				.menuStyle(.borderlessButton)
 				
-			case .picker:
+			case .list:
 				
-				EmptyView()
+				ScrollView(.horizontal, showsIndicators: false) {
+					HStack {
+						ForEach(ColorEnum.allCases) { color in
+							Button {
+								withAnimation(.easeInOut(duration: 0.1)) {
+									self.color = color
+								}
+							} label: {
+								Image(systemName: "checkmark")
+									.foregroundStyle(.primary)
+									.font(.system(.title3, design: .default, weight: .bold))
+									.opacity(self.color == color ? 1 : 0)
+									.padding()
+									.background {
+										RoundedRectangle(cornerRadius: 8)
+											.foregroundStyle(color.toColor.gradient)
+											.shadow(radius: 2)
+									}
+							}
+							
+							.buttonStyle(.plain)
+						}
+						
+					}
+					
+				}
 				
 			}
 		}
@@ -53,5 +71,5 @@ struct MaltesColorPicker: View {
 }
 
 #Preview {
-	MaltesColorPicker(color: .constant(ColorEnum.blue), colorPickerStyle: .menu)
+	MaltesColorPicker(color: .constant(ColorEnum.blue), colorPickerStyle: .list)
 }
