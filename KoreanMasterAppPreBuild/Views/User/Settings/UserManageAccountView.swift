@@ -22,13 +22,7 @@ struct UserManageAccountView: View {
 					HStack {
 						Spacer()
 						VStack {
-							Circle()
-								.frame(width: 75, height: 75, alignment: .center)
-								.foregroundColor(selectedTintColor.toColor.opacity(0.75))
-								.overlay {
-									Text(user.displayName.first?.uppercased() ?? "")
-										.font(.system(.title, design: .rounded, weight: .bold))
-								}
+							UserProfileDefaultCircleView()
 							
 							Button {
 								//TODO: Update Pictures

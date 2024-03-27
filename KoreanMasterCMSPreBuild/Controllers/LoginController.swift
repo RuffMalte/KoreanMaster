@@ -228,6 +228,7 @@ class LoginController: ObservableObject {
 						completion(nil, false, error)
 					}
 				} else {
+					self.logoutUser()
 					print("User does not exist")
 					completion(nil, false, nil)
 				}

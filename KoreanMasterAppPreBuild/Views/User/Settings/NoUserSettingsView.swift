@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct NoUserSettingsView: View {
+	
+	@EnvironmentObject var loginCon: LoginController
+	
     var body: some View {
 		Group {
 			ContentUnavailableView(label: {
@@ -16,7 +19,7 @@ struct NoUserSettingsView: View {
 				Text("How did you get here 🤨?")
 			}, actions: {
 				Button {
-					
+					loginCon.logoutUser()
 				} label: {
 					Label("Sign Up", systemImage: "person.fill.badge.plus")
 				}

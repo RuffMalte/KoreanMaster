@@ -104,6 +104,7 @@ struct InSessionLessonHeroSectionView: View {
 			}
 			
 		}
+
 		.onAppear {
 			getDiff()
 		}

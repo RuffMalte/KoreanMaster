@@ -46,6 +46,8 @@
 		2E666E682BAE31D300C59FEB /* InSessionLessonSongItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E666E672BAE31D300C59FEB /* InSessionLessonSongItemView.swift */; };
 		2E666E6B2BAE3BAD00C59FEB /* YouTubePlayerKit in Frameworks */ = {isa = PBXBuildFile; productRef = 2E666E6A2BAE3BAD00C59FEB /* YouTubePlayerKit */; };
 		2E666E6E2BAF36B700C59FEB /* DocumentRefrenceGeneratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E666E6D2BAF36B700C59FEB /* DocumentRefrenceGeneratorTests.swift */; };
+		2E6C4DAC2BB40E4800FE0C78 /* UserSettingsMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6C4DAB2BB40E4800FE0C78 /* UserSettingsMainView.swift */; };
+		2E6C4DAE2BB40FB300FE0C78 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2E6C4DAD2BB40FB300FE0C78 /* GoogleService-Info.plist */; };
 		2E6C517B2B927C7000626F95 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6C517A2B927C7000626F95 /* MainTabView.swift */; };
 		2E6C51802B927ECB00626F95 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6C517F2B927ECB00626F95 /* ProfileView.swift */; };
 		2E6C51832B92817100626F95 /* MainSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6C51822B92817100626F95 /* MainSettingsView.swift */; };
@@ -94,6 +96,12 @@
 		2E990C152BB35976003DBA2C /* MaltesColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA7BDFD2B9B17EE00AAA532 /* MaltesColorPicker.swift */; };
 		2E990C162BB35979003DBA2C /* MaltesSFIconPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7803732BB092510083F15A /* MaltesSFIconPicker.swift */; };
 		2E990C182BB3615F003DBA2C /* Haptics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E990C172BB3615F003DBA2C /* Haptics.swift */; };
+		2EA72A032BB4277200DD2262 /* UserProfileDefaultCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA72A022BB4277200DD2262 /* UserProfileDefaultCircleView.swift */; };
+		2EA72A052BB4310100DD2262 /* UserProfileSubHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA72A042BB4310100DD2262 /* UserProfileSubHeaderView.swift */; };
+		2EA72A072BB4343D00DD2262 /* FadeToClearModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA72A062BB4343D00DD2262 /* FadeToClearModifier.swift */; };
+		2EA72A082BB4358300DD2262 /* FadeToClearModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA72A062BB4343D00DD2262 /* FadeToClearModifier.swift */; };
+		2EA72A0A2BB43B7700DD2262 /* UserStatisticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA72A092BB43B7700DD2262 /* UserStatisticsView.swift */; };
+		2EA72A0D2BB43C3800DD2262 /* UserStatisticsItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA72A0C2BB43C3800DD2262 /* UserStatisticsItemView.swift */; };
 		2EA7BDF42B9B113500AAA532 /* ModifyLessonTagItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA7BDF32B9B113500AAA532 /* ModifyLessonTagItemView.swift */; };
 		2EA7BDFB2B9B14C800AAA532 /* ColorEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA7BDFA2B9B14C800AAA532 /* ColorEnum.swift */; };
 		2EA7BDFE2B9B17EE00AAA532 /* MaltesColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA7BDFD2B9B17EE00AAA532 /* MaltesColorPicker.swift */; };
@@ -178,7 +186,6 @@
 		2ED4D06B2BB32D0C009BE46C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED4D06A2BB32D0C009BE46C /* ContentView.swift */; };
 		2ED4D06D2BB32D0E009BE46C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2ED4D06C2BB32D0E009BE46C /* Assets.xcassets */; };
 		2ED4D0712BB32D0E009BE46C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2ED4D0702BB32D0E009BE46C /* Preview Assets.xcassets */; };
-		2ED4D0762BB32DA1009BE46C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2ED4D0752BB32DA1009BE46C /* GoogleService-Info.plist */; };
 		2ED4D0782BB33007009BE46C /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 2ED4D0772BB33007009BE46C /* FirebaseAuth */; };
 		2ED4D07A2BB33007009BE46C /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 2ED4D0792BB33007009BE46C /* FirebaseFirestore */; };
 		2EDF0C012B9A08FF001132AD /* ModifyLessonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDF0C002B9A08FF001132AD /* ModifyLessonView.swift */; };
@@ -255,6 +262,8 @@
 		2E666E642BAE312300C59FEB /* InSessionLessonCultureRefrenceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InSessionLessonCultureRefrenceView.swift; sourceTree = "<group>"; };
 		2E666E672BAE31D300C59FEB /* InSessionLessonSongItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InSessionLessonSongItemView.swift; sourceTree = "<group>"; };
 		2E666E6D2BAF36B700C59FEB /* DocumentRefrenceGeneratorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentRefrenceGeneratorTests.swift; sourceTree = "<group>"; };
+		2E6C4DAB2BB40E4800FE0C78 /* UserSettingsMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingsMainView.swift; sourceTree = "<group>"; };
+		2E6C4DAD2BB40FB300FE0C78 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2E6C517A2B927C7000626F95 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		2E6C517F2B927ECB00626F95 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		2E6C51822B92817100626F95 /* MainSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSettingsView.swift; sourceTree = "<group>"; };
@@ -302,6 +311,11 @@
 		2E8D83C02BA1CEDC0039DE57 /* WelcomeMessageDetailSmallCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeMessageDetailSmallCellView.swift; sourceTree = "<group>"; };
 		2E8D83C42BA2F8170039DE57 /* TranslationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationController.swift; sourceTree = "<group>"; };
 		2E990C172BB3615F003DBA2C /* Haptics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Haptics.swift; sourceTree = "<group>"; };
+		2EA72A022BB4277200DD2262 /* UserProfileDefaultCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileDefaultCircleView.swift; sourceTree = "<group>"; };
+		2EA72A042BB4310100DD2262 /* UserProfileSubHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileSubHeaderView.swift; sourceTree = "<group>"; };
+		2EA72A062BB4343D00DD2262 /* FadeToClearModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FadeToClearModifier.swift; sourceTree = "<group>"; };
+		2EA72A092BB43B7700DD2262 /* UserStatisticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStatisticsView.swift; sourceTree = "<group>"; };
+		2EA72A0C2BB43C3800DD2262 /* UserStatisticsItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStatisticsItemView.swift; sourceTree = "<group>"; };
 		2EA7BDF32B9B113500AAA532 /* ModifyLessonTagItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyLessonTagItemView.swift; sourceTree = "<group>"; };
 		2EA7BDFA2B9B14C800AAA532 /* ColorEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorEnum.swift; sourceTree = "<group>"; };
 		2EA7BDFD2B9B17EE00AAA532 /* MaltesColorPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaltesColorPicker.swift; sourceTree = "<group>"; };
@@ -332,7 +346,6 @@
 		2ED4D06C2BB32D0E009BE46C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2ED4D06E2BB32D0E009BE46C /* KoreanMasterAppPreBuild.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = KoreanMasterAppPreBuild.entitlements; sourceTree = "<group>"; };
 		2ED4D0702BB32D0E009BE46C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		2ED4D0752BB32DA1009BE46C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2EDF0C002B9A08FF001132AD /* ModifyLessonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyLessonView.swift; sourceTree = "<group>"; };
 		2EDF0C032B9A170C001132AD /* LocallizedLessonListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocallizedLessonListView.swift; sourceTree = "<group>"; };
 		2EDF0C052B9A39D4001132AD /* ModifyLessonInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyLessonInfoView.swift; sourceTree = "<group>"; };
@@ -664,6 +677,18 @@
 				2E666E6D2BAF36B700C59FEB /* DocumentRefrenceGeneratorTests.swift */,
 			);
 			path = DocumentRefGen;
+			sourceTree = "<group>";
+		};
+		2E6C4DAA2BB40E2B00FE0C78 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				2EA72A012BB4270400DD2262 /* Helper */,
+				2EC21C8F2BB3521800B1F04E /* UserProfileHeaderView.swift */,
+				2E80FC342BB365A700DD8582 /* NoUserSettingsView.swift */,
+				2E80FC322BB3654D00DD8582 /* UserManageAccountView.swift */,
+				2E6C4DAB2BB40E4800FE0C78 /* UserSettingsMainView.swift */,
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 		2E6C51792B927C6500626F95 /* MainTabView */ = {
@@ -1179,6 +1204,24 @@
 			path = CellViews;
 			sourceTree = "<group>";
 		};
+		2EA72A012BB4270400DD2262 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				2EA72A022BB4277200DD2262 /* UserProfileDefaultCircleView.swift */,
+				2EA72A042BB4310100DD2262 /* UserProfileSubHeaderView.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		2EA72A0B2BB43C0C00DD2262 /* Statistics */ = {
+			isa = PBXGroup;
+			children = (
+				2EA72A092BB43B7700DD2262 /* UserStatisticsView.swift */,
+				2EA72A0C2BB43C3800DD2262 /* UserStatisticsItemView.swift */,
+			);
+			path = Statistics;
+			sourceTree = "<group>";
+		};
 		2EA7BDF22B9B111800AAA532 /* LessonTagItem */ = {
 			isa = PBXGroup;
 			children = (
@@ -1355,6 +1398,7 @@
 			children = (
 				2EC21C892BB3457300B1F04E /* WithEnviromentObjects.swift */,
 				2E990C172BB3615F003DBA2C /* Haptics.swift */,
+				2EA72A062BB4343D00DD2262 /* FadeToClearModifier.swift */,
 			);
 			path = SystemExtension;
 			sourceTree = "<group>";
@@ -1369,10 +1413,9 @@
 		2EC21C8C2BB34BA800B1F04E /* User */ = {
 			isa = PBXGroup;
 			children = (
+				2EA72A0B2BB43C0C00DD2262 /* Statistics */,
 				2EC21C8D2BB34C7C00B1F04E /* UserMainProfileView.swift */,
-				2EC21C8F2BB3521800B1F04E /* UserProfileHeaderView.swift */,
-				2E80FC322BB3654D00DD8582 /* UserManageAccountView.swift */,
-				2E80FC342BB365A700DD8582 /* NoUserSettingsView.swift */,
+				2E6C4DAA2BB40E2B00FE0C78 /* Settings */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -1396,11 +1439,11 @@
 		2ED4D0672BB32D0C009BE46C /* KoreanMasterAppPreBuild */ = {
 			isa = PBXGroup;
 			children = (
-				2EC21C882BB3456200B1F04E /* SystemExtension */,
 				2ED4D0682BB32D0C009BE46C /* KoreanMasterAppPreBuildApp.swift */,
+				2EC21C882BB3456200B1F04E /* SystemExtension */,
 				2EC21C812BB3351300B1F04E /* Views */,
 				2ED4D06C2BB32D0E009BE46C /* Assets.xcassets */,
-				2ED4D0752BB32DA1009BE46C /* GoogleService-Info.plist */,
+				2E6C4DAD2BB40FB300FE0C78 /* GoogleService-Info.plist */,
 				2ED4D06E2BB32D0E009BE46C /* KoreanMasterAppPreBuild.entitlements */,
 				2ED4D06F2BB32D0E009BE46C /* Preview Content */,
 			);
@@ -1735,7 +1778,7 @@
 			files = (
 				2ED4D0712BB32D0E009BE46C /* Preview Assets.xcassets in Resources */,
 				2ED4D06D2BB32D0E009BE46C /* Assets.xcassets in Resources */,
-				2ED4D0762BB32DA1009BE46C /* GoogleService-Info.plist in Resources */,
+				2E6C4DAE2BB40FB300FE0C78 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1805,18 +1848,22 @@
 				2EC21C5A2BB333B200B1F04E /* InSessionLessonPageinatedItemsView.swift in Sources */,
 				2EC21C762BB3349200B1F04E /* LoginOptions.swift in Sources */,
 				2EC21C7F2BB334E200B1F04E /* LessonLikeSmallNavButtonView.swift in Sources */,
+				2E6C4DAC2BB40E4800FE0C78 /* UserSettingsMainView.swift in Sources */,
 				2EC21C6D2BB3346A00B1F04E /* VocabMocData.swift in Sources */,
 				2E990C162BB35979003DBA2C /* MaltesSFIconPicker.swift in Sources */,
 				2EC21C632BB3340100B1F04E /* InSessionLessonPraticeView.swift in Sources */,
 				2EC21C622BB333FB00B1F04E /* InSessionLessonGrammarExamplePageView.swift in Sources */,
 				2E80FC352BB365A700DD8582 /* NoUserSettingsView.swift in Sources */,
 				2EC21C642BB3340400B1F04E /* InSessionLessonPraticeShowAnswerButtonView.swift in Sources */,
+				2EA72A0A2BB43B7700DD2262 /* UserStatisticsView.swift in Sources */,
 				2EC21C682BB3341800B1F04E /* InSessionLessonSongItemView.swift in Sources */,
 				2EC21C522BB3336F00B1F04E /* LoginController.swift in Sources */,
 				2EC21C782BB3349B00B1F04E /* ColorExtension.swift in Sources */,
 				2EC21C612BB333F600B1F04E /* InSessionLessonGrammarView.swift in Sources */,
+				2EA72A0D2BB43C3800DD2262 /* UserStatisticsItemView.swift in Sources */,
 				2EC21C732BB3348400B1F04E /* WelcomeMessage.swift in Sources */,
 				2EC21C5C2BB333D700B1F04E /* LessonTagSmallView.swift in Sources */,
+				2EA72A052BB4310100DD2262 /* UserProfileSubHeaderView.swift in Sources */,
 				2EC21C572BB333A800B1F04E /* InSessionSwitchSubLessonButtonView.swift in Sources */,
 				2EC21C862BB341B000B1F04E /* LoginView.swift in Sources */,
 				2EC21C4F2BB3330C00B1F04E /* Lesson.swift in Sources */,
@@ -1829,10 +1876,12 @@
 				2EC21C842BB3357B00B1F04E /* MainTabView.swift in Sources */,
 				2EC21C542BB3339A00B1F04E /* InSessionLessonHeroSectionView.swift in Sources */,
 				2EC21C8A2BB3457300B1F04E /* WithEnviromentObjects.swift in Sources */,
+				2EA72A072BB4343D00DD2262 /* FadeToClearModifier.swift in Sources */,
 				2EC21C552BB3339E00B1F04E /* InSessionLessonHeaderView.swift in Sources */,
 				2ED4D06B2BB32D0C009BE46C /* ContentView.swift in Sources */,
 				2EC21C5B2BB333C800B1F04E /* InSessionLessonInfoView.swift in Sources */,
 				2EC21C712BB3347A00B1F04E /* Dictionary.swift in Sources */,
+				2EA72A032BB4277200DD2262 /* UserProfileDefaultCircleView.swift in Sources */,
 				2EC21C7E2BB334BD00B1F04E /* VocabController.swift in Sources */,
 				2EC21C772BB3349400B1F04E /* FirestoreUser.swift in Sources */,
 				2EC21C5E2BB333E500B1F04E /* InSessionLessonGoalExampleView.swift in Sources */,
@@ -1857,6 +1906,7 @@
 				2E666E132BAC716A00C59FEB /* LessonCommentSmallNavButtonView.swift in Sources */,
 				2E5B3D792BA1AFA00028FCB2 /* AllWelcomeMessages.swift in Sources */,
 				2E6C51802B927ECB00626F95 /* ProfileView.swift in Sources */,
+				2EA72A082BB4358300DD2262 /* FadeToClearModifier.swift in Sources */,
 				2E6C51B62B93825A00626F95 /* LanguageFromMocData.swift in Sources */,
 				2E6C51892B92840600626F95 /* LoginView.swift in Sources */,
 				2E666E182BAC82B900C59FEB /* InSessionLessonGoalView.swift in Sources */,

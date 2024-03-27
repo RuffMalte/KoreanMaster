@@ -25,11 +25,25 @@ struct MainTabView: View {
 					.tag(0)
 			}
 			
+			Text("Vocab")
+				.tabItem {
+					Label("Vocab", systemImage: "text.book.closed.fill")
+						.tag(1)
+				}
+			
+			Text("Use the Camera to find and automatically translate objects")
+				.tabItem {
+					Label("Scan", systemImage: "square.dashed")
+						.tag(2)
+				}
+			
 			UserMainProfileView()
 				.tabItem {
 					Label("Profile", systemImage: "person.fill")
-						.tag(1)
+						.tag(3)
 				}
+			
+			
 			
 		}
 			

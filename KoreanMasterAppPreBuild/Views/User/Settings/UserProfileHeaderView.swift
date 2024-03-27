@@ -18,13 +18,7 @@ struct UserProfileHeaderView: View {
 		HStack {
 			Spacer()
 			VStack(alignment: .center) {
-				Circle()
-					.frame(width: 75, height: 75, alignment: .center)
-					.foregroundColor(selectedTintColor.toColor.opacity(0.75))
-					.overlay {
-						Text(loginCon.currentFirestoreUser?.displayName.first?.uppercased() ?? "")
-							.font(.system(.title, design: .rounded, weight: .bold))
-					}
+				UserProfileDefaultCircleView()
 				
 				Text(loginCon.currentFirestoreUser?.displayName ?? "")
 					.font(.system(.title3, design: .rounded, weight: .bold))

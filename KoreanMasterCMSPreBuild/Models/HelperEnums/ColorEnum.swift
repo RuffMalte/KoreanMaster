@@ -60,4 +60,25 @@ enum ColorEnum: String, Codable, CaseIterable, Identifiable {
 			return "Pink"
 		}
 	}
+	
+	var getOpposite: ColorEnum {
+		switch self {
+		case .red:
+			return .blue
+		case .orange:
+			return .indigo
+		case .yellow:
+			return .purple
+		case .green:
+			return .pink
+		case .blue:
+			return .red
+		case .indigo:
+			return .orange
+		case .purple:
+			return .yellow
+		case .pink:
+			return .green
+		}
+	}
 }

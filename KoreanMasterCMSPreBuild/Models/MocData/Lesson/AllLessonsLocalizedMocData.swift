@@ -70,7 +70,7 @@ extension LessonInfo {
 		lessonName: "Lesson 2",
 		heading: "The Korean Alphabet",
 		desc: "Learn the Korean Alphabet",
-		difficultyID: "",
+		difficultyID: "0F162136-F7E5-43BC-B855-700D32A4231B",
 		xpToGain: 100,
 		icon: "abc",
 		color: .orange,
