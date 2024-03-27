@@ -102,6 +102,7 @@
 		2EA72A082BB4358300DD2262 /* FadeToClearModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA72A062BB4343D00DD2262 /* FadeToClearModifier.swift */; };
 		2EA72A0A2BB43B7700DD2262 /* UserStatisticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA72A092BB43B7700DD2262 /* UserStatisticsView.swift */; };
 		2EA72A0D2BB43C3800DD2262 /* UserStatisticsItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA72A0C2BB43C3800DD2262 /* UserStatisticsItemView.swift */; };
+		2EA72A0F2BB4723100DD2262 /* UserXpGainedGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA72A0E2BB4723000DD2262 /* UserXpGainedGraphView.swift */; };
 		2EA7BDF42B9B113500AAA532 /* ModifyLessonTagItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA7BDF32B9B113500AAA532 /* ModifyLessonTagItemView.swift */; };
 		2EA7BDFB2B9B14C800AAA532 /* ColorEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA7BDFA2B9B14C800AAA532 /* ColorEnum.swift */; };
 		2EA7BDFE2B9B17EE00AAA532 /* MaltesColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA7BDFD2B9B17EE00AAA532 /* MaltesColorPicker.swift */; };
@@ -316,6 +317,7 @@
 		2EA72A062BB4343D00DD2262 /* FadeToClearModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FadeToClearModifier.swift; sourceTree = "<group>"; };
 		2EA72A092BB43B7700DD2262 /* UserStatisticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStatisticsView.swift; sourceTree = "<group>"; };
 		2EA72A0C2BB43C3800DD2262 /* UserStatisticsItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStatisticsItemView.swift; sourceTree = "<group>"; };
+		2EA72A0E2BB4723000DD2262 /* UserXpGainedGraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserXpGainedGraphView.swift; sourceTree = "<group>"; };
 		2EA7BDF32B9B113500AAA532 /* ModifyLessonTagItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyLessonTagItemView.swift; sourceTree = "<group>"; };
 		2EA7BDFA2B9B14C800AAA532 /* ColorEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorEnum.swift; sourceTree = "<group>"; };
 		2EA7BDFD2B9B17EE00AAA532 /* MaltesColorPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaltesColorPicker.swift; sourceTree = "<group>"; };
@@ -1218,6 +1220,7 @@
 			children = (
 				2EA72A092BB43B7700DD2262 /* UserStatisticsView.swift */,
 				2EA72A0C2BB43C3800DD2262 /* UserStatisticsItemView.swift */,
+				2EA72A0E2BB4723000DD2262 /* UserXpGainedGraphView.swift */,
 			);
 			path = Statistics;
 			sourceTree = "<group>";
@@ -1862,6 +1865,7 @@
 				2EC21C612BB333F600B1F04E /* InSessionLessonGrammarView.swift in Sources */,
 				2EA72A0D2BB43C3800DD2262 /* UserStatisticsItemView.swift in Sources */,
 				2EC21C732BB3348400B1F04E /* WelcomeMessage.swift in Sources */,
+				2EA72A0F2BB4723100DD2262 /* UserXpGainedGraphView.swift in Sources */,
 				2EC21C5C2BB333D700B1F04E /* LessonTagSmallView.swift in Sources */,
 				2EA72A052BB4310100DD2262 /* UserProfileSubHeaderView.swift in Sources */,
 				2EC21C572BB333A800B1F04E /* InSessionSwitchSubLessonButtonView.swift in Sources */,

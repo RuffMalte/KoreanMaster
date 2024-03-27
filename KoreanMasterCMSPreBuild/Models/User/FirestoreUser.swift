@@ -16,7 +16,13 @@ class FirestoreUser: Identifiable, Encodable, Decodable {
 	var languageSelected: String
 		
 	var totalXP: Int
+	
+	
+	
 	var daysStreak: Int
+	var streaks: [StreakDay] =  []
+	
+	
 	
 	var createdAt: Date
 	var totalLiked: Int
@@ -47,4 +53,10 @@ class FirestoreUser: Identifiable, Encodable, Decodable {
 		self.totalLiked = totalLiked
 		self.totalComments = totalComments
 	}
+}
+
+struct StreakDay: Identifiable, Codable {
+	var id: String = UUID().uuidString
+	var date: Date
+	var xpGained: Int
 }

@@ -12,20 +12,11 @@ struct UserMainProfileView: View {
 	
 	@EnvironmentObject var loginCon: LoginController
 
-	struct PetData: Identifiable {
-		var id: UUID = UUID()
-		var year: Double
-		var population: Double
-	}
-	
-	let catData: [PetData] = [PetData(year: 2000, population: 6.8),
-							  PetData(year: 2010, population: 8.2),
-							  PetData(year: 2015, population: 12.9),
-							  PetData(year: 2022, population: 15.2)]
+
 
     var body: some View {
 		NavigationStack {
-			if loginCon.currentFirestoreUser != nil {
+			if let currentUser = loginCon.currentFirestoreUser {
 				
 				GeometryReader { geo in
 					VStack {
@@ -48,7 +39,7 @@ struct UserMainProfileView: View {
 						
 						ScrollView(.vertical) {
 							VStack {
-								UserProfileSubHeaderView(title: loginCon.currentFirestoreUser!.displayName) {
+								UserProfileSubHeaderView(title: currentUser.displayName) {
 									HStack {
 										VStack(alignment: .leading, spacing: 5) {
 											Label {
@@ -84,11 +75,7 @@ struct UserMainProfileView: View {
 								Divider()
 								
 								UserProfileSubHeaderView(title: "XP Gained") {
-									Chart(catData) { data in
-										LineMark(x: .value("Year", data.year),
-												 y: .value("Population", data.population))
-									}
-									.frame(height: 200)
+									UserXpGainedGraphView()
 								}
 								.padding()
 
