@@ -13,12 +13,32 @@ struct MainTabView: View {
 	
 	var lesson = Lesson.detailExample
 	
+	@EnvironmentObject var loginCon: LoginController
+	
     var body: some View {
 #if os(iOS)
 			
 		TabView(selection: $selectedTab) {
 			InSessionLessonMainView(lesson: lesson, currentLanguage: "English") {
-				print("Ending")
+				if let user = loginCon.currentFirestoreUser {
+					print("Hello")
+					UserComponentsController().addStreakItem(
+						for: user.id,
+						preSelectedUser: user,
+						providedStreakDay: StreakDay(
+							date: Date(),
+							xpGained: lesson.lessonInfo.xpToGain)
+					)
+					{ newUser, error in
+						if let error = error {
+							print("Error adding streak item: \(error)")
+						}
+						if let newUser = newUser {
+							loginCon.currentFirestoreUser = newUser
+							print(newUser.daysStreak.description)
+						}
+					}
+				}
 			}
 			.tabItem {
 				Label("Lesson", systemImage: "book.fill")

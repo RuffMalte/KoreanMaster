@@ -27,7 +27,7 @@ struct UserXpGainedGraphView: View {
 									.foregroundStyle(.secondary)
 								
 								HStack {
-									Text("\(selectedValue)")
+									Text("\(Int(selectedValue))")
 										.font(.system(.title3, design: .rounded, weight: .semibold))
 									
 									Image(systemName: "sparkles")

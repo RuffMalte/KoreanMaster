@@ -103,6 +103,8 @@
 		2EA72A0A2BB43B7700DD2262 /* UserStatisticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA72A092BB43B7700DD2262 /* UserStatisticsView.swift */; };
 		2EA72A0D2BB43C3800DD2262 /* UserStatisticsItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA72A0C2BB43C3800DD2262 /* UserStatisticsItemView.swift */; };
 		2EA72A0F2BB4723100DD2262 /* UserXpGainedGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA72A0E2BB4723000DD2262 /* UserXpGainedGraphView.swift */; };
+		2EA72A122BB4792A00DD2262 /* UserComponentsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA72A112BB4792A00DD2262 /* UserComponentsController.swift */; };
+		2EA72A132BB482DC00DD2262 /* UserComponentsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA72A112BB4792A00DD2262 /* UserComponentsController.swift */; };
 		2EA7BDF42B9B113500AAA532 /* ModifyLessonTagItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA7BDF32B9B113500AAA532 /* ModifyLessonTagItemView.swift */; };
 		2EA7BDFB2B9B14C800AAA532 /* ColorEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA7BDFA2B9B14C800AAA532 /* ColorEnum.swift */; };
 		2EA7BDFE2B9B17EE00AAA532 /* MaltesColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA7BDFD2B9B17EE00AAA532 /* MaltesColorPicker.swift */; };
@@ -318,6 +320,7 @@
 		2EA72A092BB43B7700DD2262 /* UserStatisticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStatisticsView.swift; sourceTree = "<group>"; };
 		2EA72A0C2BB43C3800DD2262 /* UserStatisticsItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStatisticsItemView.swift; sourceTree = "<group>"; };
 		2EA72A0E2BB4723000DD2262 /* UserXpGainedGraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserXpGainedGraphView.swift; sourceTree = "<group>"; };
+		2EA72A112BB4792A00DD2262 /* UserComponentsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserComponentsController.swift; sourceTree = "<group>"; };
 		2EA7BDF32B9B113500AAA532 /* ModifyLessonTagItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyLessonTagItemView.swift; sourceTree = "<group>"; };
 		2EA7BDFA2B9B14C800AAA532 /* ColorEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorEnum.swift; sourceTree = "<group>"; };
 		2EA7BDFD2B9B17EE00AAA532 /* MaltesColorPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaltesColorPicker.swift; sourceTree = "<group>"; };
@@ -1225,6 +1228,15 @@
 			path = Statistics;
 			sourceTree = "<group>";
 		};
+		2EA72A102BB4790900DD2262 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				2E6C518D2B92888200626F95 /* LoginController.swift */,
+				2EA72A112BB4792A00DD2262 /* UserComponentsController.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
 		2EA7BDF22B9B111800AAA532 /* LessonTagItem */ = {
 			isa = PBXGroup;
 			children = (
@@ -1631,7 +1643,7 @@
 			isa = PBXGroup;
 			children = (
 				2EAC1C5D2B98BC0900F713F7 /* DocumentReferenceGenerator.swift */,
-				2E6C518D2B92888200626F95 /* LoginController.swift */,
+				2EA72A102BB4790900DD2262 /* User */,
 				2E666E2A2BACC7FB00C59FEB /* CourseControllers */,
 				2E6C51A72B935AC700626F95 /* Helper */,
 			);
@@ -1900,6 +1912,7 @@
 				2E990C182BB3615F003DBA2C /* Haptics.swift in Sources */,
 				2ED4D0692BB32D0C009BE46C /* KoreanMasterAppPreBuildApp.swift in Sources */,
 				2EC21C7C2BB334B300B1F04E /* DictionaryController.swift in Sources */,
+				2EA72A132BB482DC00DD2262 /* UserComponentsController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1970,6 +1983,7 @@
 				2E666E582BAE030800C59FEB /* InSessionLessonSentenceBuildingItemView.swift in Sources */,
 				2E5B3D7C2BA1B0740028FCB2 /* WelcomeMessage.swift in Sources */,
 				2E6C51832B92817100626F95 /* MainSettingsView.swift in Sources */,
+				2EA72A122BB4792A00DD2262 /* UserComponentsController.swift in Sources */,
 				2E666E152BAC73D900C59FEB /* LessonLikeSmallNavButtonView.swift in Sources */,
 				2E7E3A862BA6E8B000CD9353 /* ModifyLessonPraticeView.swift in Sources */,
 				2E666E5A2BAE1EFA00C59FEB /* InSessionLessonPraticeShowAnswerButtonView.swift in Sources */,

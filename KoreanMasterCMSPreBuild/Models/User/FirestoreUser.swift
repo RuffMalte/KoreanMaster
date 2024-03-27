@@ -20,6 +20,7 @@ class FirestoreUser: Identifiable, Encodable, Decodable {
 	
 	
 	var daysStreak: Int
+	var maxStreakDays: Int = 0
 	var streaks: [StreakDay] =  []
 	
 	
