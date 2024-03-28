@@ -23,6 +23,12 @@ struct ExploreAllLocalizedLessonsView: View {
 	@State private var isShowingLesson = false
 	
 	@State private var scrollToLessonId: String?
+	
+	private var nextLessonToCompleteIndex: Int {
+		let completedIndexes = lessons.enumerated().filter { completedLessonIDs.contains($0.element.id) }.map(\.offset)
+		let maxCompletedIndex = completedIndexes.max() ?? -1
+		return maxCompletedIndex + 1
+	}
 
     var body: some View {
 		HStack {
@@ -32,38 +38,25 @@ struct ExploreAllLocalizedLessonsView: View {
 					VStack(spacing: 20) {
 						ForEach(Array(lessons.enumerated()), id: \.element.id) { index, lesson in
 							HStack {
-								let isCompleted = completedLessonIDs.contains(lesson.id)
+								if index % 4 != 0 {
+									Spacer()
+								}
 								
-								if index % 4 == 0 {
-									// Left aligned
-									ExploreLessonCellView(lesson: lesson, isCompleted: isCompleted, complition: { lesson in
-										self.selectedLesson = lesson
-										isShowingLesson.toggle()
-										
-									})
-									.id(lesson.id)
+								
+								let isCompleted = completedLessonIDs.contains(lesson.id)
+								ExploreLessonCellView(lesson: lesson, isCompleted: isCompleted, complition: { lesson in
+									self.selectedLesson = lesson
+									isShowingLesson.toggle()
+								})
+								.id(lesson.id)
+								.disabled(index > nextLessonToCompleteIndex)
+
+								
+								if index % 4 != 2 {
 									Spacer()
-								} else if index % 4 == 1 || index % 4 == 3 {
-									// Middle aligned
-									Spacer()
-									ExploreLessonCellView(lesson: lesson, isCompleted: isCompleted, complition: { lesson in
-										self.selectedLesson = lesson
-										isShowingLesson.toggle()
-										
-									})
-									.id(lesson.id)
-									Spacer()
-								} else if index % 4 == 2 {
-									// Right aligned
-									Spacer()
-									ExploreLessonCellView(lesson: lesson, isCompleted: isCompleted, complition: { lesson in
-										self.selectedLesson = lesson
-										isShowingLesson.toggle()
-										
-									})
-									.id(lesson.id)
 								}
 							}
+
 						}
 					}
 					.onChange(of: scrollToLessonId, { oldValue, newValue in
