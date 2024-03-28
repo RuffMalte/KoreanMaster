@@ -22,7 +22,7 @@ struct UserAllLessonStatsView: View {
 				
 				UserStatisticsItemView(icon: "character.book.closed.fill", iconColor: .blue, title: "0", showBackgroundRectangle: false)
 				
-				UserStatisticsItemView(icon: "checkmark", iconColor: .green, title: "0", showBackgroundRectangle: false)
+				UserStatisticsItemView(icon: "checkmark", iconColor: .green, title: currentUser.compeltedLessonsIDS.count.description, showBackgroundRectangle: false)
 				
 			}
 			.font(.system(.title3, design: .rounded, weight: .bold))

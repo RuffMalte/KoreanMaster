@@ -28,10 +28,7 @@ struct UsersAllLessonListView: View {
 						UserComponentsController().addStreakItem(
 							for: currentFirestoreUser.id, 
 							preSelectedUser: currentFirestoreUser,
-							xpToGain: lesson.lessonInfo.xpToGain,
-							providedStreakDay: StreakDay(
-								date: Date(),
-								xpGained: lesson.lessonInfo.xpToGain)
+							xpToGain: lesson.lessonInfo.xpToGain
 						)
 						{ newUser, error in
 							if let error = error {
@@ -56,9 +53,18 @@ struct UsersAllLessonListView: View {
 							}
 						}
 						
-						
-						
-						print("Lesson: \(lesson.lessonInfo.lessonName)")
+						UserComponentsController().addCompletedLesson(
+							for: currentFirestoreUser.id,
+							lessonID: lesson.id
+						) { user, error in
+							if let error = error {
+								print("Error adding completed lesson: \(error)")
+							} else if let user = user {
+								loginCon.currentFirestoreUser = user
+							} else {
+								print("Error adding completed lesson: User is nil")
+							}
+						}
 					}
 					
 				}
