@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ExploreLessonStartButtonView: View {
-	
+	var isButtonDisabled: Bool = false
 	var startLessonFunction: () -> Void
 	var xpToGain: Int
 	
@@ -35,6 +35,7 @@ struct ExploreLessonStartButtonView: View {
 			}
 			.shadow(radius: 5)
 		}
+		.disabled(isButtonDisabled)
     }
 }
 

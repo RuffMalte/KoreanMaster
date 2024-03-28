@@ -40,7 +40,7 @@ class LocalizedLessons: Identifiable, Codable {
 	}
 	
 	func sortLessons() -> [Lesson] {
-		return lessons.sorted { $0.lessonInfo.section > $1.lessonInfo.section && $0.lessonInfo.unit >
+		return lessons.sorted { $0.lessonInfo.section < $1.lessonInfo.section && $0.lessonInfo.unit <
 			$1.lessonInfo.unit }
 	}
 	

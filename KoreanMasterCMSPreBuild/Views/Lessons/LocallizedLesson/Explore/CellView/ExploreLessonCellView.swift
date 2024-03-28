@@ -10,6 +10,7 @@ import SwiftUI
 struct ExploreLessonCellView: View {
 	
 	var lesson: Lesson
+	var isButtonDisabled: Bool = false
 	var isCompleted: Bool = false
 	
 	var complition: (Lesson) -> Void
@@ -64,6 +65,7 @@ struct ExploreLessonCellView: View {
 					
 					VStack {
 						ExploreLessonStartButtonView(
+							isButtonDisabled: isButtonDisabled,
 							startLessonFunction: {
 								complition(lesson)
 							},

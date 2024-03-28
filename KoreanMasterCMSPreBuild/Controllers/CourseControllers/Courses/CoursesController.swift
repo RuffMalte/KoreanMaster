@@ -397,11 +397,13 @@ class CoursesController: ObservableObject {
 						newLesson.lessonTag = tags
 					}
 				}
-				
-			
 				lessons.append(newLesson)
 			}
 
+			for lesson in lessons {
+				print(lesson.lessonInfo.lessonName)
+			}
+			
 			self.isLoadingAllLessons = false
 			completion(lessons, nil)
 		}

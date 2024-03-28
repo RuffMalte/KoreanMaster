@@ -16,57 +16,64 @@ struct UsersAllLessonListView: View {
 	@EnvironmentObject var courseCon: CoursesController
 		
 	@AppStorage("selectedTintColor") var selectedTintColor: ColorEnum = .red
+	@State private var isLoadingLessons = false
 
     var body: some View {
 		VStack {
 			if let currentFirestoreUser = loginCon.currentFirestoreUser {
 				VStack {
-					UserAllLessonStatsView(currentUser: currentFirestoreUser)
-					
-					ExploreAllLocalizedLessonsView(lessons: currentLessons, currentLanguage: currentFirestoreUser.languageSelected, completedLessonIDs: currentFirestoreUser.compeltedLessonsIDS) { lesson in
+					if isLoadingLessons {
+						ProgressView()
+					} else {
+						UserAllLessonStatsView(currentUser: currentFirestoreUser)
 						
-						UserComponentsController().addStreakItem(
-							for: currentFirestoreUser.id, 
-							preSelectedUser: currentFirestoreUser,
-							xpToGain: lesson.lessonInfo.xpToGain
-						)
-						{ newUser, error in
-							if let error = error {
-								print("Error adding streak item: \(error)")
+						ExploreAllLocalizedLessonsView(lessons: currentLessons, currentLanguage: currentFirestoreUser.languageSelected, completedLessonIDs: currentFirestoreUser.compeltedLessonsIDS) { lesson in
+							
+							//Streak
+							UserComponentsController().addStreakItem(
+								for: currentFirestoreUser.id,
+								preSelectedUser: currentFirestoreUser,
+								xpToGain: lesson.lessonInfo.xpToGain
+							)
+							{ newUser, error in
+								if let error = error {
+									print("Error adding streak item: \(error)")
+								}
+								if let newUser = newUser {
+									loginCon.currentFirestoreUser = newUser
+									print(newUser.daysStreak.description)
+								}
 							}
-							if let newUser = newUser {
-								loginCon.currentFirestoreUser = newUser
-								print(newUser.daysStreak.description)
+							
+							//XP
+							UserComponentsController().addXP(
+								for: currentFirestoreUser.id,
+								xp: lesson.lessonInfo.xpToGain
+							) { user, error in
+								if let error = error {
+									print("Error adding XP: \(error)")
+								} else if let user = user {
+									loginCon.currentFirestoreUser = user
+								} else {
+									print("Error adding XP: User is nil")
+								}
 							}
-						}
-						
-						UserComponentsController().addXP(
-							for: currentFirestoreUser.id,
-							xp: lesson.lessonInfo.xpToGain
-						) { user, error in
-							if let error = error {
-								print("Error adding XP: \(error)")
-							} else if let user = user {
-								loginCon.currentFirestoreUser = user
-							} else {
-								print("Error adding XP: User is nil")
-							}
-						}
-						
-						UserComponentsController().addCompletedLesson(
-							for: currentFirestoreUser.id,
-							lessonID: lesson.id
-						) { user, error in
-							if let error = error {
-								print("Error adding completed lesson: \(error)")
-							} else if let user = user {
-								loginCon.currentFirestoreUser = user
-							} else {
-								print("Error adding completed lesson: User is nil")
+							
+							//Completed Lesson
+							UserComponentsController().addCompletedLesson(
+								for: currentFirestoreUser.id,
+								lessonID: lesson.id
+							) { user, error in
+								if let error = error {
+									print("Error adding completed lesson: \(error)")
+								} else if let user = user {
+									loginCon.currentFirestoreUser = user
+								} else {
+									print("Error adding completed lesson: User is nil")
+								}
 							}
 						}
 					}
-					
 				}
 				
 				.background {
@@ -81,12 +88,14 @@ struct UsersAllLessonListView: View {
 				}
 				.onAppear {
 					if courseCon.currentLessons.isEmpty {
+						isLoadingLessons = true
 						courseCon.getAllLessons(language: currentFirestoreUser.languageSelected) { lessons, error in
 							if let error = error {
 								print("Error getting lessons: \(error)")
 							} else {
 								self.currentLessons = lessons
 								courseCon.currentLessons = lessons
+								isLoadingLessons = false
 							}
 						}
 					} else {
