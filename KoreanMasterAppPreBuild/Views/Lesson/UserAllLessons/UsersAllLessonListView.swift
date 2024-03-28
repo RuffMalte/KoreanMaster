@@ -23,7 +23,43 @@ struct UsersAllLessonListView: View {
 				VStack {
 					UserAllLessonStatsView(currentUser: currentFirestoreUser)
 					
-					ExploreAllLocalizedLessonsView(lessons: currentLessons, currentLanguage: currentFirestoreUser.languageSelected)
+					ExploreAllLocalizedLessonsView(lessons: currentLessons, currentLanguage: currentFirestoreUser.languageSelected, completedLessonIDs: currentFirestoreUser.compeltedLessonsIDS) { lesson in
+						
+						UserComponentsController().addStreakItem(
+							for: currentFirestoreUser.id, 
+							preSelectedUser: currentFirestoreUser,
+							xpToGain: lesson.lessonInfo.xpToGain,
+							providedStreakDay: StreakDay(
+								date: Date(),
+								xpGained: lesson.lessonInfo.xpToGain)
+						)
+						{ newUser, error in
+							if let error = error {
+								print("Error adding streak item: \(error)")
+							}
+							if let newUser = newUser {
+								loginCon.currentFirestoreUser = newUser
+								print(newUser.daysStreak.description)
+							}
+						}
+						
+						UserComponentsController().addXP(
+							for: currentFirestoreUser.id,
+							xp: lesson.lessonInfo.xpToGain
+						) { user, error in
+							if let error = error {
+								print("Error adding XP: \(error)")
+							} else if let user = user {
+								loginCon.currentFirestoreUser = user
+							} else {
+								print("Error adding XP: User is nil")
+							}
+						}
+						
+						
+						
+						print("Lesson: \(lesson.lessonInfo.lessonName)")
+					}
 					
 				}
 				
@@ -55,32 +91,6 @@ struct UsersAllLessonListView: View {
 		}
 		
 	}
-		
-//		InSessionLessonMainView(lesson: lesson, currentLanguage: "English") {
-//			if let user = loginCon.currentFirestoreUser {
-//				print("Hello")
-//				UserComponentsController().addStreakItem(
-//					for: user.id,
-//					preSelectedUser: user,
-//					providedStreakDay: StreakDay(
-//						date: Date(),
-//						xpGained: lesson.lessonInfo.xpToGain)
-//				)
-//				{ newUser, error in
-//					if let error = error {
-//						print("Error adding streak item: \(error)")
-//					}
-//					if let newUser = newUser {
-//						loginCon.currentFirestoreUser = newUser
-//						print(newUser.daysStreak.description)
-//					}
-//				}
-//			}
-//		}
-		
-		
-		
-    
 }
 
 #Preview {

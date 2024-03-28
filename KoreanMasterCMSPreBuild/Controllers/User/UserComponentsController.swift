@@ -12,7 +12,7 @@ import Observation
 @Observable
 class UserComponentsController: Observable {
 		
-	func addStreakItem(for userID: String, preSelectedUser: FirestoreUser?, providedStreakDay: StreakDay? = nil, completion: @escaping (FirestoreUser?, Error?) -> Void) {
+	func addStreakItem(for userID: String, preSelectedUser: FirestoreUser?, xpToGain: Int, providedStreakDay: StreakDay? = nil, completion: @escaping (FirestoreUser?, Error?) -> Void) {
 		let db = Firestore.firestore()
 		
 		func updateUserStreaks(_ user: FirestoreUser) {
@@ -23,20 +23,19 @@ class UserComponentsController: Observable {
 			
 			var isNewStreakAdded = false
 			
-			let yesterday = Calendar.current.date(byAdding: .day, value: -1, to: Date())!
-			let hasStreakForYesterday = user.streaks.contains { Calendar.current.isDate($0.date, inSameDayAs: yesterday) }
-			
-			if let streakDay = providedStreakDay {
-				if !user.streaks.contains(where: { Calendar.current.isDate($0.date, inSameDayAs: streakDay.date) }) {
-					user.streaks.append(streakDay)
-					isNewStreakAdded = Calendar.current.isDateInToday(streakDay.date)
-				}
-				user.totalXP = user.totalXP + streakDay.xpGained
-			} else if !user.streaks.contains(where: { Calendar.current.isDateInToday($0.date) }) {
-				user.streaks.append(StreakDay(date: Date(), xpGained: 0))
+			let targetDate = providedStreakDay?.date ?? Date()
+			if let index = user.streaks.firstIndex(where: { Calendar.current.isDate($0.date, inSameDayAs: targetDate) }) {
+				// Streak day exists, update its xpGained
+				user.streaks[index].xpGained += xpToGain
+				isNewStreakAdded = Calendar.current.isDateInToday(user.streaks[index].date)
+			} else {
+				// No streak for today, add new one
+				let newStreakDay = StreakDay(date: targetDate, xpGained: xpToGain)
+				user.streaks.append(newStreakDay)
 				isNewStreakAdded = true
-				user.totalXP = user.totalXP + 0
 			}
+			
+			user.totalXP += xpToGain
 			
 			if isNewStreakAdded || user.streaks.isEmpty {
 				user.daysStreak += 1
@@ -45,7 +44,6 @@ class UserComponentsController: Observable {
 				}
 			}
 			
-		
 			let userRef = db.collection("users").document(user.id)
 			do {
 				try userRef.setData(from: user) { error in
@@ -74,6 +72,32 @@ class UserComponentsController: Observable {
 		}
 	}
 
+
+	
+	
+	func addXP(for userID: String, xp: Int, completion: @escaping (FirestoreUser?, Error?) -> Void) {
+		let db = Firestore.firestore()
+		
+		let userRef = db.collection("users").document(userID)
+		userRef.getDocument { (document, error) in
+			if let document = document, document.exists, let user = try? document.data(as: FirestoreUser.self) {
+				user.totalXP += xp
+				do {
+					try userRef.setData(from: user) { error in
+						if let error = error {
+							completion(nil, error)
+						} else {
+							completion(user, nil)
+						}
+					}
+				} catch let error {
+					completion(nil, error)
+				}
+			} else {
+				completion(nil, error ?? NSError(domain: "addXP", code: -1, userInfo: [NSLocalizedDescriptionKey: "Failed to fetch user for updating XP."]))
+			}
+		}
+	}
 
 
 

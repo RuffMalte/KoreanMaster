@@ -19,6 +19,8 @@ struct ExploreAllLocalizedLessonsView: View {
 	var currentLanguage: String
 	var completedLessonIDs: [String] = []
 	
+	var completeFunc: ((Lesson) -> Void)?
+	
 	@State var selectedLesson: Lesson?
 	@State private var isShowingLesson = false
 	
@@ -100,6 +102,7 @@ struct ExploreAllLocalizedLessonsView: View {
 			if let selectedLesson = selectedLesson {
 				InSessionLessonMainView(lesson: selectedLesson, currentLanguage: currentLanguage) {
 					isShowingLesson = false
+					completeFunc?(selectedLesson)
 				}
 				.presentationCompactAdaptation(.fullScreenCover)
 			}
