@@ -23,7 +23,7 @@ struct ExploreLessonStartButtonView: View {
 						Text("Start")
 						Text("+\(xpToGain) XP")
 					}
-					.font(.headline)
+					.font(.system(.footnote, design: .rounded, weight: .bold))
 					
 					Spacer()
 				}

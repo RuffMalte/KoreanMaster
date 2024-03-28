@@ -14,6 +14,9 @@ import FirebaseFirestore
 
 @Observable
 class CoursesController: ObservableObject {
+
+	
+	var currentLessons: [Lesson] = []
 	
 	private let dispatchGroup = DispatchGroup()
 	private var encounteredError: Error?

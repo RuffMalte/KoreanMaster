@@ -12,20 +12,26 @@ struct FadeToClearModifier: ViewModifier {
 	var endColor: Color
 	var startPoint: UnitPoint
 	var endPoint: UnitPoint
-	
+	var height: CGFloat? = nil
 	func body(content: Content) -> some View {
 		content
-			.foregroundStyle(
-				LinearGradient(colors: [startColor, endColor], startPoint: startPoint, endPoint: endPoint)
+			.frame(maxHeight: height) // Constrain content height if desired
+									  // Apply the color gradient behind the content
+			.background(
+				LinearGradient(gradient: Gradient(colors: [startColor, endColor]), startPoint: startPoint, endPoint: endPoint)
 			)
-			.mask(
-				LinearGradient(gradient: Gradient(colors: [Color.black, Color.clear]), startPoint: .top, endPoint: .bottom)
+		// Overlay the fade-to-clear effect
+			.mask( // Mask both content and background gradient with a fade-to-clear effect
+				VStack(spacing: 0) {
+					LinearGradient(gradient: Gradient(colors: [.black, .clear]), startPoint: .top, endPoint: .bottom)
+						.frame(height: height) // Apply fade effect within the specified height
+				}
 			)
 	}
 }
 
 extension View {
-	func fadeToClear(startColor: Color, endColor: Color, startPoint: UnitPoint = .topLeading, endPoint: UnitPoint = .bottomTrailing) -> some View {
-		self.modifier(FadeToClearModifier(startColor: startColor, endColor: endColor, startPoint: startPoint, endPoint: endPoint))
+	func fadeToClear(startColor: Color, endColor: Color, startPoint: UnitPoint = .topLeading, endPoint: UnitPoint = .bottomTrailing, height: CGFloat? = nil) -> some View {
+		self.modifier(FadeToClearModifier(startColor: startColor, endColor: endColor, startPoint: startPoint, endPoint: endPoint, height: height))
 	}
 }

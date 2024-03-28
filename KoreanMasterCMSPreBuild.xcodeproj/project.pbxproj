@@ -105,6 +105,12 @@
 		2EA72A0F2BB4723100DD2262 /* UserXpGainedGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA72A0E2BB4723000DD2262 /* UserXpGainedGraphView.swift */; };
 		2EA72A122BB4792A00DD2262 /* UserComponentsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA72A112BB4792A00DD2262 /* UserComponentsController.swift */; };
 		2EA72A132BB482DC00DD2262 /* UserComponentsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA72A112BB4792A00DD2262 /* UserComponentsController.swift */; };
+		2EA72A152BB5613E00DD2262 /* UsersAllLessonListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA72A142BB5613E00DD2262 /* UsersAllLessonListView.swift */; };
+		2EA72A162BB5639800DD2262 /* ExploreAllLocalizedLessonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7803672BAF7B3E0083F15A /* ExploreAllLocalizedLessonsView.swift */; };
+		2EA72A172BB5639C00DD2262 /* ExploreSectionLessonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E383EB62BB0D28E0090B5C0 /* ExploreSectionLessonView.swift */; };
+		2EA72A182BB563BE00DD2262 /* ExploreLessonCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E78036C2BB023260083F15A /* ExploreLessonCellView.swift */; };
+		2EA72A192BB563CC00DD2262 /* ExploreLessonStartButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7803712BB039D50083F15A /* ExploreLessonStartButtonView.swift */; };
+		2EA72A1D2BB56D9A00DD2262 /* UserAllLessonStatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA72A1C2BB56D9A00DD2262 /* UserAllLessonStatsView.swift */; };
 		2EA7BDF42B9B113500AAA532 /* ModifyLessonTagItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA7BDF32B9B113500AAA532 /* ModifyLessonTagItemView.swift */; };
 		2EA7BDFB2B9B14C800AAA532 /* ColorEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA7BDFA2B9B14C800AAA532 /* ColorEnum.swift */; };
 		2EA7BDFE2B9B17EE00AAA532 /* MaltesColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA7BDFD2B9B17EE00AAA532 /* MaltesColorPicker.swift */; };
@@ -321,6 +327,8 @@
 		2EA72A0C2BB43C3800DD2262 /* UserStatisticsItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStatisticsItemView.swift; sourceTree = "<group>"; };
 		2EA72A0E2BB4723000DD2262 /* UserXpGainedGraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserXpGainedGraphView.swift; sourceTree = "<group>"; };
 		2EA72A112BB4792A00DD2262 /* UserComponentsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserComponentsController.swift; sourceTree = "<group>"; };
+		2EA72A142BB5613E00DD2262 /* UsersAllLessonListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersAllLessonListView.swift; sourceTree = "<group>"; };
+		2EA72A1C2BB56D9A00DD2262 /* UserAllLessonStatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAllLessonStatsView.swift; sourceTree = "<group>"; };
 		2EA7BDF32B9B113500AAA532 /* ModifyLessonTagItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyLessonTagItemView.swift; sourceTree = "<group>"; };
 		2EA7BDFA2B9B14C800AAA532 /* ColorEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorEnum.swift; sourceTree = "<group>"; };
 		2EA7BDFD2B9B17EE00AAA532 /* MaltesColorPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaltesColorPicker.swift; sourceTree = "<group>"; };
@@ -1237,6 +1245,23 @@
 			path = User;
 			sourceTree = "<group>";
 		};
+		2EA72A1A2BB56D4000DD2262 /* UserAllLessons */ = {
+			isa = PBXGroup;
+			children = (
+				2EA72A1B2BB56D6300DD2262 /* HeaderView */,
+				2EA72A142BB5613E00DD2262 /* UsersAllLessonListView.swift */,
+			);
+			path = UserAllLessons;
+			sourceTree = "<group>";
+		};
+		2EA72A1B2BB56D6300DD2262 /* HeaderView */ = {
+			isa = PBXGroup;
+			children = (
+				2EA72A1C2BB56D9A00DD2262 /* UserAllLessonStatsView.swift */,
+			);
+			path = HeaderView;
+			sourceTree = "<group>";
+		};
 		2EA7BDF22B9B111800AAA532 /* LessonTagItem */ = {
 			isa = PBXGroup;
 			children = (
@@ -1421,6 +1446,7 @@
 		2EC21C8B2BB34B9600B1F04E /* Lesson */ = {
 			isa = PBXGroup;
 			children = (
+				2EA72A1A2BB56D4000DD2262 /* UserAllLessons */,
 			);
 			path = Lesson;
 			sourceTree = "<group>";
@@ -1428,8 +1454,8 @@
 		2EC21C8C2BB34BA800B1F04E /* User */ = {
 			isa = PBXGroup;
 			children = (
-				2EA72A0B2BB43C0C00DD2262 /* Statistics */,
 				2EC21C8D2BB34C7C00B1F04E /* UserMainProfileView.swift */,
+				2EA72A0B2BB43C0C00DD2262 /* Statistics */,
 				2E6C4DAA2BB40E2B00FE0C78 /* Settings */,
 			);
 			path = User;
@@ -1848,6 +1874,7 @@
 			files = (
 				2EC21C6E2BB3346E00B1F04E /* LocalizedWelcomeMessageMocData.swift in Sources */,
 				2EC21C532BB3337100B1F04E /* DocumentReferenceGenerator.swift in Sources */,
+				2EA72A182BB563BE00DD2262 /* ExploreLessonCellView.swift in Sources */,
 				2EC21C582BB333AC00B1F04E /* InSessionLessonNavBackButtonView.swift in Sources */,
 				2EC21C7B2BB334B100B1F04E /* TranslationController.swift in Sources */,
 				2E80FC332BB3654D00DD8582 /* UserManageAccountView.swift in Sources */,
@@ -1857,6 +1884,7 @@
 				2EC21C672BB3341200B1F04E /* InSessionLessonCultureRefrenceView.swift in Sources */,
 				2EC21C5F2BB333ED00B1F04E /* InSessionLessonVocabUsedView.swift in Sources */,
 				2EC21C592BB333AF00B1F04E /* InSessionLessonNavNextButtonView.swift in Sources */,
+				2EA72A1D2BB56D9A00DD2262 /* UserAllLessonStatsView.swift in Sources */,
 				2EC21C752BB3348D00B1F04E /* CourseLanguage.swift in Sources */,
 				2EC21C602BB333F000B1F04E /* InSessionLessonVocabUsedItemView.swift in Sources */,
 				2EC21C792BB334A000B1F04E /* DeepLConfig.swift in Sources */,
@@ -1878,6 +1906,7 @@
 				2EA72A0D2BB43C3800DD2262 /* UserStatisticsItemView.swift in Sources */,
 				2EC21C732BB3348400B1F04E /* WelcomeMessage.swift in Sources */,
 				2EA72A0F2BB4723100DD2262 /* UserXpGainedGraphView.swift in Sources */,
+				2EA72A172BB5639C00DD2262 /* ExploreSectionLessonView.swift in Sources */,
 				2EC21C5C2BB333D700B1F04E /* LessonTagSmallView.swift in Sources */,
 				2EA72A052BB4310100DD2262 /* UserProfileSubHeaderView.swift in Sources */,
 				2EC21C572BB333A800B1F04E /* InSessionSwitchSubLessonButtonView.swift in Sources */,
@@ -1887,6 +1916,7 @@
 				2E990C152BB35976003DBA2C /* MaltesColorPicker.swift in Sources */,
 				2EC21C742BB3348800B1F04E /* ColorEnum.swift in Sources */,
 				2EC21C652BB3340800B1F04E /* InSessionLessonMultipleChoiceItemView.swift in Sources */,
+				2EA72A152BB5613E00DD2262 /* UsersAllLessonListView.swift in Sources */,
 				2EC21C902BB3521800B1F04E /* UserProfileHeaderView.swift in Sources */,
 				2EC21C7A2BB334AE00B1F04E /* PasteboardController.swift in Sources */,
 				2EC21C842BB3357B00B1F04E /* MainTabView.swift in Sources */,
@@ -1908,8 +1938,10 @@
 				2EC21C852BB336D000B1F04E /* CoursesController.swift in Sources */,
 				2EC21C7D2BB334B900B1F04E /* DifficultyController.swift in Sources */,
 				2EC21C5D2BB333DF00B1F04E /* InSessionLessonGoalView.swift in Sources */,
+				2EA72A192BB563CC00DD2262 /* ExploreLessonStartButtonView.swift in Sources */,
 				2EC21C662BB3340D00B1F04E /* InSessionLessonSentenceBuildingItemView.swift in Sources */,
 				2E990C182BB3615F003DBA2C /* Haptics.swift in Sources */,
+				2EA72A162BB5639800DD2262 /* ExploreAllLocalizedLessonsView.swift in Sources */,
 				2ED4D0692BB32D0C009BE46C /* KoreanMasterAppPreBuildApp.swift in Sources */,
 				2EC21C7C2BB334B300B1F04E /* DictionaryController.swift in Sources */,
 				2EA72A132BB482DC00DD2262 /* UserComponentsController.swift in Sources */,

@@ -37,8 +37,23 @@ struct WithEnvironmentObjects: ViewModifier {
 		newLoginCon.currentFirestoreUser = newFirestoreUser
 
 		
-		
 		self.loginController = newLoginCon
+		
+		
+		let newCoursesCon = CoursesController()
+		
+		newCoursesCon.currentLessons = [
+			Lesson.detailExample,
+			Lesson.detailExample,
+			Lesson.detailExample,
+			Lesson.detailExample,
+			Lesson.detailExample,
+			Lesson.detailExample,
+			Lesson.detailExample,
+			Lesson.detailExample
+		]
+		
+		self.coursesController = newCoursesCon
 	}
 	
 	var loginController = LoginController()

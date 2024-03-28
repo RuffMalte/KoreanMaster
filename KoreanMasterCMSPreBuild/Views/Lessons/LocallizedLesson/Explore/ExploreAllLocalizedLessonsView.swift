@@ -21,12 +21,12 @@ struct ExploreAllLocalizedLessonsView: View {
 	@State var selectedLesson: Lesson?
 	@State private var isShowingLesson = false
 	
-	@State private var scrollToLessonId: String? // ID of the lesson to scroll to
+	@State private var scrollToLessonId: String?
 
     var body: some View {
 		HStack {
 			Spacer()
-			ScrollView {
+			ScrollView(showsIndicators: false) {
 				ScrollViewReader { proxy in
 					VStack(spacing: 20) {
 						ForEach(Array(lessons.enumerated()), id: \.element.id) { index, lesson in
@@ -73,27 +73,26 @@ struct ExploreAllLocalizedLessonsView: View {
 				}
 				.padding()
 			}
-			.overlay {
-				VStack {
+			.frame(width: 250)
+			Spacer()
+		}
+		.overlay {
+			VStack {
+				Spacer()
+				HStack {
 					Spacer()
-					HStack {
-						Spacer()
-						Button {
-							withAnimation {
-								scrollToLessonId = lessons.first?.lessonInfo.lessonName
-								//TODO: add logic to skip to next lesson
-							}
-						} label: {
-							Image(systemName: "arrow.up")
+					Button {
+						withAnimation {
+							scrollToLessonId = lessons.first?.lessonInfo.lessonName
+							//TODO: add logic to skip to next lesson
 						}
-						.buttonStyle(.borderedProminent)
-						.padding()
+					} label: {
+						Image(systemName: "arrow.up")
 					}
+					.buttonStyle(.borderedProminent)
+					.padding()
 				}
 			}
-			.frame(width: 250)
-			
-			Spacer()
 		}
 		.onChange(of: selectedLesson?.id, { oldValue, newValue in
 			if newValue != nil {
@@ -106,12 +105,10 @@ struct ExploreAllLocalizedLessonsView: View {
 				InSessionLessonMainView(lesson: selectedLesson, currentLanguage: currentLanguage) {
 					isShowingLesson = false
 				}
+				.presentationCompactAdaptation(.fullScreenCover)
 			}
 		}
-		.background {
-			Color.tertiaryBackground
-				.ignoresSafeArea()
-		}
+
 	}
 }
 

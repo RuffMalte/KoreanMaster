@@ -12,7 +12,9 @@ struct UserStatisticsItemView: View {
 	var icon: String
 	var iconColor: Color
 	var title: String
-	var subHeader: String
+	var subHeader: String?
+	
+	var showBackgroundRectangle: Bool = true
 	
     var body: some View {
 		HStack {
@@ -21,22 +23,28 @@ struct UserStatisticsItemView: View {
 					Text(title)
 						.font(.system(.headline, design: .monospaced, weight: .bold))
 						.foregroundStyle(.primary)
-					Text(subHeader)
-						.font(.system(.subheadline, design: .rounded, weight: .regular))
-						.foregroundStyle(.secondary)
+					if let subHeader = subHeader {
+						Text(subHeader)
+							.font(.system(.subheadline, design: .rounded, weight: .regular))
+							.foregroundStyle(.secondary)
+					}
 				}
 			} icon: {
 				Image(systemName: icon)
 					.foregroundStyle(iconColor.gradient)
 					.font(.system(.headline, design: .default, weight: .bold))
 			}
-			Spacer()
+			if showBackgroundRectangle {
+				Spacer()
+			}
 		}
-		.padding(12)
+		.padding(showBackgroundRectangle ? 12 : 0)
 		.background {
-			RoundedRectangle(cornerRadius: 16)
-				.foregroundStyle(.bar)
-				.shadow(radius: 3)
+			if showBackgroundRectangle {
+				RoundedRectangle(cornerRadius: 16)
+					.foregroundStyle(.bar)
+					.shadow(radius: 3)
+			}
 		}
     }
 }

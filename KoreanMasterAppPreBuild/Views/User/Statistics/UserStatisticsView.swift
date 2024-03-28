@@ -17,10 +17,16 @@ struct UserStatisticsView: View {
 				
 			UserStatisticsItemView(icon: "sparkles", iconColor: .yellow, title: loginCon.currentFirestoreUser?.totalXP.description ?? "0", subHeader: "Total XP")
 			
+			
+			UserStatisticsItemView(icon: "character.book.closed.fill", iconColor: .blue, title: loginCon.currentFirestoreUser?.totalXP.description ?? "0", subHeader: "Vocab masterd")
+			
+			UserStatisticsItemView(icon: "checkmark", iconColor: .green, title: loginCon.currentFirestoreUser?.totalXP.description ?? "0", subHeader: "Lessons done")
 		})
     }
 }
 
 #Preview {
     UserStatisticsView()
+		.padding()
+		.withEnvironmentObjects()
 }

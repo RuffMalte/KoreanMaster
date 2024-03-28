@@ -19,27 +19,7 @@ struct MainTabView: View {
 #if os(iOS)
 			
 		TabView(selection: $selectedTab) {
-			InSessionLessonMainView(lesson: lesson, currentLanguage: "English") {
-				if let user = loginCon.currentFirestoreUser {
-					print("Hello")
-					UserComponentsController().addStreakItem(
-						for: user.id,
-						preSelectedUser: user,
-						providedStreakDay: StreakDay(
-							date: Date(),
-							xpGained: lesson.lessonInfo.xpToGain)
-					)
-					{ newUser, error in
-						if let error = error {
-							print("Error adding streak item: \(error)")
-						}
-						if let newUser = newUser {
-							loginCon.currentFirestoreUser = newUser
-							print(newUser.daysStreak.description)
-						}
-					}
-				}
-			}
+			UsersAllLessonListView()
 			.tabItem {
 				Label("Lesson", systemImage: "book.fill")
 					.tag(0)

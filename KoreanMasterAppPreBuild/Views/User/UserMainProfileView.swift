@@ -22,6 +22,7 @@ struct UserMainProfileView: View {
 					VStack {
 						ZStack {
 							Rectangle()
+								.foregroundStyle(.clear)
 								.fadeToClear(startColor: .red.opacity(0.75), endColor: .blue.opacity(0.75), startPoint: .topLeading, endPoint: .bottomTrailing)
 								.ignoresSafeArea()
 

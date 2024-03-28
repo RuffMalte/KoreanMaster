@@ -24,12 +24,12 @@ struct ExploreLessonCellView: View {
 					CheckmarkCircle(isChecked: true, mainColor: lesson.lessonInfo.color.toColor)
 					Image(systemName: lesson.lessonInfo.icon)
 						.foregroundColor(lesson.lessonInfo.color.toColor)
-						.font(.system(.largeTitle, weight: .bold))
+						.font(.system(.title2, weight: .bold))
 				}
 				.frame(width: 80, height: 80)
 
 				Text(lesson.lessonInfo.lessonName)
-					.font(.system(.title3, design: .rounded, weight: .bold))
+					.font(.system(.headline, design: .rounded, weight: .bold))
 					.lineLimit(1)
 			}
 		}
@@ -44,11 +44,11 @@ struct ExploreLessonCellView: View {
 				VStack(alignment: .leading, spacing: 10) {
 					VStack(alignment: .leading) {
 						Text(lesson.lessonInfo.getSectionUnit())
-							.font(.system(.headline, design: .monospaced, weight: .bold))
+							.font(.system(.subheadline, design: .monospaced, weight: .bold))
 							.lineLimit(1)
 						
 						Text(lesson.lessonInfo.heading)
-							.font(.system(.subheadline, design: .rounded, weight: .regular))
+							.font(.system(.footnote, design: .rounded, weight: .regular))
 							.lineLimit(2)
 						
 					}
@@ -72,6 +72,7 @@ struct ExploreLessonCellView: View {
 					}
 				}
 			}
+			.presentationCompactAdaptation(.popover)
 			.frame(width: 150)
 			.padding()
 		}
@@ -96,8 +97,8 @@ struct CheckmarkCircle: View {
 								Spacer()
 								Image(systemName: "checkmark.seal.fill")
 									.foregroundColor(isChecked ? .yellow : .secondary)
-									.font(.system(.title2, design: .rounded, weight: .black))
-									.padding(2)
+									.font(.system(.title3, design: .rounded, weight: .black))
+									.padding(1)
 									.background {
 										Circle().foregroundColor(Color.tertiaryBackground)
 									}
@@ -105,7 +106,6 @@ struct CheckmarkCircle: View {
 						}
 					}
 			}
-			.shadow(radius: 10)
 	}
 }
 
