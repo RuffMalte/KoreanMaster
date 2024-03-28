@@ -10,6 +10,7 @@ import SwiftUI
 struct ExploreLessonCellView: View {
 	
 	var lesson: Lesson
+	var isCompleted: Bool = false
 	
 	var complition: (Lesson) -> Void
 	
@@ -21,7 +22,7 @@ struct ExploreLessonCellView: View {
 		} label: {
 			VStack {
 				ZStack {
-					CheckmarkCircle(isChecked: true, mainColor: lesson.lessonInfo.color.toColor)
+					CheckmarkCircle(isChecked: isCompleted, mainColor: lesson.lessonInfo.color.toColor)
 					Image(systemName: lesson.lessonInfo.icon)
 						.foregroundColor(lesson.lessonInfo.color.toColor)
 						.font(.system(.title2, weight: .bold))

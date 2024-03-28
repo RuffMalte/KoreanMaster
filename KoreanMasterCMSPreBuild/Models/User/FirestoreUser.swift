@@ -29,6 +29,9 @@ class FirestoreUser: Identifiable, Encodable, Decodable {
 	var totalLiked: Int
 	var totalComments: Int
 	
+	
+	var compeltedLessonsIDS: [String] = []
+	
 	init(
 		id: String,
 		email: String,

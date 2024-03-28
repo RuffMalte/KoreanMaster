@@ -20,7 +20,7 @@ struct UserStatisticsView: View {
 			
 			UserStatisticsItemView(icon: "character.book.closed.fill", iconColor: .blue, title: loginCon.currentFirestoreUser?.totalXP.description ?? "0", subHeader: "Vocab masterd")
 			
-			UserStatisticsItemView(icon: "checkmark", iconColor: .green, title: loginCon.currentFirestoreUser?.totalXP.description ?? "0", subHeader: "Lessons done")
+			UserStatisticsItemView(icon: "checkmark", iconColor: .green, title: loginCon.currentFirestoreUser?.compeltedLessonsIDS.count.description ?? "0", subHeader: "Lessons done")
 		})
     }
 }
