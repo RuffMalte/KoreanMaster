@@ -69,7 +69,7 @@ struct ExploreLessonCellView: View {
 							startLessonFunction: {
 								complition(lesson)
 							},
-							xpToGain: lesson.lessonInfo.xpToGain
+							xpToGain: Int(lesson.lessonInfo.xpToGain / 3)
 						)
 						.buttonStyle(.plain)
 					}

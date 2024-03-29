@@ -21,6 +21,9 @@ struct ExploreAllLocalizedLessonsView: View {
 	
 	var completeFunc: ((Lesson) -> Void)?
 	
+	@EnvironmentObject var courseCon: CoursesController
+	@State var isLoadingLesson: Bool = false
+	
 	@State var selectedLesson: Lesson?
 	@State private var isShowingLesson = false
 	
@@ -120,11 +123,31 @@ struct ExploreAllLocalizedLessonsView: View {
 		})
 		.sheet(isPresented: $isShowingLesson) {
 			if let selectedLesson = selectedLesson {
-				InSessionLessonMainView(lesson: selectedLesson, currentLanguage: currentLanguage) {
-					isShowingLesson = false
-					completeFunc?(selectedLesson)
+				VStack {
+					if isLoadingLesson {
+						ProgressView()
+					} else {
+						InSessionLessonMainView(lesson: selectedLesson, currentLanguage: currentLanguage) {
+							isShowingLesson = false
+							completeFunc?(selectedLesson)
+						}
+					}
 				}
 				.presentationCompactAdaptation(.fullScreenCover)
+				.onAppear {
+					isLoadingLesson = true
+					courseCon.getFullLesson(lessonID: selectedLesson.id, language: currentLanguage) { lesson, error in
+						if error == nil, let lesson = lesson {
+							
+							if completedLessonIDs.contains(lesson.id) {
+								lesson.lessonInfo.xpToGain = Int(lesson.lessonInfo.xpToGain / 3)
+							}
+							
+							self.selectedLesson = lesson
+							isLoadingLesson = false
+						}
+					}
+				}
 			}
 		}
 

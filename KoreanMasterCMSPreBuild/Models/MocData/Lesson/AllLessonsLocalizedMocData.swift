@@ -165,9 +165,9 @@ extension LessonGoal {
 
 extension LessonGoalExample {
 	static var mutlipleExample: [LessonGoalExample] = [
-		LessonGoalExample(title: "Title", koreanText: "ko text 1", translatedText: "org text 1"),
-		LessonGoalExample(title: "Title", koreanText: "ko text 2", translatedText: "org text 2"),
-		LessonGoalExample(title: "Title", koreanText: "ko text 3", translatedText: "org text 3")
+		LessonGoalExample(title: "Title", koreanText: "ko text 199", translatedText: "org text 1"),
+		LessonGoalExample(title: "Title", koreanText: "ko text 29", translatedText: "org text 2"),
+		LessonGoalExample(title: "Title", koreanText: "ko text 3999", translatedText: "org text 3")
 	]
 	static var empty: LessonGoalExample {
 		return LessonGoalExample(title: "", koreanText: "", translatedText: "")

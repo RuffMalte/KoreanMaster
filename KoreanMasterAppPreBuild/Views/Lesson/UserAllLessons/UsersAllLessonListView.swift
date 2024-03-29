@@ -6,12 +6,16 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct UsersAllLessonListView: View {
 	
 	
 	@State var currentLessons: [Lesson] = []
 	
+	@Query var localVocabs: [UserLocalVocab]
+	@Environment(\.modelContext) var modelContext
+
 	@EnvironmentObject var loginCon: LoginController
 	@EnvironmentObject var courseCon: CoursesController
 		
@@ -70,6 +74,20 @@ struct UsersAllLessonListView: View {
 									loginCon.currentFirestoreUser = user
 								} else {
 									print("Error adding completed lesson: User is nil")
+								}
+							}
+							
+							
+							print("Lesson: \(lesson.id)")
+							
+							print("Lesson: \(lesson.newLessonVocabUsed?.vocabIDs ?? ["JJJJJ"])")
+							
+							UserComponentsController().getLocaluservocabFromVocabIDs(for: lesson.newLessonVocabUsed?.vocabIDs ?? [], with: currentFirestoreUser.languageSelected) { userLocalVocab, error in
+								if error == nil {
+									for localVocab in userLocalVocab {
+										print(localVocab.id)
+										modelContext.insert(localVocab)
+									}
 								}
 							}
 						}
