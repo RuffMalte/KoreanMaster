@@ -114,6 +114,14 @@
 		2EA72A202BB6DF1300DD2262 /* UserLocalVocab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA72A1F2BB6DF1300DD2262 /* UserLocalVocab.swift */; };
 		2EA72A232BB6E90A00DD2262 /* AllLocalVocabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA72A222BB6E90A00DD2262 /* AllLocalVocabView.swift */; };
 		2EA72A242BB6E9A700DD2262 /* UserLocalVocab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA72A1F2BB6DF1300DD2262 /* UserLocalVocab.swift */; };
+		2EA72A282BB7294100DD2262 /* LearnVocabStartButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA72A272BB7294100DD2262 /* LearnVocabStartButtonView.swift */; };
+		2EA72A2B2BB72AA100DD2262 /* VocabModeSelectionSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA72A2A2BB72AA100DD2262 /* VocabModeSelectionSheetView.swift */; };
+		2EA72A2D2BB72BD600DD2262 /* VocabModeItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA72A2C2BB72BD500DD2262 /* VocabModeItemView.swift */; };
+		2EA72A312BB72FA100DD2262 /* InSessionVocabMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA72A302BB72FA100DD2262 /* InSessionVocabMainView.swift */; };
+		2EA72A352BB7309600DD2262 /* UserLocalVocabMocData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA72A342BB7309600DD2262 /* UserLocalVocabMocData.swift */; };
+		2EA72A372BB7310D00DD2262 /* VocabMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA72A362BB7310D00DD2262 /* VocabMode.swift */; };
+		2EA72A3B2BB7320F00DD2262 /* AnkiButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA72A3A2BB7320F00DD2262 /* AnkiButtonsView.swift */; };
+		2EA72A3D2BB7321800DD2262 /* AnkiButtonItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA72A3C2BB7321800DD2262 /* AnkiButtonItemView.swift */; };
 		2EA7BDF42B9B113500AAA532 /* ModifyLessonTagItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA7BDF32B9B113500AAA532 /* ModifyLessonTagItemView.swift */; };
 		2EA7BDFB2B9B14C800AAA532 /* ColorEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA7BDFA2B9B14C800AAA532 /* ColorEnum.swift */; };
 		2EA7BDFE2B9B17EE00AAA532 /* MaltesColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA7BDFD2B9B17EE00AAA532 /* MaltesColorPicker.swift */; };
@@ -334,6 +342,14 @@
 		2EA72A1C2BB56D9A00DD2262 /* UserAllLessonStatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAllLessonStatsView.swift; sourceTree = "<group>"; };
 		2EA72A1F2BB6DF1300DD2262 /* UserLocalVocab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLocalVocab.swift; sourceTree = "<group>"; };
 		2EA72A222BB6E90A00DD2262 /* AllLocalVocabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllLocalVocabView.swift; sourceTree = "<group>"; };
+		2EA72A272BB7294100DD2262 /* LearnVocabStartButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnVocabStartButtonView.swift; sourceTree = "<group>"; };
+		2EA72A2A2BB72AA100DD2262 /* VocabModeSelectionSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocabModeSelectionSheetView.swift; sourceTree = "<group>"; };
+		2EA72A2C2BB72BD500DD2262 /* VocabModeItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocabModeItemView.swift; sourceTree = "<group>"; };
+		2EA72A302BB72FA100DD2262 /* InSessionVocabMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InSessionVocabMainView.swift; sourceTree = "<group>"; };
+		2EA72A342BB7309600DD2262 /* UserLocalVocabMocData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLocalVocabMocData.swift; sourceTree = "<group>"; };
+		2EA72A362BB7310D00DD2262 /* VocabMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocabMode.swift; sourceTree = "<group>"; };
+		2EA72A3A2BB7320F00DD2262 /* AnkiButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnkiButtonsView.swift; sourceTree = "<group>"; };
+		2EA72A3C2BB7321800DD2262 /* AnkiButtonItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnkiButtonItemView.swift; sourceTree = "<group>"; };
 		2EA7BDF32B9B113500AAA532 /* ModifyLessonTagItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyLessonTagItemView.swift; sourceTree = "<group>"; };
 		2EA7BDFA2B9B14C800AAA532 /* ColorEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorEnum.swift; sourceTree = "<group>"; };
 		2EA7BDFD2B9B17EE00AAA532 /* MaltesColorPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaltesColorPicker.swift; sourceTree = "<group>"; };
@@ -1270,7 +1286,8 @@
 		2EA72A1E2BB6DEF900DD2262 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				2EA72A1F2BB6DF1300DD2262 /* UserLocalVocab.swift */,
+				2EA72A322BB7307400DD2262 /* MocData */,
+				2EA72A332BB7307C00DD2262 /* Vocab */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1278,9 +1295,80 @@
 		2EA72A212BB6E0A100DD2262 /* Vocab */ = {
 			isa = PBXGroup;
 			children = (
-				2EA72A222BB6E90A00DD2262 /* AllLocalVocabView.swift */,
+				2EA72A252BB7292A00DD2262 /* LearnVocab */,
 			);
 			path = Vocab;
+			sourceTree = "<group>";
+		};
+		2EA72A252BB7292A00DD2262 /* LearnVocab */ = {
+			isa = PBXGroup;
+			children = (
+				2EA72A222BB6E90A00DD2262 /* AllLocalVocabView.swift */,
+				2EA72A2F2BB72F8B00DD2262 /* InSession */,
+				2EA72A292BB72A9200DD2262 /* ModeSelection */,
+				2EA72A262BB7293200DD2262 /* Helper */,
+			);
+			path = LearnVocab;
+			sourceTree = "<group>";
+		};
+		2EA72A262BB7293200DD2262 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				2EA72A272BB7294100DD2262 /* LearnVocabStartButtonView.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		2EA72A292BB72A9200DD2262 /* ModeSelection */ = {
+			isa = PBXGroup;
+			children = (
+				2EA72A2A2BB72AA100DD2262 /* VocabModeSelectionSheetView.swift */,
+				2EA72A2C2BB72BD500DD2262 /* VocabModeItemView.swift */,
+				2EA72A362BB7310D00DD2262 /* VocabMode.swift */,
+			);
+			path = ModeSelection;
+			sourceTree = "<group>";
+		};
+		2EA72A2F2BB72F8B00DD2262 /* InSession */ = {
+			isa = PBXGroup;
+			children = (
+				2EA72A302BB72FA100DD2262 /* InSessionVocabMainView.swift */,
+				2EA72A382BB731F700DD2262 /* Anki */,
+			);
+			path = InSession;
+			sourceTree = "<group>";
+		};
+		2EA72A322BB7307400DD2262 /* MocData */ = {
+			isa = PBXGroup;
+			children = (
+				2EA72A342BB7309600DD2262 /* UserLocalVocabMocData.swift */,
+			);
+			path = MocData;
+			sourceTree = "<group>";
+		};
+		2EA72A332BB7307C00DD2262 /* Vocab */ = {
+			isa = PBXGroup;
+			children = (
+				2EA72A1F2BB6DF1300DD2262 /* UserLocalVocab.swift */,
+			);
+			path = Vocab;
+			sourceTree = "<group>";
+		};
+		2EA72A382BB731F700DD2262 /* Anki */ = {
+			isa = PBXGroup;
+			children = (
+				2EA72A392BB7320000DD2262 /* AnkiMainButtons */,
+			);
+			path = Anki;
+			sourceTree = "<group>";
+		};
+		2EA72A392BB7320000DD2262 /* AnkiMainButtons */ = {
+			isa = PBXGroup;
+			children = (
+				2EA72A3A2BB7320F00DD2262 /* AnkiButtonsView.swift */,
+				2EA72A3C2BB7321800DD2262 /* AnkiButtonItemView.swift */,
+			);
+			path = AnkiMainButtons;
 			sourceTree = "<group>";
 		};
 		2EA7BDF22B9B111800AAA532 /* LessonTagItem */ = {
@@ -1906,6 +1994,7 @@
 				2EC21C702BB3347600B1F04E /* UserMocData.swift in Sources */,
 				2EC21C512BB3334200B1F04E /* InSessionLessonMainView.swift in Sources */,
 				2EC21C672BB3341200B1F04E /* InSessionLessonCultureRefrenceView.swift in Sources */,
+				2EA72A2B2BB72AA100DD2262 /* VocabModeSelectionSheetView.swift in Sources */,
 				2EC21C5F2BB333ED00B1F04E /* InSessionLessonVocabUsedView.swift in Sources */,
 				2EC21C592BB333AF00B1F04E /* InSessionLessonNavNextButtonView.swift in Sources */,
 				2EA72A1D2BB56D9A00DD2262 /* UserAllLessonStatsView.swift in Sources */,
@@ -1914,6 +2003,7 @@
 				2EC21C792BB334A000B1F04E /* DeepLConfig.swift in Sources */,
 				2EC21C5A2BB333B200B1F04E /* InSessionLessonPageinatedItemsView.swift in Sources */,
 				2EC21C762BB3349200B1F04E /* LoginOptions.swift in Sources */,
+				2EA72A372BB7310D00DD2262 /* VocabMode.swift in Sources */,
 				2EC21C7F2BB334E200B1F04E /* LessonLikeSmallNavButtonView.swift in Sources */,
 				2E6C4DAC2BB40E4800FE0C78 /* UserSettingsMainView.swift in Sources */,
 				2EC21C6D2BB3346A00B1F04E /* VocabMocData.swift in Sources */,
@@ -1930,11 +2020,14 @@
 				2EC21C612BB333F600B1F04E /* InSessionLessonGrammarView.swift in Sources */,
 				2EA72A0D2BB43C3800DD2262 /* UserStatisticsItemView.swift in Sources */,
 				2EC21C732BB3348400B1F04E /* WelcomeMessage.swift in Sources */,
+				2EA72A352BB7309600DD2262 /* UserLocalVocabMocData.swift in Sources */,
 				2EA72A0F2BB4723100DD2262 /* UserXpGainedGraphView.swift in Sources */,
 				2EA72A172BB5639C00DD2262 /* ExploreSectionLessonView.swift in Sources */,
 				2EC21C5C2BB333D700B1F04E /* LessonTagSmallView.swift in Sources */,
 				2EA72A052BB4310100DD2262 /* UserProfileSubHeaderView.swift in Sources */,
+				2EA72A2D2BB72BD600DD2262 /* VocabModeItemView.swift in Sources */,
 				2EC21C572BB333A800B1F04E /* InSessionSwitchSubLessonButtonView.swift in Sources */,
+				2EA72A282BB7294100DD2262 /* LearnVocabStartButtonView.swift in Sources */,
 				2EC21C862BB341B000B1F04E /* LoginView.swift in Sources */,
 				2EC21C4F2BB3330C00B1F04E /* Lesson.swift in Sources */,
 				2EC21C802BB334E500B1F04E /* LessonCommentSmallNavButtonView.swift in Sources */,
@@ -1954,12 +2047,15 @@
 				2EC21C712BB3347A00B1F04E /* Dictionary.swift in Sources */,
 				2EA72A032BB4277200DD2262 /* UserProfileDefaultCircleView.swift in Sources */,
 				2EC21C7E2BB334BD00B1F04E /* VocabController.swift in Sources */,
+				2EA72A312BB72FA100DD2262 /* InSessionVocabMainView.swift in Sources */,
 				2EC21C772BB3349400B1F04E /* FirestoreUser.swift in Sources */,
 				2EC21C5E2BB333E500B1F04E /* InSessionLessonGoalExampleView.swift in Sources */,
 				2EC21C502BB3331900B1F04E /* AllLessonsLocalizedMocData.swift in Sources */,
 				2EC21C722BB3347F00B1F04E /* Vocab.swift in Sources */,
 				2EC21C6F2BB3347300B1F04E /* LanguageFromMocData.swift in Sources */,
 				2EC21C8E2BB34C7C00B1F04E /* UserMainProfileView.swift in Sources */,
+				2EA72A3D2BB7321800DD2262 /* AnkiButtonItemView.swift in Sources */,
+				2EA72A3B2BB7320F00DD2262 /* AnkiButtonsView.swift in Sources */,
 				2EC21C852BB336D000B1F04E /* CoursesController.swift in Sources */,
 				2EC21C7D2BB334B900B1F04E /* DifficultyController.swift in Sources */,
 				2EC21C5D2BB333DF00B1F04E /* InSessionLessonGoalView.swift in Sources */,
