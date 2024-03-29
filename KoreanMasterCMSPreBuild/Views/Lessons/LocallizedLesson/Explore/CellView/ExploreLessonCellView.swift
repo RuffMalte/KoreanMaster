@@ -24,7 +24,7 @@ struct ExploreLessonCellView: View {
 			VStack {
 				ZStack {
 					CheckmarkCircle(isChecked: isCompleted, mainColor: lesson.lessonInfo.color.toColor)
-					Image(systemName: lesson.lessonInfo.icon)
+					Image(systemName: lesson.lessonInfo.icon.isEmpty ? "book" : lesson.lessonInfo.icon)
 						.foregroundColor(lesson.lessonInfo.color.toColor)
 						.font(.system(.title2, weight: .bold))
 				}

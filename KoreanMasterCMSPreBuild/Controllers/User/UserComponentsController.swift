@@ -135,27 +135,19 @@ class UserComponentsController: Observable {
 	func getLocaluservocabFromVocabIDs(
 		for vocabIDs: [String],
 		with language: String,
+		currentLocalVocab: [UserLocalVocab],
 		completion: @escaping ([UserLocalVocab], Error?) -> Void
 	) {
 		let vocabCon: VocabController = VocabController()
 		
-		print("Getting vocab from IDs")
-		
-		for vocabID in vocabIDs {
-			print(vocabID)
-		}
-		
 		vocabCon.getVocab(with: vocabIDs, language: language) { fetchedVocab, error in
 			if error == nil {
 				var vocab: [Vocab] = []
-				vocab = fetchedVocab
+				vocab = fetchedVocab.filter { vocab in
+					!currentLocalVocab.contains(where: { $0.id == vocab.id })
+				}
 				
 				let newUserLocalVocab = vocab.map { UserLocalVocab(from: $0) }
-				
-				
-				for vocab in newUserLocalVocab {
-					print(vocab.koreanVocab)
-				}
 				
 				completion(newUserLocalVocab, nil)
 			}

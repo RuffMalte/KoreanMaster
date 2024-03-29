@@ -42,6 +42,17 @@ struct ExploreAllLocalizedLessonsView: View {
 		}
 	}
 
+	
+	private var indexedLessons: [(Int, Lesson)] {
+		return lessons.enumerated().map { ($0.offset, $0.element) }
+	}
+	
+	private var sortedIndexedLessons: [(Int, Lesson)] {
+		return indexedLessons.sorted {
+			$0.1.lessonInfo.section < $1.1.lessonInfo.section ||
+			($0.1.lessonInfo.section == $1.1.lessonInfo.section && $0.1.lessonInfo.unit < $1.1.lessonInfo.unit)
+		}
+	}
 
     var body: some View {
 		HStack {
@@ -49,14 +60,6 @@ struct ExploreAllLocalizedLessonsView: View {
 			ScrollView(showsIndicators: false) {
 				ScrollViewReader { proxy in
 					VStack(spacing: 20) {
-						let indexedLessons = lessons.enumerated().map { ($0.offset, $0.element) }
-						
-						let sortedIndexedLessons = indexedLessons.sorted {
-							$0.1.lessonInfo.section < $1.1.lessonInfo.section ||
-							($0.1.lessonInfo.section == $1.1.lessonInfo.section && $0.1.lessonInfo.unit < $1.1.lessonInfo.unit)
-						}
-						
-						
 						ForEach(Array(sortedIndexedLessons.enumerated()), id: \.1.1.id) { newIndex, tuple in
 							let (index, lesson) = tuple
 

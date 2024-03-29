@@ -82,7 +82,7 @@ extension LessonInfo {
 		return LessonInfo(
 			section: 0,
 			unit: 0,
-			lessonName: "New",
+			lessonName: "",
 			heading: "",
 			desc: "",
 			difficultyID: "",
