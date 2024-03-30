@@ -12,30 +12,48 @@ struct InSessionVocabMainView: View {
 	var localVocabs: [UserLocalVocab]
 	var selectedMode: VocabMode
 	
-    var body: some View {
+	
+	@Environment(\.dismiss ) var dismiss
+	
+	var body: some View {
 		VStack {
 			VStack {
-				Spacer()
-				HStack {
-				
-					Spacer()
-					Text("jwd")
+				switch selectedMode {
+				case .anki:
+					InSessionAnkiMainView(localVocabs: localVocabs, endFunction: {
+						dismiss()
+					})
+				case .flashcards:
+					EmptyView()
+				case .quiz:
+					EmptyView()
+				}
+			}
+			.overlay {
+				VStack {
+					HStack {
+						Spacer()
+						Button {
+							dismiss()
+						} label: {
+							Image(systemName: "xmark")
+								.font(.subheadline)
+								.padding(8)
+								.background {
+									RoundedRectangle(cornerRadius: 8)
+										.foregroundStyle(.bar)
+										.shadow(radius: 5)
+								}
+						}
+						.buttonStyle(.plain)
+					}
 					Spacer()
 				}
-				Spacer()
+				.padding()
 			}
-			.background {
-				RoundedRectangle(cornerRadius: 20)
-					.foregroundStyle(.secondary.opacity(0.2))
-					.shadow(radius: 5)
-			}
-			.padding(.bottom)
-			
-			AnkiButtonsView()
+			.padding()
 		}
-		.padding()
-		
-    }
+	}
 }
 
 #Preview {

@@ -8,81 +8,63 @@
 import SwiftUI
 
 struct AnkiButtonItemView: View {
-	
-	var ankiAction: AnkiButtonAction
+	var ankiAction: AnkiActionEnum
 	var nextTimeVocabOccurrence: Date
 	var action: (() -> Void)?
 	
-	enum AnkiButtonAction {
-		case again
-		case hard
-		case good
-		case easy
+	private func formattedTimeUntilNextOccurrence() -> String {
+		let now = Date()
+		let calendar = Calendar.current
 		
-		var toLocalized: LocalizedStringKey {
-			switch self {
-			case .again:
-				return "Again"
-			case .hard:
-				return "Hard"
-			case .good:
-				return "Good"
-			case .easy:
-				return "Easy"
-			}
-		}
+		// Ensure you're also considering minutes in your difference calculation
+		let difference = calendar.dateComponents([.minute, .hour, .day], from: now, to: nextTimeVocabOccurrence)
 		
-		var getColor: Color {
-			switch self {
-			case .again:
-				return .red
-			case .hard:
-				return .orange
-			case .good:
-				return .yellow
-			case .easy:
-				return .green
-			}
+		if let day = difference.day, day > 0 {
+			return "in \(day)d"
+		} else if let hour = difference.hour, hour > 0 {
+			return "in \(hour)h"
+		} else if let minute = difference.minute, minute > 0 {
+			return "in <1h" // If there are any minutes to the next occurrence, show as less than an hour
+		} else {
+			return "soon"
 		}
 	}
 	
-	
-    var body: some View {
+	var body: some View {
 		Button {
 			action?()
+			// playFeedbackHaptic(.medium) // Make sure to define this function or call the appropriate haptic feedback function
 		} label: {
 			HStack {
+				Spacer()
 				VStack(alignment: .leading, spacing: 2) {
 					Text(ankiAction.toLocalized)
 						.font(.system(.headline, design: .rounded, weight: .bold))
 						.foregroundStyle(.white)
 					
 					
-					Label {
-						Text(nextTimeVocabOccurrence, format: .dateTime.day())
-					} icon: {
-						Text("<")
-					}
-					.foregroundStyle(.white)
-					.font(.system(.caption, design: .monospaced, weight: .regular))
-				
+					Text(formattedTimeUntilNextOccurrence())
+						.lineLimit(1)	
+						.foregroundStyle(.white)
+						.font(.system(.caption, design: .monospaced, weight: .regular))
+					
 				}
+				Spacer()
 			}
 		}
-		.padding(10)
-		.frame(width: 80)
+		.padding(.vertical)
 		.buttonStyle(.plain)
 		.background {
 			RoundedRectangle(cornerRadius: 8)
-				.foregroundStyle(ankiAction.getColor)
+				.fill(ankiAction.getColor)
 				.shadow(radius: 5)
 		}
-		
-    }
+	}
 }
 
+
 #Preview {
-	HStack(spacing: 10) {
+	HStack(spacing: 5) {
 		AnkiButtonItemView(ankiAction: .again, nextTimeVocabOccurrence: Date())
 		AnkiButtonItemView(ankiAction: .hard, nextTimeVocabOccurrence: Date())
 		AnkiButtonItemView(ankiAction: .good, nextTimeVocabOccurrence: Date())
