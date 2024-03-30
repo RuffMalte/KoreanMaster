@@ -11,7 +11,8 @@ struct InSessionVocabMainView: View {
 	
 	var localVocabs: [UserLocalVocab]
 	var selectedMode: VocabMode
-	
+	var canLearn: Bool
+
 	
 	@Environment(\.dismiss ) var dismiss
 	
@@ -20,9 +21,16 @@ struct InSessionVocabMainView: View {
 			VStack {
 				switch selectedMode {
 				case .anki:
-					InSessionAnkiMainView(localVocabs: localVocabs, endFunction: {
-						dismiss()
-					})
+					if canLearn {
+						InSessionAnkiMainView(localVocabs: localVocabs, endFunction: {
+							dismiss()
+						})
+					} else {
+						Text("You can't learn right now. Please wait until you can learn again.")
+							.font(.title)
+							.foregroundColor(.red)
+							.padding()
+					}
 				case .flashcards:
 					EmptyView()
 				case .quiz:
@@ -57,5 +65,5 @@ struct InSessionVocabMainView: View {
 }
 
 #Preview {
-	InSessionVocabMainView(localVocabs: UserLocalVocab.multipleExampleVocabs, selectedMode: .anki)
+	InSessionVocabMainView(localVocabs: UserLocalVocab.multipleExampleVocabs, selectedMode: .anki, canLearn: true)
 }

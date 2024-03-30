@@ -10,7 +10,6 @@ import SwiftUI
 struct InSessionAnkiMainView: View {
 	
 	var localVocabs: [UserLocalVocab]
-
 	
 	var endFunction: () -> Void
 	
