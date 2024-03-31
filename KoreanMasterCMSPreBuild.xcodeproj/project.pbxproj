@@ -124,6 +124,7 @@
 		2EA72A3D2BB7321800DD2262 /* AnkiButtonItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA72A3C2BB7321800DD2262 /* AnkiButtonItemView.swift */; };
 		2EA72A402BB8714800DD2262 /* InSessionAnkiMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA72A3F2BB8714800DD2262 /* InSessionAnkiMainView.swift */; };
 		2EA72A422BB880D000DD2262 /* AnkiActionEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA72A412BB880D000DD2262 /* AnkiActionEnum.swift */; };
+		2EA72A462BB9965900DD2262 /* UserVocabCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA72A452BB9965900DD2262 /* UserVocabCellView.swift */; };
 		2EA7BDF42B9B113500AAA532 /* ModifyLessonTagItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA7BDF32B9B113500AAA532 /* ModifyLessonTagItemView.swift */; };
 		2EA7BDFB2B9B14C800AAA532 /* ColorEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA7BDFA2B9B14C800AAA532 /* ColorEnum.swift */; };
 		2EA7BDFE2B9B17EE00AAA532 /* MaltesColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA7BDFD2B9B17EE00AAA532 /* MaltesColorPicker.swift */; };
@@ -354,6 +355,7 @@
 		2EA72A3C2BB7321800DD2262 /* AnkiButtonItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnkiButtonItemView.swift; sourceTree = "<group>"; };
 		2EA72A3F2BB8714800DD2262 /* InSessionAnkiMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InSessionAnkiMainView.swift; sourceTree = "<group>"; };
 		2EA72A412BB880D000DD2262 /* AnkiActionEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnkiActionEnum.swift; sourceTree = "<group>"; };
+		2EA72A452BB9965900DD2262 /* UserVocabCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserVocabCellView.swift; sourceTree = "<group>"; };
 		2EA7BDF32B9B113500AAA532 /* ModifyLessonTagItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyLessonTagItemView.swift; sourceTree = "<group>"; };
 		2EA7BDFA2B9B14C800AAA532 /* ColorEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorEnum.swift; sourceTree = "<group>"; };
 		2EA7BDFD2B9B17EE00AAA532 /* MaltesColorPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaltesColorPicker.swift; sourceTree = "<group>"; };
@@ -1307,6 +1309,7 @@
 		2EA72A252BB7292A00DD2262 /* LearnVocab */ = {
 			isa = PBXGroup;
 			children = (
+				2EA72A442BB9963300DD2262 /* VocabCellView */,
 				2EA72A222BB6E90A00DD2262 /* AllLocalVocabView.swift */,
 				2EA72A2F2BB72F8B00DD2262 /* InSession */,
 				2EA72A292BB72A9200DD2262 /* ModeSelection */,
@@ -1383,6 +1386,14 @@
 				2EA72A3F2BB8714800DD2262 /* InSessionAnkiMainView.swift */,
 			);
 			path = AnkiInSession;
+			sourceTree = "<group>";
+		};
+		2EA72A442BB9963300DD2262 /* VocabCellView */ = {
+			isa = PBXGroup;
+			children = (
+				2EA72A452BB9965900DD2262 /* UserVocabCellView.swift */,
+			);
+			path = VocabCellView;
 			sourceTree = "<group>";
 		};
 		2EA7BDF22B9B111800AAA532 /* LessonTagItem */ = {
@@ -2020,6 +2031,7 @@
 				2EC21C762BB3349200B1F04E /* LoginOptions.swift in Sources */,
 				2EA72A372BB7310D00DD2262 /* VocabMode.swift in Sources */,
 				2EC21C7F2BB334E200B1F04E /* LessonLikeSmallNavButtonView.swift in Sources */,
+				2EA72A462BB9965900DD2262 /* UserVocabCellView.swift in Sources */,
 				2E6C4DAC2BB40E4800FE0C78 /* UserSettingsMainView.swift in Sources */,
 				2EC21C6D2BB3346A00B1F04E /* VocabMocData.swift in Sources */,
 				2E990C162BB35979003DBA2C /* MaltesSFIconPicker.swift in Sources */,

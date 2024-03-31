@@ -66,6 +66,33 @@ class UserLocalVocab: Identifiable {
 		return Calendar.current.date(byAdding: .hour, value: Int(interval), to: lastReviewed)
 	}
 	
+	func dateStringFromToday(for futureDate: Date?) -> String {
+		guard let futureDate = futureDate else { return "Date not available" }
+		let calendar = Calendar.current
+		let now = Date()
+		
+		if calendar.isDateInToday(futureDate) {
+			return "today"
+		} else if calendar.isDateInTomorrow(futureDate) {
+			return "tomorrow"
+		} else {
+			let startOfNow = calendar.startOfDay(for: now)
+			let startOfFutureDate = calendar.startOfDay(for: futureDate)
+			
+			let components = calendar.dateComponents([.day], from: startOfNow, to: startOfFutureDate)
+			if let days = components.day, days > 0 {
+				switch days {
+				case 1:
+					return "in 1 day" // This is technically covered by isDateInTomorrow, but here for completeness
+				case 2...30:
+					return "in \(days) days"
+				default:
+					return "in more than a month"
+				}
+			}
+		}
+		return "past"
+	}
 	
 	func predictedNextReviewDate(for action: AnkiActionEnum) -> Date {
 		let changes = calculateReviewChanges(action: action)

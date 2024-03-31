@@ -16,6 +16,16 @@ struct AllLocalVocabView: View {
 	@State private var isShowingVocabModeSelection = false
 	@State private var isTimeToLearnAgain: Bool = false
 
+	@State private var searchTextField: String = ""
+	private var filteredLocalVocabs: [UserLocalVocab] {
+		if searchTextField.isEmpty {
+			return localVocabs
+		} else {
+			return localVocabs.filter { $0.localizedVocab.lowercased().contains(searchTextField.lowercased()) ||
+				$0.koreanVocab.lowercased().contains(searchTextField.lowercased())
+			}
+		}
+	}
 	
 	@State private var timeUntilNextReview: String = "Loading..."
 	
@@ -24,49 +34,120 @@ struct AllLocalVocabView: View {
     var body: some View {
 		NavigationStack {
 			ZStack {
-				VStack {
-					
-					
-					
-					if isTimeToLearnAgain {
-						Text("Time to learn again!")
-							.font(.title)
-							.foregroundColor(.green)
-							.padding()
-					} else {
-						Text("Next review in: \(timeUntilNextReview)")
-							.font(.headline)
-							.padding()
-					}
-					
-					
-					
+				VStack(spacing: 10) {
 					ScrollView(.vertical) {
-						VStack {
-							ForEach(localVocabs) { localVocab in
-								VStack {
-									Text(localVocab.koreanVocab)
-									Text(localVocab.localizedVocab)
+						HStack {
+							Spacer()
+							
+							VStack(alignment: .leading, spacing: 25) {
+								if isTimeToLearnAgain {
+									Gauge(
+										value: 0.0,
+										in: 0...1,
+										label: {
+											Text("Cards for today")
+										},
+										currentValueLabel: {
+											Text("50%")
+										},
+										markedValueLabels: {
+											Text("0%").tag(0.0)
+											Text("50%").tag(0.5)
+											Text("100%").tag(1.0)
+										}
+									)
+									.gaugeStyle(.linearCapacity)
+									
+									
+									HStack {
+										Spacer()
+										
+										Label {
+											VStack(alignment: .leading) {
+												Text("20")
+													.font(.headline)
+												Text("Not studied")
+													.font(.subheadline)
+											}
+										} icon: {
+											Image(systemName: "rectangle.stack")
+										}
+										
+										Spacer()
+										
+										Label {
+											VStack(alignment: .leading) {
+												Text("114")
+													.font(.headline)
+												Text("To review")
+													.font(.subheadline)
+											}
+										} icon: {
+											Image(systemName: "graduationcap.fill")
+										}
+										
+										Spacer()
+									}
+									.padding()
+									
+									.background {
+										RoundedRectangle(cornerRadius: 16)
+											.foregroundStyle(.tint.opacity(0.2))
+										
+									}
+								} else {
+									HStack {
+										Spacer()
+										Label {
+											VStack(alignment: .leading) {
+												Text("Next review in")
+													.font(.system(.subheadline, design: .default, weight: .regular))
+												Text("\(timeUntilNextReview)")
+													.font(.system(.headline, design: .monospaced, weight: .bold))
+											}
+										} icon: {
+											Image(systemName: "timer")
+												.font(.system(.title3, design: .default, weight: .bold))
+										}
+										
+										Spacer()
+									}
+									.padding(.vertical)
 								}
 							}
-							.onDelete { indexSet in
-								for index in indexSet {
-									modelContext.delete(localVocabs[index])
-								}
+							.padding()
+							.background {
+								RoundedRectangle(cornerRadius: 16)
+									.foregroundStyle(.bar)
+									.shadow(radius: 5)
+							}
+							
+							Spacer()
+						}
+						.font(.system(.headline, design: .rounded, weight: .bold))
+						.padding(.top)
+						
+						
+						VStack(alignment: .leading) {
+							HStack {
+								Text("Cards in Deck: \(localVocabs.count)")
+									.font(.system(.callout, design: .default, weight: .bold))
+								Spacer()
+							}
+							
+							ForEach(filteredLocalVocabs) { localVocab in
+								UserVocabCellView(vocab: localVocab)
 							}
 						}
 					}
 				}
+				.padding()
 				
 				VStack {
 					Spacer()
-					
 					HStack {
 						LearnVocabStartButtonView(toggleLearnVocabSheet: $isShowingVocabModeSelection)
-						
-						
-						
-						
+							.disabled(!isTimeToLearnAgain)
 						
 						Button {
 							
@@ -82,12 +163,11 @@ struct AllLocalVocabView: View {
 								}
 						}
 					}
-					
-					
 				}
 				.padding()
 				
 			}
+			.searchable(text: $searchTextField)
 			.navigationTitle("Local Vocab")
 			.sheet(isPresented: $isShowingVocabModeSelection) {
 				
@@ -99,7 +179,7 @@ struct AllLocalVocabView: View {
 				VStack {
 					Rectangle()
 						.foregroundStyle(.clear)
-						.fadeToClear(startColor: .purple, endColor: .yellow, height: 180)
+						.fadeToClear(startColor: .purple, endColor: .yellow, height: 250)
 						.ignoresSafeArea()
 					
 					Spacer()

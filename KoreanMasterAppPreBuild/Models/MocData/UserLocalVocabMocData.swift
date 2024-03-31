@@ -69,4 +69,16 @@ extension UserLocalVocab {
 		]
 	}
 	
+	static var singleExampleVocab: UserLocalVocab {
+		UserLocalVocab(
+			koreanVocab: "사랑",
+			koreanSentence: "나는 너를 사랑해",
+			localizedVocab: "love",
+			selectedLanguage: "en",
+			partOfSpeech: "noun",
+			localizedSentence: "I love you",
+			wikiUrl: "https://en.wikipedia.org/wiki/Love"
+		)
+	}
+	
 }
