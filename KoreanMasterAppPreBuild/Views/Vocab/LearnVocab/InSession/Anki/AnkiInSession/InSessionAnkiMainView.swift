@@ -24,15 +24,21 @@ struct InSessionAnkiMainView: View {
 				Spacer()
 				HStack {
 					Spacer()
+					
+					VStack {
+						Text(localVocabs[currentVocabIndex].localizedVocab)
+							
+						Text(localVocabs[currentVocabIndex].reviewCount.description)
+						Text(localVocabs[currentVocabIndex].interval.description)
 						
-					
-					Text(localVocabs[currentVocabIndex].localizedVocab)
-						.font(.system(.title, design: .rounded, weight: .bold))
-						.foregroundStyle(.primary)
-						.padding()
-					
-					
-					
+						Text(localVocabs[currentVocabIndex].ease.description)
+						
+						Text(localVocabs[currentVocabIndex].lastReviewed ?? Date(), format: .dateTime.day().month().second())
+						
+					}
+					.font(.system(.title, design: .rounded, weight: .bold))
+					.foregroundStyle(.primary)
+					.padding()
 					
 					Spacer()
 					

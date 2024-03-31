@@ -75,53 +75,54 @@ class UserLocalVocab: Identifiable {
 	}
 	
 	func calculateReviewChanges(action: AnkiActionEnum) -> (newInterval: Double, newEase: Double) {
-		let baseInterval: Double = 1 // Base interval of 1 hour
-		let maxInterval: Double = 14 * 24 // Max interval of 14 days, converted to hours
-		let increaseFactorBase: Double = 1.2
-		var increaseFactor: Double
-		
-		// Adjust the increase factor based on review count for more nuanced growth
-		if reviewCount > 1 {
-			increaseFactor = min(increaseFactorBase + (0.08 * Double(reviewCount - 1)), 2.0) // Cap increase factor to double for long-term reviews
-		} else {
-			increaseFactor = increaseFactorBase
-		}
-		
-		var newInterval: Double
-		var newEase = ease
-		
-		// Define max intervals for actions in hours
-		let maxIntervals: [AnkiActionEnum: Double] = [
-			.again: 24, // 1 day in hours
-			.hard: 3 * 24, // 3 days in hours
-			.good: 7 * 24, // 7 days in hours
-			.easy: 14 * 24 // 14 days in hours
+		// Base ease factor adjustment values
+		let easeFactorAdjustment: [AnkiActionEnum: Double] = [
+			.again: -0.20, // Decrease ease factor by 20% for 'again'
+			.hard: -0.15,  // Decrease ease factor by 15% for 'hard'
+			.good: 0,      // Keep the ease factor the same for 'good'
+			.easy: 0.15    // Increase ease factor by 15% for 'easy'
 		]
 		
-		switch action {
-		case .again:
-			newEase = max(1.3, ease - 0.5)
-			// Reset to base interval, but do not exceed max for "again"
+		let minimumEase: Double = 1.3
+		var newEase = max(minimumEase, ease + (easeFactorAdjustment[action] ?? 0))
+		
+		// Base interval multipliers
+		let intervalMultiplier: [AnkiActionEnum: Double] = [
+			.again: 1 / newEase, // Use a fraction of the ease factor for 'again' to reduce the interval
+			.hard: 1.2,         // Slightly increase the interval
+			.good: newEase,     // Use the ease factor as the multiplier for 'good'
+			.easy: newEase * 1.5  // Use 150% of the ease factor for 'easy'
+		]
+		
+		// Dynamic minimum intervals based on action
+		let dynamicMinimumIntervals: [AnkiActionEnum: Double] = [
+			.again: 12,
+			.hard: 16,
+			.good: 24,
+			.easy: 24 * 3
+		]
+		
+		let baseInterval: Double = 12
+		var newInterval: Double
+		
+		if reviewCount <= 1 || action == .again {
+			// For the first review or if the review is 'again', reset to a base interval
 			newInterval = baseInterval
-		case .hard:
-			newEase = max(1.3, ease - 0.15)
-			// Calculate potential interval but cap at max for "hard"
-			newInterval = min(interval * (increaseFactor - 0.1), maxIntervals[.hard]!)
-		case .good:
-			newEase += 0.1
-			// Calculate potential interval but cap at max for "good"
-			newInterval = min(interval * increaseFactor, maxIntervals[.good]!)
-		case .easy:
-			newEase += 0.2
-			// Calculate potential interval but ensure it does not exceed max for "easy"
-			newInterval = min(interval * (increaseFactor + 0.2), maxIntervals[.easy]!)
+		} else {
+			// Calculate new interval based on previous interval, with a cap at a maximum interval
+			let multiplier = intervalMultiplier[action] ?? 1
+			newInterval = interval * multiplier
+			// Apply the dynamic minimum interval based on the action
+			let actionMinimumInterval = dynamicMinimumIntervals[action] ?? baseInterval
+			newInterval = max(newInterval, actionMinimumInterval)
 		}
 		
-		// Enforce the minimum interval of 1 hour
-		newInterval = max(baseInterval, newInterval)
+		// Ensure new ease does not fall below the minimum ease
+		newEase = max(newEase, minimumEase)
 		
 		return (newInterval, newEase)
 	}
+
 
 	
 
