@@ -25,7 +25,7 @@ struct MainTabView: View {
 					.tag(0)
 			}
 			
-			Text("Vocab")
+			AllLocalVocabView()
 				.tabItem {
 					Label("Vocab", systemImage: "text.book.closed.fill")
 						.tag(1)

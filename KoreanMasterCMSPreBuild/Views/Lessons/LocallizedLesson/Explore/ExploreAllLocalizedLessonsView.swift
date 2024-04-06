@@ -21,6 +21,9 @@ struct ExploreAllLocalizedLessonsView: View {
 	
 	var completeFunc: ((Lesson) -> Void)?
 	
+	@EnvironmentObject var courseCon: CoursesController
+	@State var isLoadingLesson: Bool = false
+	
 	@State var selectedLesson: Lesson?
 	@State private var isShowingLesson = false
 	
@@ -39,6 +42,17 @@ struct ExploreAllLocalizedLessonsView: View {
 		}
 	}
 
+	
+	private var indexedLessons: [(Int, Lesson)] {
+		return lessons.enumerated().map { ($0.offset, $0.element) }
+	}
+	
+	private var sortedIndexedLessons: [(Int, Lesson)] {
+		return indexedLessons.sorted {
+			$0.1.lessonInfo.section < $1.1.lessonInfo.section ||
+			($0.1.lessonInfo.section == $1.1.lessonInfo.section && $0.1.lessonInfo.unit < $1.1.lessonInfo.unit)
+		}
+	}
 
     var body: some View {
 		HStack {
@@ -46,14 +60,6 @@ struct ExploreAllLocalizedLessonsView: View {
 			ScrollView(showsIndicators: false) {
 				ScrollViewReader { proxy in
 					VStack(spacing: 20) {
-						let indexedLessons = lessons.enumerated().map { ($0.offset, $0.element) }
-						
-						let sortedIndexedLessons = indexedLessons.sorted {
-							$0.1.lessonInfo.section < $1.1.lessonInfo.section ||
-							($0.1.lessonInfo.section == $1.1.lessonInfo.section && $0.1.lessonInfo.unit < $1.1.lessonInfo.unit)
-						}
-						
-						
 						ForEach(Array(sortedIndexedLessons.enumerated()), id: \.1.1.id) { newIndex, tuple in
 							let (index, lesson) = tuple
 
@@ -120,11 +126,31 @@ struct ExploreAllLocalizedLessonsView: View {
 		})
 		.sheet(isPresented: $isShowingLesson) {
 			if let selectedLesson = selectedLesson {
-				InSessionLessonMainView(lesson: selectedLesson, currentLanguage: currentLanguage) {
-					isShowingLesson = false
-					completeFunc?(selectedLesson)
+				VStack {
+					if isLoadingLesson {
+						ProgressView()
+					} else {
+						InSessionLessonMainView(lesson: selectedLesson, currentLanguage: currentLanguage) {
+							isShowingLesson = false
+							completeFunc?(selectedLesson)
+						}
+					}
 				}
 				.presentationCompactAdaptation(.fullScreenCover)
+				.onAppear {
+					isLoadingLesson = true
+					courseCon.getFullLesson(lessonID: selectedLesson.id, language: currentLanguage) { lesson, error in
+						if error == nil, let lesson = lesson {
+							
+							if completedLessonIDs.contains(lesson.id) {
+								lesson.lessonInfo.xpToGain = Int(lesson.lessonInfo.xpToGain / 3)
+							}
+							
+							self.selectedLesson = lesson
+							isLoadingLesson = false
+						}
+					}
+				}
 			}
 		}
 

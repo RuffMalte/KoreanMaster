@@ -31,9 +31,9 @@ struct ExploreLessonStartButtonView: View {
 				.background {
 					RoundedRectangle(cornerRadius: 8)
 						.foregroundStyle(.bar)
+						.shadow(radius: 5)
 				}
 			}
-			.shadow(radius: 5)
 		}
 		.disabled(isButtonDisabled)
     }
