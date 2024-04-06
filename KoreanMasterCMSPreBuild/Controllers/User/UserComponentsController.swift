@@ -32,6 +32,11 @@ class UserComponentsController: Observable {
 					user.streaks[index].xpGained += xpToGain
 				}
 			} else {
+				if let lastStreakDate = user.streaks.last?.date, Calendar.current.isDate(lastStreakDate, inSameDayAs: Calendar.current.date(byAdding: .day, value: -1, to: today)!) == false {
+					user.daysStreak = 1
+				} else {
+					user.daysStreak += 1
+				}
 				let newStreakDay = StreakDay(date: targetDate, xpGained: xpToGain)
 				user.streaks.append(newStreakDay)
 				isNewStreakAdded = true
@@ -40,7 +45,6 @@ class UserComponentsController: Observable {
 			user.totalXP += xpToGain
 			
 			if isNewStreakAdded {
-				user.daysStreak += 1
 				if user.daysStreak > user.maxStreakDays {
 					user.maxStreakDays = user.daysStreak
 				}
