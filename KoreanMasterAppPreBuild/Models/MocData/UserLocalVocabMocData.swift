@@ -81,4 +81,13 @@ extension UserLocalVocab {
 		)
 	}
 	
+	static var newExampleVocab: UserLocalVocab {
+		UserLocalVocab(
+			koreanVocab: "",
+			koreanSentence: "",
+			localizedVocab: "",
+			selectedLanguage: ""
+		)
+	}
+	
 }

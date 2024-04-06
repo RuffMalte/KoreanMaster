@@ -6,14 +6,17 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct UserVocabCellView: View {
 	
 	var vocab: UserLocalVocab
 	
-	
+	@Environment(\.modelContext) var modelContext
+
 	@State var showDetail: Bool = false
 	
+	@State private var isShowingEditSheet = false
 	var body: some View {
 		HStack {
 			VStack(alignment: .leading, spacing: 10) {
@@ -88,7 +91,7 @@ struct UserVocabCellView: View {
 			}
 			Divider()
 			Button {
-				print("Edit")
+				isShowingEditSheet.toggle()
 			} label: {
 				Label("Edit", systemImage: "pencil")
 			}
@@ -98,13 +101,16 @@ struct UserVocabCellView: View {
 				Label("Reset", systemImage: "arrow.counterclockwise")
 			}
 			Button(role: .destructive) {
-				print("Delete")
+				modelContext.delete(vocab)
 			} label: {
 				Label("Delete", systemImage: "trash")
 			}
 			
 			
 		}
+		.sheet(isPresented: $isShowingEditSheet, content: {
+			ModifyVocabSheetView(vocab: vocab)
+		})
 		.onTapGesture {
 			withAnimation(.bouncy) {
 				showDetail.toggle()

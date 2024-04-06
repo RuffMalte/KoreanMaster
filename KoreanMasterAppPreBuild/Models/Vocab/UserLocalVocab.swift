@@ -39,7 +39,12 @@ class UserLocalVocab: Identifiable {
 		selectedLanguage: String,
 		partOfSpeech: String? = nil,
 		localizedSentence: String? = nil,
-		wikiUrl: String? = nil
+		wikiUrl: String? = nil,
+		reviewCount: Int = 0,
+		interval: Double = 0,
+		ease: Double = 0,
+		lastReviewed: Date? = Date(),
+		isMastered: Bool = false
 	) {
 		self.id = id
 		self.koreanVocab = koreanVocab
@@ -49,6 +54,12 @@ class UserLocalVocab: Identifiable {
 		self.partOfSpeech = partOfSpeech
 		self.localizedSentence = localizedSentence
 		self.wikiUrl = wikiUrl
+		self.reviewCount = reviewCount
+		self.interval = interval
+		self.ease = ease
+		self.lastReviewed = lastReviewed
+		self.isMastered = isMastered
+
 	}
 	
 	func review(action: AnkiActionEnum) {
@@ -170,9 +181,20 @@ class UserLocalVocab: Identifiable {
 	}
 
 
-
-	
-
+	func update(from vocab: UserLocalVocab) {
+		self.koreanVocab = vocab.koreanVocab
+		self.koreanSentence = vocab.koreanSentence
+		self.localizedVocab = vocab.localizedVocab
+		self.selectedLanguage = vocab.selectedLanguage
+		self.partOfSpeech = vocab.partOfSpeech
+		self.localizedSentence = vocab.localizedSentence
+		self.wikiUrl = vocab.wikiUrl
+		self.reviewCount = vocab.reviewCount
+		self.interval = vocab.interval
+		self.ease = vocab.ease
+		self.lastReviewed = vocab.lastReviewed
+		self.isMastered = vocab.isMastered
+	}
 
 }
 

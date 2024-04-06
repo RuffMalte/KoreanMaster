@@ -31,6 +31,9 @@ struct AllLocalVocabView: View {
 	
 	let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
 	
+	@State private var isShowingAddNewVocab = false
+	@State private var newVocab: UserLocalVocab = UserLocalVocab.newExampleVocab
+	
     var body: some View {
 		NavigationStack {
 			ZStack {
@@ -148,7 +151,7 @@ struct AllLocalVocabView: View {
 						
 						
 						Button {
-							
+							isShowingAddNewVocab.toggle()
 						} label: {
 							Image(systemName: "plus")
 								.font(.system(.headline, design: .rounded, weight: .bold))
@@ -166,7 +169,8 @@ struct AllLocalVocabView: View {
 				
 			}
 //			.searchable(text: $searchTextField)
-			.navigationTitle("Local Vocab")
+			.navigationTitle("Vocab")
+			.navigationBarTitleDisplayMode(.inline)
 			.sheet(isPresented: $isShowingVocabModeSelection) {
 				
 				//TODO: Implement VocabModeSelection
@@ -176,6 +180,12 @@ struct AllLocalVocabView: View {
 					canLearn: isTimeToLearnAgain
 				)
 				.presentationCompactAdaptation(.fullScreenCover)
+			}
+			.sheet(isPresented: $isShowingAddNewVocab) {
+				ModifyVocabSheetView(vocab: newVocab) { vocab in
+					modelContext.insert(vocab)
+					newVocab = UserLocalVocab.newExampleVocab
+				}
 			}
 			.background {
 				VStack {
