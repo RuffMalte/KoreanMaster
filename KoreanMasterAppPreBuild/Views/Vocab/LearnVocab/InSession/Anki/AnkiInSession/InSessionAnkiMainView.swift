@@ -13,7 +13,7 @@ struct InSessionAnkiMainView: View {
 	
 	var endFunction: () -> Void
 	
-	@State var currentVocabIndex: Int = 0
+	@State private var currentVocab: UserLocalVocab?
 	@State private var isShowingAnkiButtons: Bool = false
 	
 	
@@ -26,15 +26,16 @@ struct InSessionAnkiMainView: View {
 					Spacer()
 					
 					VStack {
-						Text(localVocabs[currentVocabIndex].localizedVocab)
+						if let currentVocab = currentVocab {
+							Text(currentVocab.localizedVocab)
 							
-						Text(localVocabs[currentVocabIndex].reviewCount.description)
-						Text(localVocabs[currentVocabIndex].interval.description)
-						
-						Text(localVocabs[currentVocabIndex].ease.description)
-						
-						Text(localVocabs[currentVocabIndex].lastReviewed ?? Date(), format: .dateTime.day().month().second())
-						
+							Text(currentVocab.reviewCount.description)
+							Text(currentVocab.interval.description)
+							
+							Text(currentVocab.ease.description)
+							
+							Text(currentVocab.lastReviewed ?? Date(), format: .dateTime.day().month().second())
+						}
 					}
 					.font(.system(.title, design: .rounded, weight: .bold))
 					.foregroundStyle(.primary)
@@ -58,17 +59,19 @@ struct InSessionAnkiMainView: View {
 					isShowingAnkiButtons = true
 				}
 			}
+			.onAppear {
+				findAndSetNextVocab()
+			}
 			
 			
 			
 			
-				
 			HStack(spacing: 10) {
-				if isShowingAnkiButtons {
+				if let currentVocab = currentVocab, isShowingAnkiButtons {
 					ForEach(AnkiActionEnum.allCases, id: \.self) { action in
 						AnkiButtonItemView(
 							ankiAction: action,
-							nextTimeVocabOccurrence: localVocabs[currentVocabIndex].predictedNextReviewDate(for: action)
+							nextTimeVocabOccurrence: currentVocab.predictedNextReviewDate(for: action)
 						) {
 							nextVocab(ankiAction: action)
 						}
@@ -80,21 +83,33 @@ struct InSessionAnkiMainView: View {
 				}
 			}
 			.frame(height: 50)
-			
 		}
-    }
+			
+	}
+    
+	
 	
 	func nextVocab(ankiAction: AnkiActionEnum) {
 		withAnimation {
-			localVocabs[currentVocabIndex].review(action: ankiAction)
-			if currentVocabIndex == localVocabs.count - 1 {
+			if let currentVocab = currentVocab {
+				
+				currentVocab.review(action: ankiAction)
+				findAndSetNextVocab()
+				
+				isShowingAnkiButtons = false
+			} else {
 				endFunction()
-				return
 			}
-			currentVocabIndex += 1
-			isShowingAnkiButtons = false
 		}
 	}
+	
+	func findAndSetNextVocab() {
+		currentVocab = localVocabs.first(where: { $0.nextReviewDate() ?? Date.distantFuture < Date() })
+		if currentVocab == nil {
+			endFunction()
+		}
+	}
+
 	
 }
 

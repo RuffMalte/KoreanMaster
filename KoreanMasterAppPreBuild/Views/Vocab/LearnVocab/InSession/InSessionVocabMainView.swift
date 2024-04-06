@@ -21,7 +21,7 @@ struct InSessionVocabMainView: View {
 			VStack {
 				switch selectedMode {
 				case .anki:
-					if !canLearn {
+					if canLearn {
 						InSessionAnkiMainView(localVocabs: localVocabs, endFunction: {
 							dismiss()
 						})

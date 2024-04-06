@@ -42,20 +42,10 @@ struct AllLocalVocabView: View {
 							VStack(alignment: .leading, spacing: 25) {
 								if isTimeToLearnAgain {
 									Gauge(
-										value: 0.0,
-										in: 0...1,
+										value: Double(localVocabs.filter { $0.reviewCount > 1 && $0.nextReviewDate() ?? Date() < Date() }.count) / Double(localVocabs.count),
 										label: {
-											Text("Cards for today")
-										},
-										currentValueLabel: {
-											Text("50%")
-										},
-										markedValueLabels: {
-											Text("0%").tag(0.0)
-											Text("50%").tag(0.5)
-											Text("100%").tag(1.0)
-										}
-									)
+											Text("Learned")
+										})
 									.gaugeStyle(.linearCapacity)
 									
 									
@@ -64,7 +54,9 @@ struct AllLocalVocabView: View {
 										
 										Label {
 											VStack(alignment: .leading) {
-												Text("20")
+												Text(localVocabs.filter { 
+													$0.reviewCount < 1
+												}.count.description)
 													.font(.headline)
 												Text("Not studied")
 													.font(.subheadline)
@@ -77,7 +69,9 @@ struct AllLocalVocabView: View {
 										
 										Label {
 											VStack(alignment: .leading) {
-												Text("114")
+												Text(localVocabs.filter {
+													$0.reviewCount > 1 && $0.nextReviewDate() ?? Date() < Date()
+												}.count.description)
 													.font(.headline)
 												Text("To review")
 													.font(.subheadline)
@@ -139,6 +133,7 @@ struct AllLocalVocabView: View {
 								UserVocabCellView(vocab: localVocab)
 							}
 						}
+						.padding(.top)
 					}
 				}
 				.padding()
@@ -147,7 +142,10 @@ struct AllLocalVocabView: View {
 					Spacer()
 					HStack {
 						LearnVocabStartButtonView(toggleLearnVocabSheet: $isShowingVocabModeSelection)
-							.disabled(!isTimeToLearnAgain)
+							.disabled(!isTimeToLearnAgain || (localVocabs.filter { $0.nextReviewDate() ?? Date.distantFuture < Date() }.isEmpty))
+						
+						
+						
 						
 						Button {
 							
@@ -167,13 +165,17 @@ struct AllLocalVocabView: View {
 				.padding()
 				
 			}
-			.searchable(text: $searchTextField)
+//			.searchable(text: $searchTextField)
 			.navigationTitle("Local Vocab")
 			.sheet(isPresented: $isShowingVocabModeSelection) {
 				
 				//TODO: Implement VocabModeSelection
-				InSessionVocabMainView(localVocabs: localVocabs, selectedMode: .anki, canLearn: isTimeToLearnAgain)
-					.presentationCompactAdaptation(.fullScreenCover)
+				InSessionVocabMainView(
+					localVocabs: findCloseReviewDateVocabs(),
+					selectedMode: .anki,
+					canLearn: isTimeToLearnAgain
+				)
+				.presentationCompactAdaptation(.fullScreenCover)
 			}
 			.background {
 				VStack {
@@ -194,6 +196,11 @@ struct AllLocalVocabView: View {
 		}
 		
     }
+	func findCloseReviewDateVocabs() -> [UserLocalVocab] {
+		let now = Date()
+		return localVocabs.filter { $0.nextReviewDate() ?? Date.distantFuture < now }
+	}
+	
 	func updateTimer() {
 		guard let nextReviewDate = localVocabs.min(by: { $0.nextReviewDate() ?? Date.distantFuture < $1.nextReviewDate() ?? Date.distantFuture })?.nextReviewDate() else {
 			timeUntilNextReview = "No reviews pending"

@@ -60,7 +60,13 @@ class UserLocalVocab: Identifiable {
 		lastReviewed = Date() // Update the last reviewed date to now
 	}
 	
-
+	func reset() {
+		reviewCount = 0
+		interval = 0
+		ease = 0
+		lastReviewed = Date()
+	}
+	
 	func nextReviewDate() -> Date? {
 		guard let lastReviewed = lastReviewed else { return nil }
 		return Calendar.current.date(byAdding: .hour, value: Int(interval), to: lastReviewed)
@@ -91,7 +97,7 @@ class UserLocalVocab: Identifiable {
 				}
 			}
 		}
-		return "past"
+		return ""
 	}
 	
 	func predictedNextReviewDate(for action: AnkiActionEnum) -> Date {

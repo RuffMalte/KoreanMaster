@@ -17,10 +17,11 @@ struct UserVocabCellView: View {
 	var body: some View {
 		HStack {
 			VStack(alignment: .leading, spacing: 10) {
-				Label(vocab.dateStringFromToday(for: vocab.nextReviewDate()).capitalized, systemImage: "clock")
-					.font(.system(.subheadline, design: .rounded, weight: .bold))
-					.foregroundStyle(.tint)
-				
+				if !vocab.dateStringFromToday(for: vocab.nextReviewDate()).isEmpty {
+					Label(vocab.dateStringFromToday(for: vocab.nextReviewDate()).capitalized, systemImage: "clock")
+						.font(.system(.subheadline, design: .rounded, weight: .bold))
+						.foregroundStyle(.tint)
+				}
 				
 				
 				HStack {
@@ -83,6 +84,18 @@ struct UserVocabCellView: View {
 				print("Edit")
 			} label: {
 				Label("Edit", systemImage: "pencil")
+			}
+			
+			Button {
+				vocab.resetTime()
+			} label: {
+				Label("Reset Time", systemImage: "arrow.clockwise")
+			}
+			
+			Button {
+				vocab.reset()
+			} label: {
+				Label("Reset", systemImage: "arrow.counterclockwise")
 			}
 			Button(role: .destructive) {
 				print("Delete")

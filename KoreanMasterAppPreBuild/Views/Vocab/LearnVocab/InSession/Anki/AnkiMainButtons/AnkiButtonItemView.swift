@@ -26,14 +26,14 @@ struct AnkiButtonItemView: View {
 		} else if let minute = difference.minute, minute > 0 {
 			return "in <1h" // If there are any minutes to the next occurrence, show as less than an hour
 		} else {
-			return "soon"
+			return ""
 		}
 	}
 	
 	var body: some View {
 		Button {
 			action?()
-			// playFeedbackHaptic(.medium) // Make sure to define this function or call the appropriate haptic feedback function
+			playFeedbackHaptic(.medium) 
 		} label: {
 			HStack {
 				Spacer()
