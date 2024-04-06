@@ -29,6 +29,7 @@ class UserLocalVocab: Identifiable {
 	var ease: Double = 0
 	var lastReviewed: Date? = Date()
 	
+	var isMastered: Bool = false
 	
 	init(
 		id: String = UUID().uuidString,
@@ -51,13 +52,14 @@ class UserLocalVocab: Identifiable {
 	}
 	
 	func review(action: AnkiActionEnum) {
-		reviewCount += 1 // Increment review count
+		reviewCount += 1
 		
 		let changes = calculateReviewChanges(action: action)
 		interval = changes.newInterval
 		ease = changes.newEase
 		
-		lastReviewed = Date() // Update the last reviewed date to now
+		lastReviewed = Date()
+		checkForMastery()
 	}
 	
 	func reset() {
@@ -107,6 +109,16 @@ class UserLocalVocab: Identifiable {
 		return Calendar.current.date(byAdding: .hour, value: Int(predictedInterval), to: currentLastReviewed)!
 	}
 	
+	func checkForMastery() {
+		
+		let masteryEaseFactorThreshold = 2.5
+		let masteryIntervalThreshold = 90 * 24
+		
+		if ease >= masteryEaseFactorThreshold && Int(interval) >= masteryIntervalThreshold {
+			isMastered = true
+		}
+	}
+	
 	func calculateReviewChanges(action: AnkiActionEnum) -> (newInterval: Double, newEase: Double) {
 		// Base ease factor adjustment values
 		let easeFactorAdjustment: [AnkiActionEnum: Double] = [
@@ -121,40 +133,42 @@ class UserLocalVocab: Identifiable {
 		
 		// Base interval multipliers
 		let intervalMultiplier: [AnkiActionEnum: Double] = [
-			.again: 1 / newEase, // Use a fraction of the ease factor for 'again' to reduce the interval
-			.hard: 1.2,         // Slightly increase the interval
-			.good: newEase,     // Use the ease factor as the multiplier for 'good'
+			.again: 0.5,   // Reduce the interval to half for 'again'
+			.hard: 1.2,    // Slightly increase the interval
+			.good: newEase, // Use the ease factor as the multiplier for 'good'
 			.easy: newEase * 1.5  // Use 150% of the ease factor for 'easy'
 		]
 		
 		// Dynamic minimum intervals based on action
 		let dynamicMinimumIntervals: [AnkiActionEnum: Double] = [
-			.again: 12,
-			.hard: 16,
-			.good: 24,
-			.easy: 24 * 3
+			.again: 13,
+			.hard: 17,
+			.good: 25,
+			.easy: 73  // 3 days expressed in hours
 		]
 		
 		let baseInterval: Double = 12
 		var newInterval: Double
 		
-		if reviewCount <= 1 || action == .again {
-			// For the first review or if the review is 'again', reset to a base interval
+		if reviewCount <= 1 {
+			// For the first review, set to base interval, but consider the minimum for the action
 			newInterval = baseInterval
 		} else {
 			// Calculate new interval based on previous interval, with a cap at a maximum interval
 			let multiplier = intervalMultiplier[action] ?? 1
 			newInterval = interval * multiplier
-			// Apply the dynamic minimum interval based on the action
-			let actionMinimumInterval = dynamicMinimumIntervals[action] ?? baseInterval
-			newInterval = max(newInterval, actionMinimumInterval)
 		}
+		
+		// Apply the dynamic minimum interval based on the action
+		let actionMinimumInterval = dynamicMinimumIntervals[action] ?? baseInterval
+		newInterval = max(newInterval, actionMinimumInterval)
 		
 		// Ensure new ease does not fall below the minimum ease
 		newEase = max(newEase, minimumEase)
 		
 		return (newInterval, newEase)
 	}
+
 
 
 	

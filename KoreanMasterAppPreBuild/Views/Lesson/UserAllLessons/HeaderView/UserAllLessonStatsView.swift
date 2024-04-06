@@ -6,10 +6,14 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct UserAllLessonStatsView: View {
 	
 	var currentUser: FirestoreUser
+	
+	@Query var localVocabs: [UserLocalVocab]
+	@Environment(\.modelContext) var modelContext
 	
     var body: some View {
 		HStack {
@@ -20,14 +24,14 @@ struct UserAllLessonStatsView: View {
 				
 				UserStatisticsItemView(icon: "sparkles", iconColor: .yellow, title: currentUser.totalXP.description, showBackgroundRectangle: false)
 				
-				UserStatisticsItemView(icon: "character.book.closed.fill", iconColor: .blue, title: "0", showBackgroundRectangle: false)
+				UserStatisticsItemView(icon: "character.book.closed.fill", iconColor: .blue, title: localVocabs.filter { $0.isMastered }.count.description, showBackgroundRectangle: false)
 				
 				UserStatisticsItemView(icon: "checkmark", iconColor: .green, title: currentUser.compeltedLessonsIDS.count.description, showBackgroundRectangle: false)
 				
 			}
 			.font(.system(.title3, design: .rounded, weight: .bold))
 			.padding()
-			
+			.lineLimit(1)
 			
 			Spacer()
 		}

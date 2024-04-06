@@ -17,13 +17,20 @@ struct UserVocabCellView: View {
 	var body: some View {
 		HStack {
 			VStack(alignment: .leading, spacing: 10) {
-				if !vocab.dateStringFromToday(for: vocab.nextReviewDate()).isEmpty {
-					Label(vocab.dateStringFromToday(for: vocab.nextReviewDate()).capitalized, systemImage: "clock")
-						.font(.system(.subheadline, design: .rounded, weight: .bold))
-						.foregroundStyle(.tint)
+				HStack {
+					if !vocab.dateStringFromToday(for: vocab.nextReviewDate()).isEmpty {
+						Label(vocab.dateStringFromToday(for: vocab.nextReviewDate()).capitalized, systemImage: "clock")
+							.font(.system(.subheadline, design: .rounded, weight: .bold))
+							.foregroundStyle(.tint)
+					}
+					Spacer()
+					
+					if vocab.isMastered {
+						Image(systemName: "star.fill")
+							.foregroundStyle(.yellow.gradient)
+							.font(.subheadline)
+					}
 				}
-				
-				
 				HStack {
 					Text(vocab.koreanVocab)
 					Spacer()
