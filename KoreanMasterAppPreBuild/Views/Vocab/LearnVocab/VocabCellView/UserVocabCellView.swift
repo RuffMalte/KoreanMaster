@@ -85,13 +85,6 @@ struct UserVocabCellView: View {
 			} label: {
 				Label("Edit", systemImage: "pencil")
 			}
-			
-			Button {
-				vocab.resetTime()
-			} label: {
-				Label("Reset Time", systemImage: "arrow.clockwise")
-			}
-			
 			Button {
 				vocab.reset()
 			} label: {
