@@ -19,7 +19,7 @@ struct UserAllLessonStatsView: View {
 		HStack {
 			Spacer()
 			HStack(spacing: 30) {
-				UserStatisticsItemView(icon: "flame.fill", iconColor: .orange, title: currentUser.daysStreak.description, showBackgroundRectangle: false)
+				UserStatisticsItemView(icon: "flame.fill", iconColor: getStreakColorItem(), title: currentUser.daysStreak.description, showBackgroundRectangle: false)
 					
 				
 				UserStatisticsItemView(icon: "sparkles", iconColor: .yellow, title: currentUser.totalXP.description, showBackgroundRectangle: false)
@@ -36,6 +36,17 @@ struct UserAllLessonStatsView: View {
 			Spacer()
 		}
     }
+	func getStreakColorItem() -> Color {
+		let today = Date()
+		
+		if let lastStreak = currentUser.streaks.last {
+			if Calendar.current.isDate(lastStreak.date, inSameDayAs: today) {
+				return .orange
+			}
+		}
+		return .gray
+	}
+
 }
 
 #Preview {

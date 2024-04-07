@@ -17,7 +17,7 @@ struct UserStatisticsView: View {
 	
     var body: some View {
 		LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], content: {
-			UserStatisticsItemView(icon: "flame.fill", iconColor: .orange, title: loginCon.currentFirestoreUser?.daysStreak.description ?? "0", subHeader: "Day streak")
+			UserStatisticsItemView(icon: "flame.fill", iconColor: getStreakColorItem(), title: loginCon.currentFirestoreUser?.daysStreak.description ?? "0", subHeader: "Day streak")
 				
 			UserStatisticsItemView(icon: "sparkles", iconColor: .yellow, title: loginCon.currentFirestoreUser?.totalXP.description ?? "0", subHeader: "Total XP")
 			
@@ -27,6 +27,16 @@ struct UserStatisticsView: View {
 			UserStatisticsItemView(icon: "checkmark", iconColor: .green, title: loginCon.currentFirestoreUser?.compeltedLessonsIDS.count.description ?? "0", subHeader: "Lessons done")
 		})
     }
+	func getStreakColorItem() -> Color {
+		let today = Date()
+		
+		if let lastStreak = loginCon.currentFirestoreUser?.streaks.last {
+			if Calendar.current.isDate(lastStreak.date, inSameDayAs: today) {
+				return .orange
+			}
+		}
+		return .gray
+	}
 }
 
 #Preview {
