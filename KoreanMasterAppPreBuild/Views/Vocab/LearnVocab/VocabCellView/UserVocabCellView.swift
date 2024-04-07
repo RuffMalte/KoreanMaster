@@ -110,6 +110,7 @@ struct UserVocabCellView: View {
 		}
 		.sheet(isPresented: $isShowingEditSheet, content: {
 			ModifyVocabSheetView(vocab: vocab)
+				.presentationDetents([.medium, .large])
 		})
 		.onTapGesture {
 			withAnimation(.bouncy) {

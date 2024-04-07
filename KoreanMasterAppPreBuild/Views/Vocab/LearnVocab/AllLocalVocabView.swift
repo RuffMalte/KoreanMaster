@@ -186,6 +186,7 @@ struct AllLocalVocabView: View {
 					modelContext.insert(vocab)
 					newVocab = UserLocalVocab.newExampleVocab
 				}
+				.presentationDetents([.medium, .large])
 			}
 			.background {
 				VStack {
@@ -214,7 +215,7 @@ struct AllLocalVocabView: View {
 	func updateTimer() {
 		guard let nextReviewDate = localVocabs.min(by: { $0.nextReviewDate() ?? Date.distantFuture < $1.nextReviewDate() ?? Date.distantFuture })?.nextReviewDate() else {
 			timeUntilNextReview = "No reviews pending"
-			isTimeToLearnAgain = true // No upcoming reviews, so it's always a good time to learn
+			isTimeToLearnAgain = true
 			return
 		}
 		
