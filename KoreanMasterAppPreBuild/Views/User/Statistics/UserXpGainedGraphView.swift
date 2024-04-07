@@ -53,9 +53,9 @@ struct UserXpGainedGraphView: View {
 									.foregroundStyle(.secondary)
 								
 								
-								if let firstXP = currentUser.streaks.first?.xpGained, let lastXP = currentUser.streaks.last?.xpGained {
+								if let heigestXP = currentUser.streaks.max(by: { $0.xpGained < $1.xpGained}), let lowestXP = currentUser.streaks.min(by: { $0.xpGained < $1.xpGained}) {
 									HStack {
-										Text("\(firstXP) - \(lastXP)")
+										Text("\(heigestXP.xpGained) - \(lowestXP.xpGained)")
 											.font(.system(.title3, design: .rounded, weight: .semibold))
 										
 										Image(systemName: "sparkles")
@@ -66,7 +66,7 @@ struct UserXpGainedGraphView: View {
 								
 								
 								if let firstDate = currentUser.streaks.first?.date, let lastDate = currentUser.streaks.last?.date {
-									Text("\(lastDate, format: .dateTime.day()) - \(firstDate, format: .dateTime.day().month(.wide).year())")
+									Text("\(firstDate, format: .dateTime.day().month()) - \(lastDate, format: .dateTime.day().month(.wide).year())")
 										.font(.system(.caption, design: .rounded, weight: .semibold))
 										.foregroundStyle(.secondary)
 									
