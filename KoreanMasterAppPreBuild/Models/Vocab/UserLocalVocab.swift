@@ -91,7 +91,17 @@ class UserLocalVocab: Identifiable {
 		let now = Date()
 		
 		if calendar.isDateInToday(futureDate) {
-			return "today"
+			let components = calendar.dateComponents([.hour, .minute], from: now, to: futureDate)
+			if let hours = components.hour, let minutes = components.minute {
+				if hours > 0 || minutes > 0 {
+					if hours > 0 {
+						return "in \(hours) hour\(hours == 1 ? "" : "s")"
+					} else if minutes > 0 {
+						return "in \(minutes) minute\(minutes == 1 ? "" : "s")"
+					}
+				}
+				return "now"
+			}
 		} else if calendar.isDateInTomorrow(futureDate) {
 			return "tomorrow"
 		} else {
@@ -112,6 +122,7 @@ class UserLocalVocab: Identifiable {
 		}
 		return ""
 	}
+
 	
 	func predictedNextReviewDate(for action: AnkiActionEnum) -> Date {
 		let changes = calculateReviewChanges(action: action)
@@ -161,14 +172,9 @@ class UserLocalVocab: Identifiable {
 		let baseInterval: Double = 12
 		var newInterval: Double
 		
-		if reviewCount <= 1 {
-			// For the first review, set to base interval, but consider the minimum for the action
-			newInterval = baseInterval
-		} else {
-			// Calculate new interval based on previous interval, with a cap at a maximum interval
-			let multiplier = intervalMultiplier[action] ?? 1
-			newInterval = interval * multiplier
-		}
+		// Calculate new interval based on previous interval or base interval if first review
+		let multiplier = intervalMultiplier[action] ?? 1
+		newInterval = (reviewCount <= 1) ? baseInterval : interval * multiplier
 		
 		// Apply the dynamic minimum interval based on the action
 		let actionMinimumInterval = dynamicMinimumIntervals[action] ?? baseInterval
