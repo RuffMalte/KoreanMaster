@@ -23,6 +23,9 @@ struct UsersAllLessonListView: View {
 	@AppStorage("selectedTintColor") var selectedTintColor: ColorEnum = .red
 	@State private var isLoadingLessons = false
 
+	
+	@State private var afterLesson: AfterLessonModel?
+	
     var body: some View {
 		VStack {
 			if let currentFirestoreUser = loginCon.currentFirestoreUser {
@@ -38,63 +41,15 @@ struct UsersAllLessonListView: View {
 								currentLanguage: currentFirestoreUser.languageSelected,
 								completedLessonIDs: currentFirestoreUser.compeltedLessonsIDS
 							) { lesson in
-								
-								//Streak
-								UserComponentsController().addStreakItem(
-									for: currentFirestoreUser.id,
-									preSelectedUser: currentFirestoreUser,
-									xpToGain: lesson.lessonInfo.xpToGain
-								)
-								{ newUser, error in
-									if let error = error {
-										print("Error adding streak item: \(error)")
-									}
-									if let newUser = newUser {
-										loginCon.currentFirestoreUser = newUser
-										print(newUser.daysStreak.description)
+								handleLessonActions(lesson: lesson, user: currentFirestoreUser, loginController: loginCon) { hasNewStreakItem in
+									
+									let newAfterLesson = AfterLessonModel(lesson: lesson, user: currentFirestoreUser, hasNewStreakItem: hasNewStreakItem)
+									
+									withAnimation {
+										self.afterLesson = newAfterLesson
 									}
 								}
-								
-								//XP
-								UserComponentsController().addXP(
-									for: currentFirestoreUser.id,
-									xp: lesson.lessonInfo.xpToGain
-								) { user, error in
-									if let error = error {
-										print("Error adding XP: \(error)")
-									} else if let user = user {
-										loginCon.currentFirestoreUser = user
-									} else {
-										print("Error adding XP: User is nil")
-									}
-								}
-								
-								//Completed Lesson
-								UserComponentsController().addCompletedLesson(
-									for: currentFirestoreUser.id,
-									lessonID: lesson.id
-								) { user, error in
-									if let error = error {
-										print("Error adding completed lesson: \(error)")
-									} else if let user = user {
-										loginCon.currentFirestoreUser = user
-									} else {
-										print("Error adding completed lesson: User is nil")
-									}
-								}
-								
-								UserComponentsController().getLocaluservocabFromVocabIDs(
-									for: lesson.newLessonVocabUsed?.vocabIDs ?? [],
-									with: currentFirestoreUser.languageSelected, 
-									currentLocalVocab: localVocabs
-								) { userLocalVocab, error in
-									if error == nil {
-										for localVocab in userLocalVocab {
-											print(localVocab.id)
-											modelContext.insert(localVocab)
-										}
-									}
-								}
+																
 							}
 						}
 						.background {
@@ -125,10 +80,98 @@ struct UsersAllLessonListView: View {
 						currentLessons = courseCon.currentLessons
 					}
 				}
+				.overlay {
+					if let afterLesson = afterLesson {
+						HStack {
+							Spacer()
+							VStack {
+								Spacer()
+								AfterLessonMainView(afterLesson: afterLesson) {
+									withAnimation {
+										self.afterLesson = nil
+									}
+								}
+								Spacer()
+							}
+							Spacer()
+						}
+						.background(.ultraThinMaterial)
+						.ignoresSafeArea()
+						.presentationCompactAdaptation(.fullScreenCover)
+					}
+				}
 			}
 		}
 		
 	}
+	
+	func handleLessonActions(lesson: Lesson, user: FirestoreUser, loginController: LoginController, completion: @escaping (Bool) -> Void) {
+		let userComponentsController = UserComponentsController()
+		
+		var hasNewStreakItem: Bool = false
+		
+		userComponentsController.addStreakItem(for: user.id, preSelectedUser: user, xpToGain: lesson.lessonInfo.xpToGain) { newUser, error in
+			if let error = error {
+				print("Error adding streak item: \(error)")
+				return
+			}
+			
+			// If the user has a new streak item
+			if !Calendar.current.isDate((user.streaks.last?.date ?? Date.distantPast), inSameDayAs: (newUser?.streaks.last?.date ?? Date.distantFuture)) {
+				hasNewStreakItem = true
+			}
+			
+			
+			if let newUser = newUser {
+				loginController.currentFirestoreUser = newUser
+				
+				userComponentsController.addXP(for: user.id, xp: lesson.lessonInfo.xpToGain) { updatedUser, error in
+					if let error = error {
+						print("Error adding XP: \(error)")
+						return
+					}
+					
+					if let updatedUser = updatedUser {
+						loginController.currentFirestoreUser = updatedUser
+						
+						userComponentsController.addCompletedLesson(for: user.id, lessonID: lesson.id) { finalUser, error in
+							if error != nil {
+								return
+							}
+							
+							if let finalUser = finalUser {
+								loginController.currentFirestoreUser = finalUser
+								
+								let vocabIDs = lesson.newLessonVocabUsed?.vocabIDs ?? []
+								userComponentsController.getLocaluservocabFromVocabIDs(for: vocabIDs, with: user.languageSelected, currentLocalVocab: localVocabs) { userLocalVocab, error in
+									if let error = error {
+										print("Error fetching local vocabulary: \(error)")
+										return
+									}
+									
+									for localVocab in userLocalVocab {
+										modelContext.insert(localVocab)
+									}
+									
+									
+									
+									completion(hasNewStreakItem)
+									
+								}
+							} else {
+								print("Error: Final user is nil after adding completed lesson")
+							}
+						}
+					} else {
+						print("Error: Updated user is nil after adding XP")
+					}
+				}
+			} else {
+				print("Error: New user is nil after adding streak")
+			}
+		}
+	}
+
 }
 
 #Preview {
