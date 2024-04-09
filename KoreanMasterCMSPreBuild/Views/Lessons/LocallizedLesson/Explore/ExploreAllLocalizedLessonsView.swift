@@ -79,7 +79,9 @@ struct ExploreAllLocalizedLessonsView: View {
 									isShowingLesson.toggle()
 								})
 								.id(lesson.id)
-
+								.onTapGesture {
+									scrollToLessonId = lesson.id
+								}
 								
 								if index % 4 != 0 {
 									Spacer()

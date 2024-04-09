@@ -69,9 +69,10 @@ class UserLocalVocab: Identifiable {
 		ease = changes.newEase
 		
 		lastReviewed = Date()
-		futureReviewDate = nextReviewDate()
+		futureReviewDate = Calendar.current.date(byAdding: .hour, value: Int(interval), to: lastReviewed!)
 		checkForMastery()
 	}
+
 	
 	func reset() {
 		reviewCount = 0
@@ -82,8 +83,10 @@ class UserLocalVocab: Identifiable {
 	}
 	
 	func nextReviewDate() -> Date? {
-		guard let futureReviewDate = futureReviewDate else { return nil }
-		return Calendar.current.date(byAdding: .hour, value: Int(interval), to: futureReviewDate)
+		if let lastReviewed = lastReviewed {
+			return Calendar.current.date(byAdding: .hour, value: Int(interval), to: lastReviewed)
+		}
+		return nil
 	}
 	
 	func dateStringFromToday(for futureDate: Date?) -> String {
@@ -113,8 +116,8 @@ class UserLocalVocab: Identifiable {
 	func predictedNextReviewDate(for action: AnkiActionEnum) -> Date {
 		let changes = calculateReviewChanges(action: action)
 		let predictedInterval = changes.newInterval
-		let currentfutureReviewed = futureReviewDate ?? Date()
-		return Calendar.current.date(byAdding: .hour, value: Int(predictedInterval), to: currentfutureReviewed)!
+		let newDate = lastReviewed ?? Date()
+		return Calendar.current.date(byAdding: .hour, value: Int(predictedInterval), to: newDate)!
 	}
 	
 	func checkForMastery() {
