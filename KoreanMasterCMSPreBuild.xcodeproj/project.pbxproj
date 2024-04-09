@@ -2632,8 +2632,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SvenTiigi/YouTubePlayerKit.git";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.7.0;
+				kind = exactVersion;
+				version = 1.7.0;
 			};
 		};
 		2EF41ADF2B927B37007431ED /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
