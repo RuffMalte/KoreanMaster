@@ -156,7 +156,7 @@ class UserLocalVocab: Identifiable {
 	func dynamicMinimumIntervals(_ action: AnkiActionEnum, currentInterval: Double) -> Double {
 		switch action {
 		case .again:
-			return max(1, currentInterval * 0.5) // Ensuring minimum 1 hour and half of previous if it was larger
+			return max(12, currentInterval * 0.5) // Ensuring minimum 1 hour and half of previous if it was larger
 		case .hard:
 			return max(17, currentInterval * 0.75) // Ensuring minimum 17 hours and 75% of previous
 		case .good:

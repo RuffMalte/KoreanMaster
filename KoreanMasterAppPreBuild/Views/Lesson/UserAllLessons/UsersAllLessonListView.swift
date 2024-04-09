@@ -36,6 +36,8 @@ struct UsersAllLessonListView: View {
 						VStack {
 							UserAllLessonStatsView(currentUser: currentFirestoreUser)
 							
+							Divider()
+							
 							ExploreAllLocalizedLessonsView(
 								lessons: currentLessons,
 								currentLanguage: currentFirestoreUser.languageSelected,
