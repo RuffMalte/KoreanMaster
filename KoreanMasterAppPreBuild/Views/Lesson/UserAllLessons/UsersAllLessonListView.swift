@@ -110,6 +110,8 @@ struct UsersAllLessonListView: View {
 		
 		var hasNewStreakItem: Bool = false
 		
+		let oldUser = user.copy()
+		
 		userComponentsController.addStreakItem(for: user.id, preSelectedUser: user, xpToGain: lesson.lessonInfo.xpToGain) { newUser, error in
 			if let error = error {
 				print("Error adding streak item: \(error)")
@@ -117,11 +119,9 @@ struct UsersAllLessonListView: View {
 			}
 			
 			// If the user has a new streak item
-			if !Calendar.current.isDate((user.streaks.last?.date ?? Date.distantPast), inSameDayAs: (newUser?.streaks.last?.date ?? Date.distantFuture)) {
+			if oldUser.streaks.last?.date != newUser?.streaks.last?.date {
 				hasNewStreakItem = true
 			}
-			
-			
 			if let newUser = newUser {
 				loginController.currentFirestoreUser = newUser
 				

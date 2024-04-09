@@ -57,6 +57,27 @@ class FirestoreUser: Identifiable, Encodable, Decodable {
 		self.totalLiked = totalLiked
 		self.totalComments = totalComments
 	}
+	
+	
+	func copy() -> FirestoreUser {
+		let copy = FirestoreUser(
+			id: id,
+			email: email,
+			displayName: displayName,
+			isAdmin: isAdmin,
+			isAdminLesson: isAdminLesson,
+			languageSelected: languageSelected,
+			totalXP: totalXP,
+			daysStreak: daysStreak,
+			createAT: createdAt,
+			totalLiked: totalLiked,
+			totalComments: totalComments
+		)
+		copy.compeltedLessonsIDS = compeltedLessonsIDS
+		copy.streaks = streaks
+		copy.maxStreakDays = maxStreakDays
+		return copy
+	}
 }
 
 struct StreakDay: Identifiable, Codable {

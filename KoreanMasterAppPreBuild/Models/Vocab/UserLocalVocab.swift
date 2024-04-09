@@ -14,7 +14,6 @@ class UserLocalVocab: Identifiable {
 	var koreanVocab: String
 	var koreanSentence: String?
 	
-	
 	var localizedVocab: String
 	var selectedLanguage: String
 	var partOfSpeech: String?
@@ -22,12 +21,11 @@ class UserLocalVocab: Identifiable {
 	
 	var wikiUrl: String?
 	
-	
-	
 	var reviewCount: Int = 0
 	var interval: Double = 0
 	var ease: Double = 0
 	var lastReviewed: Date? = Date()
+	var futureReviewDate: Date? = Date()
 	
 	var isMastered: Bool = false
 	
@@ -44,6 +42,7 @@ class UserLocalVocab: Identifiable {
 		interval: Double = 0,
 		ease: Double = 0,
 		lastReviewed: Date? = Date(),
+		futureReviewDate: Date? = Date(),
 		isMastered: Bool = false
 	) {
 		self.id = id
@@ -58,8 +57,8 @@ class UserLocalVocab: Identifiable {
 		self.interval = interval
 		self.ease = ease
 		self.lastReviewed = lastReviewed
+		self.futureReviewDate = futureReviewDate
 		self.isMastered = isMastered
-
 	}
 	
 	func review(action: AnkiActionEnum) {
@@ -70,6 +69,7 @@ class UserLocalVocab: Identifiable {
 		ease = changes.newEase
 		
 		lastReviewed = Date()
+		futureReviewDate = nextReviewDate()
 		checkForMastery()
 	}
 	
@@ -78,11 +78,12 @@ class UserLocalVocab: Identifiable {
 		interval = 0
 		ease = 0
 		lastReviewed = Date()
+		futureReviewDate = lastReviewed
 	}
 	
 	func nextReviewDate() -> Date? {
-		guard let lastReviewed = lastReviewed else { return nil }
-		return Calendar.current.date(byAdding: .hour, value: Int(interval), to: lastReviewed)
+		guard let futureReviewDate = futureReviewDate else { return nil }
+		return Calendar.current.date(byAdding: .hour, value: Int(interval), to: futureReviewDate)
 	}
 	
 	func dateStringFromToday(for futureDate: Date?) -> String {
@@ -90,119 +91,100 @@ class UserLocalVocab: Identifiable {
 		let calendar = Calendar.current
 		let now = Date()
 		
-		if calendar.isDateInToday(futureDate) {
-			let components = calendar.dateComponents([.hour, .minute], from: now, to: futureDate)
-			if let hours = components.hour, let minutes = components.minute {
-				if hours > 0 || minutes > 0 {
-					if hours > 0 {
-						return "in \(hours) hour\(hours == 1 ? "" : "s")"
-					} else if minutes > 0 {
-						return "in \(minutes) minute\(minutes == 1 ? "" : "s")"
-					}
+		let days = calendar.dateComponents([.day], from: now, to: futureDate).day ?? 0
+		if days == 0 {
+			let hours = calendar.dateComponents([.hour], from: now, to: futureDate).hour ?? 0
+			if hours > 0 {
+				return "in \(hours) hour\(hours == 1 ? "" : "s")"
+			} else {
+				let minutes = calendar.dateComponents([.minute], from: now, to: futureDate).minute ?? 0
+				if minutes > 0 {
+					return "in \(minutes) minute\(minutes == 1 ? "" : "s")"
 				}
 				return "now"
 			}
-		} else if calendar.isDateInTomorrow(futureDate) {
-			return "tomorrow"
+		} else if days > 0 {
+			return "in \(days) day\(days == 1 ? "" : "s")"
 		} else {
-			let startOfNow = calendar.startOfDay(for: now)
-			let startOfFutureDate = calendar.startOfDay(for: futureDate)
-			
-			let components = calendar.dateComponents([.day], from: startOfNow, to: startOfFutureDate)
-			if let days = components.day, days > 0 {
-				switch days {
-				case 1:
-					return "in 1 day" // This is technically covered by isDateInTomorrow, but here for completeness
-				case 2...30:
-					return "in \(days) days"
-				default:
-					return "in more than a month"
-				}
-			}
+			return "Date has already passed"
 		}
-		return ""
 	}
-
 	
 	func predictedNextReviewDate(for action: AnkiActionEnum) -> Date {
 		let changes = calculateReviewChanges(action: action)
 		let predictedInterval = changes.newInterval
-		let currentLastReviewed = lastReviewed ?? Date()
-		return Calendar.current.date(byAdding: .hour, value: Int(predictedInterval), to: currentLastReviewed)!
+		let currentfutureReviewed = futureReviewDate ?? Date()
+		return Calendar.current.date(byAdding: .hour, value: Int(predictedInterval), to: currentfutureReviewed)!
 	}
 	
 	func checkForMastery() {
-		
 		let masteryEaseFactorThreshold = 2.5
-		let masteryIntervalThreshold = 90 * 24
+		let masteryIntervalThreshold = 90 * 24 // 90 days * 24 hours per day
 		
-		if ease >= masteryEaseFactorThreshold && Int(interval) >= masteryIntervalThreshold {
+		if ease >= masteryEaseFactorThreshold && interval >= Double(masteryIntervalThreshold) {
 			isMastered = true
+		} else {
+			isMastered = false
 		}
 	}
 	
 	func calculateReviewChanges(action: AnkiActionEnum) -> (newInterval: Double, newEase: Double) {
-		// Base ease factor adjustment values
 		let easeFactorAdjustment: [AnkiActionEnum: Double] = [
-			.again: -0.20, // Decrease ease factor by 20% for 'again'
-			.hard: -0.15,  // Decrease ease factor by 15% for 'hard'
-			.good: 0,      // Keep the ease factor the same for 'good'
-			.easy: 0.15    // Increase ease factor by 15% for 'easy'
+			.again: -0.20,  // Decrease ease factor by 20% for 'again'
+			.hard: -0.15,   // Decrease ease factor by 15% for 'hard'
+			.good: 0,       // Keep the ease factor the same for 'good'
+			.easy: 0.15     // Increase ease factor by 15% for 'easy'
 		]
 		
 		let minimumEase: Double = 1.3
-		var newEase = max(minimumEase, ease + (easeFactorAdjustment[action] ?? 0))
-		
-		// Base interval multipliers
-		let intervalMultiplier: [AnkiActionEnum: Double] = [
-			.again: 0.5,   // Reduce the interval to half for 'again'
-			.hard: 1.2,    // Slightly increase the interval
-			.good: newEase, // Use the ease factor as the multiplier for 'good'
-			.easy: newEase * 1.5  // Use 150% of the ease factor for 'easy'
-		]
-		
-		// Dynamic minimum intervals based on action
-		let dynamicMinimumIntervals: [AnkiActionEnum: Double] = [
-			.again: 13,
-			.hard: 17,
-			.good: 25,
-			.easy: 73  // 3 days expressed in hours
-		]
-		
-		let baseInterval: Double = 12
-		var newInterval: Double
-		
-		// Calculate new interval based on previous interval or base interval if first review
-		let multiplier = intervalMultiplier[action] ?? 1
-		newInterval = (reviewCount <= 1) ? baseInterval : interval * multiplier
-		
-		// Apply the dynamic minimum interval based on the action
-		let actionMinimumInterval = dynamicMinimumIntervals[action] ?? baseInterval
-		newInterval = max(newInterval, actionMinimumInterval)
-		
-		// Ensure new ease does not fall below the minimum ease
+		var newEase = ease + (easeFactorAdjustment[action] ?? 0)
 		newEase = max(newEase, minimumEase)
+		
+		let intervalMultiplier: [AnkiActionEnum: Double] = [
+			.again: 0.5,
+			.hard: 0.75,
+			.good: 1.0,
+			.easy: 1.5
+		]
+		
+		var newInterval = interval * (intervalMultiplier[action] ?? 1.0)
+		newInterval = max(newInterval, dynamicMinimumIntervals(action, currentInterval: newInterval))
 		
 		return (newInterval, newEase)
 	}
-
-
-	func update(from vocab: UserLocalVocab) {
-		self.koreanVocab = vocab.koreanVocab
-		self.koreanSentence = vocab.koreanSentence
-		self.localizedVocab = vocab.localizedVocab
-		self.selectedLanguage = vocab.selectedLanguage
-		self.partOfSpeech = vocab.partOfSpeech
-		self.localizedSentence = vocab.localizedSentence
-		self.wikiUrl = vocab.wikiUrl
-		self.reviewCount = vocab.reviewCount
-		self.interval = vocab.interval
-		self.ease = vocab.ease
-		self.lastReviewed = vocab.lastReviewed
-		self.isMastered = vocab.isMastered
+	
+	func dynamicMinimumIntervals(_ action: AnkiActionEnum, currentInterval: Double) -> Double {
+		switch action {
+		case .again:
+			return max(1, currentInterval * 0.5) // Ensuring minimum 1 hour and half of previous if it was larger
+		case .hard:
+			return max(17, currentInterval * 0.75) // Ensuring minimum 17 hours and 75% of previous
+		case .good:
+			return max(25, currentInterval) // No reduction, ensuring minimum 25 hours
+		case .easy:
+			return max(73, currentInterval * 1.5) // Ensuring minimum 73 hours and an increase of 50%
+		}
 	}
 
+
+	
+	func update(from vocab: UserLocalVocab) {
+		koreanVocab = vocab.koreanVocab
+		koreanSentence = vocab.koreanSentence
+		localizedVocab = vocab.localizedVocab
+		selectedLanguage = vocab.selectedLanguage
+		partOfSpeech = vocab.partOfSpeech
+		localizedSentence = vocab.localizedSentence
+		wikiUrl = vocab.wikiUrl
+		reviewCount = vocab.reviewCount
+		interval = vocab.interval
+		ease = vocab.ease
+		lastReviewed = vocab.lastReviewed
+		futureReviewDate = vocab.futureReviewDate
+		isMastered = vocab.isMastered
+	}
 }
+
 
 extension UserLocalVocab {
 	convenience init(from vocab: Vocab) {

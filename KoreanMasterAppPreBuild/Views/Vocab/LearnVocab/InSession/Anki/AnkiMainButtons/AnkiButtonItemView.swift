@@ -14,9 +14,37 @@ struct AnkiButtonItemView: View {
 	
 	private func formattedTimeUntilNextOccurrence() -> String {
 		let now = Date()
-		let calendar = Calendar.current
 		
-		// Ensure you're also considering minutes in your difference calculation
+		let calendar = Calendar.current
+		let components = calendar.dateComponents([.year, .month, .weekday, .day, .hour], from: now, to: nextTimeVocabOccurrence)
+
+		func printMostSignificantComponent() {
+			if let years = components.year, years != 0 {
+				print("There are \(years) years until \(nextTimeVocabOccurrence)")
+				return
+			}
+			if let months = components.month, months != 0 {
+				print("There are \(months) months until \(nextTimeVocabOccurrence)")
+				return
+			}
+			if let weeks = components.weekOfYear, weeks != 0 {
+				print("There are \(weeks) weeks until \(nextTimeVocabOccurrence)")
+				return
+			}
+			if let days = components.day, days != 0 {
+				print("There are \(days) days until \(nextTimeVocabOccurrence)")
+				return
+			}
+			if let hours = components.hour, hours != 0 {
+				print("There are \(hours) hours until \(nextTimeVocabOccurrence)")
+				return
+			}
+			print("The event is happening now or a date component was not properly set.")
+		}
+		
+		printMostSignificantComponent()
+
+		
 		let difference = calendar.dateComponents([.minute, .hour, .day], from: now, to: nextTimeVocabOccurrence)
 		
 		if let day = difference.day, day > 0 {
@@ -24,9 +52,9 @@ struct AnkiButtonItemView: View {
 		} else if let hour = difference.hour, hour > 0 {
 			return "in \(hour)h"
 		} else if let minute = difference.minute, minute > 0 {
-			return "in <1h" // If there are any minutes to the next occurrence, show as less than an hour
+			return "in <1h"
 		} else {
-			return ""
+			return "soon"
 		}
 	}
 	
