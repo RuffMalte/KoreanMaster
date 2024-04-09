@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-import YouTubePlayerKit
+//import YouTubePlayerKit
 
 struct ModifyCultureRefrenceSongView: View {
 	
@@ -26,28 +26,28 @@ struct ModifyCultureRefrenceSongView: View {
 					HStack {
 						Group {
 							if !isReloading {
-								YouTubePlayerView(
-									YouTubePlayer(
-										source: .video(
-											id: lessonCultureReferenceSong.youtubeLinkID,
-											startSeconds: lessonCultureReferenceSong.youtubeStartTimestamp,
-											endSeconds: lessonCultureReferenceSong.youtubeEndTimestamp
-										),
-										configuration: .init(
-											loopEnabled: true
-										)
-									)
-								) { state in
-									switch state {
-									case .idle:
-										ProgressView()
-									case .ready:
-										EmptyView()
-									case .error(let error):
-										Text(verbatim: "YouTube player couldn't be loaded. " + error.localizedDescription)
-									}
-								}
-								.clipShape(RoundedRectangle(cornerRadius: 16))
+//								YouTubePlayerView(
+//									YouTubePlayer(
+//										source: .video(
+//											id: lessonCultureReferenceSong.youtubeLinkID,
+//											startSeconds: lessonCultureReferenceSong.youtubeStartTimestamp,
+//											endSeconds: lessonCultureReferenceSong.youtubeEndTimestamp
+//										),
+//										configuration: .init(
+//											loopEnabled: true
+//										)
+//									)
+//								) { state in
+//									switch state {
+//									case .idle:
+//										ProgressView()
+//									case .ready:
+//										EmptyView()
+//									case .error(let error):
+//										Text(verbatim: "YouTube player couldn't be loaded. " + error.localizedDescription)
+//									}
+//								}
+//								.clipShape(RoundedRectangle(cornerRadius: 16))
 							} else {
 								ProgressView()
 							}

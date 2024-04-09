@@ -44,7 +44,6 @@
 		2E666E5F2BAE21AE00C59FEB /* InSessionLessonNavBackButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E666E5E2BAE21AE00C59FEB /* InSessionLessonNavBackButtonView.swift */; };
 		2E666E652BAE312300C59FEB /* InSessionLessonCultureRefrenceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E666E642BAE312300C59FEB /* InSessionLessonCultureRefrenceView.swift */; };
 		2E666E682BAE31D300C59FEB /* InSessionLessonSongItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E666E672BAE31D300C59FEB /* InSessionLessonSongItemView.swift */; };
-		2E666E6B2BAE3BAD00C59FEB /* YouTubePlayerKit in Frameworks */ = {isa = PBXBuildFile; productRef = 2E666E6A2BAE3BAD00C59FEB /* YouTubePlayerKit */; };
 		2E666E6E2BAF36B700C59FEB /* DocumentRefrenceGeneratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E666E6D2BAF36B700C59FEB /* DocumentRefrenceGeneratorTests.swift */; };
 		2E6C4DAC2BB40E4800FE0C78 /* UserSettingsMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6C4DAB2BB40E4800FE0C78 /* UserSettingsMainView.swift */; };
 		2E6C4DAE2BB40FB300FE0C78 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2E6C4DAD2BB40FB300FE0C78 /* GoogleService-Info.plist */; };
@@ -175,7 +174,6 @@
 		2EC21C662BB3340D00B1F04E /* InSessionLessonSentenceBuildingItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E666E572BAE030800C59FEB /* InSessionLessonSentenceBuildingItemView.swift */; };
 		2EC21C672BB3341200B1F04E /* InSessionLessonCultureRefrenceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E666E642BAE312300C59FEB /* InSessionLessonCultureRefrenceView.swift */; };
 		2EC21C682BB3341800B1F04E /* InSessionLessonSongItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E666E672BAE31D300C59FEB /* InSessionLessonSongItemView.swift */; };
-		2EC21C6A2BB3344600B1F04E /* YouTubePlayerKit in Frameworks */ = {isa = PBXBuildFile; productRef = 2EC21C692BB3344600B1F04E /* YouTubePlayerKit */; };
 		2EC21C6C2BB3345600B1F04E /* ConfettiSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 2EC21C6B2BB3345600B1F04E /* ConfettiSwiftUI */; };
 		2EC21C6D2BB3346A00B1F04E /* VocabMocData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7E3A572BA31CAE00CD9353 /* VocabMocData.swift */; };
 		2EC21C6E2BB3346E00B1F04E /* LocalizedWelcomeMessageMocData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8D83BA2BA1CE240039DE57 /* LocalizedWelcomeMessageMocData.swift */; };
@@ -426,7 +424,6 @@
 				2ED4D0782BB33007009BE46C /* FirebaseAuth in Frameworks */,
 				2ED4D07A2BB33007009BE46C /* FirebaseFirestore in Frameworks */,
 				2EC21C6C2BB3345600B1F04E /* ConfettiSwiftUI in Frameworks */,
-				2EC21C6A2BB3344600B1F04E /* YouTubePlayerKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -436,7 +433,6 @@
 			files = (
 				2E666E292BACC01A00C59FEB /* ConfettiSwiftUI in Frameworks */,
 				2EF41AE12B927B37007431ED /* FirebaseAuth in Frameworks */,
-				2E666E6B2BAE3BAD00C59FEB /* YouTubePlayerKit in Frameworks */,
 				2EF41AE32B927B37007431ED /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1900,7 +1896,6 @@
 			packageProductDependencies = (
 				2ED4D0772BB33007009BE46C /* FirebaseAuth */,
 				2ED4D0792BB33007009BE46C /* FirebaseFirestore */,
-				2EC21C692BB3344600B1F04E /* YouTubePlayerKit */,
 				2EC21C6B2BB3345600B1F04E /* ConfettiSwiftUI */,
 			);
 			productName = KoreanMasterAppPreBuild;
@@ -1924,7 +1919,6 @@
 				2EF41AE02B927B37007431ED /* FirebaseAuth */,
 				2EF41AE22B927B37007431ED /* FirebaseFirestore */,
 				2E666E282BACC01A00C59FEB /* ConfettiSwiftUI */,
-				2E666E6A2BAE3BAD00C59FEB /* YouTubePlayerKit */,
 			);
 			productName = KoreanMasterCMSPreBuild;
 			productReference = 2EF41AC92B927A36007431ED /* KoreanMasterCMSPreBuild.app */;
@@ -1964,7 +1958,6 @@
 			packageReferences = (
 				2EF41ADF2B927B37007431ED /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				2E666E272BACC01A00C59FEB /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */,
-				2E666E692BAE3BAD00C59FEB /* XCRemoteSwiftPackageReference "YouTubePlayerKit" */,
 			);
 			productRefGroup = 2EF41ACA2B927A36007431ED /* Products */;
 			projectDirPath = "";
@@ -2628,14 +2621,6 @@
 				minimumVersion = 1.1.0;
 			};
 		};
-		2E666E692BAE3BAD00C59FEB /* XCRemoteSwiftPackageReference "YouTubePlayerKit" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/SvenTiigi/YouTubePlayerKit.git";
-			requirement = {
-				kind = exactVersion;
-				version = 1.7.0;
-			};
-		};
 		2EF41ADF2B927B37007431ED /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
@@ -2651,16 +2636,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 2E666E272BACC01A00C59FEB /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */;
 			productName = ConfettiSwiftUI;
-		};
-		2E666E6A2BAE3BAD00C59FEB /* YouTubePlayerKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 2E666E692BAE3BAD00C59FEB /* XCRemoteSwiftPackageReference "YouTubePlayerKit" */;
-			productName = YouTubePlayerKit;
-		};
-		2EC21C692BB3344600B1F04E /* YouTubePlayerKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 2E666E692BAE3BAD00C59FEB /* XCRemoteSwiftPackageReference "YouTubePlayerKit" */;
-			productName = YouTubePlayerKit;
 		};
 		2EC21C6B2BB3345600B1F04E /* ConfettiSwiftUI */ = {
 			isa = XCSwiftPackageProductDependency;

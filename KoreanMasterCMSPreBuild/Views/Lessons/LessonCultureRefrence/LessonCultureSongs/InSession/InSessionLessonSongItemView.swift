@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-import YouTubePlayerKit
+//import YouTubePlayerKit
 
 struct InSessionLessonSongItemView: View {
 	
@@ -21,29 +21,29 @@ struct InSessionLessonSongItemView: View {
 					RoundedRectangle(cornerRadius: 0)
 						.foregroundStyle(.bar)
 				} else {
-					YouTubePlayerView(
-						YouTubePlayer(
-							source: .video(
-								id: song.youtubeLinkID,
-								startSeconds: song.youtubeStartTimestamp,
-								endSeconds: song.youtubeEndTimestamp
-							),
-							configuration: .init(
-								endTime: song.youtubeEndTimestamp,
-								loopEnabled: false,
-								startTime: song.youtubeStartTimestamp
-							)
-						)
-					) { state in
-						switch state {
-						case .idle:
-							ProgressView()
-						case .ready:
-							EmptyView()
-						case .error(_):
-							Text(verbatim: "YouTube player couldn't be loaded")
-						}
-					}
+//					YouTubePlayerView(
+//						YouTubePlayer(
+//							source: .video(
+//								id: song.youtubeLinkID,
+//								startSeconds: song.youtubeStartTimestamp,
+//								endSeconds: song.youtubeEndTimestamp
+//							),
+//							configuration: .init(
+//								endTime: song.youtubeEndTimestamp,
+//								loopEnabled: false,
+//								startTime: song.youtubeStartTimestamp
+//							)
+//						)
+//					) { state in
+//						switch state {
+//						case .idle:
+//							ProgressView()
+//						case .ready:
+//							EmptyView()
+//						case .error(_):
+//							Text(verbatim: "YouTube player couldn't be loaded")
+//						}
+//					}
 				}
 			}
 			.clipShape(RoundedRectangle(cornerRadius: 16))
