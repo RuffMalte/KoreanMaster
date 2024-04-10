@@ -25,19 +25,55 @@ struct InSessionAnkiMainView: View {
 				HStack {
 					Spacer()
 					
-					VStack {
+					ScrollView {
 						if let currentVocab = currentVocab {
-							Text(currentVocab.localizedVocab)
+							Text(currentVocab.koreanVocab)
+								.padding()
+								.font(.system(.title, design: .rounded, weight: .bold))
+
 							
-							Text(currentVocab.reviewCount.description)
-							Text(currentVocab.interval.description)
 							
-							Text(currentVocab.ease.description)
-							
-							Text(currentVocab.lastReviewed ?? Date(), format: .dateTime.day().month().second())
+							if isShowingAnkiButtons {
+								Divider()
+								
+								VStack {
+									Text(currentVocab.localizedVocab)
+										.font(.system(.title, design: .rounded, weight: .regular))
+								}
+								.padding()
+								
+								
+								VStack {
+									Text("Sentence")
+										.padding(4)
+									Text(currentVocab.koreanSentence ?? "-")
+										.font(.system(.title3, design: .rounded, weight: .regular))
+									Text(currentVocab.localizedSentence ?? "-")
+										.font(.system(.title3, design: .rounded, weight: .regular))
+								}
+								.padding()
+								
+								if let info = currentVocab.partOfSpeech {
+									VStack {
+										Text("Info")
+											.padding(4)
+										Text("• " + info)
+											.font(.system(.title3, design: .rounded, weight: .regular))
+									}
+									.padding()
+								}
+								
+								
+								if currentVocab.isMastered {
+									Image(systemName: "star.fill")
+										.foregroundStyle(.yellow.gradient)
+										.font(.subheadline)
+								}
+								
+								Spacer()
+							}
 						}
 					}
-					.font(.system(.title, design: .rounded, weight: .bold))
 					.foregroundStyle(.primary)
 					.padding()
 					
