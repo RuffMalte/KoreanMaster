@@ -21,6 +21,8 @@ struct InSessionLessonInfoView: View {
 				VStack {
 					Label("Description", systemImage: "book.fill")
 						.font(.system(.title3, design: .rounded, weight: .bold))
+						.padding()
+					
 					Text(lessonInfo.desc)
 						.font(.system(.subheadline, design: .default, weight: .thin))
 				}
@@ -37,4 +39,5 @@ struct InSessionLessonInfoView: View {
 
 #Preview {
 	InSessionLessonInfoView(lessonInfo: LessonInfo.detailExample, switchLesson: { print("switching")})
+		.padding()
 }

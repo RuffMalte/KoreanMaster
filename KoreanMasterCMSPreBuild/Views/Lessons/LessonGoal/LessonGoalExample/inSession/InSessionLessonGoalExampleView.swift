@@ -12,14 +12,26 @@ struct InSessionLessonGoalExampleView: View {
 	var example: LessonGoalExample
 	
     var body: some View {
-		VStack(alignment: .leading) {
-			Text(example.koreanText)
-				.font(.system(.headline, design: .rounded, weight: .bold))
+		HStack {
 			
-			Text(example.translatedText)
-				.font(.system(.body, design: .rounded, weight: .regular))
-				.foregroundStyle(.secondary)
+			//ICONS are from: https://www.dicebear.com/styles/bottts/
+			Image("bottts-\(Int.random(in: 1...20))")
+				.resizable()
+				.scaledToFit()
+				.frame(width: 50, height: 50)
 			
+		
+		
+			
+			VStack(alignment: .leading) {
+				Text(example.koreanText)
+					.font(.system(.headline, design: .rounded, weight: .bold))
+				
+				Text(example.translatedText)
+					.font(.system(.body, design: .rounded, weight: .regular))
+					.foregroundStyle(.secondary)
+				
+			}
 		}
     }
 }
