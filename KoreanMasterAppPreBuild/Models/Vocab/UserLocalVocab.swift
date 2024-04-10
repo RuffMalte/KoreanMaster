@@ -116,7 +116,7 @@ class UserLocalVocab: Identifiable {
 	func predictedNextReviewDate(for action: AnkiActionEnum) -> Date {
 		let changes = calculateReviewChanges(action: action)
 		let predictedInterval = changes.newInterval
-		let newDate = lastReviewed ?? Date()
+		let newDate = Date()
 		return Calendar.current.date(byAdding: .hour, value: Int(predictedInterval), to: newDate)!
 	}
 	
@@ -159,13 +159,13 @@ class UserLocalVocab: Identifiable {
 	func dynamicMinimumIntervals(_ action: AnkiActionEnum, currentInterval: Double) -> Double {
 		switch action {
 		case .again:
-			return max(12, currentInterval * 0.5) // Ensuring minimum 1 hour and half of previous if it was larger
+			return max(currentInterval, 12) // Ensuring minimum 1 hour and half of previous if it was larger
 		case .hard:
-			return max(17, currentInterval * 0.75) // Ensuring minimum 17 hours and 75% of previous
+			return max(currentInterval, 17) // Ensuring minimum 17 hours and 75% of previous
 		case .good:
-			return max(25, currentInterval) // No reduction, ensuring minimum 25 hours
+			return max(currentInterval, 25) // No reduction, ensuring minimum 25 hours
 		case .easy:
-			return max(73, currentInterval * 1.5) // Ensuring minimum 73 hours and an increase of 50%
+			return max(currentInterval, 73) // Ensuring minimum 73 hours and an increase of 50%
 		}
 	}
 

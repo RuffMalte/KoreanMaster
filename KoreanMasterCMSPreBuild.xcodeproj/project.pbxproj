@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2E33FBE02BC6FC1000E8D4FE /* AnkiActionEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA72A412BB880D000DD2262 /* AnkiActionEnum.swift */; };
+		2E33FBE12BC6FC1000E8D4FE /* AnkiActionEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA72A412BB880D000DD2262 /* AnkiActionEnum.swift */; };
 		2E383EB72BB0D28E0090B5C0 /* ExploreSectionLessonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E383EB62BB0D28E0090B5C0 /* ExploreSectionLessonView.swift */; };
 		2E5B3D792BA1AFA00028FCB2 /* AllWelcomeMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5B3D782BA1AFA00028FCB2 /* AllWelcomeMessages.swift */; };
 		2E5B3D7C2BA1B0740028FCB2 /* WelcomeMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5B3D7B2BA1B0740028FCB2 /* WelcomeMessage.swift */; };
@@ -2015,6 +2017,7 @@
 				2EA8D3502BAA0460003067E2 /* TranslationControllerTests.swift in Sources */,
 				2EA8D35C2BAA092B003067E2 /* Vocab.swift in Sources */,
 				2E666E6E2BAF36B700C59FEB /* DocumentRefrenceGeneratorTests.swift in Sources */,
+				2E33FBE02BC6FC1000E8D4FE /* AnkiActionEnum.swift in Sources */,
 				2EF1F1842BAB30C000B1426C /* CreateUserTests.swift in Sources */,
 				2EF1F17A2BAB290C00B1426C /* WelcomeMessagesControllerTests.swift in Sources */,
 				2E666E3E2BACE30A00C59FEB /* DifficultyController.swift in Sources */,
@@ -2170,6 +2173,7 @@
 				2E666E452BAD8E5100C59FEB /* InSessionLessonVocabUsedView.swift in Sources */,
 				2EAC1C3D2B93B77900F713F7 /* CoursesController.swift in Sources */,
 				2E7E3A692BA5D0E500CD9353 /* ModifyLessonGoalView.swift in Sources */,
+				2E33FBE12BC6FC1000E8D4FE /* AnkiActionEnum.swift in Sources */,
 				2E6C51862B92835C00626F95 /* UserListView.swift in Sources */,
 				2EDF0C0E2B9A3C1B001132AD /* LessonDetailSmallCellView.swift in Sources */,
 				2E6C51A62B9356DC00626F95 /* UserMocData.swift in Sources */,
