@@ -16,11 +16,16 @@ struct InSessionAnkiMainView: View {
 	@State private var currentVocab: UserLocalVocab?
 	@State private var isShowingAnkiButtons: Bool = false
 	
-	
+	var totalVocabs: Int {
+		return localVocabs.count
+	}
+	@State var vocabsCompleted: Int = 0
 	
     var body: some View {
 		VStack {
 			VStack {
+				ProgressView(value: (Double(vocabsCompleted) / Double(totalVocabs)), total: 1)
+					.padding()
 				Spacer()
 				HStack {
 					Spacer()
@@ -131,6 +136,8 @@ struct InSessionAnkiMainView: View {
 				
 				currentVocab.review(action: ankiAction)
 				findAndSetNextVocab()
+				
+				vocabsCompleted += 1
 				
 				isShowingAnkiButtons = false
 			} else {
