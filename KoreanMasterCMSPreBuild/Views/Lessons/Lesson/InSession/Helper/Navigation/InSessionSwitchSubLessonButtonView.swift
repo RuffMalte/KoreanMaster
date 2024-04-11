@@ -34,8 +34,8 @@ struct InSessionSwitchSubLessonButtonView: View {
 					.background {
 						RoundedRectangle(cornerRadius: 8)
 							.foregroundStyle(.bar)
+							.shadow(radius: 5)
 					}
-					.shadow(radius: 5)
 			} else {
 				HStack {
 					HStack {
@@ -64,13 +64,16 @@ struct InSessionSwitchSubLessonButtonView: View {
 								.overlay {
 									RoundedRectangle(cornerRadius: 16)
 										.stroke(.tint, style: StrokeStyle(lineWidth: 3, dash: [20, 5]))
+										.shadow(radius: 5)
+
 								}
 						} else {
 							RoundedRectangle(cornerRadius: 16)
 								.foregroundStyle(.tint)
+								.shadow(radius: 5)
+
 						}
 					}
-					.shadow(radius: 5)
 				}
 			}
 		}

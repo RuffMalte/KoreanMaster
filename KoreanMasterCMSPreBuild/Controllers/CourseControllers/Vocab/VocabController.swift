@@ -38,6 +38,10 @@ class VocabController: ObservableObject{
 					}
 				}
 				
+				for vocab in vocabs {
+					print(vocab.koreanVocab)
+				}
+				
 				completion(vocabs, nil)
 				self.isLoadingVocabs = false
 			}

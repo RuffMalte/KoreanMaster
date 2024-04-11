@@ -49,6 +49,8 @@
 		2E666E6B2BAE3BAD00C59FEB /* YouTubePlayerKit in Frameworks */ = {isa = PBXBuildFile; productRef = 2E666E6A2BAE3BAD00C59FEB /* YouTubePlayerKit */; };
 		2E666E6E2BAF36B700C59FEB /* DocumentRefrenceGeneratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E666E6D2BAF36B700C59FEB /* DocumentRefrenceGeneratorTests.swift */; };
 		2E66E4752BC71CC700D25793 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2EF41AD02B927A38007431ED /* Assets.xcassets */; };
+		2E66E4762BC839BD00D25793 /* DeepLConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED4D05E2BB210B7009BE46C /* DeepLConfig.swift */; };
+		2E66E4772BC839BD00D25793 /* DeepLConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED4D05E2BB210B7009BE46C /* DeepLConfig.swift */; };
 		2E6C4DAC2BB40E4800FE0C78 /* UserSettingsMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6C4DAB2BB40E4800FE0C78 /* UserSettingsMainView.swift */; };
 		2E6C4DAE2BB40FB300FE0C78 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2E6C4DAD2BB40FB300FE0C78 /* GoogleService-Info.plist */; };
 		2E6C517B2B927C7000626F95 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6C517A2B927C7000626F95 /* MainTabView.swift */; };
@@ -206,7 +208,6 @@
 		2EC21C8A2BB3457300B1F04E /* WithEnviromentObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC21C892BB3457300B1F04E /* WithEnviromentObjects.swift */; };
 		2EC21C8E2BB34C7C00B1F04E /* UserMainProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC21C8D2BB34C7C00B1F04E /* UserMainProfileView.swift */; };
 		2EC21C902BB3521800B1F04E /* UserProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC21C8F2BB3521800B1F04E /* UserProfileHeaderView.swift */; };
-		2ED4D05F2BB210B7009BE46C /* DeepLConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED4D05E2BB210B7009BE46C /* DeepLConfig.swift */; };
 		2ED4D0612BB2110C009BE46C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2ED4D0602BB2110C009BE46C /* GoogleService-Info.plist */; };
 		2ED4D0692BB32D0C009BE46C /* KoreanMasterAppPreBuildApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED4D0682BB32D0C009BE46C /* KoreanMasterAppPreBuildApp.swift */; };
 		2ED4D06B2BB32D0C009BE46C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED4D06A2BB32D0C009BE46C /* ContentView.swift */; };
@@ -2018,6 +2019,7 @@
 				2EA8D35C2BAA092B003067E2 /* Vocab.swift in Sources */,
 				2E666E6E2BAF36B700C59FEB /* DocumentRefrenceGeneratorTests.swift in Sources */,
 				2E33FBE02BC6FC1000E8D4FE /* AnkiActionEnum.swift in Sources */,
+				2E66E4762BC839BD00D25793 /* DeepLConfig.swift in Sources */,
 				2EF1F1842BAB30C000B1426C /* CreateUserTests.swift in Sources */,
 				2EF1F17A2BAB290C00B1426C /* WelcomeMessagesControllerTests.swift in Sources */,
 				2E666E3E2BACE30A00C59FEB /* DifficultyController.swift in Sources */,
@@ -2156,6 +2158,7 @@
 				2EDF0C042B9A170C001132AD /* LocallizedLessonListView.swift in Sources */,
 				2EDF0C082B9A3A60001132AD /* ModifyLocalizedLessonView.swift in Sources */,
 				2E7E3A512BA318BF00CD9353 /* Vocab.swift in Sources */,
+				2E66E4772BC839BD00D25793 /* DeepLConfig.swift in Sources */,
 				2E666E2D2BACC82A00C59FEB /* DifficultyController.swift in Sources */,
 				2E666E682BAE31D300C59FEB /* InSessionLessonSongItemView.swift in Sources */,
 				2E8D83BB2BA1CE240039DE57 /* LocalizedWelcomeMessageMocData.swift in Sources */,
@@ -2169,7 +2172,6 @@
 				2EAC1C482B94B88100F713F7 /* LanguageSmallDetailCellView.swift in Sources */,
 				2E666E1F2BAC89A100C59FEB /* InSessionLessonGoalExampleView.swift in Sources */,
 				2EAC1C332B93853B00F713F7 /* LanguageCellView.swift in Sources */,
-				2ED4D05F2BB210B7009BE46C /* DeepLConfig.swift in Sources */,
 				2E666E452BAD8E5100C59FEB /* InSessionLessonVocabUsedView.swift in Sources */,
 				2EAC1C3D2B93B77900F713F7 /* CoursesController.swift in Sources */,
 				2E7E3A692BA5D0E500CD9353 /* ModifyLessonGoalView.swift in Sources */,

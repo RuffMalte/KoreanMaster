@@ -175,7 +175,11 @@ extension LessonGoalExample {
 }
 
 extension NewLessonVocabUsed {
-	static var example: NewLessonVocabUsed = NewLessonVocabUsed(title: "Title", helpText: "helptext", vocabIDs: ["String"])
+	static var example: NewLessonVocabUsed = NewLessonVocabUsed(title: "Title", helpText: "helptext", vocabIDs: [
+			"0ECB1B6C-98F3-44EA-882A-95E5E644F737",
+			"18B3537D-A59D-4805-815A-BA9C65793C4B",
+			"67AF06BF-0231-4A86-9BF8-4F7AEEDEDC7A"
+	])
 }
 
 extension LessonGrammar {

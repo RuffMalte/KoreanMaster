@@ -17,7 +17,7 @@ struct InSessionLessonVocabUsedView: View {
 	
 	@StateObject var vocabCon: VocabController = VocabController()
 	@State var isLoading: Bool = false
-	@State var fetchVocabs: [Vocab] = []
+	@State var fetchVocabs: [Vocab] = [Vocab.example]
 	
 	
 	var vGridItemLayout = [GridItem(.flexible()), GridItem(.flexible())]
@@ -30,12 +30,31 @@ struct InSessionLessonVocabUsedView: View {
 					ProgressView()
 				} else {
 					VStack {
-						ScrollView {
-							LazyVGrid(columns: vGridItemLayout) {
+						GeometryReader { geo in
+#if os(iOS)
+							TabView {
 								ForEach(fetchVocabs, id: \.id) { vocab in
 									InSessionLessonVocabUsedItemView(vocab: vocab)
+										.padding()
+										.frame(width: geo.size.width, height: geo.size.height / 2)
 								}
+								
 							}
+							.tabViewStyle(.page(indexDisplayMode: .always))
+							.indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))
+
+#else
+							ScrollView(.horizontal, showsIndicators: false) {
+								HStack {
+									ForEach(fetchVocabs, id: \.id) { vocab in
+										InSessionLessonVocabUsedItemView(vocab: vocab)
+											.frame(width: geo.size.width, height: geo.size.height)
+									}
+								}
+								.scrollTargetLayout()
+							}
+							.scrollTargetBehavior(.viewAligned)
+#endif
 						}
 						Spacer()
 						InSessionSwitchSubLessonButtonView(switchLesson: switchLesson)
@@ -62,4 +81,5 @@ struct InSessionLessonVocabUsedView: View {
 
 #Preview {
 	InSessionLessonVocabUsedView(vocab: NewLessonVocabUsed.example, currentLanguage: "English", switchLesson: {})
+		.padding()
 }
