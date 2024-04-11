@@ -214,8 +214,12 @@ extension LessonPractice {
 
 extension LessonpracticeMultipleChoice {
 	static var multipleExample: [LessonpracticeMultipleChoice] = [
-		LessonpracticeMultipleChoice(question: "",
-									 answers: [LessonPraticeMultipleChoiceAnswer.example, LessonPraticeMultipleChoiceAnswer.example, LessonPraticeMultipleChoiceAnswer.example],
+		LessonpracticeMultipleChoice(question: "Hello Worls",
+									 answers: 
+										[LessonPraticeMultipleChoiceAnswer(answer: "22"),
+										 LessonPraticeMultipleChoiceAnswer(answer: "44"),
+										 LessonPraticeMultipleChoiceAnswer.example
+										],
 									 correctAnswer: LessonPraticeMultipleChoiceAnswer.example
 									)
 	]
@@ -228,7 +232,7 @@ extension LessonpracticeMultipleChoice {
 
 extension LessonPraticeMultipleChoiceAnswer {
 	static var example: LessonPraticeMultipleChoiceAnswer {
-		return LessonPraticeMultipleChoiceAnswer(answer: "")
+		return LessonPraticeMultipleChoiceAnswer(answer: "42")
 	}
 }
 

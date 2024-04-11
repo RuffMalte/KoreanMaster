@@ -16,26 +16,46 @@ struct InSessionLessonMultipleChoiceItemView: View {
 	
 	@State private var confettiCon: Int = 0
 	
+	@State private var selectedAnswer: Int?
+	
 	var body: some View {
 		VStack {
+			Spacer()
 			Text(multipleChoice.question)
-				.font(.title)
+				.font(.system(.title2, design: .rounded, weight: .bold))
 				.padding()
 			
+			Spacer()
 			ForEach(multipleChoice.answers.indices, id: \.self) { index in
 				Button(action: {
 					hasAnswerBeenSelected = true
 					showNavigationButtons = true
 					
+					selectedAnswer = index
 					if multipleChoice.answers[index].isCorret {
 						confettiCon += 1
 					}
 					
 				}) {
-					Text(multipleChoice.answers[index].answer)
-						.font(.title2)
-						.foregroundStyle (getButtonColor(for: index))
+					HStack {
+						Spacer()
+						Text(multipleChoice.answers[index].answer)
+							.font(.system(.headline, design: .default, weight: .regular))
+							.foregroundStyle (hasAnswerBeenSelected ? .white : .primary)
+						Spacer()
+					}
 				}
+				.padding()
+				.background {
+					if hasAnswerBeenSelected {
+						RoundedRectangle(cornerRadius: 16)
+							.foregroundStyle(getButtonColor(for: index))
+					} else {
+						RoundedRectangle(cornerRadius: 16)
+							.foregroundStyle(.bar)
+					}
+				}
+
 				.disabled(hasAnswerBeenSelected)
 				.confettiCannon(counter: $confettiCon)
 			}
@@ -54,3 +74,6 @@ struct InSessionLessonMultipleChoiceItemView: View {
 	}
 }
 
+#Preview {
+	InSessionLessonMultipleChoiceItemView(multipleChoice: LessonpracticeMultipleChoice.multipleExample[0], showNavigationButtons: .constant(false), hasAnswerBeenSelected: .constant(false))
+}
