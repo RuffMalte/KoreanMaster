@@ -41,7 +41,7 @@ struct AfterLessonStreakExtensionView: View {
 							Text(day, format: .dateTime.day(.defaultDigits))
 								.foregroundStyle(.primary)
 								.padding(8)
-								.font(.system(.title3, design: .monospaced, weight: .black))
+								.font(.system(.headline, design: .monospaced, weight: .black))
 								.background {
 									if afterLesson.user.streaks.contains(where: { self.isSameDay($0.date, day) }) {
 										RoundedRectangle(cornerRadius: 8)
