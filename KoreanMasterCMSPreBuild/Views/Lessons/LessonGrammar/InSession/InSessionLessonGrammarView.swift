@@ -30,3 +30,9 @@ struct InSessionLessonGrammarView: View {
 }
 
 
+#Preview {
+	InSessionLessonGrammarView(grammar: LessonGrammar.example, switchLesson: {
+		
+	})
+	.padding()
+}

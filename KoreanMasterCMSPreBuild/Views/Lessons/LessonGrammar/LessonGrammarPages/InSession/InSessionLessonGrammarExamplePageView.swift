@@ -14,14 +14,33 @@ struct InSessionLessonGrammarExamplePageView: View {
 	
     var body: some View {
 		VStack {
-			Text(examplePage.title)
-				.font(.system(.headline, design: .rounded, weight: .bold))
+			VStack {
+				Text(examplePage.title)
+					.font(.system(.title, design: .rounded, weight: .bold))
+					.foregroundStyle(.green.gradient)
+				
+				Text(examplePage.example)
+					.font(.system(.title2, design: .default, weight: .regular))
+					.foregroundStyle(.green)
+			}
+			.padding()
 			
-			Text(examplePage.desc)
-				.font(.system(.subheadline, design: .default, weight: .regular))
-			
-			Text(examplePage.example)
-				.font(.system(.body, design: .default, weight: .regular))
+			HStack {
+				Spacer()
+				Text(examplePage.desc)
+					.font(.system(.body, design: .default, weight: .regular))
+				Spacer()
+			}
+			.padding()
+			.background {
+				RoundedRectangle(cornerRadius: 16)
+					.foregroundStyle(.bar)
+			}
+			.padding()
 		}
     }
+}
+
+#Preview {
+	InSessionLessonGrammarExamplePageView(examplePage: LessonGrammarPage.multipleExample[0])
 }
