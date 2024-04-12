@@ -129,5 +129,8 @@ struct LoginView: View {
 }
 
 #Preview {
-	LoginView(selectedLoginOption: .create)
+	var loginCon = LoginController()
+	
+	return LoginView(selectedLoginOption: .create)
+		.environmentObject(loginCon)
 }

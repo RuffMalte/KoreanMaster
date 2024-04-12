@@ -34,9 +34,11 @@ class LoginController: ObservableObject {
 	var allLanguages: [CourseLanguage] = []
 	
 	init() {
-		self.checkUserLoggedIn()
-		self.getAllLanguages()
-		
+		self.getAllLanguages() { languages in
+			self.allLanguages = languages
+			
+			self.checkUserLoggedIn()
+		}
 	}
 	
 	//MARK: User for FirebaseAuth
@@ -360,15 +362,16 @@ class LoginController: ObservableObject {
 		}
 	}
 	
-	func getAllLanguages() {
+	func getAllLanguages(completion: @escaping ([CourseLanguage]) -> Void) {
 		let languagesCollection = Firestore.firestore().collection("languages")
 		languagesCollection.getDocuments { querySnapshot, error in
 			if let error = error {
 				print("Error reading all languages from Firestore: \(error)")
 			} else {
-				self.allLanguages = querySnapshot?.documents.compactMap { document in
+				let allLanguages = querySnapshot?.documents.compactMap { document in
 					try? document.data(as: CourseLanguage.self)
 				} ?? []
+				completion(allLanguages)
 			}
 		}
 	}

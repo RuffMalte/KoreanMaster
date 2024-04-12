@@ -51,6 +51,8 @@
 		2E66E4752BC71CC700D25793 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2EF41AD02B927A38007431ED /* Assets.xcassets */; };
 		2E66E4762BC839BD00D25793 /* DeepLConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED4D05E2BB210B7009BE46C /* DeepLConfig.swift */; };
 		2E66E4772BC839BD00D25793 /* DeepLConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED4D05E2BB210B7009BE46C /* DeepLConfig.swift */; };
+		2E670A282BC9982A00BA7CDB /* LoginMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E670A272BC9982A00BA7CDB /* LoginMainView.swift */; };
+		2E670A292BC9988500BA7CDB /* LoginMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E670A272BC9982A00BA7CDB /* LoginMainView.swift */; };
 		2E6C4DAC2BB40E4800FE0C78 /* UserSettingsMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6C4DAB2BB40E4800FE0C78 /* UserSettingsMainView.swift */; };
 		2E6C4DAE2BB40FB300FE0C78 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2E6C4DAD2BB40FB300FE0C78 /* GoogleService-Info.plist */; };
 		2E6C517B2B927C7000626F95 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6C517A2B927C7000626F95 /* MainTabView.swift */; };
@@ -292,6 +294,7 @@
 		2E666E642BAE312300C59FEB /* InSessionLessonCultureRefrenceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InSessionLessonCultureRefrenceView.swift; sourceTree = "<group>"; };
 		2E666E672BAE31D300C59FEB /* InSessionLessonSongItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InSessionLessonSongItemView.swift; sourceTree = "<group>"; };
 		2E666E6D2BAF36B700C59FEB /* DocumentRefrenceGeneratorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentRefrenceGeneratorTests.swift; sourceTree = "<group>"; };
+		2E670A272BC9982A00BA7CDB /* LoginMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginMainView.swift; sourceTree = "<group>"; };
 		2E6C4DAB2BB40E4800FE0C78 /* UserSettingsMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingsMainView.swift; sourceTree = "<group>"; };
 		2E6C4DAD2BB40FB300FE0C78 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2E6C517A2B927C7000626F95 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
@@ -782,6 +785,7 @@
 			isa = PBXGroup;
 			children = (
 				2E6C51882B92840600626F95 /* LoginView.swift */,
+				2E670A272BC9982A00BA7CDB /* LoginMainView.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -2133,6 +2137,7 @@
 				2EC21C7D2BB334B900B1F04E /* DifficultyController.swift in Sources */,
 				2EC21C5D2BB333DF00B1F04E /* InSessionLessonGoalView.swift in Sources */,
 				2EA72A192BB563CC00DD2262 /* ExploreLessonStartButtonView.swift in Sources */,
+				2E670A292BC9988500BA7CDB /* LoginMainView.swift in Sources */,
 				2EC21C662BB3340D00B1F04E /* InSessionLessonSentenceBuildingItemView.swift in Sources */,
 				2E990C182BB3615F003DBA2C /* Haptics.swift in Sources */,
 				2EA72A162BB5639800DD2262 /* ExploreAllLocalizedLessonsView.swift in Sources */,
@@ -2223,6 +2228,7 @@
 				2E7E3A582BA31CAE00CD9353 /* VocabMocData.swift in Sources */,
 				2E7E3A7B2BA644E200CD9353 /* ModifyLessonGrammarPageListCellView.swift in Sources */,
 				2E383EB72BB0D28E0090B5C0 /* ExploreSectionLessonView.swift in Sources */,
+				2E670A282BC9982A00BA7CDB /* LoginMainView.swift in Sources */,
 				2E6C517B2B927C7000626F95 /* MainTabView.swift in Sources */,
 				2E7803742BB092510083F15A /* MaltesSFIconPicker.swift in Sources */,
 				2E6C51AC2B93668D00626F95 /* CourseLanguage.swift in Sources */,

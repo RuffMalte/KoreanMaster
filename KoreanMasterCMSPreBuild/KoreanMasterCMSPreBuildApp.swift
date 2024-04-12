@@ -44,7 +44,7 @@ struct KoreanMasterCMSPreBuildApp: App {
 						if loginController.isLoadingAccountSignIn {
 							ProgressView()
 						} else {
-							LoginView(selectedLoginOption: loginController.loginOption)
+							LoginMainView(selectedLoginOption: loginController.loginOption)
 						}
 					}
 				}
