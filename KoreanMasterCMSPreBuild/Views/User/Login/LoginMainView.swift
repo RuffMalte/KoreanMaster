@@ -106,6 +106,7 @@ struct LoginMainView: View {
 									}
 									.padding(20)
 								}
+								.buttonStyle(.plain)
 								.frame(width: geo.size.width, height: geo.size.height / 3)
 							}
 						}
@@ -217,6 +218,7 @@ struct LoginMainView: View {
 				}
 			}
 			.ignoresSafeArea()
+			#if os(iOS)
 			.toolbarBackground(.hidden, for: .navigationBar)
 			.toolbar {
 				ToolbarItem(placement: .cancellationAction) {
@@ -230,6 +232,9 @@ struct LoginMainView: View {
 					.foregroundStyle(.white)
 				}
 			}
+			#elseif os(macOS)
+			.navigationTitle("KoreanMaster")
+			#endif
 		}
     }
 }
