@@ -16,9 +16,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2EF41AC82B927A36007431ED"
-               BuildableName = "KoreanMasterCMSPreBuild.app"
-               BlueprintName = "KoreanMasterCMSPreBuild"
-               ReferencedContainer = "container:KoreanMasterCMSPreBuild.xcodeproj">
+               BuildableName = "KoreanMasterCMS.app"
+               BlueprintName = "KoreanMasterCMS"
+               ReferencedContainer = "container:KoreanMaster.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -30,7 +30,7 @@
       shouldUseLaunchSchemeArgsEnv = "YES">
       <TestPlans>
          <TestPlanReference
-            reference = "container:KoreanMasterCMSPreBuild.xctestplan"
+            reference = "container:../KoreanMasterTestPlan.xctestplan"
             default = "YES">
          </TestPlanReference>
       </TestPlans>
@@ -40,9 +40,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2E6C51922B9292DC00626F95"
-               BuildableName = "KoreanMasterCMSPreBuildTests.xctest"
-               BlueprintName = "KoreanMasterCMSPreBuildTests"
-               ReferencedContainer = "container:KoreanMasterCMSPreBuild.xcodeproj">
+               BuildableName = "KoreanMasterTests.xctest"
+               BlueprintName = "KoreanMasterTests"
+               ReferencedContainer = "container:KoreanMaster.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -62,9 +62,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2EF41AC82B927A36007431ED"
-            BuildableName = "KoreanMasterCMSPreBuild.app"
-            BlueprintName = "KoreanMasterCMSPreBuild"
-            ReferencedContainer = "container:KoreanMasterCMSPreBuild.xcodeproj">
+            BuildableName = "KoreanMasterCMS.app"
+            BlueprintName = "KoreanMasterCMS"
+            ReferencedContainer = "container:KoreanMaster.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -79,9 +79,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2EF41AC82B927A36007431ED"
-            BuildableName = "KoreanMasterCMSPreBuild.app"
-            BlueprintName = "KoreanMasterCMSPreBuild"
-            ReferencedContainer = "container:KoreanMasterCMSPreBuild.xcodeproj">
+            BuildableName = "KoreanMasterCMS.app"
+            BlueprintName = "KoreanMasterCMS"
+            ReferencedContainer = "container:KoreanMaster.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

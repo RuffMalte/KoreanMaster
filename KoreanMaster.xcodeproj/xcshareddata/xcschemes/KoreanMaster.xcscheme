@@ -16,9 +16,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2ED4D0652BB32D0C009BE46C"
-               BuildableName = "KoreanMasterAppPreBuild.app"
-               BlueprintName = "KoreanMasterAppPreBuild"
-               ReferencedContainer = "container:KoreanMasterCMSPreBuild.xcodeproj">
+               BuildableName = "KoreanMaster.app"
+               BlueprintName = "KoreanMaster"
+               ReferencedContainer = "container:KoreanMaster.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -27,8 +27,13 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "YES"
-      shouldAutocreateTestPlan = "YES">
+      shouldUseLaunchSchemeArgsEnv = "YES">
+      <TestPlans>
+         <TestPlanReference
+            reference = "container:../KoreanMasterTestPlan.xctestplan"
+            default = "YES">
+         </TestPlanReference>
+      </TestPlans>
    </TestAction>
    <LaunchAction
       buildConfiguration = "Debug"
@@ -45,9 +50,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2ED4D0652BB32D0C009BE46C"
-            BuildableName = "KoreanMasterAppPreBuild.app"
-            BlueprintName = "KoreanMasterAppPreBuild"
-            ReferencedContainer = "container:KoreanMasterCMSPreBuild.xcodeproj">
+            BuildableName = "KoreanMaster.app"
+            BlueprintName = "KoreanMaster"
+            ReferencedContainer = "container:KoreanMaster.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -62,9 +67,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2ED4D0652BB32D0C009BE46C"
-            BuildableName = "KoreanMasterAppPreBuild.app"
-            BlueprintName = "KoreanMasterAppPreBuild"
-            ReferencedContainer = "container:KoreanMasterCMSPreBuild.xcodeproj">
+            BuildableName = "KoreanMaster.app"
+            BlueprintName = "KoreanMaster"
+            ReferencedContainer = "container:KoreanMaster.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
