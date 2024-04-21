@@ -8,7 +8,7 @@ Korean Master is divided into two main components: the learner's app and the CMS
 
 ### Learner's App
 
-- **Vocabulary:** Get introduced to essential Korean vocabulary. (Note: Active learning component under development)
+- **Vocabulary:** Get introduced to essential Korean vocabulary
 - **Lessons Management:** Access well-structured lessons on Korean grammar, phrases, and usage.
 - **Culture Tips:** Learn about Korean culture with tips and facts that enhance your learning experience.
 - **Achievements:** Track your progress and unlock achievements as you learn.
@@ -17,16 +17,6 @@ Korean Master is divided into two main components: the learner's app and the CMS
 
 - **Content Management:** Easily add, modify, and organize lessons, vocabulary, and cultural tips.
 - **Firebase Integration:** Manage user data and app content securely.
-
-## Currently Implemented Features
-
-As of now, the following features are available:
-
-- Basic vocabulary introduction (without active learning quizzes)
-- Management of Korean lessons
-- Korean cultural tips and facts
-
-We are continuously working to add more features and enhance your learning experience.
 
 ## Build Steps
 
@@ -39,7 +29,7 @@ We are continuously working to add more features and enhance your learning exper
    - Obtain `GoogleService-Info.plist` for Firebase:
      - Contact the developer to obtain the file, or
      - Create your own Firebase project and download the file.
-   - Add `GoogleService-Info.plist` to the app's root directory.
+   - Add `GoogleService-Info.plist` to the target App.
 
 3. **Build and Run:**
    - Open the project in Xcode.
@@ -56,7 +46,7 @@ We are continuously working to add more features and enhance your learning exper
    - Obtain `GoogleService-Info.plist` for Firebase:
      - Contact the developer to obtain the file, or
      - Create your own Firebase project and download the file.
-   - Add `GoogleService-Info.plist` to the app's root directory.
+   - Add `GoogleService-Info.plist` to the target App.
 
 3. **Folder Structure:**
    - Create the following folders within the project directory:
