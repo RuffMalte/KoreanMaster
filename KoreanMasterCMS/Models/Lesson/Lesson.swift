@@ -1,8 +1,8 @@
 //
 //  Lesson.swift
-//  KoreanMasterCMSPreBuild
+//  KoreanMasterCMS
 //
-//  Created by Malte Ruff on 05.03.24.
+//  Created by Malte Ruff on 19.04.24.
 //
 
 import Foundation
@@ -65,7 +65,7 @@ class Lesson: Identifiable, Codable {
 	
 	var lessonInfo: LessonInfo
 	var lessonTag: LessonTag
-
+	
 	var lessonGoal: LessonGoal?
 	
 	var newLessonVocabUsed: NewLessonVocabUsed?
@@ -169,7 +169,7 @@ class LessonDiffuculty: Identifiable, Codable, Hashable {
 		hasher.combine(id)
 	}
 	
-
+	
 	
 	var id: String
 	var difficulty: String
@@ -480,7 +480,7 @@ class LessonCultureReference: Identifiable, Codable {
 		id: String = UUID().uuidString,
 		title: String,
 		desc: String,
-	 	songs: [LessonCultureReferenceSong] = []
+		songs: [LessonCultureReferenceSong] = []
 	) {
 		self.id = id
 		self.title = title
