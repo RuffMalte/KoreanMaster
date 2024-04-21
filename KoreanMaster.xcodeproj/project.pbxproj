@@ -59,7 +59,6 @@
 		2E6C51892B92840600626F95 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6C51882B92840600626F95 /* LoginView.swift */; };
 		2E6C518C2B92847300626F95 /* LoginOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6C518B2B92847300626F95 /* LoginOptions.swift */; };
 		2E6C518E2B92888200626F95 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6C518D2B92888200626F95 /* LoginController.swift */; };
-		2E6C51962B9292DC00626F95 /* KoreanMasterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6C51952B9292DC00626F95 /* KoreanMasterTests.swift */; };
 		2E6C519F2B92944000626F95 /* FirestoreUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6C519E2B92944000626F95 /* FirestoreUser.swift */; };
 		2E6C51A12B93567500626F95 /* UserCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6C51A02B93567500626F95 /* UserCellView.swift */; };
 		2E6C51A62B9356DC00626F95 /* UserMocData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6C51A52B9356DC00626F95 /* UserMocData.swift */; };
@@ -244,6 +243,7 @@
 		2EF662DD2BD54C320081C9DA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2EF662DC2BD54C320081C9DA /* GoogleService-Info.plist */; };
 		2EF662DE2BD54F2D0081C9DA /* Lesson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF662D22BD54AC20081C9DA /* Lesson.swift */; };
 		2EF662DF2BD54F2E0081C9DA /* Lesson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF662D22BD54AC20081C9DA /* Lesson.swift */; };
+		2EF662E42BD5A8EE0081C9DA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2EF662DA2BD54C090081C9DA /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -303,7 +303,6 @@
 		2E6C518B2B92847300626F95 /* LoginOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginOptions.swift; sourceTree = "<group>"; };
 		2E6C518D2B92888200626F95 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		2E6C51932B9292DC00626F95 /* KoreanMasterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KoreanMasterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		2E6C51952B9292DC00626F95 /* KoreanMasterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KoreanMasterTests.swift; sourceTree = "<group>"; };
 		2E6C519E2B92944000626F95 /* FirestoreUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreUser.swift; sourceTree = "<group>"; };
 		2E6C51A02B93567500626F95 /* UserCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCellView.swift; sourceTree = "<group>"; };
 		2E6C51A52B9356DC00626F95 /* UserMocData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMocData.swift; sourceTree = "<group>"; };
@@ -414,7 +413,7 @@
 		2EF662D42BD54AE80081C9DA /* DeepLConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DeepLConfig.swift; path = KoreanMasterCMS/Static/API/DeepLConfig.swift; sourceTree = SOURCE_ROOT; };
 		2EF662DA2BD54C090081C9DA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2EF662DC2BD54C320081C9DA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		2EF662E02BD550B80081C9DA /* KoreanMasterTests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = KoreanMasterTests.xctestplan; sourceTree = "<group>"; };
+		2EF662E32BD5A61F0081C9DA /* KoreanMasterTestPlan.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; name = KoreanMasterTestPlan.xctestplan; path = ../KoreanMasterTestPlan.xctestplan; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -803,8 +802,6 @@
 			isa = PBXGroup;
 			children = (
 				2E6C519C2B92930400626F95 /* ControllerTest */,
-				2E6C51952B9292DC00626F95 /* KoreanMasterTests.swift */,
-				2EF662E02BD550B80081C9DA /* KoreanMasterTests.xctestplan */,
 			);
 			path = KoreanMasterTests;
 			sourceTree = "<group>";
@@ -1771,6 +1768,7 @@
 		2EF41AC02B927A36007431ED = {
 			isa = PBXGroup;
 			children = (
+				2EF662E32BD5A61F0081C9DA /* KoreanMasterTestPlan.xctestplan */,
 				2ED4D0672BB32D0C009BE46C /* KoreanMaster */,
 				2EF41ACB2B927A36007431ED /* KoreanMasterCMS */,
 				2E6C51942B9292DC00626F95 /* KoreanMasterTests */,
@@ -1989,6 +1987,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2EF662E42BD5A8EE0081C9DA /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2042,7 +2041,6 @@
 				2EF1F1812BAB2E4800B1426C /* FirestoreUser.swift in Sources */,
 				2EA8D3562BAA08B4003067E2 /* Dictionary.swift in Sources */,
 				2EF1F1882BAB38A500B1426C /* CoursesController.swift in Sources */,
-				2E6C51962B9292DC00626F95 /* KoreanMasterTests.swift in Sources */,
 				2EF1F1802BAB2E4600B1426C /* LoginOptions.swift in Sources */,
 				2EF1F1892BAB39CE00B1426C /* AllLessonsLocalizedMocData.swift in Sources */,
 				2EA8D35A2BAA0916003067E2 /* VocabControllerTests.swift in Sources */,
