@@ -10,6 +10,8 @@ import SwiftUI
 struct UserManageAccountView: View {
 	
 	@EnvironmentObject var loginCon: LoginController
+	@EnvironmentObject var alertModal: AlertManager
+
 	@State private var isPresentingAlert = false
 	@AppStorage("selectedTintColor") var selectedTintColor: ColorEnum = .red
 
@@ -23,13 +25,7 @@ struct UserManageAccountView: View {
 						Spacer()
 						VStack {
 							UserProfileDefaultCircleView()
-							
-							Button {
-								//TODO: Update Pictures
-							} label: {
-								Text("Update Picture")
-									.font(.system(.headline, design: .rounded, weight: .bold))
-							}.buttonStyle(.bordered)
+						
 
 						}
 						Spacer()
@@ -47,7 +43,13 @@ struct UserManageAccountView: View {
 							.disableAutocorrection(true)
 						
 						Button {
-							loginCon.changeUserDisplayName(displayName: currentUser.displayName)
+							loginCon.changeUserDisplayName(displayName: currentUser.displayName) { newName, error in
+								if let error = error {
+									alertModal.showAlert(.error, heading: "Error", subHeading: error.localizedDescription)
+								} else if let name = newName {
+									alertModal.showAlert(.success, heading: "Success", subHeading: "Name updated to \(String(describing: name))")
+								}
+							}
 						} label: {
 							Image(systemName: "square.and.arrow.down")
 								.font(.headline)
@@ -67,7 +69,7 @@ struct UserManageAccountView: View {
 							.disableAutocorrection(true)
 						
 						Button {
-							print("doesn't work yet")
+							
 						} label: {
 							Image(systemName: "square.and.arrow.down")
 								.font(.headline)
@@ -102,7 +104,13 @@ struct UserManageAccountView: View {
 				Section {
 					HStack {
 						Button {
-							loginCon.logoutUser()
+							loginCon.logoutUser() { error, success in
+								if let error = error {
+									alertModal.showAlert(.error, heading: "Error", subHeading: error.localizedDescription)
+								} else if success {
+									alertModal.showAlert(.success, heading: "Success", subHeading: "Logged Out")
+								}
+							}
 						} label: {
 							Label("Log out", systemImage: "rectangle.portrait.and.arrow.right")
 						}
@@ -129,7 +137,14 @@ struct UserManageAccountView: View {
 				) {
 					Button("Yes", role: .destructive) {
 						withAnimation {
-							loginCon.deleteCurrentUser()
+							loginCon.deleteCurrentUser() { success, error in
+								if let error = error {
+									alertModal.showAlert(.error, heading: "Error", subHeading: error.localizedDescription)
+								} else if success {
+									alertModal.showAlert(.success, heading: "Success", subHeading: "Account Deleted")
+								}
+								
+							}
 						}
 					}
 				}
@@ -138,6 +153,8 @@ struct UserManageAccountView: View {
 				currentUser = user
 			}
 			.navigationTitle("Your Account")
+			.withAlertModal(isPresented: $alertModal.isModalPresented)
+
 		} else {
 			NoUserSettingsView()
 		}

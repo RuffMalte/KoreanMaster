@@ -22,6 +22,7 @@ struct ExploreAllLocalizedLessonsView: View {
 	var completeFunc: ((Lesson) -> Void)?
 	
 	@EnvironmentObject var courseCon: CoursesController
+	@EnvironmentObject var alertModal: AlertManager
 	@State var isLoadingLesson: Bool = false
 	
 	@State var selectedLesson: Lesson?
@@ -126,6 +127,7 @@ struct ExploreAllLocalizedLessonsView: View {
 				isShowingLesson = true
 			}
 		})
+		.withAlertModal(isPresented: $alertModal.isModalPresented)
 		.sheet(isPresented: $isShowingLesson) {
 			if let selectedLesson = selectedLesson {
 				VStack {
@@ -149,6 +151,9 @@ struct ExploreAllLocalizedLessonsView: View {
 							}
 							
 							self.selectedLesson = lesson
+							isLoadingLesson = false
+						} else {
+							alertModal.showAlert(.error, heading: "Error", subHeading: "Failed to load lesson")
 							isLoadingLesson = false
 						}
 					}

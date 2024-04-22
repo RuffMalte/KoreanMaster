@@ -16,8 +16,10 @@ struct UserProfileDefaultCircleView: View {
 			.shadow(radius: 5)
 			.foregroundStyle(.tint.opacity(0.75))
 			.overlay {
-				Text(loginCon.currentFirestoreUser!.displayName.prefix(1))
-					.font(.system(.title, design: .rounded, weight: .bold))
+				if let currentFirestoreUser = loginCon.currentFirestoreUser {
+					Text(currentFirestoreUser.displayName.prefix(1))
+						.font(.system(.title, design: .rounded, weight: .bold))
+				}
 			}
     }
 }

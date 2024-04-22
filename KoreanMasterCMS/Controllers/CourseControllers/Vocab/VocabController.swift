@@ -38,10 +38,6 @@ class VocabController: ObservableObject{
 					}
 				}
 				
-				for vocab in vocabs {
-					print(vocab.koreanVocab)
-				}
-				
 				completion(vocabs, nil)
 				self.isLoadingVocabs = false
 			}
@@ -68,7 +64,6 @@ class VocabController: ObservableObject{
 				}
 			}
 		} catch {
-			print("Error writing vocab to Firestore: \(error)")
 			completion(false, error)
 		}
 	}

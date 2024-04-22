@@ -23,7 +23,7 @@ struct LocalizedVocabListView: View {
 	@State var isShowingAddVocab: Bool = false
 	@State var searchText: String = ""
 	@StateObject var vocabCon = VocabController()
-	
+	@EnvironmentObject var alertModal: AlertManager
 	
     var body: some View {
 		VStack {
@@ -65,6 +65,7 @@ struct LocalizedVocabListView: View {
 			}
 		}
 		.navigationTitle("\(language) Vocab")
+		.withAlertModal(isPresented: $alertModal.isModalPresented)
 		.onAppear {
 			getVocab()
 		}
@@ -96,7 +97,9 @@ struct LocalizedVocabListView: View {
 	
 	func getVocab() {
 		vocabCon.getVocab(language: language) { vocab, error in
-			guard error != nil else {
+			if let error = error {
+				alertModal.showAlert(.error, heading: "Error", subHeading: error.localizedDescription)
+			} else {
 				self.vocab = vocab
 				return
 			}

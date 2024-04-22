@@ -18,7 +18,8 @@ struct UsersAllLessonListView: View {
 
 	@EnvironmentObject var loginCon: LoginController
 	@EnvironmentObject var courseCon: CoursesController
-	
+	@EnvironmentObject var alertModal: AlertManager
+
 		
 	@AppStorage("selectedTintColor") var selectedTintColor: ColorEnum = .red
 	@State private var isLoadingLessons = false
@@ -66,12 +67,13 @@ struct UsersAllLessonListView: View {
 						}
 					}
 				}
+				.withAlertModal(isPresented: $alertModal.isModalPresented)
 				.onAppear {
 					if courseCon.currentLessons.isEmpty {
 						isLoadingLessons = true
 						courseCon.getAllLessons(language: currentFirestoreUser.languageSelected) { lessons, error in
 							if let error = error {
-								print("Error getting lessons: \(error)")
+								alertModal.showAlert(.error, heading: "Error", subHeading: error.localizedDescription)
 							} else {
 								self.currentLessons = lessons
 								courseCon.currentLessons = lessons

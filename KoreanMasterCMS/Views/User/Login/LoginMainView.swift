@@ -20,7 +20,7 @@ struct LoginMainView: View {
 	
 	
 	@EnvironmentObject var loginCon: LoginController
-	
+	@EnvironmentObject var alertModal: AlertManager
 	
 	@State private var showLoginOptions: LoginOptions = .login
 	@State private var color: Color = .red
@@ -153,7 +153,11 @@ struct LoginMainView: View {
 									
 									
 									Button {
-										loginCon.createUser(email: email, password: password, displayName: displayName)
+										loginCon.createUser(email: email, password: password, displayName: displayName) { user, isFinished, error in
+											if let error = error {
+												alertModal.showAlert(.error, heading: "There was an Error", subHeading: error.localizedDescription)
+											}
+										}
 									} label: {
 										Text("Create account")
 											.foregroundStyle(.primary)
@@ -165,12 +169,16 @@ struct LoginMainView: View {
 											}
 									}
 									.padding()
-									.disabled(email.isEmpty || password.isEmpty || selectedLanguage != nil)
+									.disabled(email.isEmpty || password.isEmpty || selectedLanguage == nil)
 
 								} else if showLoginOptions == .login {
 									
 									Button {
-										loginCon.loginUser(email: email, password: password)
+										loginCon.loginUser(email: email, password: password) { user, isFinished, error in
+											if let error = error {
+												alertModal.showAlert(.error, heading: "There was an Error", subHeading: error.localizedDescription)
+											}
+										}
 									} label: {
 										Text("Login")
 											.foregroundStyle(.primary)
@@ -217,6 +225,7 @@ struct LoginMainView: View {
 					selectedLanguage = loginCon.allLanguages.first
 				}
 			}
+			.withAlertModal(isPresented: $alertModal.isModalPresented)
 			.ignoresSafeArea()
 			#if os(iOS)
 			.toolbarBackground(.hidden, for: .navigationBar)

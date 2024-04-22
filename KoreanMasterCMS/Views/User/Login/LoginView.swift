@@ -60,7 +60,7 @@ struct LoginView: View {
 				switch selectedLoginOption {
 				case .login:
 					Button("Login") {
-						loginCon.loginUser(email: email, password: password)
+//						loginCon.loginUser(email: email, password: password)
 					}
 					.disabled(email.isEmpty || password.isEmpty)
 					Button("Forgot password") {
@@ -98,7 +98,7 @@ struct LoginView: View {
 						
 					
 					Button("Create Account") {
-						loginCon.createUser(email: email, password: password, displayName: displayName)
+//						loginCon.createUser(email: email, password: password, displayName: displayName)
 					}
 					.disabled(email.isEmpty || password.isEmpty || displayName.isEmpty)
 					.onAppear {

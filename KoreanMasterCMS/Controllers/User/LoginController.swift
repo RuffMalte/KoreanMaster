@@ -34,7 +34,7 @@ class LoginController: ObservableObject {
 	var allLanguages: [CourseLanguage] = []
 	
 	init() {
-		self.getAllLanguages() { languages in
+		self.getAllLanguages() { languages, error in
 			self.allLanguages = languages
 			
 			self.checkUserLoggedIn()
@@ -48,13 +48,9 @@ class LoginController: ObservableObject {
 			if user != nil {
 				self.user = auth.currentUser
 				self.readFirestoreUser { user, bool, error in
-					if let error = error {
-						print(error)
-					}
 					if let user = user {
 						self.currentFirestoreUser = user
 					}
-						
 				}
 				self.loggedIn = true
 			} else {
@@ -66,53 +62,62 @@ class LoginController: ObservableObject {
 		}
 	}
 	
-	func logoutUser() {
+	func logoutUser(completion: @escaping (Error?, Bool) -> Void) {
 		do {
 			try Auth.auth().signOut()
 			self.loggedIn = false
+			completion(nil, true)
 		} catch {
 			print(error)
+			completion(error, false)
 		}
 	}
 	
-	func createUser(email: String, password: String, displayName: String) {
+	func createUser(email: String, password: String, displayName: String, completion: @escaping (FirestoreUser?, Bool, Error?) -> Void) {
 		self.isLoadingAccountSignIn = true
 		Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
 			if let error = error {
 				print(error)
+				self.loginOption = .create
+				self.isLoadingAccountSignIn = false
+				completion(nil, false, error)
 			} else {
-				self.changeUserDisplayName(displayName: displayName)
+				self.changeUserDisplayName(displayName: displayName) { newName, error in
+				}
 				
 				self.loggedIn = true
 				self.isLoadingAccountSignIn = false
 				
 				self.createFirestoreUser(displayName: displayName) { isFinished, error in
-					//TODO: Handle error
+					completion(self.currentFirestoreUser, isFinished, error)
 				}
 			}
 		}
 	}
 	
-	func changeUserDisplayName(displayName: String) {
+	func changeUserDisplayName(displayName: String, completion: @escaping (String?, Error?) -> Void) {
 		let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest()
 		changeRequest?.displayName = displayName
 		changeRequest?.commitChanges { error in
 			if let error = error {
 				print(error)
+				completion(nil, error)
 			}
 		}
 		if let user = self.user {
 			self.changeFirebaseDisplayName(withId: user.uid, displayName: displayName) { displayName, error in
 				if let error = error {
 					print(error)
+					completion(nil, error)
 				} else if let displayName = displayName {
 					self.currentFirestoreUser?.displayName = displayName
+					completion(displayName, nil)
 				}
 			}
 		}
 	}
 
-	func loginUser(email: String, password: String) {
+	func loginUser(email: String, password: String, completion: @escaping (FirestoreUser?, Bool, Error?) -> Void) {
 		self.loginOption = .login
 		self.isLoadingAccountSignIn = true
 		Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
@@ -120,13 +125,16 @@ class LoginController: ObservableObject {
 				print(error)
 				self.loginOption = .login
 				self.isLoadingAccountSignIn = false
+				completion(nil, false, error)
 			} else {
 				self.readFirestoreUser { user, bool, error in
 					if let error = error {
 						print(error)
+						completion(nil, false, error)
 					}
 					if let user = user {
 						self.currentFirestoreUser = user
+						completion(user, true, nil)
 					}
 				}
 				self.loggedIn = true
@@ -136,7 +144,7 @@ class LoginController: ObservableObject {
 		}
 	}
 	
-	func deleteCurrentUser() {
+	func deleteCurrentUser(completion: @escaping (Bool, Error?) -> Void) {
 		self.isLoadingAccountSignIn = true
 		guard let user = user else { return }
 		self.deleteFirestoreUser(with: user.uid) { bool, error in
@@ -151,14 +159,12 @@ class LoginController: ObservableObject {
 					self.loginOption = .reauthenticate
 					self.loggedIn = false
 				} else {
-					print(error.localizedDescription)
+					completion(false, error)
 				}
 			} else {
-				print("User deleted")
-
 				self.loginOption = .create
 				self.loggedIn = false
-				print("User deleted")
+				completion(true, nil)
 			}
 		}
 		self.isLoadingAccountSignIn = false
@@ -172,8 +178,8 @@ class LoginController: ObservableObject {
 			if let error = error {
 				print(error)
 			}
-			self.deleteCurrentUser()
-			//TODO: implement some kind of Confirmation
+			self.deleteCurrentUser() { bool, error in
+			}
 			self.loginOption = .create
 			self.loggedIn = false
 		}
@@ -228,12 +234,14 @@ class LoginController: ObservableObject {
 						let fetchedFirestoreUser = try document.data(as: FirestoreUser.self)
 						completion(fetchedFirestoreUser, true, nil)
 					} catch {
-						print("Error decoding user from Firestore: \(error)")
 						completion(nil, false, error)
 					}
 				} else {
-					self.logoutUser()
-					print("User does not exist")
+					self.logoutUser() { error, success in
+						if let error = error {
+							completion(nil, false, error)
+						}
+					}
 					completion(nil, false, nil)
 				}
 			}
@@ -241,7 +249,7 @@ class LoginController: ObservableObject {
 	}
 	
 	func deleteFirestoreUser(with id: String, completion: @escaping (Bool, Error?) -> Void) {
-		guard !id.isEmpty else { return }
+		guard !id.isEmpty else { completion(false, nil); return }
 		
 		let usersCollection = Firestore.firestore().collection("users")
 		
@@ -261,7 +269,6 @@ class LoginController: ObservableObject {
 		
 		usersCollection.document(withId).updateData(["displayName": displayName]) { error in
 			if let error = error {
-				print("Error updating user: \(error)")
 				completion(nil, error)
 			}
 			completion(displayName, nil)
@@ -347,7 +354,7 @@ class LoginController: ObservableObject {
 		let usersCollection = Firestore.firestore().collection("users")
 		usersCollection.document(id).getDocument { document, error in
 			if let error = error {
-				print("Error reading user from Firestore: \(error)")
+				fatalError("Error reading user from Firestore: \(error)")
 			} else {
 				if let document = document, document.exists {
 					do {
@@ -355,25 +362,25 @@ class LoginController: ObservableObject {
 						user.languageSelected = language
 						try usersCollection.document(id).setData(from: user)
 					} catch {
-						print("Error decoding user from Firestore: \(error)")
+						fatalError("Error writing user to Firestore: \(error)")
 					}
 				} else {
-					print("User does not exist")
+					fatalError("User does not exist in Firestore")
 				}
 			}
 		}
 	}
 	
-	func getAllLanguages(completion: @escaping ([CourseLanguage]) -> Void) {
+	func getAllLanguages(completion: @escaping ([CourseLanguage], Error?) -> Void) {
 		let languagesCollection = Firestore.firestore().collection("languages")
 		languagesCollection.getDocuments { querySnapshot, error in
 			if let error = error {
-				print("Error reading all languages from Firestore: \(error)")
+				completion([], error)
 			} else {
 				let allLanguages = querySnapshot?.documents.compactMap { document in
 					try? document.data(as: CourseLanguage.self)
 				} ?? []
-				completion(allLanguages)
+				completion(allLanguages, nil)
 			}
 		}
 	}
@@ -448,7 +455,6 @@ class LoginController: ObservableObject {
 						}
 						dispatchGroup.leave()
 					} catch {
-						print("Error decoding welcome message from Firestore: \(error)")
 						dispatchGroup.leave()
 					}
 				}

@@ -14,7 +14,8 @@ struct MainTabView: View {
 	var lesson = Lesson.detailExample
 	
 	@EnvironmentObject var loginCon: LoginController
-	
+	@EnvironmentObject var alertModal: AlertManager
+
     var body: some View {
 #if os(iOS)
 			
@@ -31,20 +32,11 @@ struct MainTabView: View {
 						.tag(1)
 				}
 			
-			Text("Use the Camera to find and automatically translate objects")
-				.tabItem {
-					Label("Scan", systemImage: "square.dashed")
-						.tag(2)
-				}
-			
 			UserMainProfileView()
 				.tabItem {
 					Label("Profile", systemImage: "person.fill")
-						.tag(3)
+						.tag(2)
 				}
-			
-			
-			
 		}
 			
 			

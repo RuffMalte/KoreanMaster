@@ -97,7 +97,7 @@ class CoursesController: ObservableObject {
 
 	
 	///if the lesson already exists, it will be overwritten, otherwise a new lesson will be created
-	func SaveLesson(lesson: Lesson, language: String, completion: @escaping (Bool) -> Void) {
+	func SaveLesson(lesson: Lesson, language: String, completion: @escaping (Bool, Error?) -> Void) {
 		let db = Firestore.firestore()
 		let batch = db.batch()
 		
@@ -246,15 +246,15 @@ class CoursesController: ObservableObject {
 			// Finally, commit the batch
 			batch.commit { error in
 				if let error = error {
-					print("Error writing batch to Firestore: \(error)")
-					completion(false)
+					
+					completion(false, error)
 				} else {
-					completion(true)
+					completion(true, nil)
 				}
 			}
 		} catch {
 			print("Error writing lesson to Firestore: \(error)")
-			completion(false)
+			completion(false, error)
 		}
 	}
 	
@@ -399,10 +399,6 @@ class CoursesController: ObservableObject {
 				}
 				lessons.append(newLesson)
 			}
-
-			for lesson in lessons {
-				print(lesson.lessonInfo.lessonName)
-			}
 			
 			self.isLoadingAllLessons = false
 			completion(lessons, nil)
@@ -418,7 +414,6 @@ class CoursesController: ObservableObject {
 		
 		mainLessonPath.document(lesson.lessonInfo.lessonName).delete() { error in
 			if let error = error {
-				print("Error removing document: \(error)")
 				completion(false)
 			} else {
 				completion(true)

@@ -19,6 +19,7 @@ struct InSessionLessonVocabUsedView: View {
 	@State var isLoading: Bool = false
 	@State var fetchVocabs: [Vocab] = [Vocab.example]
 	
+	@EnvironmentObject var alertModal: AlertManager
 	
 	var vGridItemLayout = [GridItem(.flexible()), GridItem(.flexible())]
 	
@@ -62,6 +63,7 @@ struct InSessionLessonVocabUsedView: View {
 				}
 			}
 		}
+		.withAlertModal(isPresented: $alertModal.isModalPresented)
 		.onAppear {
 			getVocab()
 		}
@@ -72,9 +74,15 @@ struct InSessionLessonVocabUsedView: View {
 	func getVocab() {
 		self.isLoading = true
 		vocabCon.getVocab(with: vocab.vocabIDs, language: currentLanguage) { allVocab, error in
-			self.fetchVocabs = allVocab
-			
-			self.isLoading = false
+			if let error = error {
+				alertModal.showAlert(.error, heading: "Error", subHeading: error.localizedDescription)
+				self.isLoading = false
+				
+			} else {
+				self.fetchVocabs = allVocab
+				
+				self.isLoading = false
+			}
 		}
 	}
 }

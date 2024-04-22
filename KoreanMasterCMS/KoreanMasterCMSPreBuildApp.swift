@@ -31,7 +31,8 @@ struct KoreanMasterCMSPreBuildApp: App {
 	
 	@StateObject var loginController = LoginController()
 	@StateObject var coursesController = CoursesController()
-	
+	@StateObject var alertModal: AlertManager = AlertManager()
+
     var body: some Scene {
 		Group {
 			WindowGroup {
@@ -53,6 +54,7 @@ struct KoreanMasterCMSPreBuildApp: App {
 		}
 		.environmentObject(coursesController)
 		.environmentObject(loginController)
+		.environmentObject(alertModal)
 
     }
 }

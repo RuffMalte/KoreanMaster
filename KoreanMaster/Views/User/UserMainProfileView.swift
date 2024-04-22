@@ -44,14 +44,14 @@ struct UserMainProfileView: View {
 									HStack {
 										VStack(alignment: .leading, spacing: 5) {
 											Label {
-												Text("Joined: ") + Text(loginCon.currentFirestoreUser!.createdAt, format: .dateTime.day().month(.wide).year())
+												Text("Joined: ") + Text(currentUser.createdAt, format: .dateTime.day().month(.wide).year())
 											} icon: {
 												Image(systemName: "clock.fill")
 											}
 												
 											
 											Label {
-												Text("Total liked: ") + Text("\(loginCon.currentFirestoreUser!.totalLiked)")
+												Text("Total liked: ") + Text("\(currentUser.totalLiked)")
 											} icon: {
 												Image(systemName: "heart.fill")
 											}

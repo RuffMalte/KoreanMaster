@@ -12,6 +12,7 @@ struct ProfileView: View {
 	@Environment(\.dismiss) var dismiss
 	
 	@EnvironmentObject var loginCon: LoginController
+	@EnvironmentObject var alertModal: AlertManager
 
 	@AppStorage("selectedTintColor") var selectedTintColor: ColorEnum = .blue
 	
@@ -28,19 +29,32 @@ struct ProfileView: View {
 				MaltesColorPicker(color: $selectedTintColor, colorPickerStyle: .menu)
 			
 				Button {
-					loginCon.logoutUser()
+					loginCon.logoutUser() { error, success in
+						if let error = error {
+							alertModal.showAlert(.error, heading: "Error", subHeading: error.localizedDescription)
+						} else if success {
+							alertModal.showAlert(.success, heading: "Success", subHeading: "Logged Out")
+						}
+					}
 				} label: {
 					Label("LogOut", systemImage: "arrowshape.turn.up.left.fill")
 				}
 				
 				Button {
-					loginCon.deleteCurrentUser()
+					loginCon.deleteCurrentUser() { success, error in
+						if let error = error {
+							alertModal.showAlert(.error, heading: "Error", subHeading: error.localizedDescription)
+						} else if success {
+							alertModal.showAlert(.success, heading: "Success", subHeading: "Deleted Account Out")
+						}
+					}
 				} label: {
 					Label("Delete Account", systemImage: "trash.fill")
 						.foregroundStyle(.red)
 				}
 				
 			}
+			.withAlertModal(isPresented: $alertModal.isModalPresented)
 		}
 		.toolbar {
 			ToolbarItem(placement: .automatic) {

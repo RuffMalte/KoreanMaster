@@ -21,6 +21,8 @@ struct InSessionLessonHeroSectionView: View {
 	@EnvironmentObject var loginCon: LoginController
 	
 	@StateObject var difficultyCon: DifficultyController = DifficultyController()
+	@EnvironmentObject var alertModal: AlertManager
+
 	@State private var lessonDifficulty: LessonDiffuculty?
 	
     var body: some View {
@@ -104,7 +106,7 @@ struct InSessionLessonHeroSectionView: View {
 			}
 			
 		}
-
+		.withAlertModal(isPresented: $alertModal.isModalPresented)
 		.onAppear {
 			getDiff()
 		}
@@ -115,7 +117,9 @@ struct InSessionLessonHeroSectionView: View {
 	
 	func getDiff() {
 		difficultyCon.getDifficulties(with: [lesson.lessonInfo.difficultyID], language: currentLanguage) { diffs, error in
-			if error == nil && diffs.count > 0 && diffs.count < 2 {
+			if let error = error {
+				alertModal.showAlert(.error, heading: "Error", subHeading: error.localizedDescription)
+			} else if diffs.count > 0 && diffs.count < 2 {
 				lessonDifficulty = diffs[0]
 			}
 		}

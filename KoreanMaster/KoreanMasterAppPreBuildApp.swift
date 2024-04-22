@@ -45,7 +45,8 @@ struct KoreanMasterAppPreBuildApp: App {
 	
 	@StateObject var loginController = LoginController()
 	@StateObject var coursesController = CoursesController()
-	
+	@StateObject var alertModal: AlertManager = AlertManager()
+
     var body: some Scene {
         WindowGroup {
 			if loginController.isInitialLoading {
@@ -65,5 +66,7 @@ struct KoreanMasterAppPreBuildApp: App {
 		.modelContainer(container)
 		.environmentObject(coursesController)
 		.environmentObject(loginController)
+		.environmentObject(alertModal)
+
     }
 }

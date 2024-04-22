@@ -10,6 +10,8 @@ import SwiftUI
 struct NoUserSettingsView: View {
 	
 	@EnvironmentObject var loginCon: LoginController
+	@EnvironmentObject var alertModal: AlertManager
+
 	
     var body: some View {
 		Group {
@@ -19,7 +21,13 @@ struct NoUserSettingsView: View {
 				Text("How did you get here 🤨?")
 			}, actions: {
 				Button {
-					loginCon.logoutUser()
+					loginCon.logoutUser() { error, success in
+						if let error = error {
+							alertModal.showAlert(.error, heading: "Error", subHeading: error.localizedDescription)
+						} else if success {
+							alertModal.showAlert(.success, heading: "Success", subHeading: "Logged Out")
+						}
+					}
 				} label: {
 					Label("Sign Up", systemImage: "person.fill.badge.plus")
 				}
@@ -31,6 +39,8 @@ struct NoUserSettingsView: View {
 				}
 				.buttonStyle(.bordered)
 			})
+			.withAlertModal(isPresented: $alertModal.isModalPresented)
+
 		}
     }
 }

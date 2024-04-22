@@ -47,25 +47,25 @@ struct UserProfileHeaderView: View {
 					}
 				}
 
-				if loginCon.currentFirestoreUser?.isAdmin ?? false {
-					NavigationLink {
-						
-					} label: {
-						HStack {
-							Spacer()
-							Text("Admin Panel")
-								.font(.headline)
-							
-							Spacer()
-						}
-						.padding(8)
-						.background {
-							RoundedRectangle(cornerRadius: 8)
-								.foregroundStyle(.red)
-						}
-						.shadow(radius: 5)
-					}
-				}
+//				if loginCon.currentFirestoreUser?.isAdmin ?? false {
+//					NavigationLink {
+//						
+//					} label: {
+//						HStack {
+//							Spacer()
+//							Text("Admin Panel")
+//								.font(.headline)
+//							
+//							Spacer()
+//						}
+//						.padding(8)
+//						.background {
+//							RoundedRectangle(cornerRadius: 8)
+//								.foregroundStyle(.red)
+//						}
+//						.shadow(radius: 5)
+//					}
+//				}
 				
 				
 				
