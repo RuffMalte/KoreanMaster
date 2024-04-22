@@ -30,7 +30,7 @@
       shouldUseLaunchSchemeArgsEnv = "YES">
       <TestPlans>
          <TestPlanReference
-            reference = "container:../KoreanMasterTestPlan.xctestplan"
+            reference = "container:KoreanMasterCMSTests.xctestplan"
             default = "YES">
          </TestPlanReference>
       </TestPlans>
@@ -42,6 +42,17 @@
                BlueprintIdentifier = "2E6C51922B9292DC00626F95"
                BuildableName = "KoreanMasterTests.xctest"
                BlueprintName = "KoreanMasterTests"
+               ReferencedContainer = "container:KoreanMaster.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "2E2F59762BD664F2000F3035"
+               BuildableName = "KoreanMasterCMSTests.xctest"
+               BlueprintName = "KoreanMasterCMSTests"
                ReferencedContainer = "container:KoreanMaster.xcodeproj">
             </BuildableReference>
          </TestableReference>

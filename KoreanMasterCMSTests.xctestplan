@@ -1,0 +1,24 @@
+{
+  "configurations" : [
+    {
+      "id" : "6A757908-FED3-4F1D-A77D-94E3FDC02D74",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:KoreanMaster.xcodeproj",
+        "identifier" : "2E2F59762BD664F2000F3035",
+        "name" : "KoreanMasterCMSTests"
+      }
+    }
+  ],
+  "version" : 1
+}

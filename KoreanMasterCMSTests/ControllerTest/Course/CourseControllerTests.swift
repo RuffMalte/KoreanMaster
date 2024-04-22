@@ -6,7 +6,7 @@
 //
 
 import XCTest
-
+import Firebase
 final class CourseControllerTests: XCTestCase {
 
 	var courseController: CoursesController!

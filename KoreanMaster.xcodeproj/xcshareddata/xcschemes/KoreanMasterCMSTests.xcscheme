@@ -11,17 +11,21 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "YES"
-      shouldAutocreateTestPlan = "YES">
+      shouldUseLaunchSchemeArgsEnv = "YES">
+      <TestPlans>
+         <TestPlanReference
+            reference = "container:KoreanMasterCMSTests.xctestplan"
+            default = "YES">
+         </TestPlanReference>
+      </TestPlans>
       <Testables>
          <TestableReference
-            skipped = "NO"
-            parallelizable = "YES">
+            skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "2E6C51922B9292DC00626F95"
-               BuildableName = "KoreanMasterTests.xctest"
-               BlueprintName = "KoreanMasterTests"
+               BlueprintIdentifier = "2E2F59762BD664F2000F3035"
+               BuildableName = "KoreanMasterCMSTests.xctest"
+               BlueprintName = "KoreanMasterCMSTests"
                ReferencedContainer = "container:KoreanMaster.xcodeproj">
             </BuildableReference>
          </TestableReference>

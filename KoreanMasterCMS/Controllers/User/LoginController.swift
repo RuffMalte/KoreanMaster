@@ -118,6 +118,8 @@ class LoginController: ObservableObject {
 		Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
 			if let error = error {
 				print(error)
+				self.loginOption = .login
+				self.isLoadingAccountSignIn = false
 			} else {
 				self.readFirestoreUser { user, bool, error in
 					if let error = error {
