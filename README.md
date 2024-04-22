@@ -72,7 +72,3 @@ If you encounter any issues or have questions, feel free to open an issue on the
 ---
 
 Enjoy learning Korean with Korean Master, and embark on your journey to mastering the language while diving deep into the fascinating Korean culture!
-
-
-> [!NOTE]
-> Full code for this example: [Tag List Example](https://github.com/OlehKorchytskyi/FitPlayground/blob/main/FitPlayground/FitPlayground/Examples/TagListExample.swift).
