@@ -60,6 +60,11 @@ Korean Master is divided into two main components: the learner's app and the CMS
    - Resolve any dependencies.
    - Build and run the CMS app.
 
+## Run Tests
+
+- To be able to run the test, please make sure you have selected the right schema: "KoreanMasterCMSTests".
+- Please also make sure that you have logged in with a valid admin account, as some of the tests require a connection to Firebase with a valid account.
+
 ## Support
 
 If you encounter any issues or have questions, feel free to open an issue on the GitHub repository or contact the developer directly.
