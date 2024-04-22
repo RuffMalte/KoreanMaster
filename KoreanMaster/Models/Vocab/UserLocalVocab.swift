@@ -109,7 +109,7 @@ class UserLocalVocab: Identifiable {
 		} else if days > 0 {
 			return "in \(days) day\(days == 1 ? "" : "s")"
 		} else {
-			return "Date has already passed"
+			return ""
 		}
 	}
 	
