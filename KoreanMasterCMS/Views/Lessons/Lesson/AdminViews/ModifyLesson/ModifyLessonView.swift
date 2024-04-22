@@ -118,7 +118,7 @@ struct ModifyLessonView: View {
 			ToolbarItem(placement: .primaryAction) {
 				Button {
 					if let lesson = lesson {
-						courseCon.SaveLesson(lesson: lesson, language: currentLanguage) { bool in
+						courseCon.SaveLesson(lesson: lesson, language: currentLanguage) { bool, error in
 							if bool {
 								print("Lesson added")
 							} else {

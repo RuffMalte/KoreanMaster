@@ -558,10 +558,10 @@
 		2E2F598F2BD6655D000F3035 /* ControllerTest */ = {
 			isa = PBXGroup;
 			children = (
+				2E2F598E2BD6655D000F3035 /* Helper */,
+				2E2F598B2BD6655D000F3035 /* DocumentRefGen */,
 				2E2F59872BD6655D000F3035 /* Course */,
 				2E2F59892BD6655D000F3035 /* CreateUser */,
-				2E2F598B2BD6655D000F3035 /* DocumentRefGen */,
-				2E2F598E2BD6655D000F3035 /* Helper */,
 			);
 			path = ControllerTest;
 			sourceTree = "<group>";

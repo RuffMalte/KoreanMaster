@@ -22,7 +22,7 @@ final class CourseControllerTests: XCTestCase {
 		newLesson.id = "TEST"
 		newLesson.lessonInfo.lessonName = "TEST"
 		
-		courseController.SaveLesson(lesson: newLesson, language: "English") { bool in
+		courseController.SaveLesson(lesson: newLesson, language: "English") { bool,error  in
 			XCTAssertTrue(bool)
 			creatExpectation.fulfill()
 		}

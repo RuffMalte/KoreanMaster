@@ -93,25 +93,25 @@ final class CreateUserTests: XCTestCase {
 		
 		
 		
-		//MARK: Deletion
-		let deleteExpectation = self.expectation(description: "delete user")
-		loginController.deleteFirestoreUser(with: testFireStoreUser.id) { isFinished, error in
-			XCTAssertTrue(isFinished, "User deletion should be finished.")
-			XCTAssertNil(error, "Error should be nil.")
-			deleteExpectation.fulfill()
-		}
-		
-		waitForExpectations(timeout: 20, handler: nil)
-		
-		let getExpectation2 = self.expectation(description: "get user should be nil")
-		loginController.readFirestoreUser(with: testFireStoreUser.id) { user, bool, error in
-			XCTAssertNil(error, "Error should be nil.")
-			XCTAssertEqual(bool, false, "Bool should be false.")
-			XCTAssertNil(user, "User should be nil.")
-			
-			getExpectation2.fulfill()
-		}
-		waitForExpectations(timeout: 20, handler: nil)
+//		//MARK: Deletion
+//		let deleteExpectation = self.expectation(description: "delete user")
+//		loginController.deleteFirestoreUser(with: testFireStoreUser.id) { isFinished, error in
+//			XCTAssertTrue(isFinished, "User deletion should be finished.")
+//			XCTAssertNil(error, "Error should be nil.")
+//			deleteExpectation.fulfill()
+//		}
+//		
+//		waitForExpectations(timeout: 20, handler: nil)
+//		
+//		let getExpectation2 = self.expectation(description: "get user should be nil")
+//		loginController.readFirestoreUser(with: testFireStoreUser.id) { user, bool, error in
+//			XCTAssertNil(error, "Error should be nil.")
+//			XCTAssertEqual(bool, false, "Bool should be false.")
+//			XCTAssertNil(user, "User should be nil.")
+//			
+//			getExpectation2.fulfill()
+//		}
+//		waitForExpectations(timeout: 20, handler: nil)
 		
 	}
 

@@ -24,7 +24,7 @@ struct LanguagesListView: View {
 							Label("Add Language", systemImage: "plus.circle.fill")
 						}
 						Button {
-							loginCon.getAllLanguages() { langs in
+							loginCon.getAllLanguages() { langs, error in
 								loginCon.allLanguages = langs
 							}
 						} label: {
