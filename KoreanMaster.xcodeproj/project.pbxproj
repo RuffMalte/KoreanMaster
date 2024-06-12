@@ -366,9 +366,8 @@
 		2E7E3A902BA7868C00CD9353 /* ModifyMultipleChoiceAnswerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyMultipleChoiceAnswerView.swift; sourceTree = "<group>"; };
 		2E80FC322BB3654D00DD8582 /* UserManageAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManageAccountView.swift; sourceTree = "<group>"; };
 		2E80FC342BB365A700DD8582 /* NoUserSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoUserSettingsView.swift; sourceTree = "<group>"; };
-		2E855AFE2BD6A2AB0059674C /* KoreanMaster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = KoreanMaster.app; path = /Users/mr/Documents/GitHub/KoreanMaster/build/Debug/KoreanMaster.app; sourceTree = "<absolute>"; };
-		2E855AFF2BD6A2AB0059674C /* KoreanMasterCMS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = KoreanMasterCMS.app; path = /Users/mr/Documents/GitHub/KoreanMaster/build/Debug/KoreanMasterCMS.app; sourceTree = "<absolute>"; };
-		2E855B002BD6A2AB0059674C /* KoreanMasterCMSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = KoreanMasterCMSTests.xctest; path = "/Users/mr/Documents/GitHub/KoreanMaster/build/Debug-iphoneos/KoreanMasterCMS.app/PlugIns/KoreanMasterCMSTests.xctest"; sourceTree = "<absolute>"; };
+		2E855B012BE8C1E80059674C /* KoreanMaster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = KoreanMaster.app; path = /Users/mr/Documents/GitHub/KoreanMaster/build/Debug/KoreanMaster.app; sourceTree = "<absolute>"; };
+		2E855B022BE8C1E80059674C /* KoreanMasterCMS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = KoreanMasterCMS.app; path = /Users/mr/Documents/GitHub/KoreanMaster/build/Debug/KoreanMasterCMS.app; sourceTree = "<absolute>"; };
 		2E8D83B42BA1C4230039DE57 /* LocalizedWelcomeMessageListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedWelcomeMessageListView.swift; sourceTree = "<group>"; };
 		2E8D83B72BA1CD500039DE57 /* ModifyWelcomeMessageSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyWelcomeMessageSheetView.swift; sourceTree = "<group>"; };
 		2E8D83BA2BA1CE240039DE57 /* LocalizedWelcomeMessageMocData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedWelcomeMessageMocData.swift; sourceTree = "<group>"; };
@@ -415,6 +414,7 @@
 		2EC21C892BB3457300B1F04E /* WithEnviromentObjects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithEnviromentObjects.swift; sourceTree = "<group>"; };
 		2EC21C8D2BB34C7C00B1F04E /* UserMainProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMainProfileView.swift; sourceTree = "<group>"; };
 		2EC21C8F2BB3521800B1F04E /* UserProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileHeaderView.swift; sourceTree = "<group>"; };
+		2ED3D36E2C199E9600D48C86 /* KoreanMasterCMSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = KoreanMasterCMSTests.xctest; path = "/Users/mr/Documents/GitHub/KoreanMaster/build/Debug-iphoneos/KoreanMasterCMS.app/PlugIns/KoreanMasterCMSTests.xctest"; sourceTree = "<absolute>"; };
 		2ED4D0682BB32D0C009BE46C /* KoreanMasterAppPreBuildApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KoreanMasterAppPreBuildApp.swift; sourceTree = "<group>"; };
 		2ED4D06A2BB32D0C009BE46C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		2ED4D06C2BB32D0E009BE46C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -1910,7 +1910,7 @@
 			);
 			name = KoreanMasterCMSTests;
 			productName = KoreanMasterCMSTests;
-			productReference = 2E855B002BD6A2AB0059674C /* KoreanMasterCMSTests.xctest */;
+			productReference = 2ED3D36E2C199E9600D48C86 /* KoreanMasterCMSTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		2ED4D0652BB32D0C009BE46C /* KoreanMaster */ = {
@@ -1933,7 +1933,7 @@
 				2EC21C6B2BB3345600B1F04E /* ConfettiSwiftUI */,
 			);
 			productName = KoreanMasterAppPreBuild;
-			productReference = 2E855AFE2BD6A2AB0059674C /* KoreanMaster.app */;
+			productReference = 2E855B012BE8C1E80059674C /* KoreanMaster.app */;
 			productType = "com.apple.product-type.application";
 		};
 		2EF41AC82B927A36007431ED /* KoreanMasterCMS */ = {
@@ -1956,7 +1956,7 @@
 				2E666E6A2BAE3BAD00C59FEB /* YouTubePlayerKit */,
 			);
 			productName = KoreanMasterCMSPreBuild;
-			productReference = 2E855AFF2BD6A2AB0059674C /* KoreanMasterCMS.app */;
+			productReference = 2E855B022BE8C1E80059674C /* KoreanMasterCMS.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */

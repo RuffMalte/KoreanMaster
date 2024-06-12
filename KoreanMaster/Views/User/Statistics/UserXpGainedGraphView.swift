@@ -128,6 +128,10 @@ struct UserXpGainedGraphView: View {
 				}
 				.frame(height: 200)
 			}
+			.onAppear {
+				currentUser.streaks = currentUser.streaks.filter { $0.date > Date().addingTimeInterval(-TimeInterval(60*60*24*14)) }
+		
+			}
 		}
 	}
 }
