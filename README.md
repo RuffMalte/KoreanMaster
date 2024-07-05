@@ -11,7 +11,6 @@ Korean Master is divided into two main components: the learner's app and the CMS
 - **Vocabulary:** Get introduced to essential Korean vocabulary
 - **Lessons Management:** Access well-structured lessons on Korean grammar, phrases, and usage.
 - **Culture Tips:** Learn about Korean culture with tips and facts that enhance your learning experience.
-- **Achievements:** Track your progress and unlock achievements as you learn.
 
 ### CMS (macOS App)
 
